@@ -204,15 +204,27 @@ img, video {
   position: sticky;
   top: 0;
   z-index: 500;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.65);
   border-bottom: 1px solid var(--line-grid);
-  transition: background-color 0.4s ease, border-color 0.4s ease;
+  transition: background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 [data-theme="dark"] .site-header {
-  background-color: rgba(9, 12, 11, 0.88);
+  background-color: rgba(9, 12, 11, 0.65);
+}
+
+.site-header.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.38);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .site-header.is-scrolled {
+  background-color: rgba(9, 12, 11, 0.38);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
 }
 
 .header-inner {
@@ -1915,28 +1927,40 @@ img, video {
   transition: color 0.3s ease;
 }
 
-/* Desktop Floating Scrollytelling Session Rail */
+/* Desktop Floating Scrollytelling Session Rail (Transparent so content underneath is fully visible) */
 .scrolly-session-rail {
   position: fixed;
-  left: 24px;
+  left: 18px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 400;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 14px 10px;
-  background-color: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--line-grid);
+  padding: 10px 6px;
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid transparent;
   border-radius: 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.scrolly-session-rail:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-color: var(--line-grid);
 }
 
 [data-theme="dark"] .scrolly-session-rail {
-  background-color: rgba(9, 12, 11, 0.85);
+  background-color: transparent;
+}
+
+[data-theme="dark"] .scrolly-session-rail:hover {
+  background-color: rgba(9, 12, 11, 0.35);
+  border-color: var(--line-grid);
 }
 
 .scrolly-session-item {
@@ -2665,7 +2689,72 @@ body.page-is-exiting footer {
   }
 }
 
+/* ==========================================================================
+   FLOATING BACK TO TOP ARROW BUTTON
+   ========================================================================== */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 86px;
+  right: 28px;
+  z-index: 450;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--line-grid);
+  color: var(--ink-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s var(--transition-smooth), background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
 
+[data-theme="dark"] .back-to-top-btn {
+  background-color: rgba(9, 12, 11, 0.75);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
 
+.back-to-top-btn.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
 
+.back-to-top-btn:hover {
+  background-color: var(--accent-ember);
+  border-color: var(--accent-ember);
+  color: #FFFFFF;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px var(--accent-ember-glow);
+}
 
+.back-to-top-btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.back-to-top-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.back-to-top-btn:hover svg {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .back-to-top-btn {
+    bottom: 82px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}

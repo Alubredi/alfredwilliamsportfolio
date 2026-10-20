@@ -731,6 +731,64 @@
   }
 
   // --------------------------------------------------------------------------
+  // 14. FLOATING BACK TO TOP ARROW BUTTON & SCROLLED HEADER
+  // --------------------------------------------------------------------------
+  function initBackToTop() {
+    let btn = document.getElementById('backToTopBtn');
+    if (!btn) {
+      btn = document.createElement('button');
+      btn.id = 'backToTopBtn';
+      btn.className = 'back-to-top-btn';
+      btn.setAttribute('aria-label', 'Return to top of page');
+      btn.setAttribute('type', 'button');
+      btn.innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+      `;
+      document.body.appendChild(btn);
+    }
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    const header = document.querySelector('.site-header');
+
+    let scrollTicking = false;
+    function handleScroll() {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      if (scrollY > 300) {
+        btn.classList.add('is-visible');
+      } else {
+        btn.classList.remove('is-visible');
+      }
+
+      if (header) {
+        if (scrollY > 40) {
+          header.classList.add('is-scrolled');
+        } else {
+          header.classList.remove('is-scrolled');
+        }
+      }
+      scrollTicking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) {
+        requestAnimationFrame(handleScroll);
+        scrollTicking = true;
+      }
+    }, { passive: true });
+
+    handleScroll();
+  }
+
+  // --------------------------------------------------------------------------
   // INITIALIZATION ON DOM READY
   // --------------------------------------------------------------------------
   function initAllComponents() {
@@ -750,6 +808,7 @@
     initCardDepth();
     initParallaxMedia();
     initFloatingWhatsApp();
+    initBackToTop();
   }
 
   if (document.readyState === 'loading') {
