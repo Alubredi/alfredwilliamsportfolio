@@ -335,8 +335,8 @@
               </p>
               
               <div style="display: flex; flex-direction: column; gap: 12px;">
-                <a href="contact.html" class="btn btn-solid" style="width: 100%; text-align: center;">
-                  Schedule a Strategy Call →
+                <a href="#book-call" class="btn btn-solid" style="width: 100%; text-align: center;">
+                  Book a 60-Min Strategy Call ↓
                 </a>
                 <button class="btn btn-outline" data-copy-email="officialwilliamsae@gmail.com" style="width: 100%; text-align: center; font-size: 0.8rem;">
                   <span>Copy Direct Email</span>
@@ -409,6 +409,56 @@
 
       </div>
     </section>
+
+    <!-- STRATEGIC CONSULTATION SCHEDULER: CAL.COM INTEGRATION -->
+    <section id="book-call" data-session-title="Schedule Scoping Call" style="padding: 100px 0 110px; border-bottom: 1px solid var(--line-grid); background-color: var(--bg-surface-elevated); position: relative;">
+      <div class="container">
+        
+        <div class="editorial-chapter-badge">CONSULTATION ATELIER // CAL.COM DIRECT ENGINE</div>
+        <div class="eyebrow">Direct Scoping &amp; Architecture Consultation</div>
+        <h2 class="display-title" style="margin-bottom: 18px;">
+          Book a 60-Minute<br><em>Strategy Session</em>.
+        </h2>
+        <p class="editorial-lead" style="color: var(--ink-muted); font-size: 1.18rem; max-width: 68ch; line-height: 1.6; margin-bottom: 40px;">
+          Select a time directly on my calendar below for a focused 60-minute scoping discussion. We will clarify your project objectives, technology architecture, delivery milestones, and commercial investment roadmap.
+        </p>
+
+        <!-- Cal.com Architectural Container Card -->
+        <div class="cal-embed-card">
+          <div class="cal-embed-header">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span class="status-dot"></span>
+              <strong style="color: var(--ink-primary);">60-MINUTE STRATEGY &amp; SCOPING SESSION</strong>
+              <span style="color: var(--ink-faint);">· Google Meet / Zoom Video</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; color: var(--accent-ember);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Instant Confirmation · Local Timezone Auto-Detected</span>
+            </div>
+          </div>
+
+          <!-- Cal inline embed code begins -->
+          <div class="cal-embed-body" id="my-cal-inline-60min"></div>
+          <script type="text/javascript">
+            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "60min", {origin:"https://app.cal.com"});
+            Cal.config = Cal.config || {};
+            Cal.config.forwardQueryParams = true;
+
+            Cal.ns["60min"]("inline", {
+              elementOrSelector:"#my-cal-inline-60min",
+              config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+              calLink: "alfred-williams-cwb4t4/60min",
+            });
+
+            Cal.ns["60min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+          </script>
+          <!-- Cal inline embed code ends -->
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <!-- Global Footer -->

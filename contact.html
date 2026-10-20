@@ -77,9 +77,76 @@
         <h1 class="display-title" style="margin-bottom: 24px;">
           Initiate a<br><em>Conversation</em>.
         </h1>
-        <p style="color: var(--ink-muted); font-size: 1.25rem; max-width: 62ch; line-height: 1.6; margin-bottom: 50px;">
+        <p style="color: var(--ink-muted); font-size: 1.25rem; max-width: 62ch; line-height: 1.6; margin-bottom: 32px;">
           <span class="editorial-dropcap">W</span>hether you need a high-performance web platform, an executive content syndication pipeline, or admissions advisory, I respond personally to all genuine project inquiries within 24 hours.
         </p>
+
+        <!-- Quick Action Anchor Badges -->
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 56px;">
+          <a href="#book-call" class="btn btn-solid">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book 60-Min Strategy Call (Instant Calendar) ↓
+          </a>
+          <a href="#terminal-form" class="btn btn-outline">Submit Written Brief / RFP ↓</a>
+        </div>
+
+        <!-- 1. PRIORITY CALENDAR BOOKING ATELIER -->
+        <div id="book-call" style="margin-bottom: 70px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+            <div>
+              <span class="card-tag">Priority Option 01 · Instant Calendar</span>
+              <h2 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; margin-top: 6px;">
+                Schedule a 60-Minute Scoping Session
+              </h2>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-ember);">
+              ✦ Direct Booking via Cal.com
+            </div>
+          </div>
+          <p style="color: var(--ink-muted); font-size: 0.98rem; max-width: 65ch; line-height: 1.6; margin-bottom: 24px;">
+            Pick a time that fits your schedule. All video meetings include direct Google Meet / Zoom link and automated timezone synchronization.
+          </p>
+
+          <!-- Cal.com Architectural Container Card -->
+          <div class="cal-embed-card">
+            <div class="cal-embed-header">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span class="status-dot"></span>
+                <strong style="color: var(--ink-primary);">CAL.COM VERIFIED SCHEDULER</strong>
+                <span style="color: var(--ink-faint);">· Alfred E. Williams Direct Line</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px; color: var(--accent-ember);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Local Timezone Auto-Detected</span>
+              </div>
+            </div>
+
+            <!-- Cal inline embed code begins -->
+            <div class="cal-embed-body" id="my-cal-inline-60min"></div>
+            <script type="text/javascript">
+              (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+              Cal("init", "60min", {origin:"https://app.cal.com"});
+              Cal.config = Cal.config || {};
+              Cal.config.forwardQueryParams = true;
+
+              Cal.ns["60min"]("inline", {
+                elementOrSelector:"#my-cal-inline-60min",
+                config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+                calLink: "alfred-williams-cwb4t4/60min",
+              });
+
+              Cal.ns["60min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+            </script>
+            <!-- Cal inline embed code ends -->
+          </div>
+        </div>
+
+        <!-- Divider with Option 2 Heading -->
+        <div style="border-top: 1px solid var(--line-grid); margin: 60px 0 40px; text-align: center; position: relative;">
+          <span style="position: relative; top: -11px; background-color: var(--bg-page); padding: 0 18px; font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint);">
+            Option 02: Direct Channels &amp; Written Project Brief
+          </span>
+        </div>
 
         <!-- 2-Column Split: Contact Channels + Interactive Commission Terminal -->
         <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; align-items: start;">
