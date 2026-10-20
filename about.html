@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Alfred E. Williams — Systems Architect, Writer &amp; Growth Engineer</title>
+  <link rel="stylesheet" href="css/main.css">
+  <!-- GSAP & ScrollTrigger for kinetic motion & transitions -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Structural 12-Column Hairline Blueprint Overlay -->
+  <div class="structural-grid-overlay" aria-hidden="true">
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="scroll-progress-bar"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brandmark">
+        <span class="status-dot"></span>
+        <span>Alfred <strong>E. Williams</strong></span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="works.html" class="nav-link">Works</a></li>
+          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="brands.html" class="nav-link">Brands &amp; Social</a></li>
+          <!-- About with Dropdown (Blog under About) -->
+          <li class="nav-item-dropdown">
+            <a href="about.html" class="nav-link nav-link-dropdown active" aria-expanded="false" aria-haspopup="true">
+              <span>About</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="about.html" class="nav-dropdown-item active" role="menuitem">
+                <span class="dropdown-item-title">About Alfred</span>
+                <span class="dropdown-item-desc">Biography, philosophy &amp; SME field research</span>
+              </a>
+              <a href="blog.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Blog &amp; Essays</span>
+                <span class="dropdown-item-desc">Critical commentary, data &amp; culture</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle theme"></button>
+        <button class="directory-trigger-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Directory</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Monumental Header Section -->
+    <section id="biography" data-session-title="Biography" style="padding: 80px 0 60px; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div class="editorial-chapter-badge">BIOGRAPHY &amp; INTELLECTUAL DOSSIER</div>
+        <div class="eyebrow">Biography · Systems Philosophy · Ten-Year Track Record</div>
+        <h1 class="display-title" style="margin-bottom: 30px;">
+          Humanistic Rigor.<br><em>Computational</em> Execution.
+        </h1>
+        <p class="editorial-lead" style="color: var(--ink-muted); font-size: 1.25rem; max-width: 64ch; line-height: 1.6; margin-bottom: 40px;">
+          <span class="editorial-dropcap">I</span>'m Alfred — a writer, editor, and trainer at my core, and a full-cycle web developer and AI-integrated brand builder by trade. Over the past decade I've helped brands, students, and startups turn ideas into content and platforms that actually perform.
+        </p>
+
+        <!-- Alfred Portrait + Quick Stats Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 50px;">
+          
+          <div style="position: relative; border: 1px solid var(--line-grid); overflow: hidden; background-color: var(--bg-surface);">
+            <img src="assets/alfred-photo.jpg" alt="Alfred E. Williams Editorial Portrait" style="width: 100%; height: auto; display: block; filter: grayscale(15%);">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 20px; background: linear-gradient(transparent, rgba(9,12,11,0.92)); color: #FAF9F5; font-family: var(--font-mono); font-size: 0.8rem; display: flex; justify-content: space-between;">
+              <span>Alfred E. Williams, B.A. (Hons.) UNILAG</span>
+              <span style="color: var(--accent-ember);">Lagos, Nigeria</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 24px;">
+            <div style="padding: 26px 28px; background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-left: 3px solid var(--accent-ember);">
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-ember); text-transform: uppercase;">Core Thesis &amp; Foundation</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin: 6px 0 10px;">The Foundation Everything Else Is Built On</h3>
+              <p style="font-size: 0.96rem; color: var(--ink-primary); line-height: 1.65; margin-bottom: 10px;">
+                At my core, I'm a <strong>professional writer, editor, and trainer</strong>, working at an advanced level across business, academic, research, social media, and personal content. That's the foundation everything else is built on.
+              </p>
+              <p style="font-size: 0.92rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 10px;">
+                Around that core, I've built a broader skillset: <strong>full-cycle website and web app development, AI-powered branding and ad creation, graphic design, and video editing</strong> — so I can carry a brand's voice from the page to the screen, and design the platform it lives on.
+              </p>
+              <p style="font-size: 0.92rem; color: var(--ink-muted); line-height: 1.6;">
+                My background spans both the <strong>education and digital media sectors</strong>, where I've consistently delivered in content creation, community management, social listening, and engagement-driven campaigns. Right now, I split my time between client web builds, AI-assisted content systems, and running social media for a handful of growing Lagos-based startups.
+              </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+              <div class="metric-card scrolly-fade">
+                <div class="metric-top-row">
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-ember);">CHRONOLOGY</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="metric-number-display" style="font-size: 2.2rem;">
+                  <span class="counter-number" data-counter-target="10" data-counter-suffix="+">10+</span>
+                </div>
+                <div class="metric-label-text" style="font-size: 0.72rem;">Years Cross-Disciplinary</div>
+              </div>
+
+              <div class="metric-card scrolly-fade">
+                <div class="metric-top-row">
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-ember);">FIELD STUDY</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                </div>
+                <div class="metric-number-display" style="font-size: 2.2rem;">
+                  <span class="counter-number" data-counter-target="551" data-counter-suffix="">551</span>
+                </div>
+                <div class="metric-label-text" style="font-size: 0.72rem;">Lagos SMEs Mapped</div>
+              </div>
+
+              <div class="metric-card scrolly-fade">
+                <div class="metric-top-row">
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-ember);">INTELLIGENCE</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>
+                </div>
+                <div class="metric-number-display" style="font-size: 2.2rem;">
+                  <span class="counter-number" data-counter-target="2500" data-counter-suffix="+">2,500+</span>
+                </div>
+                <div class="metric-label-text" style="font-size: 0.72rem;">Dossiers Indexed</div>
+              </div>
+
+              <div class="metric-card scrolly-fade">
+                <div class="metric-top-row">
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-ember);">SUCCESS</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                </div>
+                <div class="metric-number-display" style="font-size: 2.2rem;">
+                  <span class="counter-number" data-counter-target="90" data-counter-suffix="%+">90%+</span>
+                </div>
+                <div class="metric-label-text" style="font-size: 0.72rem;">F-1 Visa &amp; IELTS Success</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CHAPTER 01: Academic Foundations -->
+    <section id="chapter-01" data-session-title="01 · Academic Craft" style="padding: 90px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 3.2fr 6.8fr; gap: 60px;">
+          <div>
+            <div class="editorial-chapter-badge">ACADEMIA · UNILAG ARCHIVE</div>
+            <span class="card-tag">Chapter 01</span>
+            <h2 style="font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; margin-top: 8px;">Academic Foundations &amp; Critical Scholarship</h2>
+            <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-faint); margin-top: 10px;">2014 – 2018 · University of Lagos</p>
+            
+            <div class="editorial-marginalia">
+              <strong>Archival Document:</strong> Contributing sub-editor on the landmark 145-page Presidential Committee on North-East Initiative (PCNI) Report under President Muhammadu Buhari's administration.
+            </div>
+          </div>
+          <div style="font-size: 1.05rem; line-height: 1.7; color: var(--ink-muted);">
+            <p class="editorial-lead" style="margin-bottom: 20px;">
+              <span class="editorial-dropcap">A</span>lfred earned his Bachelor of Arts (Honours) in English and Literary Studies from the prestigious <strong>University of Lagos (UNILAG)</strong>. His academic training immersed him in dramatic theory, semiotics, phonology, and post-colonial African literature.
+            </p>
+            <p style="margin-bottom: 20px;">
+              During this period, he founded <em>My WORLD of Literature (TWOL)</em>, designing the platform from scratch to publish penetrating theater reviews (such as his dramaturgy critique of Dr. Chris Anyokwu's <em>The Far Country</em> at the UNILAG Arts Theatre) and sociopolitical essays on Nigerian legislative debates.
+            </p>
+            <p>
+              He also served as a contributing sub-editor on national publications, including the landmark <strong>145-page Presidential Committee on North-East Initiative (PCNI) Report</strong> under President Muhammadu Buhari's administration, honing an eye for high-stakes institutional precision.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 02: Lagos Commercial Field Study -->
+    <section id="chapter-02" data-session-title="02 · 551 SMEs Study" style="padding: 90px 0; border-bottom: 1px solid var(--line-grid); background-color: var(--bg-surface);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 3.2fr 6.8fr; gap: 60px;">
+          <div>
+            <div class="editorial-chapter-badge">PRIMARY ECONOMIC FIELDWORK</div>
+            <span class="card-tag">Chapter 02</span>
+            <h2 style="font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; margin-top: 8px;">The 551 SMEs Lagos Commercial Field Study</h2>
+            <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-faint); margin-top: 10px;">Primary Economic Field Research · 9 Districts</p>
+          </div>
+          <div style="font-size: 1.05rem; line-height: 1.7; color: var(--ink-muted);">
+            <p class="editorial-lead" style="margin-bottom: 20px;">
+              <span class="editorial-dropcap">B</span>etween 2021 and 2023, Alfred spearheaded an intensive ground-level research expedition across <strong>9 major commercial hubs in Lagos State</strong>—including Ikeja, Yaba, Lekki, Victoria Island, Oshodi, Alaba International, Balogun Market, Surulere, and Agege.
+            </p>
+            <p style="margin-bottom: 20px;">
+              Through direct in-person interviews and operational audits with <strong>551 small and medium business owners</strong>, he mapped real-world bottlenecks: cash-flow opacity, erratic inventory reconciliation, over-reliance on informal WhatsApp trade, and an absence of lightweight, accessible digital tools.
+            </p>
+            
+            <blockquote class="editorial-pullquote scrolly-fade" style="margin: 28px 0;">
+              <p>“Software built for emerging markets cannot afford decorative latency. When bandwidth fluctuates and currency devalues daily, clarity is not an aesthetic choice—it is survival.”</p>
+              <cite>— Alfred E. Williams · Field Notes on 551 Lagos Enterprises</cite>
+            </blockquote>
+
+            <p>
+              This rigorous empirical field study became the foundation for his software philosophy: building intuitive, zero-bloat web tools designed for maximum resilience in bandwidth-constrained, volatile macroeconomic environments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 03: Academic Operations -->
+    <section id="chapter-03" data-session-title="03 · Admissions" style="padding: 90px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 3.2fr 6.8fr; gap: 60px;">
+          <div>
+            <div class="editorial-chapter-badge">PEDAGOGICAL LEADERSHIP</div>
+            <span class="card-tag">Chapter 03</span>
+            <h2 style="font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; margin-top: 8px;">Academic Operations &amp; High-Stakes Admissions</h2>
+            <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-faint); margin-top: 10px;">2016 – 2024 · Gresfor &amp; Light Heights</p>
+            
+            <div class="editorial-marginalia">
+              <strong>Success Metric:</strong> Sustained an extraordinary 90%+ US F-1 Visa approval rate across 50+ candidates coached via the proprietary Consular Q&amp;A framework.
+            </div>
+          </div>
+          <div style="font-size: 1.05rem; line-height: 1.7; color: var(--ink-muted);">
+            <p class="editorial-lead" style="margin-bottom: 20px;">
+              <span class="editorial-dropcap">A</span>s <strong>Academic Operations Manager &amp; Lead Instructor at Gresfor Consults</strong> (2018–2024) and previously <strong>Head of Academics at Light Heights Consults</strong> (2016–2018), Alfred directed pedagogical operations, managed cross-functional tutor faculties, and mentored over 150 international candidates annually.
+            </p>
+            <p style="margin-bottom: 20px;">
+              He overhauled instructional onboarding, slashing tutor ramp-up time by <strong>50%</strong> through standardized metric rubrics. His personalized coaching curriculum lifted client satisfaction scores from 72% to 94%, with students routinely gaining admittance into Ivy League institutions, Russell Group universities, and prestigious medical programs.
+            </p>
+            <p>
+              He created the proprietary <strong>US Embassy F-1 Visa Consular Q&amp;A Blueprint</strong>—a psychological and rhetorical framework that prepared over 50 scholars for consular interviews, maintaining an extraordinary <strong>90%+ visa approval rate</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 04: Creative Expression -->
+    <section id="chapter-04" data-session-title="04 · Creative Sound" style="padding: 90px 0; border-bottom: 1px solid var(--line-grid); background-color: var(--bg-surface);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 3.2fr 6.8fr; gap: 60px;">
+          <div>
+            <div class="editorial-chapter-badge">ACOUSTIC &amp; KINETIC ARTS</div>
+            <span class="card-tag">Chapter 04</span>
+            <h2 style="font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; margin-top: 8px;">Creative Expression: Dance, Movement &amp; Sound</h2>
+            <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-faint); margin-top: 10px;">Choreography &amp; Sonic Design</p>
+          </div>
+          <div style="font-size: 1.05rem; line-height: 1.7; color: var(--ink-muted);">
+            <p class="editorial-lead" style="margin-bottom: 20px;">
+              <span class="editorial-dropcap">A</span>lfred's creative output extends beyond code and prose into the physical and acoustic arts. An accomplished dancer and movement director, he has choreographed video productions, exploring polyrhythmic Afrobeats, urban hip-hop, and contemporary movement.
+            </p>
+            <p>
+              In his sound studio, he experiments with digital audio workstations (DAWs), synthesizing ambient soundscapes, percussive cadence, and acoustic motifs. This kinesthetic and sonic awareness directly informs his front-end engineering: micro-interactions that breathe, animations that respect human physics, and visual layouts structured like musical counterpoint.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS & COMPETENCY MATRIX SECTION -->
+    <section id="skills" data-session-title="Skills Matrix" style="padding: 90px 0; border-bottom: 1px solid var(--line-grid); background-color: var(--bg-surface);">
+      <div class="container">
+        
+        <div class="section-head">
+          <span class="section-num">05</span>
+          <h2 class="section-title">Skills &amp; Craft Matrix</h2>
+          <div class="section-rule"></div>
+          <a href="index.html#skills" class="card-link" style="font-size: 0.85rem;">Interactive Grid ↗</a>
+        </div>
+
+        <p style="color: var(--ink-muted); font-size: 1.08rem; margin-top: -36px; margin-bottom: 44px; max-width: 68ch; line-height: 1.6;">
+          Bridging rigorous literary precision with modern web development, AI content systems, and pedagogical mastery.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 44px;">
+          
+          <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-top: 3px solid var(--accent-ember); padding: 28px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+              <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700;">Writing &amp; Editing</h3>
+              <span class="skill-badge badge-advanced">Advanced</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 16px;">
+              Business, academic, research, social media, personal &amp; professional content. 145p PCNI report edited for the Presidency; 50+ admission essays with 90%+ acceptance rate.
+            </p>
+            <div class="skill-tools-tags" style="margin-top: 0; padding-top: 12px;">
+              <span class="skill-tool-tag">Editorial Copy</span>
+              <span class="skill-tool-tag">Whitepapers</span>
+              <span class="skill-tool-tag">Admissions 90%+</span>
+              <span class="skill-tool-tag">Fact-Checking</span>
+            </div>
+          </div>
+
+          <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-top: 3px solid var(--accent-ember); padding: 28px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+              <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700;">Tutoring &amp; Training</h3>
+              <span class="skill-badge badge-advanced">Advanced</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 16px;">
+              Coaching writers and students to advanced proficiency, one-on-one and in structured programs. Standardized exams (IELTS/TOEFL/GRE/GMAT/SAT), curriculum design slashing onboarding by 50%.
+            </p>
+            <div class="skill-tools-tags" style="margin-top: 0; padding-top: 12px;">
+              <span class="skill-tool-tag">IELTS / TOEFL</span>
+              <span class="skill-tool-tag">GRE / GMAT / SAT</span>
+              <span class="skill-tool-tag">F-1 Visa Q&amp;A</span>
+              <span class="skill-tool-tag">Faculty Training</span>
+            </div>
+          </div>
+
+          <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-top: 3px solid var(--accent-gold); padding: 28px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+              <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700;">Full-Cycle Web Dev</h3>
+              <span class="skill-badge badge-above-int">Above Intermediate</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 16px;">
+              Full-cycle website and web app development from design to deployment. HTML5, CSS3, JavaScript (ES6+), Next.js, WordPress themes, e-commerce storefronts, and sub-100ms render speeds.
+            </p>
+            <div class="skill-tools-tags" style="margin-top: 0; padding-top: 12px;">
+              <span class="skill-tool-tag">Custom Frontend/Backend</span>
+              <span class="skill-tool-tag">E-Commerce</span>
+              <span class="skill-tool-tag">Next.js / JS</span>
+              <span class="skill-tool-tag">WebGL / Three.js</span>
+            </div>
+          </div>
+
+          <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-top: 3px solid var(--line-grid-strong); padding: 28px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+              <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700;">AI Branding &amp; Media</h3>
+              <span class="skill-badge badge-intermediate">Intermediate</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 16px;">
+              AI-powered branding, Meta Ads funnels, 1-to-8 content repurposing engine, graphic design (Figma/Canva), and video editing (CapCut) carrying a brand's voice from page to screen.
+            </p>
+            <div class="skill-tools-tags" style="margin-top: 0; padding-top: 12px;">
+              <span class="skill-tool-tag">AI Workflows</span>
+              <span class="skill-tool-tag">Meta Ads Funnels</span>
+              <span class="skill-tool-tag">1-to-8 Engine</span>
+              <span class="skill-tool-tag">CapCut / Figma</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Master CV Banner -->
+        <div class="cv-banner" style="background-color: var(--bg-page);">
+          <div class="cv-banner-left">
+            <h4 class="cv-banner-title">Download Official Master CV &amp; Credentials</h4>
+            <p class="cv-banner-desc">
+              Get comprehensive documentation of all educational background (UNILAG B.A. Hons, 150-Hr TEFL), leadership appointments, field research, and verified career history.
+            </p>
+          </div>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="Resume and CV/Alfred_Williams_Master_CV.pdf" target="_blank" rel="noopener" class="btn btn-solid">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Master CV (PDF)
+            </a>
+            <a href="works.html" class="btn btn-outline">Explore Selected Works →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Editorial Journal & Blog Discovery Section -->
+    <section id="critical-journal" data-session-title="Critical Journal" style="padding: 60px 0; border-top: 1px solid var(--line-grid); background-color: var(--bg-surface);">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+        <div style="max-width: 65ch;">
+          <div class="eyebrow" style="margin-bottom: 8px;">EDITORIAL ATELIER // ESSAYS &amp; RESEARCH</div>
+          <h3 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; margin-bottom: 8px;">Explore Critical Investigations &amp; Methodologies</h3>
+          <p style="color: var(--ink-muted); font-size: 0.95rem; line-height: 1.6;">Delve into Alfred's peer-grounded essays on macroeconomic data clarity, zero-bloat web architecture, African dramaturgy, and elite admissions rhetoric.</p>
+        </div>
+        <div>
+          <a href="blog.html" class="btn btn-solid">Visit Blog &amp; Essays Terminal →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="commission" data-session-title="Executive Inquiry" style="padding: 80px 0;">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 700;">Ready to discuss a project or executive engagement?</h3>
+          <p style="color: var(--ink-muted); font-size: 1rem; margin-top: 6px;">Available for selective web architecture, content leadership, and consulting commissions.</p>
+        </div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-solid">Initiate Consultation →</a>
+          <a href="services.html" class="btn btn-outline">Explore Service Packages</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer id="terminal" data-session-title="Dispatch Terminal" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2 class="footer-heading">
+            Let's build<br>something <em>worth</em><br>remembering.
+          </h2>
+        </div>
+        <div class="footer-contacts">
+          <button class="contact-row-btn" data-copy-email="officialwilliamsae@gmail.com">
+            <span>officialwilliamsae@gmail.com</span>
+            <span style="font-size: 0.72rem; color: var(--accent-ember);">Click to Copy</span>
+          </button>
+          <a href="tel:+2348176939974" class="contact-row-btn">
+            <span>+234 817 693 9974</span>
+            <span style="font-size: 0.72rem; color: var(--ink-faint);">Call Direct</span>
+          </a>
+        </div>
+      </div>
+      <div class="monumental-wordmark" aria-hidden="true">WILLIAMS.</div>
+      
+      <!-- Footer Sub-Bar with Privacy & Terms Links -->
+      <div class="footer-sub-bar">
+        <span>© 2026 Alfred E. Williams. All rights reserved.</span>
+        <span>
+          <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+          <span style="opacity: 0.3; margin: 0 8px;">/</span>
+          <a href="terms.html" class="footer-legal-link">Terms of Usage</a>
+        </span>
+        <span>Lagos, Nigeria · Operating Across London, New York &amp; Tokyo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/components.js"></script>
+</body>
+</html>

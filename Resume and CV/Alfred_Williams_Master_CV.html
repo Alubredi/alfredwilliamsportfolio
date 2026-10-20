@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alfred E. Williams — Master CV (Full Database)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAFAF7;
+      --card-bg: #FFFFFF;
+      --ink: #141A18;
+      --ink-muted: #4E5955;
+      --ink-faint: #7A8580;
+      --border: #D8DED9;
+      --border-subtle: #EBEFEA;
+      --accent: #C86432;
+      --accent-soft: rgba(200, 100, 50, 0.08);
+      --font-display: 'Space Grotesk', -apple-system, sans-serif;
+      --font-body: 'Manrope', -apple-system, sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 14px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 40px 20px;
+    }
+
+    .cv-container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.04);
+    }
+
+    /* Print header actions */
+    .action-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 24px;
+      background: #141A18;
+      color: #FAFAF7;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .action-bar a, .action-bar button {
+      color: #FAFAF7;
+      text-decoration: none;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+    .action-bar button:hover, .action-bar a:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* Header */
+    header {
+      padding: 40px 48px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8F9F7 100%);
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    h1.name {
+      font-family: var(--font-display);
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      color: var(--ink);
+    }
+    .role-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 6px;
+      letter-spacing: -0.01em;
+    }
+    .contact-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--ink-muted);
+      text-align: right;
+    }
+    .contact-grid a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .contact-grid a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* Summary Bar */
+    .summary-section {
+      padding: 32px 48px;
+      background: #FDFDFB;
+      border-bottom: 1px solid var(--border);
+    }
+    .summary-text {
+      font-size: 14.5px;
+      line-height: 1.68;
+      color: var(--ink-muted);
+    }
+    .summary-text strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .strategic-edge-badge {
+      margin-top: 18px;
+      padding: 12px 18px;
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+
+    /* Layout: 2 Columns */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Left Sidebar */
+    .sidebar {
+      padding: 36px 32px;
+      border-right: 1px solid var(--border);
+      background: #FBFBFA;
+    }
+    .sidebar-block {
+      margin-bottom: 36px;
+    }
+    .sidebar-block:last-child {
+      margin-bottom: 0;
+    }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .skill-category {
+      margin-bottom: 20px;
+    }
+    .skill-category-title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .pill {
+      font-size: 11px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      border-radius: 3px;
+      color: var(--ink-muted);
+    }
+
+    .sidebar-item {
+      margin-bottom: 16px;
+    }
+    .sidebar-item-title {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--ink);
+    }
+    .sidebar-item-sub {
+      font-size: 12px;
+      color: var(--ink-faint);
+    }
+
+    /* Right Main Content */
+    .main-content {
+      padding: 36px 44px;
+    }
+    .experience-group {
+      margin-bottom: 40px;
+    }
+    .experience-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-card {
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .job-card:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    .job-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .job-dates {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .job-company {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-muted);
+      margin-bottom: 4px;
+    }
+    .job-company a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--ink-muted);
+    }
+    .job-tagline {
+      font-size: 12px;
+      font-style: italic;
+      color: var(--ink-faint);
+      margin-bottom: 10px;
+    }
+    .job-bullets {
+      list-style: none;
+      padding-left: 0;
+    }
+    .job-bullets li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 8px;
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--ink-muted);
+    }
+    .job-bullets li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .job-bullets li strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Live Portfolio Grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .portfolio-card {
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+      background: #FFFFFF;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .portfolio-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .portfolio-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .portfolio-name a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .portfolio-name a:hover {
+      color: var(--accent);
+    }
+    .portfolio-desc {
+      font-size: 12px;
+      color: var(--ink-faint);
+      line-height: 1.45;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        padding: 0;
+        background: #FFFFFF;
+      }
+      .cv-container {
+        border: none;
+        box-shadow: none;
+        max-width: 100%;
+      }
+      .action-bar {
+        display: none !important;
+      }
+      header {
+        padding: 20px 28px;
+      }
+      .summary-section {
+        padding: 20px 28px;
+      }
+      .sidebar {
+        padding: 20px 22px;
+      }
+      .main-content {
+        padding: 20px 28px;
+      }
+      .job-card {
+        page-break-inside: avoid;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .cv-body {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      header {
+        padding: 28px 24px;
+      }
+      .summary-section {
+        padding: 24px;
+      }
+      .main-content {
+        padding: 24px;
+      }
+      .contact-grid {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cv-container">
+
+  <!-- Action Bar -->
+  <div class="action-bar">
+    <span>ALFRED E. WILLIAMS · MASTER CV REPOSITORY</span>
+    <button onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-top">
+      <div>
+        <h1 class="name">ALFRED E. WILLIAMS</h1>
+        <div class="role-title">Content & Social Media Marketer · Digital Systems & Growth Engineer</div>
+      </div>
+      <div class="contact-grid">
+        <div><strong>Location:</strong> Lagos, NG (Available Full-time In-Person / Hybrid)</div>
+        <div><strong>Phone:</strong> <a href="tel:+2348176939974">+234 817 693 9974</a></div>
+        <div><strong>Email:</strong> <a href="mailto:officialwilliamsae@gmail.com">officialwilliamsae@gmail.com</a></div>
+        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/williams-e-alfred/" target="_blank">linkedin.com/in/williams-e-alfred</a></div>
+        <div><strong>Portfolio:</strong> <a href="https://alfredwilliams.netlify.app/" target="_blank">alfredwilliams.netlify.app</a></div>
+        <div style="font-size: 11.5px; color: var(--ink-faint); margin-top: 4px;">9, Azu Odita Street, Atlantic View Estate, Lekki</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Summary Section -->
+  <section class="summary-section">
+    <p class="summary-text">
+      Versatile, high-impact <strong>Content and Social Media Marketer</strong> and <strong>Digital Systems Builder</strong> with <strong>10+ years of cumulative experience</strong> in digital communication, content strategy, media management, and brand storytelling across education and digital media. Hands-on with full-cycle web development, Facebook Ads, Meta Business Suite, and AI-powered branding workflows. Currently managing end-to-end social systems for <strong>Renalytica</strong> (Enterprise Market Intelligence) alongside commerce and education leaders like <strong>AXiA Active</strong> (Athleisure) and <strong>GoFar International Academy</strong>.
+    </p>
+    <div class="strategic-edge-badge">
+      <strong>Core Strategic Edge:</strong> Deep institutional understanding of African tech and talent dynamics—backed by field research mapping <strong>551 SMEs across 9 Lagos districts</strong>, building academic operations systems that slashed training time by <strong>50%</strong>, and maintaining an extraordinary <strong>90%+ acceptance rate</strong> on 50+ international scholarship and admission essays.
+    </div>
+  </section>
+
+  <!-- CV Body -->
+  <div class="cv-body">
+
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+
+      <!-- Core Competencies -->
+      <div class="sidebar-block">
+        <div class="section-label">Core Competencies</div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Writing & Editorial</div>
+          <div class="pill-list">
+            <span class="pill">Editorial Copywriting</span>
+            <span class="pill">Admission Essays (90%+)</span>
+            <span class="pill">Brand Storytelling</span>
+            <span class="pill">B2B Proposals</span>
+            <span class="pill">Corporate Reports</span>
+            <span class="pill">Fact-Checking</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Social & Community</div>
+          <div class="pill-list">
+            <span class="pill">Channel Ownership</span>
+            <span class="pill">Content Calendars</span>
+            <span class="pill">LinkedIn / X / IG</span>
+            <span class="pill">Repurposing Engine</span>
+            <span class="pill">Community Triage</span>
+            <span class="pill">Meta Business Suite</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Web & Digital Systems</div>
+          <div class="pill-list">
+            <span class="pill">Full-Cycle Web Dev</span>
+            <span class="pill">WordPress & Themes</span>
+            <span class="pill">Next.js & Frontend</span>
+            <span class="pill">E-Commerce Stores</span>
+            <span class="pill">Facebook Ads</span>
+            <span class="pill">GA4 & Meta Insights</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Creative & Tools</div>
+          <div class="pill-list">
+            <span class="pill">Canva</span>
+            <span class="pill">Figma</span>
+            <span class="pill">CapCut Video</span>
+            <span class="pill">Notion</span>
+            <span class="pill">Google Workspace</span>
+            <span class="pill">Buffer / Hootsuite</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="sidebar-block">
+        <div class="section-label">Education</div>
+        <div class="sidebar-item">
+          <div class="sidebar-item-title">B.A. English & Literary Studies</div>
+          <div class="sidebar-item-sub">University of Lagos (UNILAG) · 2011 – 2015</div>
+        </div>
+        <div class="sidebar-item">
+          <div class="sidebar-item-title">English, Mathematics & Leadership</div>
+          <div class="sidebar-item-sub">Leadership Development Alumnus · 2007 – 2009</div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="sidebar-block">
+        <div class="section-label">Certifications</div>
+        <div class="sidebar-item">
+          <div class="sidebar-item-title">150-Hour Advanced TEFL Certificate</div>
+          <div class="sidebar-item-sub">TEFL UK · 2019</div>
+        </div>
+        <div class="sidebar-item">
+          <div class="sidebar-item-title">Certificate of Leadership & Development</div>
+          <div class="sidebar-item-sub">Lagos State Leadership Training · 2008</div>
+        </div>
+      </div>
+
+      <!-- Volunteer Leadership -->
+      <div class="sidebar-block">
+        <div class="section-label">Leadership</div>
+        <div class="sidebar-item">
+          <div class="sidebar-item-title">Chairman, Academic Committee</div>
+          <div class="sidebar-item-sub">NASELS – University of Lagos · 2015</div>
+          <div style="font-size: 11.5px; color: var(--ink-muted); margin-top: 3px;">Organized preparatory tutorials across all years; 6 direct mentees graduated in the top 5%.</div>
+        </div>
+        <div class="sidebar-item">
+          <div class="sidebar-item-title">President, Arts Students Association</div>
+          <div class="sidebar-item-sub">Ansar-Ud-Deen Senior Secondary · 2008–2009</div>
+          <div style="font-size: 11.5px; color: var(--ink-muted); margin-top: 3px;">Led preparatory tutorials for WAEC for SS2 & SS3; organized literary & debating events.</div>
+        </div>
+      </div>
+
+      <!-- Hobbies -->
+      <div class="sidebar-block">
+        <div class="section-label">Interests</div>
+        <div class="pill-list">
+          <span class="pill">Dance Video Choreography</span>
+          <span class="pill">Writing & Research</span>
+          <span class="pill">Creative Coding</span>
+          <span class="pill">Sound Design</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- Main Experience Column -->
+    <main class="main-content">
+
+      <!-- Section: Professional Experience -->
+      <div class="experience-group">
+        <div class="section-label">Professional Experience</div>
+
+        <!-- Renalytica -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title">Lead Full-Stack Web Developer, Digital Systems Architect & Content Director</div>
+            <div class="job-dates">2026 – PRESENT</div>
+          </div>
+          <div class="job-company"><a href="https://renalytica.com" target="_blank">Renalytica</a> · Lagos, Nigeria</div>
+          <div class="job-tagline">Democratizing strategic direction for modern enterprises — Market Intelligence for Commerce & Macro</div>
+          <ul class="job-bullets">
+            <li>Designed, architected, and engineered the official enterprise website (<a href="https://renalytica.com" target="_blank">renalytica.com</a>) from scratch—delivering full-stack development (front-end, back-end), interactive data interfaces, and content architecture.</li>
+            <li>Own day-to-day social media operations across <a href="https://www.linkedin.com/company/renalytica" target="_blank">LinkedIn</a>, <a href="https://www.instagram.com/p/DeKpVoVkccD/?img_index=1" target="_blank">Instagram</a>, and <a href="https://x.com/renalytica" target="_blank">X (Twitter)</a>; planning, scheduling, and publishing to a structured content calendar.</li>
+            <li>Translate complex statistical models and <strong>2,500+ market dossiers</strong> into warm, humanized, boardroom-ready stories that elevate executive perception.</li>
+            <li>Architect a <strong>1-to-8 content repurposing engine</strong>: converting 1 comprehensive research report into 8 high-engagement assets (LinkedIn visual carousel, viral X thread, Instagram infographic, executive email draft, blog snippet, and quote cards).</li>
+            <li>Steward brand community: actively engaging followers, replying to comments/DMs, flagging sensitive brand mentions to leadership, and delivering data-backed post-campaign analytical reports.</li>
+          </ul>
+        </article>
+
+        <!-- AXiA Active -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title">Social Media Manager & Web Developer</div>
+            <div class="job-dates">2024 – PRESENT</div>
+          </div>
+          <div class="job-company"><a href="https://axiaactive.com" target="_blank">AXiA Active</a> · Lagos, Nigeria</div>
+          <div class="job-tagline">Performance activewear and lifestyle athleisure brand</div>
+          <ul class="job-bullets">
+            <li>Built official e-commerce website from scratch (<a href="https://axiaactive.com" target="_blank">axiaactive.com</a>) — from visual identity to checkout-ready storefront.</li>
+            <li>Manage day-to-day organic content; write high-converting product stories, captions, and recruitment copy.</li>
+            <li>Plan, launch, and optimize paid acquisition campaigns via <strong>Meta Business Suite</strong> (Facebook & Instagram Ads).</li>
+            <li>Leverage AI-assisted design and copywriting workflows to accelerate creative output and branding turnaround.</li>
+          </ul>
+        </article>
+
+        <!-- GoFar International Academy -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title">Writer, Social Media Lead & Web Developer</div>
+            <div class="job-dates">2023 – PRESENT</div>
+          </div>
+          <div class="job-company"><a href="https://gofarinternationalacademy.com" target="_blank">GoFar International Academy</a> · Lagos, Nigeria</div>
+          <div class="job-tagline">Premier K–12 and international preparatory education</div>
+          <ul class="job-bullets">
+            <li>Designed, built, and launched the full institutional portal (<a href="https://gofarinternationalacademy.com" target="_blank">gofarinternationalacademy.com</a>).</li>
+            <li>Wrote inspiring learner and graduate success stories, recruitment copy, and email campaigns for parent and student communities.</li>
+            <li>Managed multi-channel brand awareness campaigns that strengthened admissions inquiries and regional reputation.</li>
+          </ul>
+        </article>
+
+        <!-- Gresfor International Services -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title">In-House Education & Business Development Consultant</div>
+            <div class="job-dates">06/2022 – PRESENT</div>
+          </div>
+          <div class="job-company"><a href="https://gresfor.com" target="_blank">Gresfor International Services</a> · Ikorodu, Lagos, Nigeria</div>
+          <ul class="job-bullets">
+            <li>Oversee operational and academic administration of company tutorial centers within and outside Lagos.</li>
+            <li>Coach candidates sitting for IELTS, TOEFL, SAT, GRE, and GMAT, achieving an outstanding <strong>90% pass and target score success rate</strong>.</li>
+            <li>Direct recruitment, vetting, and performance appraisal for new faculty; oversee quarterly/annual Academic Department index reports.</li>
+            <li>Manage digital campaigns and build website (<a href="https://gresfor.com" target="_blank">gresfor.com</a>) and social content to generate qualified student leads.</li>
+            <li>Authored core institutional publications: <em>Institutional Prospectus</em>, <em>Students' Handbook</em>, and <em>Academic Operations Handbook</em>.</li>
+          </ul>
+        </article>
+
+        <!-- Independent Writing / Research -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title">Independent Writing, Editing & Research Consultant</div>
+            <div class="job-dates">11/2019 – PRESENT</div>
+          </div>
+          <div class="job-company">Freelance Consulting Practice · Lagos, Nigeria</div>
+          <ul class="job-bullets">
+            <li>Researched and authored comprehensive company profiles, website copy, and landing pages for <strong>BTS Renewables</strong> (<a href="http://btsrenewables.com.ng" target="_blank">btsrenewables.com.ng</a>), <strong>Word Samurai</strong> (<a href="http://wordsamurai.ng" target="_blank">wordsamurai.ng</a>), and <strong>Gresfor</strong> (<a href="https://gresfor.com" target="_blank">gresfor.com</a>).</li>
+            <li>Authored and edited <strong>50+ university admission essays, scholarship statements, and personal statements</strong> with a verified <strong>90%+ admission success rate</strong>.</li>
+            <li>Conducted exhaustive SME ecosystem research across Lagos State, <strong>mapping 551 SMEs across 9 business areas</strong> to identify digital communication and operational bottlenecks.</li>
+          </ul>
+        </article>
+
+        <!-- Freelance IELTS Coach -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title">Freelance IELTS, TOEFL, SAT, GRE, GMAT & ESL Coach</div>
+            <div class="job-dates">11/2019 – 06/2022</div>
+          </div>
+          <div class="job-company">Independent Practice / Partnership with Gryn Index Initiative · Lagos, Nigeria</div>
+          <ul class="job-bullets">
+            <li>Coached intermediate to advanced English for WAEC, NECO, GCE, UTME, and standardized international examinations.</li>
+            <li>Founded the <strong>IELTS MASTERCLASS</strong> with Gryn Index Initiative, delivering a 90% student success rate.</li>
+            <li>Collaborated with study abroad agencies on teacher training and competence evaluation; recruited and trained lead English tutors for Gresfor.</li>
+          </ul>
+        </article>
+
+        <!-- Light Heights - Verbal Coach -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title">IELTS, TOEFL, SAT, GRE & GMAT Verbal Coach</div>
+            <div class="job-dates">07/2016 – 11/2019</div>
+          </div>
+          <div class="job-company">Light Heights Global Services · Lagos, Nigeria</div>
+          <ul class="job-bullets">
+            <li>Instructed ESL to over <strong>60+ scholars annually</strong>; drove an <strong>80%+ increase in academic performance</strong> across standardized tests.</li>
+            <li>Authored the unified in-house ESL Curriculum and the comprehensive <strong>Academic Manual</strong>, slashing tutor onboarding time and resources by <strong>50%</strong>.</li>
+            <li>Selected for special appointment to teach advanced ESL to 5 high-profile private clients at Covenant University.</li>
+          </ul>
+        </article>
+
+        <!-- Light Heights - Staff Writer -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title">Staff Writer, Editor & Content Creator</div>
+            <div class="job-dates">11/2016 – 10/2019</div>
+          </div>
+          <div class="job-company">Light Heights Global Services · Lagos, Nigeria</div>
+          <ul class="job-bullets">
+            <li>Researched and drafted proposals, corporate brochures, and B2B/B2C communications; built web copy and articles for <a href="http://lightheights.com" target="_blank">lightheights.com</a>.</li>
+            <li>Polished candidate resumes, personal statements, scholarship essays, and supervisor outreach emails.</li>
+          </ul>
+        </article>
+
+        <!-- Light Heights - Visa Counsellor -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title">F-1 Visa Counselor & Interview Coach</div>
+            <div class="job-dates">10/2017 – 08/2019</div>
+          </div>
+          <div class="job-company">Light Heights Global Services · Lagos, Nigeria</div>
+          <ul class="job-bullets">
+            <li>Prepped candidates for US Embassy consular interviews via mock sessions; audited Form I-20, DS-160, and supporting financial portfolios.</li>
+            <li>Authored the <strong>Counselling Manual</strong> (saved 50%+ onboarding time) and the <strong>US-Embassy Q&A Template</strong>, securing a documented <strong>90%+ visa approval rate</strong>.</li>
+          </ul>
+        </article>
+
+        <!-- WAE Solutions -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title">Writer, Editor, Social Media Manager & Research Consultant</div>
+            <div class="job-dates">01/2012 – 11/2019</div>
+          </div>
+          <div class="job-company">WAE Solutions / Volunteer Corps · Lagos, Nigeria</div>
+          <ul class="job-bullets">
+            <li>Scaled audience engagement on the <em>"My World of Literature"</em> Facebook page from <strong>0 to over 90% active engagement in one year</strong>.</li>
+            <li>Provided academic research and methodological writing support for <strong>20+ undergraduate and postgraduate dissertations</strong> across arts, humanities, and business.</li>
+            <li>Drafted company profile and technical product descriptions for BTS Renewables (<a href="http://btsrenewables.com.ng" target="_blank">btsrenewables.com.ng</a>).</li>
+          </ul>
+        </article>
+
+        <!-- Netsol -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title">Editor & Contributing Cultural Writer</div>
+            <div class="job-dates">07/2016 – 12/2016</div>
+          </div>
+          <div class="job-company">Netsocial Limited (Netsol) · Lagos, Nigeria</div>
+          <ul class="job-bullets">
+            <li>Authored the <strong>only published online report</strong> reviewing the landmark Farafina Workshop for writers hosted by <strong>Chimamanda Ngozi Adichie</strong>.</li>
+            <li>Covered the <em>"Words Come Alive"</em> literary festival at UNILAG featuring celebrated guest <strong>Lola Shoneyin</strong>.</li>
+            <li>Published the definitive theatrical review of the stage play <em>"The Far Country"</em> by Christopher Anyokwu at the UNILAG Arts Theatre.</li>
+          </ul>
+        </article>
+
+        <!-- Plug Media -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title">Writer, Editor, Content Creator & Social Media Manager</div>
+            <div class="job-dates">01/2016 – 05/2016</div>
+          </div>
+          <div class="job-company">Plug Media Nigeria Ltd · Lagos, Nigeria</div>
+          <ul class="job-bullets">
+            <li>Edited the landmark <strong>PCNI Report</strong> — a <strong>145-page policy report on strategies for curbing terrorism</strong> commissioned for President Muhammadu Buhari's Administration.</li>
+            <li>Wrote executive professional profiles for prominent Nigerian cultural and business icons, including design leader <strong>Titi Ogufere</strong> and actress <strong>Dakore Egbuson-Akande</strong>.</li>
+          </ul>
+        </article>
+
+      </div>
+
+      <!-- Section: Verified Live Builds & Digital Systems -->
+      <div class="experience-group">
+        <div class="section-label">Verified Portfolio Builds</div>
+        <p style="font-size: 13px; color: var(--ink-muted); margin-bottom: 12px;">Live digital builds, storefronts, and content systems available on <a href="https://alfredwilliams.netlify.app/" target="_blank" style="color: var(--accent); font-weight: 600;">alfredwilliams.netlify.app</a>:</p>
+        
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <div class="portfolio-name"><a href="https://renalytica.com" target="_blank">Renalytica Enterprise ↗</a> <span class="pill">Full-Stack &amp; BI</span></div>
+            <div class="portfolio-desc">Engineered full-stack website (front/back-end), data intelligence platform &amp; multi-channel social engine.</div>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-name"><a href="https://axiaactive.com" target="_blank">AXiA Active ↗</a> <span class="pill">E-Com</span></div>
+            <div class="portfolio-desc">Performance athleisure storefront, custom branding, checkout funnel, Meta ads.</div>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-name"><a href="https://gofarinternationalacademy.com" target="_blank">GoFar Academy ↗</a> <span class="pill">Education</span></div>
+            <div class="portfolio-desc">Full institutional website, admission workflows, learner narratives, parent outreach.</div>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-name"><a href="https://twol101.wordpress.com/" target="_blank">My WORLD of Lit (TWOL) ↗</a> <span class="pill">Journal &amp; Dev</span></div>
+            <div class="portfolio-desc">Self-designed literary &amp; cultural journal featuring original fiction, poetry, and published reviews.</div>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-name"><a href="https://wcsocialmediacalendar.netlify.app" target="_blank">WC Social Calendar ↗</a> <span class="pill">Tool</span></div>
+            <div class="portfolio-desc">Interactive digital planning hub and campaign scheduling system for brand managers.</div>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-name"><a href="https://healthbayv3.netlify.app" target="_blank">HealthBay ↗</a> <span class="pill">Healthcare</span></div>
+            <div class="portfolio-desc">Modern responsive healthcare portal with intuitive patient service navigation.</div>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-name"><a href="https://9japroquiz.netlify.app" target="_blank">9jaProQuiz ↗</a> <span class="pill">App</span></div>
+            <div class="portfolio-desc">Dynamic interactive quiz application featuring real-time evaluation and score tracking.</div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+</div>
+
+</body>
+</html>

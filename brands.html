@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Ecosystems &amp; Social Systems — Alfred E. Williams</title>
+  <link rel="stylesheet" href="css/main.css">
+  <!-- GSAP & ScrollTrigger for kinetic motion & transitions -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Structural 12-Column Hairline Blueprint Overlay -->
+  <div class="structural-grid-overlay" aria-hidden="true">
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="scroll-progress-bar"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brandmark">
+        <span class="status-dot"></span>
+        <span>Alfred <strong>E. Williams</strong></span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="works.html" class="nav-link">Works</a></li>
+          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="brands.html" class="nav-link active">Brands &amp; Social</a></li>
+          <!-- About with Dropdown (Blog under About) -->
+          <li class="nav-item-dropdown">
+            <a href="about.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
+              <span>About</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="about.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">About Alfred</span>
+                <span class="dropdown-item-desc">Biography, philosophy &amp; SME field research</span>
+              </a>
+              <a href="blog.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Blog &amp; Essays</span>
+                <span class="dropdown-item-desc">Critical commentary, data &amp; culture</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle theme"></button>
+        <button class="directory-trigger-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Directory</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="brands-thesis" data-session-title="Brand Architecture" style="padding: 80px 0 100px; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div class="editorial-chapter-badge">ECOSYSTEMS &amp; MULTI-CHANNEL DISTRIBUTION</div>
+        <div class="eyebrow">Multi-Brand Media Stewardship &amp; Growth</div>
+        <h1 class="display-title" style="margin-bottom: 24px;">Brands, Social Systems &amp;<br><em>Audience</em> Growth.</h1>
+        <p class="editorial-lead" style="color: var(--ink-muted); font-size: 1.18rem; max-width: 68ch; line-height: 1.6; margin-bottom: 40px;">
+          <span class="editorial-dropcap">M</span>y background spans both the education and digital media sectors, where I've consistently delivered in content creation, community management, social listening, and engagement-driven campaigns. Right now, I split my time between client web builds, AI-assisted content systems, and running social media for a handful of growing Lagos-based startups.
+        </p>
+
+        <!-- The 1-to-8 Repurposing System Spotlight -->
+        <div style="background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-left: 4px solid var(--accent-ember); padding: 32px; margin-bottom: 60px;">
+          <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; margin-bottom: 10px;">The 1-to-8 Content Multiplication Architecture</h3>
+          <p style="color: var(--ink-muted); font-size: 0.98rem; line-height: 1.6; max-width: 72ch;">
+            Managing brand velocity requires systemization. Instead of creating ad-hoc posts, I convert single in-depth research briefs or core company announcements into 8 synchronized assets: high-retention LinkedIn slide carousels, viral X insight threads, Instagram infographics, executive email letters, blog deep-dives, short video scripts, and quote cards.
+          </p>
+        </div>
+
+        <!-- Brands Grid -->
+        <div style="display: grid; grid-template-columns: 1fr; gap: 54px;">
+
+          <!-- Brand 1: Renalytica -->
+          <article id="renalytica" data-session-title="01 · Renalytica" class="showcase-card" style="padding: 40px;">
+            <div style="margin-bottom: 28px;">
+              <span class="card-tag">Enterprise Market Intelligence · B2B</span>
+              <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 8px 0 16px;">Renalytica</h2>
+              <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.65; max-width: 80ch; margin-bottom: 24px;">
+                Full digital stewardship across production web architecture and multi-channel social operations (LinkedIn, Instagram, and X). Translating macroeconomic econometric forecasts and 2,500+ commercial research dossiers into authoritative, humanized executive content that sparks dialogue among founders and corporate directors.
+              </p>
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <a href="https://renalytica.com" target="_blank" rel="noopener" class="btn btn-solid btn-sm">Live Platform ↗</a>
+                <a href="https://www.linkedin.com/company/renalytica" target="_blank" rel="noopener" class="btn btn-outline btn-sm">LinkedIn Channel ↗</a>
+                <a href="https://www.instagram.com/p/DeKpVoVkccD/?img_index=1" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Instagram Carousel ↗</a>
+                <a href="https://x.com/renalytica" target="_blank" rel="noopener" class="btn btn-outline btn-sm">X (Twitter) Feed ↗</a>
+                <a href="case-studies/renalytica.html" class="btn btn-outline btn-sm">Detailed Case Study →</a>
+              </div>
+            </div>
+
+            <!-- Multi-Asset Visual Showcase: Real Web Platform + Real Social Channels -->
+            <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px;">
+              <!-- Real Web Platform -->
+              <div style="background-color: #090C0B; border: 1px solid var(--line-grid); overflow: hidden; border-radius: 2px;">
+                <div style="padding: 10px 16px; background-color: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.08); font-family: var(--font-mono); font-size: 0.72rem; color: #8F9995; display: flex; justify-content: space-between; align-items: center;">
+                  <span>LIVE PRODUCTION PLATFORM</span>
+                  <span style="color: var(--accent-ember);">renalytica.com</span>
+                </div>
+                <img src="assets/renalytica-real.png" alt="Renalytica Live Production Web Platform Interface" style="width: 100%; height: auto; display: block; object-fit: cover;">
+              </div>
+
+              <!-- Real Social Media Feeds (Instagram & X) -->
+              <div style="display: flex; flex-direction: column; gap: 14px;">
+                <div style="background-color: #090C0B; border: 1px solid var(--line-grid); overflow: hidden; border-radius: 2px; flex: 1;">
+                  <div style="padding: 10px 16px; background-color: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.08); font-family: var(--font-mono); font-size: 0.72rem; color: #8F9995; display: flex; justify-content: space-between; align-items: center;">
+                    <span>VERIFIED INSTAGRAM CAROUSEL</span>
+                    <span style="color: #E1306C;">@renalytica</span>
+                  </div>
+                  <img src="assets/renalytica-instagram-post.png" alt="Renalytica Instagram Carousel Post" style="width: 100%; height: auto; max-height: 240px; object-fit: cover; object-position: top; display: block;">
+                </div>
+                <div style="background-color: #090C0B; border: 1px solid var(--line-grid); overflow: hidden; border-radius: 2px; flex: 1;">
+                  <div style="padding: 10px 16px; background-color: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.08); font-family: var(--font-mono); font-size: 0.72rem; color: #8F9995; display: flex; justify-content: space-between; align-items: center;">
+                    <span>OFFICIAL X (TWITTER) CHANNEL</span>
+                    <span style="color: #1DA1F2;">@renalytica</span>
+                  </div>
+                  <img src="assets/renalytica-x.png" alt="Renalytica Official X Twitter Feed" style="width: 100%; height: auto; max-height: 240px; object-fit: cover; object-position: top; display: block;">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Brand 2: AXiA Active -->
+          <article id="axia" data-session-title="02 · AXiA Active" class="showcase-card" style="padding: 40px;">
+            <div style="margin-bottom: 28px;">
+              <span class="card-tag">Athleisure &amp; Performance E-Commerce · B2C</span>
+              <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 8px 0 16px;">AXiA Active</h2>
+              <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.65; max-width: 80ch; margin-bottom: 24px;">
+                Complete brand lifecycle engineering: engineered the official e-commerce storefront (<a href="https://axiaactive.com" target="_blank" style="text-decoration: underline;">axiaactive.com</a>) and managed day-to-day organic and paid social growth via Meta Business Suite. Drafted high-converting lifestyle product narratives and deployed targeted dynamic ad retargeting funnels.
+              </p>
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <a href="https://axiaactive.com" target="_blank" rel="noopener" class="btn btn-solid btn-sm">Live Storefront ↗</a>
+                <a href="https://www.instagram.com/axia_active/" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Instagram Feed (@axia_active) ↗</a>
+                <a href="case-studies/axia-active.html" class="btn btn-outline btn-sm">Detailed Case Study →</a>
+              </div>
+            </div>
+
+            <!-- Multi-Asset Visual Showcase: Real Storefront + Real Instagram Feed -->
+            <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px;">
+              <!-- Real Storefront -->
+              <div style="background-color: #090C0B; border: 1px solid var(--line-grid); overflow: hidden; border-radius: 2px;">
+                <div style="padding: 10px 16px; background-color: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.08); font-family: var(--font-mono); font-size: 0.72rem; color: #8F9995; display: flex; justify-content: space-between; align-items: center;">
+                  <span>LIVE E-COMMERCE STOREFRONT</span>
+                  <span style="color: var(--accent-ember);">axiaactive.com</span>
+                </div>
+                <img src="assets/axia-real.png" alt="AXiA Active Live Production Storefront" style="width: 100%; height: auto; display: block; object-fit: cover;">
+              </div>
+
+              <!-- Real Instagram Feed -->
+              <div style="background-color: #090C0B; border: 1px solid var(--line-grid); overflow: hidden; border-radius: 2px;">
+                <div style="padding: 10px 16px; background-color: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.08); font-family: var(--font-mono); font-size: 0.72rem; color: #8F9995; display: flex; justify-content: space-between; align-items: center;">
+                  <span>OFFICIAL INSTAGRAM COMMUNITY</span>
+                  <span style="color: #E1306C;">@axia_active</span>
+                </div>
+                <img src="assets/axia-instagram.png" alt="AXiA Active Official Instagram Profile and Reels" style="width: 100%; height: auto; max-height: 480px; object-fit: cover; object-position: top; display: block;">
+              </div>
+            </div>
+          </article>
+
+          <!-- Brand 3: GoFar International Academy -->
+          <article id="gofar" data-session-title="03 · GoFar Academy" class="showcase-card" style="padding: 40px;">
+            <div style="margin-bottom: 28px;">
+              <span class="card-tag">Global K-12 &amp; International Prep · Education</span>
+              <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 8px 0 16px;">GoFar International Academy</h2>
+              <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.65; max-width: 80ch; margin-bottom: 24px;">
+                Architected the official institutional web portal (<a href="https://www.gofarinternationalacademy.com/" target="_blank" style="text-decoration: underline;">gofarinternationalacademy.com</a>) and directed educational brand communications. Authored inspiring learner case studies, faculty spotlights, and admissions campaigns that steadily expanded parent enrollment inquiries across Lagos.
+              </p>
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <a href="https://www.gofarinternationalacademy.com/" target="_blank" rel="noopener" class="btn btn-solid btn-sm">Institutional Portal ↗</a>
+                <a href="https://www.instagram.com/gofar_international/" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Instagram Channel (@gofar_international) ↗</a>
+                <a href="case-studies/gofar-academy.html" class="btn btn-outline btn-sm">Detailed Case Study →</a>
+              </div>
+            </div>
+
+            <!-- Multi-Asset Visual Showcase: Real Portal + Real Instagram Channel -->
+            <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px;">
+              <!-- Real Portal -->
+              <div style="background-color: #090C0B; border: 1px solid var(--line-grid); overflow: hidden; border-radius: 2px;">
+                <div style="padding: 10px 16px; background-color: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.08); font-family: var(--font-mono); font-size: 0.72rem; color: #8F9995; display: flex; justify-content: space-between; align-items: center;">
+                  <span>LIVE INSTITUTIONAL WEB PORTAL</span>
+                  <span style="color: var(--accent-ember);">gofarinternationalacademy.com</span>
+                </div>
+                <img src="assets/gofar-real.png" alt="GoFar International Academy Live Institutional Web Portal" style="width: 100%; height: auto; display: block; object-fit: cover;">
+              </div>
+
+              <!-- Real Instagram Channel -->
+              <div style="background-color: #090C0B; border: 1px solid var(--line-grid); overflow: hidden; border-radius: 2px;">
+                <div style="padding: 10px 16px; background-color: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.08); font-family: var(--font-mono); font-size: 0.72rem; color: #8F9995; display: flex; justify-content: space-between; align-items: center;">
+                  <span>OFFICIAL INSTAGRAM CHANNEL</span>
+                  <span style="color: #E1306C;">@gofar_international</span>
+                </div>
+                <img src="assets/gofar-instagram.png" alt="GoFar International Official Instagram Channel" style="width: 100%; height: auto; max-height: 480px; object-fit: cover; object-position: top; display: block;">
+              </div>
+            </div>
+          </article>
+
+          <!-- Brand 4: OTEC Nigeria -->
+          <article id="otec" data-session-title="04 · OTEC IELTS" class="showcase-card" style="padding: 40px;">
+            <div style="margin-bottom: 28px;">
+              <span class="card-tag">Study Abroad &amp; Standardized Test Prep · EdTech</span>
+              <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 8px 0 16px;">OTEC Nigeria</h2>
+              <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.65; max-width: 80ch; margin-bottom: 24px;">
+                Engineered interactive assessment software (IELTS Speaking Assessment Diagnostic Tool) and directed student engagement content across social channels, preparing West African scholars for competitive global academic admissions and standard testing benchmarks.
+              </p>
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <a href="https://ieltsspeakingassessmentbyotec.netlify.app/" target="_blank" rel="noopener" class="btn btn-solid btn-sm">Speaking Assessment Tool ↗</a>
+                <a href="https://www.instagram.com/otec_ng/" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Instagram Channel (@otec_ng) ↗</a>
+                <a href="case-studies/otec-ielts.html" class="btn btn-outline btn-sm">Detailed Case Study →</a>
+              </div>
+            </div>
+
+            <!-- Multi-Asset Visual Showcase: Real Tool Interface + Impact Stats -->
+            <div style="display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 20px;">
+              <!-- Real Assessment Tool Screenshot -->
+              <div style="background-color: #090C0B; border: 1px solid var(--line-grid); overflow: hidden; border-radius: 2px;">
+                <div style="padding: 10px 16px; background-color: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.08); font-family: var(--font-mono); font-size: 0.72rem; color: #8F9995; display: flex; justify-content: space-between; align-items: center;">
+                  <span>IELTS SPEAKING ASSESSMENT SUITE</span>
+                  <span style="color: var(--accent-ember);">Live Web Tool</span>
+                </div>
+                <img src="assets/otec-speaking-real.png" alt="OTEC Nigeria IELTS Speaking Assessment Diagnostic Tool" style="width: 100%; height: auto; display: block; object-fit: cover;">
+              </div>
+
+              <!-- Student Success Metric Block -->
+              <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); padding: 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                <div style="font-family: var(--font-display); font-size: 3.5rem; font-weight: 800; color: var(--accent-ember);">90%+</div>
+                <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-faint); text-transform: uppercase; margin-top: 6px; letter-spacing: 0.1em;">Candidate Target Band Rate</div>
+                <div style="font-size: 0.9rem; color: var(--ink-muted); margin-top: 12px;">IELTS · TOEFL · SAT · GRE · GMAT</div>
+                <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line-grid); width: 100%; font-size: 0.82rem; color: var(--ink-faint);">
+                  Automated band scoring across Fluency, Pronunciation, Grammar, and Lexicon.
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer id="terminal" data-session-title="Dispatch Terminal" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2 class="footer-heading">
+            Let's build<br>something <em>worth</em><br>remembering.
+          </h2>
+        </div>
+        <div class="footer-contacts">
+          <button class="contact-row-btn" data-copy-email="officialwilliamsae@gmail.com">
+            <span>officialwilliamsae@gmail.com</span>
+            <span style="font-size: 0.72rem; color: var(--accent-ember);">Click to Copy</span>
+          </button>
+        </div>
+      </div>
+      <div class="monumental-wordmark" aria-hidden="true">WILLIAMS.</div>
+      
+      <!-- Footer Sub-Bar with Privacy & Terms Links -->
+      <div class="footer-sub-bar">
+        <span>© 2026 Alfred E. Williams. All rights reserved.</span>
+        <span>
+          <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+          <span style="opacity: 0.3; margin: 0 8px;">/</span>
+          <a href="terms.html" class="footer-legal-link">Terms of Usage</a>
+        </span>
+        <span>Lagos, Nigeria · Operating Across London, New York &amp; Tokyo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/components.js"></script>
+</body>
+</html>

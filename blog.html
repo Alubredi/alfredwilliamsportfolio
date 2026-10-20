@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog &amp; Critical Essays — Alfred E. Williams</title>
+  <meta name="description" content="Curated repository of 12 well-researched critical essays, macroeconomic investigations, literary reviews, and technical web architecture analyses by Alfred E. Williams.">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <style>
+    /* Dedicated Blog Page Styles */
+    .blog-hero {
+      padding: 90px 0 60px;
+      border-bottom: 1px solid var(--line-grid);
+      position: relative;
+    }
+    .blog-controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line-grid);
+      margin-bottom: 48px;
+    }
+    .blog-search-box {
+      position: relative;
+      min-width: 280px;
+      max-width: 360px;
+      flex: 1;
+    }
+    .blog-search-input {
+      width: 100%;
+      padding: 12px 16px 12px 40px;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      color: var(--ink-primary);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      border-radius: 2px;
+      transition: all 0.25s ease;
+    }
+    .blog-search-input:focus {
+      outline: none;
+      border-color: var(--accent-ember);
+      background-color: var(--bg-page);
+    }
+    .blog-search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink-faint);
+      pointer-events: none;
+    }
+    .blog-filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .blog-filter-pill {
+      background: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      color: var(--ink-muted);
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      padding: 8px 14px;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.2s ease;
+    }
+    .blog-filter-pill:hover,
+    .blog-filter-pill.active {
+      background-color: var(--ink-primary);
+      color: var(--bg-page);
+      border-color: var(--ink-primary);
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 80px;
+    }
+    @media (max-width: 1100px) {
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+    .blog-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s var(--transition-smooth), border-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-ember);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.06);
+    }
+    .blog-card-media {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background-color: var(--bg-surface-elevated);
+      border-bottom: 1px solid var(--line-grid);
+    }
+    .blog-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s var(--transition-smooth);
+    }
+    .blog-card:hover .blog-card-media img {
+      transform: scale(1.05);
+    }
+    .blog-card-index {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background-color: rgba(13, 17, 16, 0.88);
+      color: #FFFFFF;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 4px 8px;
+      border-radius: 2px;
+      letter-spacing: 0.08em;
+      backdrop-filter: blur(8px);
+    }
+    .blog-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .blog-card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+    }
+    .blog-card-category {
+      color: var(--accent-ember);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .blog-card-title {
+      font-family: var(--font-display);
+      font-size: 1.22rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      color: var(--ink-primary);
+      transition: color 0.2s ease;
+    }
+    .blog-card:hover .blog-card-title {
+      color: var(--accent-ember);
+    }
+    .blog-card-excerpt {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      line-height: 1.55;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .blog-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--line-grid);
+      padding-top: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent-ember);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Structural 12-Column Hairline Blueprint Overlay -->
+  <div class="structural-grid-overlay" aria-hidden="true">
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="scroll-progress-bar"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Global Header with Nested Blog under About -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brandmark">
+        <span class="status-dot"></span>
+        <span>Alfred <strong>E. Williams</strong></span>
+      </a>
+
+      <div class="world-clocks" aria-label="Synchronized World Clocks"></div>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="works.html" class="nav-link">Works</a></li>
+          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="brands.html" class="nav-link">Brands &amp; Social</a></li>
+          
+          <!-- About with Dropdown (Blog under About) -->
+          <li class="nav-item-dropdown">
+            <a href="about.html" class="nav-link nav-link-dropdown active" aria-expanded="false" aria-haspopup="true">
+              <span>About</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="about.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">About Alfred</span>
+                <span class="dropdown-item-desc">Biography, philosophy &amp; SME field research</span>
+              </a>
+              <a href="blog.html" class="nav-dropdown-item active" role="menuitem">
+                <span class="dropdown-item-title">Blog &amp; Essays ✦</span>
+                <span class="dropdown-item-desc">Critical commentary, data &amp; culture</span>
+              </a>
+            </div>
+          </li>
+
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle theme"></button>
+        <button class="directory-trigger-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Directory</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+      <div class="container">
+        <div class="editorial-chapter-badge">EDITORIAL ATELIER // CRITICAL ESSAYS &amp; FIELD DOSSIERS</div>
+        <div class="eyebrow">Intellectual Commentary · Technical Craft · Cultural Inquiries</div>
+        <h1 class="display-title" style="margin-bottom: 20px;">
+          Dispatches on<br><em>Culture, Code &amp; Capital</em>.
+        </h1>
+        <p style="color: var(--ink-muted); font-size: 1.25rem; max-width: 70ch; line-height: 1.6;">
+          <span class="editorial-dropcap">A</span> rigorous, living repository of long-form critical investigations, empirical field analyses, and technical methodologies authored by Alfred E. Williams. Bridging macroeconomic data clarity, African theatrical dramaturgy, zero-bloat web architecture, and admissions rhetoric with verified research.
+        </p>
+
+        <!-- Search & Category Filters -->
+        <div class="blog-controls-bar">
+          <div class="blog-search-box">
+            <svg class="blog-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="text" id="blogSearch" class="blog-search-input" placeholder="Search essays by keyword, concept or thesis..." aria-label="Search essays">
+          </div>
+
+          <div class="blog-filter-pills" id="filterPills" role="tablist">
+            <button class="blog-filter-pill active" data-category="all" role="tab">All Dispatches (<span id="totalDispatchesCount">12</span>)</button>
+            <button class="blog-filter-pill" data-category="web" role="tab">Web Systems</button>
+            <button class="blog-filter-pill" data-category="macro" role="tab">Macroeconomics &amp; Data</button>
+            <button class="blog-filter-pill" data-category="criticism" role="tab">Cultural &amp; Literary</button>
+            <button class="blog-filter-pill" data-category="pedagogy" role="tab">Admissions &amp; Pedagogy</button>
+            <button class="blog-filter-pill" data-category="strategy" role="tab">Content &amp; Systems</button>
+            <button class="blog-filter-pill" data-category="sme" role="tab">SME Field Research</button>
+          </div>
+        </div>
+
+        <!-- Critical Essays & Dispatches Grid -->
+        <div class="blog-grid" id="blogGrid">
+          <!-- Populated dynamically with complete rich data -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Editorial Call to Action -->
+    <section style="padding: 80px 0; border-top: 1px solid var(--line-grid); background-color: var(--bg-surface);">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px;">
+        <div style="max-width: 60ch;">
+          <div class="eyebrow" style="margin-bottom: 12px;">Commission Editorial Work</div>
+          <h2 style="font-family: var(--font-display); font-size: 2rem; font-weight: 700; margin-bottom: 12px;">Need high-stakes research, strategic whitepapers, or bespoke web systems?</h2>
+          <p style="color: var(--ink-muted); line-height: 1.6;">Alfred conducts deep-dive market intelligence, crafts authoritative policy documents, and engineers performance-first digital platforms.</p>
+        </div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-solid">Initiate Consultation →</a>
+          <a href="about.html" class="btn btn-outline">Read Full Biography</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer with Legal Links in Sub-Bar -->
+  <footer id="terminal" data-session-title="Epilogue" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2 class="footer-heading">
+            Let's build<br>something <em>worth</em><br>remembering.
+          </h2>
+        </div>
+        <div class="footer-contacts">
+          <button class="contact-row-btn" data-copy-email="officialwilliamsae@gmail.com">
+            <span>officialwilliamsae@gmail.com</span>
+            <span style="font-size: 0.72rem; color: var(--accent-ember);">Click to Copy</span>
+          </button>
+          <a href="tel:+2348176939974" class="contact-row-btn">
+            <span>+234 817 693 9974</span>
+            <span style="font-size: 0.72rem; color: var(--ink-faint);">Call Direct</span>
+          </a>
+        </div>
+      </div>
+      <div class="monumental-wordmark" aria-hidden="true">WILLIAMS.</div>
+      
+      <!-- Footer Sub-Bar with Privacy & Terms Links -->
+      <div class="footer-sub-bar">
+        <span>© 2026 Alfred E. Williams. All rights reserved.</span>
+        <span>
+          <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+          <span style="opacity: 0.3; margin: 0 8px;">/</span>
+          <a href="terms.html" class="footer-legal-link">Terms of Usage</a>
+        </span>
+        <span>Lagos, Nigeria · Operating Across London, New York &amp; Tokyo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/components.js"></script>
+  <script src="js/blog-data.js"></script>
+  <script>
+    // Blog Rendering & Interactivity Logic — Native Page Navigation
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('blogGrid');
+      const searchInput = document.getElementById('blogSearch');
+      const filterPills = document.querySelectorAll('.blog-filter-pill');
+
+      let currentCategory = 'all';
+      let currentQuery = '';
+
+      function renderArticles() {
+        if (!window.blogArticles) return;
+
+        const filtered = window.blogArticles.filter(art => {
+          const matchCat = currentCategory === 'all' || art.categoryKey === currentCategory;
+          const matchQuery = !currentQuery || 
+            art.title.toLowerCase().includes(currentQuery) || 
+            art.excerpt.toLowerCase().includes(currentQuery) ||
+            art.category.toLowerCase().includes(currentQuery) ||
+            art.tags.some(t => t.toLowerCase().includes(currentQuery));
+          return matchCat && matchQuery;
+        });
+
+        if (filtered.length === 0) {
+          grid.innerHTML = `
+            <div style="grid-column: 1 / -1; padding: 60px 20px; text-align: center; border: 1px dashed var(--line-grid); background-color: var(--bg-surface);">
+              <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 8px;">No matching dispatches found</h3>
+              <p style="color: var(--ink-muted); font-size: 0.9rem;">Try adjusting your search terms or selecting a different category filter.</p>
+              <button class="btn btn-outline btn-sm" style="margin-top: 16px;" onclick="resetFilters()">Reset All Filters</button>
+            </div>
+          `;
+          return;
+        }
+
+        grid.innerHTML = filtered.map((art, idx) => `
+          <a href="article.html?id=${art.id}" class="blog-card" data-id="${art.id}" aria-label="Read full investigation: ${art.title}">
+            <div class="blog-card-media">
+              <img src="${art.image}" alt="${art.title}" loading="lazy" onerror="this.src='assets/illust-editorial-writing.png'">
+              <span class="blog-card-index">ESSAY ${String(art.number).padStart(2, '0')}</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-card-category">${art.category}</span>
+                <span>${art.readTime}</span>
+              </div>
+              <h2 class="blog-card-title">${art.title}</h2>
+              <p class="blog-card-excerpt">${art.excerpt}</p>
+              <div class="blog-card-footer">
+                <span>Read Full Investigation</span>
+                <span style="font-size: 1.1rem;">→</span>
+              </div>
+            </div>
+          </a>
+        `).join('');
+      }
+
+      function updateCountBadge() {
+        const countEl = document.getElementById('totalDispatchesCount');
+        if (countEl && window.blogArticles) {
+          countEl.textContent = window.blogArticles.length;
+        }
+      }
+
+      // Search input handler
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = e.target.value.trim().toLowerCase();
+        renderArticles();
+      });
+
+      // Filter pills handler
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          filterPills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          currentCategory = pill.dataset.category;
+          renderArticles();
+        });
+      });
+
+      window.resetFilters = function() {
+        searchInput.value = '';
+        currentQuery = '';
+        currentCategory = 'all';
+        filterPills.forEach(p => p.classList.toggle('active', p.dataset.category === 'all'));
+        renderArticles();
+      };
+
+      updateCountBadge();
+      renderArticles();
+
+      // Supabase Live Cloud Sync — Fetches latest published essays dynamically
+      const SUPABASE_URL = 'https://bxgxnbqvarmdxirzulje.supabase.co';
+      const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4Z3huYnF2YXJtZHhpcnp1bGplIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI0NTI5NjgsImV4cCI6MjEwODAyODk2OH0.tEAKJrYRhYWiAN8n_6wHFlH9pebdeqjLxZgLPhHrtjU';
+
+      async function fetchSupabaseArticles() {
+        try {
+          const res = await fetch(`${SUPABASE_URL}/rest/v1/articles?select=*&is_published=eq.true&order=number.asc`, {
+            headers: {
+              'apikey': SUPABASE_ANON_KEY,
+              'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+            }
+          });
+          if (res.ok) {
+            const data = await res.json();
+            if (Array.isArray(data) && data.length > 0) {
+              window.blogArticles = data.map(row => ({
+                id: row.id,
+                number: row.number,
+                title: row.title,
+                category: row.category,
+                categoryKey: row.category_key,
+                date: row.date,
+                readTime: row.read_time,
+                image: row.image,
+                excerpt: row.excerpt,
+                tags: row.tags || [],
+                takeaways: row.takeaways || [],
+                references: row.references_list || [],
+                contentHtml: row.content_html || ''
+              }));
+              updateCountBadge();
+              renderArticles();
+            }
+          }
+        } catch (err) {
+          // Graceful fallback to local repository baseline in js/blog-data.js
+          console.info('Operating on local critical essay baseline repository.', err);
+        }
+      }
+
+      fetchSupabaseArticles();
+    });
+  </script>
+</body>
+</html>

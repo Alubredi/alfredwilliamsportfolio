@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9jaProQuiz Interactive Learning — Case Study — Alfred E. Williams</title>
+  <meta name="description" content="Technical deep-dive into 9jaProQuiz: a gamified phonetics, vocabulary, and cognitive assessment web application engineered with real-time feedback loops and examination prep modules.">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+  <!-- Structural 12-Column Blueprint Overlay -->
+  <div class="structural-grid-overlay" aria-hidden="true">
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="scroll-progress-bar"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brandmark">
+        <span class="status-dot"></span>
+        <span>Alfred <strong>E. Williams</strong></span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../works.html" class="nav-link active">Works</a></li>
+          <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="../brands.html" class="nav-link">Brands &amp; Social</a></li>
+          <!-- About with Dropdown (Blog under About) -->
+          <li class="nav-item-dropdown">
+            <a href="../about.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
+              <span>About</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="../about.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">About Alfred</span>
+                <span class="dropdown-item-desc">Biography, philosophy &amp; SME field research</span>
+              </a>
+              <a href="../blog.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Blog &amp; Essays</span>
+                <span class="dropdown-item-desc">Critical commentary, data &amp; culture</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="../services.html" class="nav-link">Services</a></li>
+          <li><a href="../contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle theme"></button>
+        <button class="directory-trigger-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Directory</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article style="padding: 80px 0 120px;">
+      <div class="container">
+        
+        <div style="margin-bottom: 24px;">
+          <a href="../works.html" style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; color: var(--accent-ember); letter-spacing: 0.15em;">← Back to Works &amp; Archive</a>
+        </div>
+
+        <div class="eyebrow">EdTech Architecture · Gamified Cognitive Evaluation</div>
+        <h1 class="display-title" style="margin-bottom: 24px;">9jaProQuiz: <em>Phonetics &amp;</em> Examination Engine.</h1>
+        <p style="color: var(--ink-muted); font-size: 1.22rem; max-width: 60ch; line-height: 1.6; margin-bottom: 48px;">
+          Architecting a high-speed, gamified learning and phonetics evaluation tool: real-time question randomization, stress and intonation drills, and streak-based cognitive reinforcement for West African students.
+        </p>
+
+        <!-- Technical Specification Grid -->
+        <dl style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; padding: 28px 0; border-top: 1px solid var(--line-grid); border-bottom: 1px solid var(--line-grid); margin-bottom: 60px;">
+          <div>
+            <dt style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px;">Alfred's Role</dt>
+            <dd style="font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--ink-strong);">Lead EdTech Developer</dd>
+            <dd style="font-size: 0.85rem; color: var(--ink-muted);">Curriculum Engineer &amp; UI Architect</dd>
+          </div>
+          <div>
+            <dt style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px;">Timeline &amp; Domain</dt>
+            <dd style="font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--ink-strong);">2023–2024</dd>
+            <dd style="font-size: 0.85rem; color: var(--accent-ember);">Educational Software · Phonetics</dd>
+          </div>
+          <div>
+            <dt style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px;">Technology &amp; Stack</dt>
+            <dd style="font-family: var(--font-mono); font-size: 0.95rem; font-weight: 600; color: var(--ink-strong);">Vanilla JavaScript ES6+</dd>
+            <dd style="font-size: 0.85rem; color: var(--ink-muted);">Indexed State Engine · Netlify Edge</dd>
+          </div>
+        </dl>
+
+        <!-- Full-Bleed Live Production Showcase -->
+        <div style="background-color: #090C0B; border: 1px solid var(--line-grid); overflow: hidden; margin-bottom: 70px;">
+          <img src="../assets/9japroquiz-real.png" alt="9jaProQuiz Interactive Learning & Phonetics App Live Interface" style="width: 100%; height: auto; display: block;">
+          <div style="padding: 16px 24px; border-top: 1px solid rgba(255,255,255,0.08); font-family: var(--font-mono); font-size: 0.78rem; color: #8F9995; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <span>FIGURE 06: 9jaProQuiz Live Web Application — Active Examination Session &amp; Phonetic Breakdown</span>
+            <a href="https://9japroquiz.netlify.app/" target="_blank" rel="noopener" style="color: #FAF9F5; text-decoration: underline;">Launch Live Web Application ↗</a>
+          </div>
+        </div>
+
+        <!-- Narrative Section: The Mandate -->
+        <div style="display: grid; grid-template-columns: 3fr 7fr; gap: 60px; margin-bottom: 80px; align-items: start;">
+          <div>
+            <span class="card-tag">01 / The Mandate</span>
+            <h2 style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; line-height: 1.2;">Overcoming the Oral English Examination Crisis</h2>
+          </div>
+          <div style="font-size: 1.05rem; line-height: 1.7; color: var(--ink-muted);">
+            <p style="margin-bottom: 18px;">
+              Oral English, phonetics, and phonetic transcription represent historically the highest failure rates among West African Senior School Certificate Examination (WAEC) and UTME candidates. Traditional paper past-questions fail to convey vowel pitch, consonant aspiration, diphthongs, and stress rules.
+            </p>
+            <p>
+              9jaProQuiz was conceptualized and developed by Alfred to transform static memorization into dynamic, gamified cognitive practice. The app provides structured challenges covering phonetic symbols, rhyming patterns, syllable stress, idiomatic nuances, and rapid-fire vocabulary mastery.
+            </p>
+          </div>
+        </div>
+
+        <!-- Narrative Section: Architecture & UX -->
+        <div style="display: grid; grid-template-columns: 3fr 7fr; gap: 60px; margin-bottom: 80px; align-items: start;">
+          <div>
+            <span class="card-tag">02 / Technical Architecture</span>
+            <h2 style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; line-height: 1.2;">Zero-Latency Local Evaluation &amp; Gamification</h2>
+          </div>
+          <div style="font-size: 1.05rem; line-height: 1.7; color: var(--ink-muted);">
+            <p style="margin-bottom: 18px;">
+              Engineered for extreme performance and zero friction across low-bandwidth mobile connections:
+            </p>
+            <ul style="list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 14px;">
+              <li style="display: flex; gap: 12px; align-items: baseline;">
+                <span style="color: var(--accent-ember); font-family: var(--font-mono);">[01]</span>
+                <span><strong>846+ Curated Question Bank:</strong> Normalized in structured client-side JSON arrays, eliminating round-trip database queries and allowing offline-ready instantaneous quizzes.</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: baseline;">
+                <span style="color: var(--accent-ember); font-family: var(--font-mono);">[02]</span>
+                <span><strong>IPA Phonetic Engine:</strong> Dedicated typography rendering engine supporting the International Phonetic Alphabet (IPA) without font warping on legacy mobile Android browsers.</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: baseline;">
+                <span style="color: var(--accent-ember); font-family: var(--font-mono);">[03]</span>
+                <span><strong>Cognitive Streak System:</strong> Real-time timer countdowns, dynamic combo multipliers, and immediate visual validation that reinforce psychological recall.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Outcomes & Actions -->
+        <div style="border-top: 1px solid var(--line-grid); border-bottom: 1px solid var(--line-grid); padding: 48px 0; margin-bottom: 80px;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; text-align: center;">
+            <div>
+              <div style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--accent-ember);">840+</div>
+              <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-faint); text-transform: uppercase; margin-top: 4px;">Curated Phonetics &amp; Vocab Questions</div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--accent-ember);">0ms</div>
+              <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-faint); text-transform: uppercase; margin-top: 4px;">Response Latency (Client In-Memory)</div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--accent-ember);">99.4%</div>
+              <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-faint); text-transform: uppercase; margin-top: 4px;">Mobile Browser Compatibility</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Next / Prev Case Study -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+          <a href="../works.html" class="btn btn-outline btn-sm">← Back to Works</a>
+          <a href="https://9japroquiz.netlify.app/" target="_blank" rel="noopener" class="btn btn-solid btn-sm">Launch Live Web Application ↗</a>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2 class="footer-heading">
+            Let's build<br>something <em>worth</em><br>remembering.
+          </h2>
+        </div>
+        <div class="footer-contacts">
+          <button class="contact-row-btn" data-copy-email="officialwilliamsae@gmail.com">
+            <span>officialwilliamsae@gmail.com</span>
+            <span style="font-size: 0.72rem; color: var(--accent-ember);">Click to Copy</span>
+          </button>
+        </div>
+      </div>
+      <div class="monumental-wordmark" aria-hidden="true">WILLIAMS.</div>
+      
+      <!-- Footer Sub-Bar with Privacy & Terms Links -->
+      <div class="footer-sub-bar">
+        <span>© 2026 Alfred E. Williams. All rights reserved.</span>
+        <span>
+          <a href="../privacy.html" class="footer-legal-link">Privacy Policy</a>
+          <span style="opacity: 0.3; margin: 0 8px;">/</span>
+          <a href="../terms.html" class="footer-legal-link">Terms of Usage</a>
+        </span>
+        <span>Lagos, Nigeria · Operating Across London, New York &amp; Tokyo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/components.js"></script>
+</body>
+</html>

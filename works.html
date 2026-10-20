@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selected Works &amp; Portfolio Archive — Alfred E. Williams</title>
+  <link rel="stylesheet" href="css/main.css">
+  <!-- GSAP & ScrollTrigger for kinetic motion & transitions -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--line-grid);
+      padding-bottom: 16px;
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--line-grid);
+      color: var(--ink-muted);
+      padding: 8px 18px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--ink-primary);
+      color: var(--bg-page);
+      border-color: var(--ink-primary);
+    }
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px;
+    }
+    @media (max-width: 860px) {
+      .works-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Structural 12-Column Hairline Blueprint Overlay -->
+  <div class="structural-grid-overlay" aria-hidden="true">
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="scroll-progress-bar"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brandmark">
+        <span class="status-dot"></span>
+        <span>Alfred <strong>E. Williams</strong></span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="works.html" class="nav-link active">Works</a></li>
+          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="brands.html" class="nav-link">Brands &amp; Social</a></li>
+          <!-- About with Dropdown (Blog under About) -->
+          <li class="nav-item-dropdown">
+            <a href="about.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
+              <span>About</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="about.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">About Alfred</span>
+                <span class="dropdown-item-desc">Biography, philosophy &amp; SME field research</span>
+              </a>
+              <a href="blog.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Blog &amp; Essays</span>
+                <span class="dropdown-item-desc">Critical commentary, data &amp; culture</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle theme"></button>
+        <button class="directory-trigger-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Directory</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="catalog" data-session-title="Catalogue Raisonné" style="padding: 80px 0 120px;">
+      <div class="container">
+        
+        <div class="editorial-chapter-badge">CATALOGUE RAISONNÉ · 2016–2026</div>
+        <div class="eyebrow">The Complete Verified Catalog</div>
+        <h1 class="display-title" style="margin-bottom: 24px;">Selected Works &amp;<br><em>Engineering</em> Archive.</h1>
+        <p class="editorial-lead" style="color: var(--ink-muted); font-size: 1.15rem; max-width: 68ch; line-height: 1.6; margin-bottom: 32px;">
+          <span class="editorial-dropcap">A</span> curated portfolio of full-stack web builds, e-commerce engines, data intelligence platforms, institutional architectures, and published critical writing. At my core, I'm a writer, editor, and trainer—and every project here demonstrates how I carry a brand's voice from the page to the screen, and design the platform it lives on.
+        </p>
+
+        <!-- Core Voice & Platform Architecture Banner -->
+        <div style="background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-left: 4px solid var(--accent-ember); padding: 22px 28px; margin-bottom: 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+          <p style="font-size: 0.95rem; color: var(--ink-muted); line-height: 1.6; max-width: 80ch; margin: 0;">
+            <strong style="color: var(--ink-primary);">The Interdisciplinary Craft:</strong> Right now, I split my time between client web builds, AI-assisted content systems, and running social media for a handful of growing Lagos-based startups. These builds showcase language, pedagogy, and technical code working in unison.
+          </p>
+          <a href="index.html#skills" class="btn btn-outline btn-sm" style="white-space: nowrap;">Explore Skills Matrix →</a>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar" role="tablist">
+          <button class="filter-btn active" data-filter="all">All Projects (<span id="allProjectsCount">12</span>)</button>
+          <button class="filter-btn" data-filter="web">Web &amp; E-Commerce</button>
+          <button class="filter-btn" data-filter="editorial">Editorial &amp; Publications</button>
+          <button class="filter-btn" data-filter="tools">Interactive Tools &amp; Apps</button>
+        </div>
+
+        <!-- Works Grid -->
+        <div class="works-grid" id="worksGrid">
+
+          <!-- Project 1: Renalytica -->
+          <article class="showcase-card" data-category="web">
+            <div class="card-media">
+              <img src="assets/renalytica-real.png" alt="Renalytica Enterprise Platform Interface" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-tag">Full-Stack Web Dev &amp; Market Intelligence · 2026</div>
+              <h3 class="card-title">Renalytica Enterprise Platform</h3>
+              <p class="card-desc">
+                Architected, designed, and developed the official enterprise website (<a href="https://renalytica.com" target="_blank" style="text-decoration: underline;">renalytica.com</a>) from the ground up. Engineered front-end and back-end systems, real-time macroeconomic ticker (USD/NGN currency signals), interactive data charts, and 1-to-8 content repurposing engine translating 2,500+ research dossiers into high-converting executive touchpoints.
+              </p>
+              <div class="card-footer">
+                <a href="case-studies/renalytica.html" class="btn btn-solid btn-sm">Case Study</a>
+                <a href="https://renalytica.com" target="_blank" rel="noopener" class="card-link">Live Site ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: AXiA Active -->
+          <article class="showcase-card" data-category="web">
+            <div class="card-media">
+              <img src="assets/axia-real.png" alt="AXiA Active Storefront Mockup" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-tag">Full-Stack E-Commerce &amp; Meta Ads · 2024</div>
+              <h3 class="card-title">AXiA Active E-Commerce Storefront</h3>
+              <p class="card-desc">
+                Designed and built the official lifestyle activewear e-commerce storefront (<a href="https://axiaactive.com" target="_blank" style="text-decoration: underline;">axiaactive.com</a>). Features responsive mobile-first checkout, payment gateway integration, product inventory management, and targeted Meta Ads acquisition funnels.
+              </p>
+              <div class="card-footer">
+                <a href="case-studies/axia-active.html" class="btn btn-solid btn-sm">Case Study</a>
+                <a href="https://axiaactive.com" target="_blank" rel="noopener" class="card-link">Live Storefront ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: GoFar Academy -->
+          <article class="showcase-card" data-category="web">
+            <div class="card-media">
+              <img src="assets/gofar-real.png" alt="GoFar International Academy Portal" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-tag">Web Architecture &amp; Education · 2023</div>
+              <h3 class="card-title">GoFar International Academy Portal</h3>
+              <p class="card-desc">
+                Full-cycle institutional website development (<a href="https://www.gofarinternationalacademy.com/" target="_blank" style="text-decoration: underline;">gofarinternationalacademy.com</a>). Structured prospective parent admissions funnels, global curriculum showcases, learner narratives, and automated inquiry pipelines.
+              </p>
+              <div class="card-footer">
+                <a href="case-studies/gofar-academy.html" class="btn btn-solid btn-sm">Case Study</a>
+                <a href="https://www.gofarinternationalacademy.com/" target="_blank" rel="noopener" class="card-link">Live Portal ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: My WORLD of Literature -->
+          <article class="showcase-card" data-category="editorial">
+            <div class="card-media">
+              <img src="assets/twol-real.png" alt="My WORLD of Literature Journal Website" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-tag">Self-Designed Journal &amp; Literary Archive · 2016–2019</div>
+              <h3 class="card-title">My WORLD of Literature (TWOL)</h3>
+              <p class="card-desc">
+                Self-designed digital journal (<a href="https://twol101.wordpress.com/" target="_blank" style="text-decoration: underline;">twol101.wordpress.com</a>) featuring original prose fiction, poetry, and published reviews—including the critique of Dr. Chris Anyokwu's play <em>The Far Country</em>, sociological essays on stereotypes, and gender equality policy analysis.
+              </p>
+              <div class="card-footer">
+                <a href="case-studies/twol-literature.html" class="btn btn-solid btn-sm">Explore Literary Archive</a>
+                <a href="https://twol101.wordpress.com/" target="_blank" rel="noopener" class="card-link">Live Blog ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Presidential Committee (PCNI) Report -->
+          <article class="showcase-card" data-category="editorial">
+            <div class="card-body" style="padding-top: 36px;">
+              <div class="card-tag">High-Stakes Policy Editing · 145 Pages</div>
+              <h3 class="card-title">Presidential Committee on North-East Initiative (PCNI) Report</h3>
+              <p class="card-desc">
+                Edited the landmark 145-page national policy document on counter-terrorism strategies and socio-economic rebuilding commissioned for President Muhammadu Buhari's Federal Administration. Ensured rigorous editorial coherence, fact-checking, and inter-agency clarity.
+              </p>
+              <div class="card-footer">
+                <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-faint);">Commissioned for Federal Republic of Nigeria</span>
+                <span class="card-tag" style="margin-bottom:0;">Government Whitepaper</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: SimFitness Planner -->
+          <article class="showcase-card" data-category="tools">
+            <div class="card-media">
+              <img src="assets/simfitness-real.png" alt="SimFitness Personal Fitness Planner Web App Interface" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-tag">Interactive Web Product · Vue/JS</div>
+              <h3 class="card-title">SimFitness Personal Fitness Planner</h3>
+              <p class="card-desc">
+                An interactive fitness management web application built as a functioning software product, featuring dynamic workout calculators, schedule builders, and animated progress visualizations.
+              </p>
+              <div class="card-footer">
+                <a href="case-studies/simfitness.html" class="btn btn-solid btn-sm">Case Study</a>
+                <a href="https://simfitness-personal-fitness-planner.netlify.app/" target="_blank" rel="noopener" class="card-link">Live App ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 7: IELTS Speaking Assessment -->
+          <article class="showcase-card" data-category="tools">
+            <div class="card-media">
+              <img src="assets/otec-speaking-real.png" alt="OTEC Nigeria IELTS Speaking Assessment Diagnostic Suite" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-tag">Assessment Tool · Educational Tech</div>
+              <h3 class="card-title">IELTS Speaking Assessment Tool</h3>
+              <p class="card-desc">
+                An interactive diagnostic metrics tool engineered for OTEC Nigeria to evaluate, score, and visualize candidate performance across the 4 core IELTS speaking criteria with automated band estimation.
+              </p>
+              <div class="card-footer">
+                <a href="case-studies/otec-ielts.html" class="btn btn-solid btn-sm">Case Study</a>
+                <a href="https://ieltsspeakingassessmentbyotec.netlify.app/" target="_blank" rel="noopener" class="card-link">Live Tool ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 8: 9jaProQuiz App -->
+          <article class="showcase-card" data-category="tools">
+            <div class="card-media">
+              <img src="assets/9japroquiz-real.png" alt="9jaProQuiz Interactive Learning & Phonetics App Interface" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-tag">Interactive Learning App · Gamification</div>
+              <h3 class="card-title">9jaProQuiz Interactive Learning</h3>
+              <p class="card-desc">
+                A dynamic pronunciation and cognitive evaluation web app built to make English phonetics and examination practice engaging and competitive through real-time score tracking.
+              </p>
+              <div class="card-footer">
+                <a href="case-studies/9japroquiz.html" class="btn btn-solid btn-sm">Case Study</a>
+                <a href="https://9japroquiz.netlify.app/" target="_blank" rel="noopener" class="card-link">Live App ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 9: WC Social Media Calendar Hub -->
+          <article class="showcase-card" data-category="tools">
+            <div class="card-media">
+              <img src="assets/wcsocialmediacalendar-real.png" alt="WC Social Media Calendar & Strategic Masterplan Hub Interface" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-tag">Digital Campaign System · Content Ops</div>
+              <h3 class="card-title">WC Social Media Calendar &amp; Hub</h3>
+              <p class="card-desc">
+                An interactive digital planning tool and campaign scheduling system for brand managers to orchestrate monthly multi-platform publishing schedules without chaos.
+              </p>
+              <div class="card-footer">
+                <a href="case-studies/wcsocial-calendar.html" class="btn btn-solid btn-sm">Case Study</a>
+                <a href="https://wcsocialmediacalendar.netlify.app/" target="_blank" rel="noopener" class="card-link">Live Hub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 10: HealthBay Platform -->
+          <article class="showcase-card" data-category="web">
+            <div class="card-media">
+              <img src="assets/healthbay-real.png" alt="HealthBay Consult & Pharma Digital Authority Roadmap Interface" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-tag">Healthcare Platform · SEO &amp; Content Architecture</div>
+              <h3 class="card-title">HealthBay Wellness Platform</h3>
+              <p class="card-desc">
+                A high-end healthcare and pharmaceutical digital authority roadmap featuring Awwwards-caliber motion architecture, accessible medical copywriting, and search engine dominance frameworks.
+              </p>
+              <div class="card-footer">
+                <a href="case-studies/healthbay.html" class="btn btn-solid btn-sm">Case Study</a>
+                <a href="https://healthbayv3.netlify.app/" target="_blank" rel="noopener" class="card-link">Live Site ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 11: Tim Milehin Portfolio -->
+          <article class="showcase-card" data-category="web">
+            <div class="card-media">
+              <img src="assets/timmilehin-real.png" alt="Tim Milehin Creative Client Portfolio Interface" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-tag">Client Portfolio Build · Web Dev</div>
+              <h3 class="card-title">Tim Milehin Creative Portfolio</h3>
+              <p class="card-desc">
+                A bespoke personal portfolio built for a creative client, crafted with distinct typography, editorial pacing, and responsive project displays.
+              </p>
+              <div class="card-footer">
+                <a href="case-studies/timmilehin.html" class="btn btn-solid btn-sm">Case Study</a>
+                <a href="https://timmilehinportfolio.netlify.app/#about" target="_blank" rel="noopener" class="card-link">Live Site ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 12: Wilbert Edu Consult -->
+          <article class="showcase-card" data-category="web">
+            <div class="card-body" style="padding-top: 36px;">
+              <div class="card-tag">Education Web Build · Video Walkthrough</div>
+              <h3 class="card-title">Wilbert Edu Consult</h3>
+              <p class="card-desc">
+                Overseas education agency web development. Includes complete walkthrough video report documenting UX decisions and technical milestones.
+              </p>
+              <div class="card-footer">
+                <a href="https://fromsmash.com/WilbertEduConsultWebDevReport1" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Watch Dev Walkthrough</a>
+                <a href="https://fromsmash.com/WilbertEduConsultWebDevReport1" target="_blank" rel="noopener" class="card-link">Video Report ↗</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer id="terminal" data-session-title="Dispatch Terminal" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2 class="footer-heading">
+            Let's build<br>
+            something <em>worth</em><br>
+            remembering.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; margin-top: 24px; max-width: 44ch;">
+            Currently accepting commissions for select web architecture, brand ecosystems, and strategic editorial direction.
+          </p>
+        </div>
+        <div class="footer-contacts">
+          <button class="contact-row-btn" data-copy-email="officialwilliamsae@gmail.com">
+            <span>officialwilliamsae@gmail.com</span>
+            <span style="font-size: 0.72rem; color: var(--accent-ember);">Click to Copy</span>
+          </button>
+          <a href="tel:+2348176939974" class="contact-row-btn">
+            <span>+234 817 693 9974</span>
+            <span style="font-size: 0.72rem; color: var(--ink-faint);">Call Direct</span>
+          </a>
+        </div>
+      </div>
+      <div class="monumental-wordmark" aria-hidden="true">WILLIAMS.</div>
+      <div class="footer-sub-bar">
+        <span>© 2026 Alfred E. Williams. All rights reserved.</span>
+        <span>
+          <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+          <span style="opacity: 0.3; margin: 0 8px;">/</span>
+          <a href="terms.html" class="footer-legal-link">Terms of Usage</a>
+        </span>
+        <span>Lagos, Nigeria · Operating Across London, New York &amp; Tokyo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/components.js"></script>
+  <script>
+    // Tab Filtering Logic & Dynamic Count
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.works-grid .showcase-card');
+    const countSpan = document.getElementById('allProjectsCount');
+    if (countSpan && cards.length) {
+      countSpan.textContent = cards.length;
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+
+        cards.forEach(card => {
+          if (f === 'all' || card.dataset.category === f) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

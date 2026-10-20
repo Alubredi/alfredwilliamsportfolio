@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Environment Variables & Secrets
+.env
+.env.*
+*.local
+
+# System & OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary Chat Attachments / Screenshots
+Screenshot*.png
+Screenshot*.jpg

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Commission Terminal — Alfred E. Williams</title>
+  <link rel="stylesheet" href="css/main.css">
+  <!-- GSAP & ScrollTrigger for kinetic motion & transitions -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Structural 12-Column Hairline Blueprint Overlay -->
+  <div class="structural-grid-overlay" aria-hidden="true">
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="scroll-progress-bar"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brandmark">
+        <span class="status-dot"></span>
+        <span>Alfred <strong>E. Williams</strong></span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="works.html" class="nav-link">Works</a></li>
+          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="brands.html" class="nav-link">Brands &amp; Social</a></li>
+          <!-- About with Dropdown (Blog under About) -->
+          <li class="nav-item-dropdown">
+            <a href="about.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
+              <span>About</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="about.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">About Alfred</span>
+                <span class="dropdown-item-desc">Biography, philosophy &amp; SME field research</span>
+              </a>
+              <a href="blog.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Blog &amp; Essays</span>
+                <span class="dropdown-item-desc">Critical commentary, data &amp; culture</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle theme"></button>
+        <button class="directory-trigger-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Directory</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="commission-dispatch" data-session-title="Direct Inquiries" style="padding: 80px 0 100px; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div class="editorial-chapter-badge">TERMINAL &amp; COMMISSIONS · DIRECT DISPATCH</div>
+        <div class="eyebrow">Direct Inquiries &amp; Project Commissions</div>
+        <h1 class="display-title" style="margin-bottom: 24px;">
+          Initiate a<br><em>Conversation</em>.
+        </h1>
+        <p style="color: var(--ink-muted); font-size: 1.25rem; max-width: 62ch; line-height: 1.6; margin-bottom: 50px;">
+          <span class="editorial-dropcap">W</span>hether you need a high-performance web platform, an executive content syndication pipeline, or admissions advisory, I respond personally to all genuine project inquiries within 24 hours.
+        </p>
+
+        <!-- 2-Column Split: Contact Channels + Interactive Commission Terminal -->
+        <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; align-items: start;">
+          
+          <!-- Column 1: Direct Contact Channels -->
+          <div style="display: flex; flex-direction: column; gap: 24px;">
+            
+            <div style="padding: 30px; background-color: var(--bg-surface); border: 1px solid var(--line-grid);">
+              <span class="card-tag">Direct Email</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin: 8px 0 4px;">officialwilliamsae@gmail.com</h3>
+              <p style="font-size: 0.88rem; color: var(--ink-muted); margin-bottom: 16px;">Primary dispatch for RFP documents, project briefs, and executive invites.</p>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button class="btn btn-outline btn-sm" data-copy-email="officialwilliamsae@gmail.com">Copy Email Address</button>
+                <a href="mailto:officialwilliamsae@gmail.com" class="btn btn-solid btn-sm">Open Mail Client ↗</a>
+              </div>
+            </div>
+
+            <div style="padding: 30px; background-color: var(--bg-surface); border: 1px solid var(--line-grid);">
+              <span class="card-tag">Phone &amp; WhatsApp Direct</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin: 8px 0 4px;">+234 817 693 9974</h3>
+              <p style="font-size: 0.88rem; color: var(--ink-muted); margin-bottom: 16px;">Direct line for scheduled voice calls and rapid WhatsApp correspondence.</p>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="https://wa.me/2348176939974" target="_blank" rel="noopener" class="btn btn-solid btn-sm">Chat on WhatsApp ↗</a>
+                <a href="tel:+2348176939974" class="btn btn-outline btn-sm">Call Direct ↗</a>
+              </div>
+            </div>
+
+            <div style="padding: 30px; background-color: var(--bg-surface); border: 1px solid var(--line-grid);">
+              <span class="card-tag">Operating Headquarters</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin: 8px 0 4px;">Lagos, Nigeria</h3>
+              <p style="font-size: 0.88rem; color: var(--ink-muted); line-height: 1.6;">
+                West Africa Time (WAT / UTC+1). Seamless async and real-time collaboration with teams across London (GMT/BST), New York (EST), San Francisco (PST), and Tokyo (JST).
+              </p>
+            </div>
+
+            <div style="padding: 24px 30px; background-color: var(--bg-surface); border: 1px solid var(--line-grid); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; color: var(--ink-faint);">Connect Online</span>
+              <div style="display: flex; gap: 14px; font-family: var(--font-mono); font-size: 0.85rem;">
+                <a href="https://www.linkedin.com/in/williams-e-alfred/" target="_blank" rel="noopener" style="text-decoration: underline;">LinkedIn ↗</a>
+                <a href="https://twol101.wordpress.com/" target="_blank" rel="noopener" style="text-decoration: underline;">TWOL Journal ↗</a>
+                <a href="https://www.instagram.com/officialwilliamsae/" target="_blank" rel="noopener" style="text-decoration: underline;">Instagram ↗</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Column 2: Interactive Commission Form Terminal -->
+          <div id="terminal-form" data-session-title="Scoping Form" style="padding: 36px; background-color: var(--bg-surface); border: 1px solid var(--line-grid);">
+            <div class="eyebrow" style="margin-bottom: 12px;">Commission Terminal</div>
+            <h2 style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; margin-bottom: 24px;">Project Scoping Form</h2>
+
+            <form id="commission-form" onsubmit="event.preventDefault(); handleFormSubmit();" style="display: flex; flex-direction: column; gap: 20px;">
+              
+              <div>
+                <label for="client-name" style="display: block; font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 6px;">Your Name / Representative *</label>
+                <input type="text" id="client-name" required placeholder="e.g., Sarah Adebayo" style="width: 100%; padding: 12px 14px; background-color: var(--bg-page); border: 1px solid var(--line-grid); color: var(--ink-strong); font-family: inherit; font-size: 0.95rem;">
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div>
+                  <label for="client-email" style="display: block; font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 6px;">Email Address *</label>
+                  <input type="email" id="client-email" required placeholder="sarah@organization.com" style="width: 100%; padding: 12px 14px; background-color: var(--bg-page); border: 1px solid var(--line-grid); color: var(--ink-strong); font-family: inherit; font-size: 0.95rem;">
+                </div>
+                <div>
+                  <label for="client-org" style="display: block; font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 6px;">Company / Brand</label>
+                  <input type="text" id="client-org" placeholder="e.g., Apex Ventures" style="width: 100%; padding: 12px 14px; background-color: var(--bg-page); border: 1px solid var(--line-grid); color: var(--ink-strong); font-family: inherit; font-size: 0.95rem;">
+                </div>
+              </div>
+
+              <div>
+                <label for="service-tier" style="display: block; font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 6px;">Service Discipline / Package</label>
+                <select id="service-tier" style="width: 100%; padding: 12px 14px; background-color: var(--bg-page); border: 1px solid var(--line-grid); color: var(--ink-strong); font-family: inherit; font-size: 0.95rem;">
+                  <option value="tier2">Tier 02: Commercial Storefront / Web App (₦950k / $1,200)</option>
+                  <option value="tier1">Tier 01: Sprint MVP / Bespoke Showcase (₦450k / $550)</option>
+                  <option value="tier3">Tier 03: Enterprise Intelligence &amp; Data Suite (₦1.85M / $2,400)</option>
+                  <option value="editorial">Strategic Content Architecture &amp; Whitepapers</option>
+                  <option value="social">Social Media Systems &amp; 1-to-8 Content Engine</option>
+                  <option value="coaching">Admissions Essay &amp; US Visa Interview Coaching</option>
+                  <option value="custom">Other / Custom Enterprise Commission</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="project-brief" style="display: block; font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 6px;">Project Overview &amp; Goals *</label>
+                <textarea id="project-brief" rows="4" required placeholder="Describe your objectives, timeline, target audience, and any existing platforms..." style="width: 100%; padding: 12px 14px; background-color: var(--bg-page); border: 1px solid var(--line-grid); color: var(--ink-strong); font-family: inherit; font-size: 0.95rem; resize: vertical;"></textarea>
+              </div>
+
+              <div id="form-feedback" style="display: none; padding: 14px; border: 1px solid var(--accent-ember); background-color: rgba(199,80,0,0.06); font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-strong);"></div>
+
+              <button type="submit" id="submit-btn" class="btn btn-solid" style="width: 100%; justify-content: center;">
+                Transmit Project Inquiry →
+              </button>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer id="terminal-epilogue" data-session-title="Epilogue" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2 class="footer-heading">
+            Let's build<br>something <em>worth</em><br>remembering.
+          </h2>
+        </div>
+        <div class="footer-contacts">
+          <button class="contact-row-btn" data-copy-email="officialwilliamsae@gmail.com">
+            <span>officialwilliamsae@gmail.com</span>
+            <span style="font-size: 0.72rem; color: var(--accent-ember);">Click to Copy</span>
+          </button>
+          <a href="tel:+2348176939974" class="contact-row-btn">
+            <span>+234 817 693 9974</span>
+            <span style="font-size: 0.72rem; color: var(--ink-faint);">Call Direct</span>
+          </a>
+        </div>
+      </div>
+      <div class="monumental-wordmark" aria-hidden="true">WILLIAMS.</div>
+      
+      <!-- Footer Sub-Bar with Privacy & Terms Links -->
+      <div class="footer-sub-bar">
+        <span>© 2026 Alfred E. Williams. All rights reserved.</span>
+        <span>
+          <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+          <span style="opacity: 0.3; margin: 0 8px;">/</span>
+          <a href="terms.html" class="footer-legal-link">Terms of Usage</a>
+        </span>
+        <span>Lagos, Nigeria · Operating Across London, New York &amp; Tokyo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/components.js"></script>
+  <script>
+    // Handle URL query param pre-selection
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const pkg = urlParams.get('package');
+      if (pkg) {
+        const selectEl = document.getElementById('service-tier');
+        if (selectEl) {
+          const match = Array.from(selectEl.options).find(opt => opt.value === pkg);
+          if (match) {
+            selectEl.value = pkg;
+          }
+        }
+      }
+    });
+
+    function handleFormSubmit() {
+      const name = document.getElementById('client-name').value.trim();
+      const email = document.getElementById('client-email').value.trim();
+      const org = document.getElementById('client-org').value.trim() || 'Not specified';
+      const tier = document.getElementById('service-tier').value;
+      const brief = document.getElementById('project-brief').value.trim();
+      const feedback = document.getElementById('form-feedback');
+
+      if (!name || !email || !brief) {
+        feedback.style.display = 'block';
+        feedback.style.borderColor = 'red';
+        feedback.textContent = 'Please fill out all required fields marked with an asterisk (*).';
+        return;
+      }
+
+      const subject = encodeURIComponent(`Project Commission Inquiry: ${name} (${org})`);
+      const body = encodeURIComponent(
+        `Dear Alfred,\n\n` +
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Company/Brand: ${org}\n` +
+        `Selected Service / Package: ${tier}\n\n` +
+        `Project Overview & Objectives:\n${brief}\n\n` +
+        `Sent via alfredwilliams.dev Commission Terminal`
+      );
+
+      feedback.style.display = 'block';
+      feedback.style.borderColor = 'var(--accent-ember)';
+      feedback.innerHTML = `✓ Thank you, ${name}. Your commission brief has been recorded. Opening your mail client to dispatch... If it doesn't open automatically, <a href="mailto:officialwilliamsae@gmail.com?subject=${subject}&body=${body}" style="text-decoration: underline; font-weight: bold;">click here to send directly</a>.`;
+
+      setTimeout(() => {
+        window.location.href = `mailto:officialwilliamsae@gmail.com?subject=${subject}&body=${body}`;
+      }, 800);
+    }
+  </script>
+</body>
+</html>
