@@ -600,11 +600,11 @@ img, video {
 .section-head {
   display: flex;
   align-items: baseline;
-  gap: 24px;
-  margin-bottom: 64px;
+  gap: 20px;
+  margin-bottom: 32px;
   position: relative;
   border-bottom: 1px solid var(--line-grid);
-  padding-bottom: 20px;
+  padding-bottom: 14px;
 }
 
 .section-num {
@@ -896,7 +896,7 @@ img, video {
    ========================================================================== */
 .site-footer {
   border-top: 1px solid var(--line-grid);
-  padding: 120px 0 60px;
+  padding: 56px 0 32px;
   background-color: var(--bg-surface);
   position: relative;
   overflow: hidden;
@@ -905,13 +905,13 @@ img, video {
 .footer-grid {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
-  gap: 60px;
+  gap: 40px;
   align-items: end;
-  margin-bottom: 100px;
+  margin-bottom: 36px;
 }
 
 @media (max-width: 860px) {
-  .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 }
 
 .footer-heading {
@@ -967,7 +967,7 @@ img, video {
   user-select: none;
   pointer-events: none;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 24px;
 }
 
 .footer-sub-bar {

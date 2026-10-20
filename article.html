@@ -65,15 +65,18 @@
 
     /* Article Hero Section */
     .article-hero {
-      padding: 64px 0 40px;
+      padding: 36px 0 24px;
       border-bottom: 1px solid var(--line-grid);
+    }
+    .article-container {
+      max-width: 1180px;
     }
     .article-header-meta {
       display: flex;
       gap: 16px;
       align-items: center;
       flex-wrap: wrap;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
     .article-tag {
       font-family: var(--font-mono);
@@ -98,7 +101,7 @@
       font-weight: 700;
       line-height: 1.1;
       letter-spacing: -0.035em;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       max-width: 24ch;
     }
     .article-display-title em {
@@ -113,9 +116,9 @@
       line-height: 1.6;
       color: var(--ink-muted);
       max-width: 65ch;
-      margin-bottom: 36px;
+      margin-bottom: 24px;
       border-left: 2px solid var(--accent-ember);
-      padding-left: 20px;
+      padding-left: 18px;
     }
 
     /* Author & Share Byline Bar */
@@ -124,8 +127,8 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 20px;
-      padding: 20px 0;
+      gap: 16px;
+      padding: 14px 0;
       border-top: 1px solid var(--line-grid);
     }
     .author-badge {
@@ -134,8 +137,8 @@
       gap: 14px;
     }
     .author-avatar {
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       object-fit: cover;
       border: 1px solid var(--line-grid-strong);
@@ -178,30 +181,316 @@
 
     /* Lead Banner Image */
     .article-banner-wrap {
-      margin: 40px 0 56px;
+      margin: 24px 0 32px;
       position: relative;
+      max-width: 960px;
     }
     .article-hero-banner {
       width: 100%;
-      max-height: 540px;
+      max-height: 480px;
       object-fit: cover;
       border: 1px solid var(--line-grid-strong);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
     }
     .banner-caption {
       font-family: var(--font-mono);
       font-size: 0.75rem;
       color: var(--ink-muted);
-      margin-top: 10px;
+      margin-top: 8px;
       text-align: right;
     }
 
-    /* Reading Layout */
-    .article-layout-grid {
+    /* Two-Column Editorial Reading Layout with Sticky TOC */
+    .article-reading-layout {
       display: grid;
-      grid-template-columns: 1fr;
-      max-width: 760px;
-      margin: 0 auto 80px;
+      grid-template-columns: 240px minmax(0, 780px);
+      gap: 48px;
+      align-items: start;
+      position: relative;
+      margin: 0 0 48px;
+    }
+
+    @media (max-width: 1024px) {
+      .article-reading-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+
+    /* Sticky Desktop TOC Rail */
+    .article-toc-rail {
+      position: sticky;
+      top: 130px; /* Accounts for site header (72px) + reader subnav (50px) + margin */
+      max-height: calc(100vh - 150px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--line-grid-strong) transparent;
+      padding-right: 6px;
+    }
+
+    @media (max-width: 1024px) {
+      .article-toc-rail {
+        display: none; /* Handled by mobile-toc-bar */
+      }
+    }
+
+    .article-toc-inner {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 3px;
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    }
+
+    .article-toc-header {
+      border-bottom: 1px solid var(--line-grid);
+      padding-bottom: 10px;
+    }
+
+    .article-toc-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-ember);
+      margin-bottom: 6px;
+    }
+
+    .article-reading-progress {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .reading-percent-num {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--ink-primary);
+      min-width: 32px;
+    }
+
+    .reading-progress-track {
+      flex: 1;
+      height: 3px;
+      background-color: var(--line-grid);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .reading-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-ember), var(--accent-gold));
+      border-radius: 2px;
+      transition: width 0.15s ease-out;
+    }
+
+    .article-toc-nav {
+      position: relative;
+      padding-left: 12px;
+      border-left: 2px solid var(--line-grid);
+    }
+
+    /* Active Indicator Pip sliding along the vertical track */
+    .toc-active-pip {
+      position: absolute;
+      left: -2px;
+      top: 0;
+      width: 2px;
+      height: 24px;
+      background-color: var(--accent-ember);
+      box-shadow: 0 0 10px var(--accent-ember);
+      transition: top 0.22s cubic-bezier(0.16, 1, 0.3, 1), height 0.22s ease, opacity 0.2s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .article-toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .article-toc-item {
+      position: relative;
+    }
+
+    .article-toc-link {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      line-height: 1.4;
+      color: var(--ink-muted);
+      text-decoration: none;
+      transition: color 0.2s ease, transform 0.2s ease;
+      padding: 2px 0;
+    }
+
+    .article-toc-link:hover {
+      color: var(--ink-primary);
+      transform: translateX(2px);
+    }
+
+    .article-toc-link.is-active {
+      color: var(--accent-ember);
+      font-weight: 700;
+    }
+
+    .toc-item-num {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      flex-shrink: 0;
+    }
+
+    .article-toc-link.is-active .toc-item-num {
+      color: var(--accent-ember);
+    }
+
+    .article-toc-footer {
+      border-top: 1px solid var(--line-grid);
+      padding-top: 8px;
+    }
+
+    .toc-top-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      transition: color 0.2s ease;
+    }
+
+    .toc-top-link:hover {
+      color: var(--accent-ember);
+    }
+
+    /* Mobile Sticky TOC Quick-Jump Bar (< 1024px) */
+    .mobile-toc-bar {
+      display: none;
+      position: sticky;
+      top: 120px;
+      z-index: 90;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid-strong);
+      border-radius: 4px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    @media (max-width: 1024px) {
+      .mobile-toc-bar {
+        display: block;
+      }
+    }
+
+    .mobile-toc-toggle {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--ink-primary);
+      text-align: left;
+    }
+
+    .mobile-toc-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 72%;
+    }
+
+    .mobile-toc-label .mobile-toc-icon {
+      color: var(--accent-ember);
+      flex-shrink: 0;
+    }
+
+    .mobile-toc-current {
+      font-weight: 600;
+      color: var(--ink-primary);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .mobile-toc-indicator {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      flex-shrink: 0;
+    }
+
+    .mobile-toc-chevron {
+      transition: transform 0.25s ease;
+    }
+
+    .mobile-toc-toggle[aria-expanded="true"] .mobile-toc-chevron {
+      transform: rotate(180deg);
+    }
+
+    .mobile-toc-dropdown {
+      display: none;
+      border-top: 1px solid var(--line-grid);
+      padding: 10px 14px;
+      max-height: 260px;
+      overflow-y: auto;
+    }
+
+    .mobile-toc-dropdown.is-open {
+      display: block;
+    }
+
+    .mobile-toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mobile-toc-link {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      display: block;
+      padding: 4px 0;
+      text-decoration: none;
+    }
+
+    .mobile-toc-link.is-active {
+      color: var(--accent-ember);
+      font-weight: 700;
     }
 
     /* Executive Key Takeaways */
@@ -209,8 +498,9 @@
       background-color: var(--bg-surface);
       border: 1px solid var(--line-grid-strong);
       border-left: 4px solid var(--accent-ember);
-      padding: 32px 36px;
-      margin-bottom: 48px;
+      padding: 24px 28px;
+      margin-bottom: 28px;
+      scroll-margin-top: 140px;
     }
     .takeaways-title {
       font-family: var(--font-mono);
@@ -219,7 +509,7 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--accent-ember);
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -230,14 +520,14 @@
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 10px;
     }
     .takeaways-list li {
       position: relative;
-      padding-left: 24px;
+      padding-left: 20px;
       font-family: var(--font-body);
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: 0.98rem;
+      line-height: 1.55;
       color: var(--ink-primary);
     }
     .takeaways-list li::before {
@@ -252,55 +542,57 @@
     /* Prose Styling */
     .prose-container {
       font-family: var(--font-body);
-      font-size: 1.15rem;
-      line-height: 1.85;
+      font-size: 1.12rem;
+      line-height: 1.8;
       color: var(--ink-primary);
     }
     .prose-container p {
-      margin-bottom: 28px;
+      margin-bottom: 20px;
     }
     .prose-container h2 {
       font-family: var(--font-display);
-      font-size: 1.85rem;
+      font-size: 1.75rem;
       font-weight: 700;
-      margin: 48px 0 20px;
+      margin: 36px 0 16px;
       letter-spacing: -0.02em;
       border-bottom: 1px solid var(--line-grid);
-      padding-bottom: 12px;
+      padding-bottom: 10px;
+      scroll-margin-top: 140px;
     }
     .prose-container h3 {
       font-family: var(--font-display);
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      margin: 36px 0 16px;
+      margin: 28px 0 12px;
+      scroll-margin-top: 140px;
     }
     .editorial-dropcap {
       float: left;
       font-family: var(--font-display);
-      font-size: 4.8rem;
+      font-size: 4.4rem;
       line-height: 0.85;
-      padding-right: 14px;
-      padding-top: 6px;
+      padding-right: 12px;
+      padding-top: 4px;
       color: var(--accent-ember);
       font-weight: 700;
     }
     .prose-container blockquote {
-      margin: 40px 0;
-      padding: 28px 32px;
+      margin: 28px 0;
+      padding: 22px 26px;
       border-left: 3px solid var(--accent-ember);
       background-color: var(--bg-surface);
       font-family: var(--font-editorial);
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       font-style: italic;
       line-height: 1.5;
       color: var(--ink-primary);
     }
     .prose-container ul, .prose-container ol {
-      margin: 24px 0 28px;
-      padding-left: 28px;
+      margin: 18px 0 22px;
+      padding-left: 24px;
     }
     .prose-container li {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .prose-container code {
       font-family: var(--font-mono);
@@ -313,10 +605,11 @@
 
     /* Verified References */
     .references-card {
-      margin-top: 60px;
-      padding: 32px 36px;
+      margin-top: 36px;
+      padding: 24px 28px;
       background-color: var(--bg-surface);
       border: 1px solid var(--line-grid);
+      scroll-margin-top: 140px;
     }
     .references-title {
       font-family: var(--font-mono);
@@ -325,34 +618,34 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--ink-muted);
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     .references-list {
       margin: 0;
-      padding-left: 24px;
+      padding-left: 20px;
       font-family: var(--font-mono);
       font-size: 0.82rem;
       color: var(--ink-muted);
       line-height: 1.6;
     }
     .references-list li {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     /* Article Prev/Next Navigation */
     .article-nav-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin: 80px 0 40px;
+      gap: 20px;
+      margin: 40px 0 24px;
       border-top: 1px solid var(--line-grid);
-      padding-top: 48px;
+      padding-top: 28px;
     }
     @media (max-width: 768px) {
       .article-nav-grid { grid-template-columns: 1fr; }
     }
     .article-nav-card {
-      padding: 24px;
+      padding: 20px;
       border: 1px solid var(--line-grid);
       background-color: var(--bg-surface);
       display: flex;
@@ -370,12 +663,12 @@
       font-weight: 700;
       text-transform: uppercase;
       color: var(--accent-ember);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       letter-spacing: 0.1em;
     }
     .nav-card-title {
       font-family: var(--font-display);
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 700;
       line-height: 1.3;
       color: var(--ink-primary);
@@ -505,74 +798,133 @@
   <main>
     <!-- Article Hero -->
     <article class="article-hero">
-      <div class="container" style="max-width: 900px;">
-        <div class="article-header-meta">
-          <span class="article-tag" id="articleCategoryTag">CRITICAL ESSAY</span>
-          <span class="article-date-meta" id="articleDate">October 2026</span>
-          <span class="article-date-meta">·</span>
-          <span class="article-date-meta" id="articleReadTime">8 min read</span>
-        </div>
-
-        <h1 class="article-display-title" id="articleTitle">Loading Investigation...</h1>
-        <p class="article-lead-excerpt" id="articleExcerpt">Preparing full text from repository baseline...</p>
-
-        <!-- Byline Bar -->
-        <div class="article-byline-bar">
-          <div class="author-badge">
-            <img src="Alfred photo.jpg" alt="Alfred E. Williams" class="author-avatar" onerror="this.src='Brand Photo Alfred.jpg'">
-            <div>
-              <div class="author-info-name">Alfred E. Williams</div>
-              <div class="author-info-role">Systems Architect, Essayist &amp; Cultural Critic</div>
-            </div>
+      <div class="container article-container">
+        <div class="article-hero-header-wrap" style="max-width: 860px; margin: 0 auto;">
+          <div class="article-header-meta">
+            <span class="article-tag" id="articleCategoryTag">CRITICAL ESSAY</span>
+            <span class="article-date-meta" id="articleDate">October 2026</span>
+            <span class="article-date-meta">·</span>
+            <span class="article-date-meta" id="articleReadTime">8 min read</span>
           </div>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-ember); display: flex; align-items: center; gap: 6px;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-            <span>Verified Research &amp; Field Sources</span>
+
+          <h1 class="article-display-title" id="articleTitle">Loading Investigation...</h1>
+          <p class="article-lead-excerpt" id="articleExcerpt">Preparing full text from repository baseline...</p>
+
+          <!-- Byline Bar -->
+          <div class="article-byline-bar">
+            <div class="author-badge">
+              <img src="Alfred photo.jpg" alt="Alfred E. Williams" class="author-avatar" onerror="this.src='Brand Photo Alfred.jpg'">
+              <div>
+                <div class="author-info-name">Alfred E. Williams</div>
+                <div class="author-info-role">Systems Architect, Essayist &amp; Cultural Critic</div>
+              </div>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-ember); display: flex; align-items: center; gap: 6px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              <span>Verified Research &amp; Field Sources</span>
+            </div>
           </div>
         </div>
 
         <!-- Hero Visual Banner -->
-        <div class="article-banner-wrap">
+        <div class="article-banner-wrap" style="margin: 24px auto 32px; max-width: 960px;">
           <img id="articleBanner" src="assets/blog-web-clarity.jpg" alt="Article Lead Banner" class="article-hero-banner" onerror="this.src='assets/illust-editorial-writing.png'">
           <div class="banner-caption" id="bannerCaption">Fig 1. Editorial Dossier Visual Record — Alfred E. Williams Archive</div>
         </div>
 
-        <!-- Reading Container -->
-        <div class="article-layout-grid">
-          <!-- Executive Key Takeaways -->
-          <div class="takeaways-card" id="takeawaysCard">
-            <div class="takeaways-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <span>Executive Key Takeaways</span>
+        <!-- Two-Column Editorial Stage with Sticky TOC -->
+        <div class="article-reading-layout">
+
+          <!-- Desktop Sticky TOC Sidebar Rail -->
+          <aside class="article-toc-rail" id="articleTocRail" aria-label="Table of Contents">
+            <div class="article-toc-inner">
+              <div class="article-toc-header">
+                <div class="article-toc-eyebrow">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                  <span>Contents</span>
+                </div>
+                <div class="article-reading-progress">
+                  <span class="reading-percent-num" id="readingPercent">0%</span>
+                  <div class="reading-progress-track">
+                    <div class="reading-progress-fill" id="readingProgressFill"></div>
+                  </div>
+                </div>
+              </div>
+
+              <nav class="article-toc-nav" id="articleTocNav">
+                <div class="toc-active-pip" id="tocActivePip"></div>
+                <ul class="article-toc-list" id="articleTocList">
+                  <!-- Populated dynamically by buildTableOfContents() -->
+                </ul>
+              </nav>
+
+              <div class="article-toc-footer">
+                <a href="#articleTitle" class="toc-top-link" id="tocTopLink">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                  <span>Top of Article</span>
+                </a>
+              </div>
             </div>
-            <ul class="takeaways-list" id="takeawaysList">
-              <!-- Injected by script -->
-            </ul>
-          </div>
+          </aside>
 
-          <!-- Prose Content -->
-          <div class="prose-container" id="proseContent">
-            <!-- Full article HTML injected here -->
-          </div>
+          <!-- Main Reading Prose Column -->
+          <div class="article-main-column">
 
-          <!-- Verified References & Citations -->
-          <div class="references-card" id="referencesCard">
-            <div class="references-title">Verified Citations &amp; Empirical References</div>
-            <ol class="references-list" id="referencesList">
-              <!-- Injected by script -->
-            </ol>
-          </div>
+            <!-- Mobile Sticky Quick-Jump Bar (<1024px) -->
+            <div class="mobile-toc-bar" id="mobileTocBar">
+              <button class="mobile-toc-toggle" id="mobileTocToggle" aria-expanded="false" aria-label="Toggle Table of Contents">
+                <span class="mobile-toc-label">
+                  <span class="mobile-toc-icon">✦</span>
+                  <span class="mobile-toc-current" id="mobileTocCurrent">Contents</span>
+                </span>
+                <span class="mobile-toc-indicator">
+                  <span id="mobileReadingPercent">0%</span>
+                  <svg class="mobile-toc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="mobile-toc-dropdown" id="mobileTocDropdown">
+                <ul class="mobile-toc-list" id="mobileTocList">
+                  <!-- Populated dynamically by buildTableOfContents() -->
+                </ul>
+              </div>
+            </div>
 
-          <!-- Prev/Next Navigation Grid -->
-          <div class="article-nav-grid" id="articleNavGrid">
-            <a href="#" class="article-nav-card" id="prevArticleCard" style="display: none;">
-              <div class="nav-direction-label">← Previous Investigation</div>
-              <div class="nav-card-title" id="prevArticleTitle">...</div>
-            </a>
-            <a href="#" class="article-nav-card" id="nextArticleCard" style="display: none; margin-left: auto; text-align: right;">
-              <div class="nav-direction-label">Next Investigation →</div>
-              <div class="nav-card-title" id="nextArticleTitle">...</div>
-            </a>
+            <!-- Executive Key Takeaways -->
+            <div class="takeaways-card" id="takeawaysCard">
+              <div class="takeaways-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>Executive Key Takeaways</span>
+              </div>
+              <ul class="takeaways-list" id="takeawaysList">
+                <!-- Injected by script -->
+              </ul>
+            </div>
+
+            <!-- Prose Content -->
+            <div class="prose-container" id="proseContent">
+              <!-- Full article HTML injected here -->
+            </div>
+
+            <!-- Verified References & Citations -->
+            <div class="references-card" id="referencesCard">
+              <div class="references-title">Verified Citations &amp; Empirical References</div>
+              <ol class="references-list" id="referencesList">
+                <!-- Injected by script -->
+              </ol>
+            </div>
+
+            <!-- Prev/Next Navigation Grid -->
+            <div class="article-nav-grid" id="articleNavGrid">
+              <a href="#" class="article-nav-card" id="prevArticleCard" style="display: none;">
+                <div class="nav-direction-label">← Previous Investigation</div>
+                <div class="nav-card-title" id="prevArticleTitle">...</div>
+              </a>
+              <a href="#" class="article-nav-card" id="nextArticleCard" style="display: none; margin-left: auto; text-align: right;">
+                <div class="nav-direction-label">Next Investigation →</div>
+                <div class="nav-card-title" id="nextArticleTitle">...</div>
+              </a>
+            </div>
+
           </div>
 
         </div>
@@ -580,12 +932,12 @@
       </div>
     </article>
 
-    <!-- Editorial Call to Action -->
-    <section style="padding: 80px 0; border-top: 1px solid var(--line-grid); background-color: var(--bg-surface);">
-      <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px;">
+    <!-- Editorial Call to Action (Tightened Spacing) -->
+    <section style="padding: 48px 0; border-top: 1px solid var(--line-grid); background-color: var(--bg-surface);">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 28px;">
         <div style="max-width: 60ch;">
-          <div class="eyebrow" style="margin-bottom: 12px;">Commission Research &amp; Web Systems</div>
-          <h2 style="font-family: var(--font-display); font-size: 2rem; font-weight: 700; margin-bottom: 12px;">Need deep-dive investigations, strategic whitepapers, or bespoke digital platforms?</h2>
+          <div class="eyebrow" style="margin-bottom: 8px;">Commission Research &amp; Web Systems</div>
+          <h2 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 700; margin-bottom: 10px;">Need deep-dive investigations, strategic whitepapers, or bespoke digital platforms?</h2>
           <p style="color: var(--ink-muted); line-height: 1.6;">Alfred conducts empirical market research, crafts authoritative policy documents, and engineers high-performance web systems.</p>
         </div>
         <div style="display: flex; gap: 14px; flex-wrap: wrap;">
@@ -646,6 +998,202 @@
       const SUPABASE_URL = 'https://bxgxnbqvarmdxirzulje.supabase.co';
       const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4Z3huYnF2YXJtZHhpcnp1bGplIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI0NTI5NjgsImV4cCI6MjEwODAyODk2OH0.tEAKJrYRhYWiAN8n_6wHFlH9pebdeqjLxZgLPhHrtjU';
 
+      let currentTocItems = [];
+
+      function buildTableOfContents() {
+        const desktopList = document.getElementById('articleTocList');
+        const mobileList = document.getElementById('mobileTocList');
+        if (!desktopList || !mobileList) return;
+
+        desktopList.innerHTML = '';
+        mobileList.innerHTML = '';
+        currentTocItems = [];
+
+        // 1. Check Executive Key Takeaways
+        const takeawaysCard = document.getElementById('takeawaysCard');
+        if (takeawaysCard && takeawaysCard.style.display !== 'none') {
+          takeawaysCard.id = 'takeawaysCard';
+          currentTocItems.push({
+            id: 'takeawaysCard',
+            title: 'Executive Key Takeaways',
+            shortTitle: 'Key Takeaways',
+            el: takeawaysCard
+          });
+        }
+
+        // 2. Discover all H2 and H3 headings in prose
+        const proseHeadings = Array.from(document.querySelectorAll('#proseContent h2'));
+        proseHeadings.forEach((h2, idx) => {
+          if (!h2.id) {
+            // Generate clean slug or index ID
+            const slug = h2.textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+            h2.id = slug || `section-${idx + 1}`;
+          }
+          currentTocItems.push({
+            id: h2.id,
+            title: h2.textContent.trim(),
+            shortTitle: h2.textContent.trim(),
+            el: h2
+          });
+        });
+
+        // 3. Check Verified References
+        const referencesCard = document.getElementById('referencesCard');
+        if (referencesCard && referencesCard.style.display !== 'none') {
+          referencesCard.id = 'referencesCard';
+          currentTocItems.push({
+            id: 'referencesCard',
+            title: 'Citations & Empirical References',
+            shortTitle: 'Citations & References',
+            el: referencesCard
+          });
+        }
+
+        // Render TOC items to both desktop rail and mobile dropdown
+        currentTocItems.forEach((item, index) => {
+          const numStr = String(index + 1).padStart(2, '0');
+
+          // Desktop Item
+          const liDesktop = document.createElement('li');
+          liDesktop.className = 'article-toc-item';
+          liDesktop.innerHTML = `
+            <a href="#${item.id}" class="article-toc-link" data-target="${item.id}">
+              <span class="toc-item-num">${numStr}.</span>
+              <span class="toc-item-text">${item.title}</span>
+            </a>
+          `;
+          desktopList.appendChild(liDesktop);
+
+          // Mobile Item
+          const liMobile = document.createElement('li');
+          liMobile.innerHTML = `
+            <a href="#${item.id}" class="mobile-toc-link" data-target="${item.id}">
+              <span style="color: var(--accent-ember); font-family: var(--font-mono); font-size: 0.72rem; margin-right: 6px;">${numStr}.</span>
+              <span>${item.title}</span>
+            </a>
+          `;
+          mobileList.appendChild(liMobile);
+        });
+
+        // Attach Smooth Scrolling Click Handlers
+        const allLinks = document.querySelectorAll('.article-toc-link, .mobile-toc-link');
+        allLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-target');
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+              targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+              // Close mobile dropdown if open
+              const mobileDropdown = document.getElementById('mobileTocDropdown');
+              const mobileToggle = document.getElementById('mobileTocToggle');
+              if (mobileDropdown) mobileDropdown.classList.remove('is-open');
+              if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+
+              history.replaceState(null, '', `#${targetId}`);
+            }
+          });
+        });
+
+        // Initialize active position
+        updateActiveToc();
+      }
+
+      function updateActiveToc() {
+        if (!currentTocItems || currentTocItems.length === 0) return;
+
+        // Reading progress calculation
+        const mainColumn = document.querySelector('.article-main-column');
+        if (mainColumn) {
+          const rect = mainColumn.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          const totalDist = rect.height - windowHeight * 0.5;
+          let progress = 0;
+          if (totalDist > 0) {
+            const scrolled = Math.max(0, -rect.top);
+            progress = Math.min(100, Math.round((scrolled / totalDist) * 100));
+          }
+          const pctText = `${progress}%`;
+          const pEl = document.getElementById('readingPercent');
+          const pFill = document.getElementById('readingProgressFill');
+          const mPEl = document.getElementById('mobileReadingPercent');
+          if (pEl) pEl.textContent = pctText;
+          if (pFill) pFill.style.width = pctText;
+          if (mPEl) mPEl.textContent = pctText;
+        }
+
+        // Detect current section in viewport
+        // Threshold line at 160px from viewport top
+        const triggerLine = 160;
+        let activeIdx = 0;
+
+        for (let i = 0; i < currentTocItems.length; i++) {
+          const top = currentTocItems[i].el.getBoundingClientRect().top;
+          if (top <= triggerLine) {
+            activeIdx = i;
+          } else {
+            break;
+          }
+        }
+
+        const activeItem = currentTocItems[activeIdx];
+        if (!activeItem) return;
+
+        // Highlight Desktop TOC Link & position Active Pip
+        const desktopLinks = document.querySelectorAll('.article-toc-link');
+        desktopLinks.forEach((link, idx) => {
+          if (idx === activeIdx) {
+            link.classList.add('is-active');
+            const pip = document.getElementById('tocActivePip');
+            if (pip) {
+              pip.style.top = `${link.offsetTop}px`;
+              pip.style.height = `${link.offsetHeight}px`;
+              pip.style.opacity = '1';
+            }
+          } else {
+            link.classList.remove('is-active');
+          }
+        });
+
+        // Highlight Mobile TOC Link
+        const mobileLinks = document.querySelectorAll('.mobile-toc-link');
+        mobileLinks.forEach((link, idx) => {
+          if (idx === activeIdx) {
+            link.classList.add('is-active');
+          } else {
+            link.classList.remove('is-active');
+          }
+        });
+
+        const mobileCurrent = document.getElementById('mobileTocCurrent');
+        if (mobileCurrent) {
+          mobileCurrent.textContent = activeItem.shortTitle || activeItem.title;
+        }
+      }
+
+      // Scroll event with requestAnimationFrame
+      let isTicking = false;
+      window.addEventListener('scroll', function() {
+        if (!isTicking) {
+          window.requestAnimationFrame(function() {
+            updateActiveToc();
+            isTicking = false;
+          });
+          isTicking = true;
+        }
+      }, { passive: true });
+
+      // Mobile TOC Toggle
+      const mobileToggle = document.getElementById('mobileTocToggle');
+      const mobileDropdown = document.getElementById('mobileTocDropdown');
+      if (mobileToggle && mobileDropdown) {
+        mobileToggle.addEventListener('click', function() {
+          const isOpen = mobileDropdown.classList.toggle('is-open');
+          mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
+
       function renderArticle(art) {
         if (!art) return;
 
@@ -697,6 +1245,9 @@
           referencesCard.style.display = 'none';
         }
 
+        // Build Table of Contents dynamically for this loaded article!
+        buildTableOfContents();
+
         // Navigation (Prev/Next)
         renderNavLinks(art);
       }
@@ -739,7 +1290,6 @@
       // 2. Fetch latest live cloud data from Supabase
       async function fetchSupabaseArticle() {
         try {
-          // Fetch all articles so prev/next navigation works across all published cloud articles
           const res = await fetch(`${SUPABASE_URL}/rest/v1/articles?select=*&is_published=eq.true&order=number.asc`, {
             headers: {
               'apikey': SUPABASE_ANON_KEY,
