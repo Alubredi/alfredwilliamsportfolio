@@ -2493,5 +2493,131 @@ body.page-is-exiting footer {
   }
 }
 
+/* ==========================================================================
+   FLOATING WHATSAPP ATELIER DISPATCH BUTTON
+   ========================================================================== */
+.whatsapp-floating-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 450;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #25D366;
+  color: #FFFFFF;
+  padding: 12px 18px 12px 14px;
+  border-radius: 50px;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.42), 0 4px 12px rgba(0, 0, 0, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s ease, 
+              background-color 0.25s ease;
+  user-select: none;
+  overflow: visible;
+}
+
+.whatsapp-floating-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 16px 36px rgba(37, 211, 102, 0.55), 0 6px 16px rgba(0, 0, 0, 0.22);
+  background-color: #20BA5A;
+  color: #FFFFFF;
+}
+
+.whatsapp-btn-pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50px;
+  border: 2px solid #25D366;
+  opacity: 0;
+  pointer-events: none;
+  animation: wa-pulse 3s infinite cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@keyframes wa-pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.18); opacity: 0; }
+  100% { transform: scale(1.18); opacity: 0; }
+}
+
+.whatsapp-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.whatsapp-btn-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: #FFFFFF;
+}
+
+.whatsapp-btn-label {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.whatsapp-label-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.whatsapp-online-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 6px #FFFFFF;
+  animation: pulse-dot 1.8s infinite ease-in-out;
+}
+
+.whatsapp-label-text {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+}
+
+/* Mobile Responsiveness for Floating WhatsApp Button */
+@media (max-width: 640px) {
+  .whatsapp-floating-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    justify-content: center;
+  }
+  
+  .whatsapp-btn-label {
+    display: none;
+  }
+  
+  .whatsapp-btn-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .whatsapp-btn-pulse {
+    border-radius: 50%;
+  }
+}
+
+
 
 
