@@ -142,16 +142,19 @@
   // 5. SLIDE-OUT DIRECTORY DRAWER & COMPLETE ARCHIVE
   // --------------------------------------------------------------------------
   const directoryData = [
-    { title: 'Renalytica Enterprise Platform', category: 'Full-Stack & BI', year: '2026', link: 'case-studies/renalytica.html', ext: 'https://renalytica.com' },
-    { title: 'AXiA Active Storefront & Paid Ads', category: 'E-Commerce & Ads', year: '2024', link: 'case-studies/axia-active.html', ext: 'https://axiaactive.com' },
+    { title: 'Disciplined Services &amp; Web Development Packages', category: 'Services &amp; Offerings', year: '2026', link: 'services.html', ext: null },
+    { title: 'Full-Cycle Web Architecture &amp; E-Commerce Retainers', category: 'Services &amp; Engineering', year: '2026', link: 'services.html#packages', ext: null },
+    { title: 'High-Stakes Admissions &amp; Visa Coaching Blueprint', category: 'Services &amp; Advisory', year: '2026', link: 'services.html#admissions', ext: null },
+    { title: 'Renalytica Enterprise Platform', category: 'Full-Stack &amp; BI', year: '2026', link: 'case-studies/renalytica.html', ext: 'https://renalytica.com' },
+    { title: 'AXiA Active Storefront &amp; Paid Ads', category: 'E-Commerce &amp; Ads', year: '2024', link: 'case-studies/axia-active.html', ext: 'https://axiaactive.com' },
     { title: 'GoFar International Academy Portal', category: 'Web Architecture', year: '2023', link: 'case-studies/gofar-academy.html', ext: 'https://www.gofarinternationalacademy.com/' },
-    { title: 'My WORLD of Literature (TWOL)', category: 'Journal & Criticism', year: '2016–2019', link: 'case-studies/twol-literature.html', ext: 'https://twol101.wordpress.com/' },
+    { title: 'My WORLD of Literature (TWOL)', category: 'Journal &amp; Criticism', year: '2016–2019', link: 'case-studies/twol-literature.html', ext: 'https://twol101.wordpress.com/' },
     { title: 'SimFitness Personal Planner', category: 'Web App', year: '2024', link: 'case-studies/simfitness.html', ext: 'https://simfitness-personal-fitness-planner.netlify.app/' },
     { title: 'IELTS Speaking Assessment Tool', category: 'Assessment System', year: '2024', link: 'case-studies/otec-ielts.html', ext: 'https://ieltsspeakingassessmentbyotec.netlify.app/' },
     { title: '9jaProQuiz Interactive Learning', category: 'EdTech App', year: '2024', link: 'case-studies/9japroquiz.html', ext: 'https://9japroquiz.netlify.app/' },
-    { title: 'WC Social Media Calendar & Hub', category: 'Content Systems', year: '2024', link: 'case-studies/wcsocial-calendar.html', ext: 'https://wcsocialmediacalendar.netlify.app/' },
+    { title: 'WC Social Media Calendar &amp; Hub', category: 'Content Systems', year: '2024', link: 'case-studies/wcsocial-calendar.html', ext: 'https://wcsocialmediacalendar.netlify.app/' },
     { title: 'HealthBay Wellness Platform', category: 'Healthcare Web', year: '2024', link: 'case-studies/healthbay.html', ext: 'https://healthbayv3.netlify.app/' },
-    { title: 'Tim Milehin Creative Portfolio', category: 'Web Dev & Portfolio', year: '2024', link: 'case-studies/timmilehin.html', ext: 'https://timmilehinportfolio.netlify.app/#about' },
+    { title: 'Tim Milehin Creative Portfolio', category: 'Web Dev &amp; Portfolio', year: '2024', link: 'case-studies/timmilehin.html', ext: 'https://timmilehinportfolio.netlify.app/#about' },
     { title: 'Presidential Committee Report (PCNI)', category: 'Policy Document (145p)', year: '2016', link: 'works.html#pcni', ext: null },
     { title: '“The Far Country” Theatrical Review', category: 'Arts Criticism', year: '2017', link: 'https://twol101.wordpress.com/2017/05/21/the-far-country-review-nearer-than-you-think/', ext: 'https://twol101.wordpress.com/2017/05/21/the-far-country-review-nearer-than-you-think/' },
     { title: 'Blog &amp; Essays — Critical Journal', category: 'Journal &amp; Essays', year: '2026', link: 'blog.html', ext: null },
@@ -159,8 +162,7 @@
     { title: 'Terms of Usage &amp; Engagement', category: 'Governance &amp; Policy', year: '2026', link: 'terms.html', ext: null },
     { title: 'Skills &amp; Craft Matrix (10-Yr Overview)', category: 'Core Competency', year: '2026', link: 'index.html#skills', ext: null },
     { title: 'Official Master CV Repository (PDF)', category: 'Credentials &amp; Resume', year: '2026', link: 'Resume and CV/Alfred_Williams_Master_CV.pdf', ext: null },
-    { title: 'Lagos SME Field Research (551 SMEs)', category: 'Market Research', year: '2021', link: 'about.html#sme-research', ext: null },
-    { title: 'US Embassy F-1 Consular Blueprint', category: 'Persuasive Strategy', year: '2018', link: 'services.html#admissions', ext: null }
+    { title: 'Lagos SME Field Research (551 SMEs)', category: 'Market Research', year: '2021', link: 'about.html#sme-research', ext: null }
   ];
 
   function renderDirectoryList(filter = 'all') {
@@ -171,12 +173,14 @@
     const rootPrefix = isSubfolder ? '../' : '';
 
     let filtered = directoryData;
-    if (filter === 'web') {
-      filtered = directoryData.filter(d => d.category.includes('Web') || d.category.includes('Full-Stack') || d.category.includes('E-Commerce') || d.category.includes('App'));
+    if (filter === 'services') {
+      filtered = directoryData.filter(d => d.category.includes('Services') || d.category.includes('Packages') || d.category.includes('Advisory') || (d.link && d.link.includes('services.html')));
+    } else if (filter === 'web') {
+      filtered = directoryData.filter(d => d.category.includes('Web') || d.category.includes('Full-Stack') || d.category.includes('E-Commerce') || d.category.includes('App') || d.category.includes('Engineering'));
     } else if (filter === 'editorial') {
-      filtered = directoryData.filter(d => d.category.includes('Journal') || d.category.includes('Essay') || d.category.includes('Criticism') || d.category.includes('Policy') || d.category.includes('Research'));
+      filtered = directoryData.filter(d => d.category.includes('Journal') || d.category.includes('Essay') || d.category.includes('Criticism') || d.category.includes('Policy') || d.category.includes('Research') || d.category.includes('Governance'));
     } else if (filter === 'tools') {
-      filtered = directoryData.filter(d => d.category.includes('Tool') || d.category.includes('System') || d.category.includes('App') || d.category.includes('Calendar'));
+      filtered = directoryData.filter(d => d.category.includes('Tool') || d.category.includes('System') || d.category.includes('App') || d.category.includes('Calendar') || d.category.includes('Assessment'));
     }
 
     listContainer.innerHTML = filtered.map((item, idx) => {
@@ -206,20 +210,43 @@
 
   function initDirectoryDrawer() {
     let drawer = document.querySelector('.directory-drawer');
+    const isSubfolder = window.location.pathname.includes('/case-studies/') || window.location.href.includes('/case-studies/');
+    const rootPrefix = isSubfolder ? '../' : '';
+
     if (!drawer) {
       drawer = document.createElement('div');
       drawer.className = 'directory-drawer';
       drawer.innerHTML = `
         <div class="drawer-backdrop"></div>
-        <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Project Directory">
+        <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Project Directory &amp; Site Navigation">
           <div class="drawer-header">
-            <div class="drawer-title">Project Directory &amp; Archive</div>
+            <div>
+              <div class="drawer-title">Project Directory &amp; Archive</div>
+              <div style="font-family: var(--font-mono); font-size: 0.70rem; color: var(--ink-muted); margin-top: 4px; letter-spacing: 0.04em;">COMPLETE ATELIER MONOGRAPH &amp; SITE INDEX</div>
+            </div>
             <button class="drawer-close-btn" aria-label="Close directory">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
             </button>
           </div>
+
+          <!-- Primary Navigation Index (Full Multi-Page Directory with Services) -->
+          <div class="drawer-quick-nav">
+            <span class="drawer-quick-label">PAGES:</span>
+            <div class="drawer-quick-links">
+              <a href="${rootPrefix}index.html" class="drawer-quick-link">Home</a>
+              <a href="${rootPrefix}works.html" class="drawer-quick-link">Works</a>
+              <a href="${rootPrefix}index.html#skills" class="drawer-quick-link">Skills</a>
+              <a href="${rootPrefix}brands.html" class="drawer-quick-link">Brands</a>
+              <a href="${rootPrefix}about.html" class="drawer-quick-link">About</a>
+              <a href="${rootPrefix}services.html" class="drawer-quick-link drawer-quick-link-highlight">Services</a>
+              <a href="${rootPrefix}blog.html" class="drawer-quick-link">Blog</a>
+              <a href="${rootPrefix}contact.html" class="drawer-quick-link">Contact</a>
+            </div>
+          </div>
+
           <div class="drawer-tabs">
-            <button class="drawer-tab active" data-filter="all">All (15)</button>
+            <button class="drawer-tab active" data-filter="all">All (${directoryData.length})</button>
+            <button class="drawer-tab" data-filter="services">Services &amp; Packages</button>
             <button class="drawer-tab" data-filter="web">Web &amp; Apps</button>
             <button class="drawer-tab" data-filter="editorial">Editorial &amp; Research</button>
             <button class="drawer-tab" data-filter="tools">Interactive Tools</button>
@@ -731,7 +758,37 @@
   }
 
   // --------------------------------------------------------------------------
-  // 14. FLOATING BACK TO TOP ARROW BUTTON & SCROLLED HEADER
+  // 14. STICKY TRANSPARENT HEADER ON SCROLL
+  // --------------------------------------------------------------------------
+  function initStickyHeader() {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+
+    let ticking = false;
+    function updateHeader() {
+      const scrollY = window.scrollY || document.documentElement.scrollTop || window.pageYOffset || 0;
+      // Immediately become transparent as soon as user begins scrolling down (scrollY > 15)
+      if (scrollY > 15) {
+        header.classList.add('is-scrolled');
+      } else {
+        header.classList.remove('is-scrolled');
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Initial check on load in case page opens scrolled or with anchor hash
+    updateHeader();
+  }
+
+  // --------------------------------------------------------------------------
+  // 15. FLOATING BACK TO TOP ARROW BUTTON
   // --------------------------------------------------------------------------
   function initBackToTop() {
     let btn = document.getElementById('backToTopBtn');
@@ -757,8 +814,6 @@
       });
     });
 
-    const header = document.querySelector('.site-header');
-
     let scrollTicking = false;
     function handleScroll() {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
@@ -766,14 +821,6 @@
         btn.classList.add('is-visible');
       } else {
         btn.classList.remove('is-visible');
-      }
-
-      if (header) {
-        if (scrollY > 40) {
-          header.classList.add('is-scrolled');
-        } else {
-          header.classList.remove('is-scrolled');
-        }
       }
       scrollTicking = false;
     }
@@ -797,6 +844,7 @@
       btn.addEventListener('click', toggleTheme);
     });
 
+    initStickyHeader();
     initCursor();
     initScrollProgress();
     initDirectoryDrawer();
