@@ -1,208 +1,199 @@
-# Alfred E. Williams — Design System & Engineering Manifesto (`DESIGN.md`)
+# Alfred E. Williams — Executive Portfolio & Studio Manifesto (`DESIGN.md` v2.0)
 
-> **Role & Discipline:** Writer · Editor · Creative Technologist / Web Developer  
-> **Source of Truth for Portfolio Redesign & Implementation**  
-> **Synthesized from:** Mijo Bello (Architectural Constructivism & Swiss Hairline Grid) + Houmahani Kane / Renault Group (Spatial 3D Storytelling, Editorial Depth & Interactive Directory)
-
----
-
-## 1. Visual Theme & Design Philosophy
-
-### The Core Concept: *"Architectural Tactility Meets Spatial Storytelling"*
-Alfred's discipline bridges two worlds: the nuanced, deliberate precision of editorial writing and the dynamic, immersive architecture of creative web development. 
-
-The design rejects generic templates, cookie-cutter "card grids", and soulless dark UI. Instead, it unites:
-1. **The Architectural Rigor of Mijo Bello:** Visible 12-column hairline gridlines, exposed structural borders, utilitarian metadata tags, live multi-timezone world time ticker, and kinetic typography.
-2. **The Spatial Elegance of Houmahani Kane:** Three.js / WebGL depth-reactive canvases, case-study interactive sandboxes (view-mode toggles, shader variants), full-bleed video loops, definition-list metadata tables, a dedicated slide-out "Directory" index with hover thumbnail reveal, and subtle magnetic cursor physics.
-
-The overall atmosphere feels like an **ultra-modern editorial atelier crossed with an interactive creative laboratory**: tactile, confident, authoritative, yet fluidly alive.
+> **Identity & Positioning:** Principal Consultant · Creative Technologist · Corporate AI Trainer · Editorial Director  
+> **Source of Truth for Portfolio Architecture & Implementation**  
+> **Synthesized from:** Parallax Fashion Atelier (`parallex-fashion.mp4` — Editorial Atmosphere, Orbit Geometry & Spatial Depth) + Jack Portfolio (`jackportofplio.mp4` — Monumental Typography, Contrast Cuts, Numbered Service Rows & Interactive Reels)
 
 ---
 
-## 2. Color System & Material Palette
+## 1. Executive Positioning & Consultant Re-Framing
 
-The palette combines organic, literary warmth with high-contrast, modernist structure. It supports seamless light and dark modes with deliberate tonal character.
+### The Core Paradigm Shift: From "Job Seeker" to "Principal Consultant & Studio Director"
+The portfolio completely eliminates any language, visual cues, or interaction patterns reminiscent of salaried employment seeking (e.g., CV resume downloads, "hire me as your employee", standard applicant skill pills). 
 
-### Light Mode (Default: Editorial Studio White)
-* **Canvas Background (`--bg-page`):** `#FFFFFF` — Pure crisp white canvas with high-contrast, modern editorial clarity.
-* **Canvas Inset / Card Surface (`--bg-surface`):** `#F8F9FA` — Pristine subtle surface for modular containers and cards.
-* **Elevated Surface (`--bg-surface-elevated`):** `#EEF0F2` — Elevated containers, hover planes, and form fields.
-* **Structural Line & Grid (`--line-grid`):** `rgba(13, 17, 16, 0.08)` — Crisp, razor-thin hairline grid line.
-* **Primary Ink (`--ink-primary`):** `#0D1110` — Pure editorial ink-black. Deep, authoritative, razor-sharp on white.
-* **Secondary Ink (`--ink-muted`):** `#4A5450` — Editorial charcoal-graphite body & secondary narrative.
-* **Faint Ink / Monospace Meta (`--ink-faint`):** `#78827E` — Tertiary archival metadata, tags, and column indices.
-* **Signature Accent (`--accent-ember`):** `#C86432` / `#D4883B` — Warm terracotta-ember / raw bronze for focal moments, cursor accents, and hover active states.
+Alfred is positioned as an **independent, high-ticket multidisciplinary consultant and enterprise studio director** who delivers end-to-end creative and technical transformations for enterprises, SMEs, executive leaders, and academic scholars across 5 core practices:
+1. **Corporate & SME AI Acceleration / Team Training Workshops** (Fashion, Fitness, Interior Design, Hospitality, Media)
+2. **Full-Cycle Web Architecture & Digital Systems** (Sprint MVPs, High-Converting Storefronts, Enterprise Data Suites)
+3. **Standardized Test Prep & Global Academic Admissions Advisory** (IELTS 8.5+, TOEFL iBT, GRE, OET Healthcare, US F-1 Visa Prep)
+4. **Academic Research Writing, Peer Review & Editorial Advisory** (Peer-Reviewed Papers, Theses, Macroeconomic Dossiers)
+5. **Creative Direction, Motion Design & Video Production** (Brand Identity, Lottie/GSAP Web Motion, High-Retention Video Editing)
 
-### Dark Mode (Ink-Black Gallery Chamber)
-* **Canvas Background (`--bg-page`):** `#090C0B` — Deep ink-black gallery abyss / volcanic mineral slate.
-* **Canvas Inset / Card Surface (`--bg-surface`):** `#111614` — Deep obsidian chamber panel.
-* **Elevated Surface (`--bg-surface-elevated`):** `#171E1C` — Elevated dark chamber surface.
-* **Structural Line & Grid (`--line-grid`):** `rgba(255, 255, 255, 0.08)` — Subtle white architectural hairline.
-* **Primary Ink (`--ink-primary`):** `#FFFFFF` — Pure white type on ink-black.
-* **Secondary Ink (`--ink-muted`):** `#9EAAA5` — Soft white narrative copy.
-* **Signature Accent (`--accent-ember`):** `#E28D56` / `#E8A858` — Radiant bronze-ember.
+---
 
-```css
-:root {
-  --font-display: 'Space Grotesk', -apple-system, sans-serif;
-  --font-editorial: 'Fraunces', serif;
-  --font-mono: 'DM Mono', monospace;
-  --font-body: 'Manrope', sans-serif;
+## 2. Visual Theme & Aesthetic Fusion
 
-  --ease-kinetic: cubic-bezier(0.65, 0, 0.35, 1);
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --duration-roll: 450ms;
-}
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           THE DUAL-ENGINE AESTHETIC                         │
+├──────────────────────────────────────┬──────────────────────────────────────┤
+│ PARALLAX FASHION (Mood & Outlook)    │ JACK PORTFOLIO (Transitions & Flow)  │
+├──────────────────────────────────────┼──────────────────────────────────────┤
+│ • Deep slate/mineral luxury palette  │ • Monumental hero display type       │
+│ • Four-corner editorial viewfinder   │ • Inverted black-to-white section    │
+│   coordinates & monograph text       │   cut for Services                   │
+│ • Concentric vector orbit lines with │ • Numbered row list: 01, 02, 03...   │
+│   depth behind subject               │   with interactive hover states      │
+│ • Floating atmospheric micro-dust    │ • Horizontal sliding project reel    │
+│ • High-fashion atelier typography    │ • Layered accordion project reveals  │
+│ • Cinematic spatial depth            │ • Sleek pill-shaped action triggers  │
+└──────────────────────────────────────┴──────────────────────────────────────┘
 ```
 
+### The Visual Language: *"High-Fashion Editorial Precision meets Kinetic Digital Mastery"*
+- **Eradicate "AI Generated / Claude" tropes:** No generic card boxes with centered icons, no soulless gradient blobs, no cookie-cutter layouts.
+- **Viewfinder Precision (Parallax Fashion):** Architectural corner coordinates (`06°31' N, 03°23' E // LAGOS`), monograph labels, and status beacons framing the viewport like a high-end editorial publication or medium-format viewfinder.
+- **Concentric Vector Orbit Geometry:** Dynamic concentric elliptical arcs radiating from behind Alfred's portrait, rotating subtly on mouse movement to create palpable spatial depth.
+- **Monumental Layered Typography (Jack Portfolio):** Ultra-bold display font (`Space Grotesk`) placed with layered depth behind the portrait, establishing instant gravitas and creative confidence.
+- **High-Contrast Section Cuts:** Seamless shifts from the atmospheric dark mineral canvas of the hero into crisp stark-white or high-contrast inverted cards for commercial service rows and pricing matrices.
+
 ---
 
-## 3. Typography & Hierarchy
+## 3. Color System & Material Palette
 
-A dual-engine typographic personality that honors both **wordsmithing (literary editorial)** and **computational engineering (structural brutalism)**:
+The palette fuses the sophisticated slate-mineral depth of high-end fashion portfolios with warm ember and antique bronze accents.
+
+### Dark Theme (Default: Atelier Slate Chamber)
+* **Canvas Abyss (`--bg-page`):** `#0B1115` — Deep mineral obsidian with subtle cool undertones.
+* **Surface Slate (`--bg-surface`):** `#121C22` — Muted architectural slate container surface.
+* **Elevated Chamber (`--bg-surface-elevated`):** `#18252E` — Elevated interactive planes, cards, and modal sheets.
+* **Inverted Contrast Section (`--bg-inverted`):** `#F8F9FA` — Crisp stark white transition card for Jack-style service blocks.
+* **Inverted Contrast Ink (`--ink-inverted`):** `#0B1115` — Deep obsidian text inside inverted sections.
+* **Hairline Gridlines (`--line-grid`):** `rgba(255, 255, 255, 0.07)` — Ultra-fine structural guide.
+* **Primary Ink (`--ink-primary`):** `#F4F6F8` — Crisp editorial white typography.
+* **Secondary Ink (`--ink-muted`):** `#8C9DA6` — Balanced mineral body copy.
+* **Signature Accent Ember (`--accent-ember`):** `#D4713B` — Warm terracotta-ember for focal buttons and key indicators.
+* **Luxury Accent Bronze (`--accent-bronze`):** `#C9A86A` — Antique gold for editorial accents and highlights.
+
+### Light Theme (Editorial Studio Paper)
+* **Canvas Canvas (`--bg-page`):** `#FAFBFC` — Crisp studio paper.
+* **Surface Panel (`--bg-surface`):** `#F0F3F5` — Subtle mineral grey container surface.
+* **Elevated Surface (`--bg-surface-elevated`):** `#E4E8EC` — Elevated cards and hover planes.
+* **Hairline Gridlines (`--line-grid`):** `rgba(11, 17, 21, 0.08)` — Crisp architectural hairline.
+* **Primary Ink (`--ink-primary`):** `#0B1115` — Authoritative editorial ink-black.
+* **Secondary Ink (`--ink-muted`):** `#475660` — Editorial charcoal body copy.
+* **Signature Accent Ember (`--accent-ember`):** `#C86432` — Warm terracotta-ember.
+
+---
+
+## 4. Typographic Blueprint
 
 | Role | Font Family | Weight & Style | Tracking & Leading | Purpose |
 | :--- | :--- | :--- | :--- | :--- |
-| **Hero Monument** | `Space Grotesk` | 700 Bold | `letter-spacing: -0.06em` to `-0.08em`, `line-height: 0.82` | Giant hero statement (`clamp(3.5rem, 16vw, 13rem)`). |
-| **Editorial Emphasis** | `Fraunces` | 500-600 Italic (Soft opsz) | `letter-spacing: -0.02em`, `line-height: 1.05` | Editorial titles, literary accentuation, philosophical quotes. |
-| **Section Labels / Eyebrows** | `DM Mono` | 500 Medium Uppercase | `letter-spacing: 0.18em`, `font-size: 0.6875rem` | Section chapter stamps (`01 / FEATURED WORK`), colophons, dates. |
-| **Body Narrative** | `Manrope` / `Space Grotesk` | 400 Regular / 500 Medium | `letter-spacing: -0.01em`, `line-height: 1.6` | Project descriptions, case narratives, biography paragraphs. |
-| **Interactive Action / Roll** | `Space Grotesk` | 600 SemiBold Uppercase | `letter-spacing: 0.08em`, `font-size: 0.85rem` | Buttons, navigation anchors, external link indicators. |
+| **Hero Monument** | `Space Grotesk` | 800 ExtraBold | `letter-spacing: -0.06em`, `line-height: 0.84` | Giant hero statement (`clamp(3.5rem, 14vw, 11rem)`) behind subject. |
+| **Editorial Emphasis** | `Fraunces` | 500-600 Italic | `letter-spacing: -0.02em`, `line-height: 1.1` | Editorial headers, philosophy quotes, prestige callouts. |
+| **Viewfinder Meta** | `DM Mono` | 500 Medium Uppercase | `letter-spacing: 0.16em`, `font-size: 0.6875rem` | Corner coordinates, chapter codes (`01 / PRACTICE`), colophons. |
+| **Body Narrative** | `Manrope` | 400 Regular / 500 Medium | `letter-spacing: -0.01em`, `line-height: 1.65` | Case studies, methodology briefs, package descriptions. |
+| **Consultation Action** | `Space Grotesk` | 700 Bold Uppercase | `letter-spacing: 0.08em`, `font-size: 0.82rem` | Pill buttons, booking triggers, package selectors. |
 
 ---
 
-## 4. Grid System & Spatial Layout
+## 5. Architectural Component Blueprints
 
-### The 12-Column Architectural Blueprint
-* **Global Grid Structure:** Visible 12-column overlay on desktop (`md:grid-cols-12`) and 4-column overlay on mobile (`grid-cols-4`).
-* **Hairline Gridlines:** Fixed full-screen hairline borders rendered as `<div class="fixed inset-0 pointer-events-none -z-1 grid grid-cols-4 md:grid-cols-12">` with `border-l border-[var(--line-grid)]`.
-* **Container Bounds:** Flush grid-aligned cells. Every section boundary uses explicit `border-b` and `border-t` with 1px precision. No random floating bubbles; everything snaps to the mathematical grid.
-* **Padding Hierarchy:**
-  - Micro-cells: `p-3 md:p-4` (8px / 16px) for technical metadata and clocks.
-  - Section spacing: `pt-16 md:pt-36` with border dividers instead of huge empty arbitrary margins.
+### 5.1. The Editorial Hero Stage (Parallax Fashion + Jack Hybrid)
+1. **Four-Corner Viewfinder Micro-Grid:**
+   - **Top-Left:** `06°31' N, 03°23' E // LAGOS ATELIER`
+   - **Top-Right:** `PRINCIPAL CONSULTANT // 2026 ARCHIVE`
+   - **Bottom-Left:** `AI ACCELERATION · WEB SYSTEMS · ADVISORY · CREATIVE`
+   - **Bottom-Right:** `AVAILABLE FOR SELECT CORPORATE COMMISSIONS`
+2. **Concentric Vector Orbit Geometry:**
+   - Radiating vector bezier arcs rendered via `<svg class="hero-orbit-arcs">` behind Alfred's portrait.
+   - Responds to mouse coordinate parallax (tilt & scale shifts).
+3. **Layered Monumental Typography:**
+   - `ALFRED E. WILLIAMS` in monumental bold display type running across the viewport width behind the portrait.
+4. **Portrait Integration:**
+   - Crisp, stylized portrait centered or offset with depth, breaking the boundary of the background text and vector arcs.
+   - Minimalist floating status badge: `🟢 Active Practice · Accepting Q4/Q1 Engagements`.
+5. **Call to Action Suite:**
+   - Primary Pill: `Book Strategic Consultation →` (Glow hover).
+   - Secondary Pill: `Explore Client Practices ↓`.
 
----
+### 5.2. The Inverted Services Stage (Jack Portfolio Style)
+A high-contrast visual shift into a stark, clean container featuring oversized numbered rows:
+- `01 / ENTERPRISE AI ACCELERATION & TEAM WORKSHOPS`
+- `02 / FULL-CYCLE WEB ARCHITECTURE & DIGITAL SYSTEMS`
+- `03 / STANDARDIZED TEST PREP & ADMISSIONS ADVISORY`
+- `04 / ACADEMIC RESEARCH WRITING & EDITORIAL CONSULTING`
+- `05 / CREATIVE DIRECTION, MOTION & VIDEO PRODUCTION`
 
-## 5. Signature Component Patterns
+**Interactive Behavior on Hover:**
+- Row expands vertically, revealing:
+  - Elevator scope & industry fit.
+  - Interactive pill tags for sub-capabilities.
+  - "View Packages & Pricing →" direct trigger.
+  - Micro thumbnail / looping preview.
 
-### 5.1. Top Header & Precision Utility Bar
-Directly aligned with the 12-column grid:
-1. **Cols 1–3 (Brandmark):** `Alfred E. Williams` with tight tracking (`tracking-[-0.05em]`) and role pill.
-2. **Cols 4–9 (Live World Clock & Status Marquee):** Infinite ticker displaying synchronized real-time clocks:
-   - `Lagos WAT`, `London GMT`, `New York EST`, `Tokyo JST`, `San Francisco PST`.
-   - Hover pauses ticker. Tabular monospace numbers with live ticking seconds.
-   - Status beacon: Green pulsing dot + `Available for select Q3/Q4 commissions`.
-3. **Cols 10–11 (Soundscape & Theme Toggle):**
-   - **Sound Toggle:** Ambient generative audio / UI feedback toggle with 3 animated EQ bars (`.sound-toggle__bar`).
-   - **Theme Switcher:** Dual-state kinetic flip button (`Light` / `Dark`) with geometric sliding indicator.
-4. **Col 12 (Directory Drawer / Menu Trigger):**
-   - 64x64px square grid-locked trigger button with geometric icon that morphs to `X` on open.
+### 5.3. Transparent Commercial Packages & Pricing Matrix (All 5 Practices)
 
-### 5.2. Hero Presentation: The Kinetic Split-Cell
-* **Col 1–7:** Monumental typography headline with staggered character entrance + sub-headline in editorial serif italic.
-* **Col 8–12:** 4:3 or 1:1 media card featuring an interactive WebGL interactive shader canvas (Three.js fluid/geometry study) or looping high-frame-rate film still, framed by hairline borders.
-* **Bottom Cell Bar:** Horizontal discipline list: `[Writer]` · `[Editor]` · `[Web Developer]` · `[Creative Technologist]`.
+#### Practice 01: Corporate & SME AI Acceleration Workshops
+- **Executive 1-Day Masterclass (Leadership & Strategy)**:
+  - ₦350,000 / $450 · Full-day intensive for executive teams & founders.
+  - GenAI tooling stack audit, process mapping, security & IP boundaries, customized AI adoption blueprint.
+- **Corporate Team 2-Week Sprint (Operational Acceleration)**:
+  - ₦950,000 / $1,200 · Hands-on sprint for creative, marketing, and engineering departments.
+  - Custom workflows for: AI Video Creation, AI Advertising & Campaigns, AI Web Dev/Design, AI Graphic/Motion Design, AI Filmmaking, AI Photoshoots/Virtual Models, AI Writing/Research.
+  - Tailored to industry: Fashion, Fitness, Interior Design, Hospitality, Media.
+- **Enterprise AI Transformation Retainer**:
+  - ₦1,750,000 / $2,200/mo · Continuous advisory, custom prompt/tool engineering, monthly team reskilling, and process optimization.
 
-### 5.3. Work Showcase: The Dual Filmstrip + Bento Stage (Mijo Bello Style)
-* **Left Filmstrip Navigator (Width: 140px / 2.5 cols):**
-  - Vertical stack of thumbnail buttons representing each project.
-  - Inactive thumbnails set to `opacity: 0.35; grayscale(80%)`. Active thumbnail pops to `opacity: 1; grayscale(0%)` with indicator border.
-* **Active Project Stage (Right 9.5 cols):**
-  - **Header Bar:** Project title in monumental type, client/publication, year, and taxonomy tags (`Branding`, `Editorial Web`, `Three.js`, `Creative Direction`).
-  - **Media Viewport:** Aspect-ratio-locked viewport with auto-looping teaser video or WebGL interactive frame.
-  - **Kinetic Action:** "Explore Case Study" rolling button (`group-hover/roll`) + arrow navigation triggers (`←`, `→`).
-* **Marquee Transition Ribbon:** Continuous infinite marquee border: `VIEW ALL WORKS / ARCHIVE / EXPERIMENTS / VIEW ALL WORKS / ...`.
+#### Practice 02: Web Development & Systems Architecture
+- **Sprint MVP / Bespoke Showcase**: ₦450,000 / $550 (7–10 days).
+- **Commercial Storefront & Web App**: ₦950,000 / $1,200 (2–3 weeks, Most Popular).
+- **Enterprise Intelligence & Data Suite**: ₦1,850,000 / $2,400 (4–5 weeks).
 
-### 5.4. Case Study Architecture: The Houmahani Depth Blueprint
-For individual project deep-dives (e.g., Renault Group equivalent case studies):
-1. **Hero Header:**
-   - Huge project title + category label.
-   - Concept statement (short 2-sentence elevator thesis).
-2. **Interactive Showcase Sandbox:**
-   - Real-time 3D interactive model or canvas view (drag to rotate, wheel to zoom).
-   - **View Variant Toggles:** Pill buttons with magnetic hover (`data-magnet="0.22"`) allowing viewers to switch perspectives:
-     - `Default Experience` · `Wireframe Topology` · `Shaders & Depth` · `Narrative Script`.
-3. **Specification Table (`<dl>` Definition Grid):**
-   - 4-column structured specification:
-     - `Client / Publication`
-     - `Year & Timeline`
-     - `Role & Services` (e.g., Lead Developer, Copywriter, Editorial Director)
-     - `Tech Stack & Tools` (e.g., Three.js, GSAP, WebGL, Next.js, DaVinci Resolve)
-4. **Narrative & Challenge Blocks:**
-   - Split-column layout: Left column = Problem Statement & Strategy; Right column = Technical Implementation & Execution.
-   - Large full-bleed looping video or high-resolution zoomable gallery.
-5. **Interactive Lightbox:**
-   - Clicking media triggers an accessible modal lightbox (`role="dialog"`, `aria-modal="true"`) with video playback controls and detailed technical annotations.
-6. **Results & Industry Recognition:**
-   - Metrics, publication features, citations, or client testimonials.
+#### Practice 03: Standardized Test Prep & Global Academic Coaching
+- **Diagnostic Evaluation & Strategy Clinic**: ₦85,000 / $110 (Comprehensive band/score diagnostic, custom roadmap, 1-on-1 strategy session).
+- **IELTS 8.5+ / TOEFL / OET 4-Week Accelerator**: ₦50,000 each exam per month (Intensive 1-on-1 coaching, 12 live writing & speaking mock clinics, proprietary scoring templates).
+- **GRE Quantitative & Verbal Mastery + US Visa Prep**: ₦80,000 per month for GRE Verbal and GRE Quantitative respectively--payment is made for added services (Full test prep cycle + Statement of Purpose refinement + US Embassy F-1 Consular interview Q&A simulation).
 
-### 5.5. The Slide-Out "Directory" Drawer (The Full Archive)
-* A full-screen or 70vw side-drawer triggered from the header "Directory" button.
-* Contains organized tabs:
-  - `01 / Featured Work`
-  - `02 / Editorial & Writing`
-  - `03 / Code Experiments & Creative Dev`
-  - `04 / Recognition & Press`
-* **Table Row Hover Reveal:** Hovering over any table row in the directory dynamically projects a floating thumbnail/video preview (`.site-directory__thumbnail-reveal`) alongside cursor movement, giving a rapid, responsive preview of 20+ projects in seconds.
+#### Practice 04: Academic Research Writing & Editorial Consulting
+- **Peer-Reviewed Paper & Journal Preparation**: From ₦180,000 / $230 per manuscript (Methodology articulation, statistical narrative, citation compliance, journal formatting).
+- **Thesis & Dissertation Advisory**: From ₦320,000 / $400 (Comprehensive structure critique, literature review synthesis, substantive editing).
+- **Executive Whitepaper & Macroeconomic Dossier**: From ₦650,000 / $850 (Original institutional research, SME data analysis, publish-ready executive report).
 
-### 5.6. Services Accordion: Expand-on-Hover Grid Cells
-* Numbered rows (`01`, `02`, `03`):
-  - `01 — Editorial & Long-Form Writing`
-  - `02 — Creative Web Development & 3D WebGL`
-  - `03 — Brand Storytelling & Content Strategy`
-* On desktop hover, the row expands smoothly from `min-h-[220px]` to `min-h-[340px]` (`transition-[min-height] 600ms cubic-bezier(0.16, 1, 0.3, 1)`), revealing an embedded looping video/visual asset and expanded sub-capabilities.
+#### Practice 05: Creative Direction, Motion & Video Production
+- **Short-Form Content & Video Cutdown Sprint**: ₦180,000 / $230 (Pack of 8 high-retention Reels/TikToks with custom dynamic captions, sound design, and color grading).
+- **Full-Cycle Documentary / Podcast Video Production**: ₦420,000 / $550 (Multi-cam editing, narrative pacing, custom motion title graphics, audio master).
+- **Monthly Creative Director & Video Retainer**: ₦850,000 / $1,100/mo (Ongoing weekly video cutdowns, bespoke brand motion assets, campaign graphics).
 
-### 5.7. Footer & Contact Terminal
-* **Colophon & Elsewhere Section:** Clean grid with live links to GitHub, LinkedIn, Substack/Medium, X/Twitter, and Instagram.
-* **One-Click Copy Email:** High-affordance button with instant tooltip feedback: `alfred@example.com` (Click to copy → "Copied to clipboard!").
-* **Gigantic Monumental Footnote Wordmark:** Giant masked typography spanning 100% width: `WILLIAMS.` or `ALFRED.` sitting flush at the baseline of the viewport.
+#Note that all prices are open for negotiation and custum pricing per project needs is welcomed.
+
+### 5.4. Interactive Horizontal Project Showcase Reel (Jack Portfolio Style)
+- Replaces static vertical card lists with a kinetic horizontal dragging/sliding track.
+- Each slide features high-aspect ratio imagery/video loop, client tag, year, technology pills, and live case study trigger.
 
 ---
 
-## 6. Motion Design & Micro-Interactions
+## 6. Motion Design & Interaction Physics
 
-| Interaction | Trigger | Timing / Easing | Visual Behavior |
-| :--- | :--- | :--- | :--- |
-| **Kinetic Text Roll** | Link/Button hover | `450ms cubic-bezier(0.65, 0, 0.35, 1)` | Two identical spans stacked: active span moves up `translate-y-full`, duplicate span rolls in from `-translate-y-full`. |
-| **Magnetic Pull** | Pointer within 40px of button | `250ms cubic-bezier(0.25, 1, 0.5, 1)` | Button subtly shifts position toward cursor (`data-magnet="0.22"`). |
-| **Custom Cursor** | Mouse movement | Smooth Lerp (`0.15`) | Small sharp center dot + 34px geometric hairline ring that expands to 56px over interactive elements. |
-| **3D Room Intro Preloader** | Page initial load | `1400ms` total sequence | Wireframe isometric 3D room with ticking counter (`000` to `100`), opening like vertical blinds via `clip-path: inset(0% 0% 0% 0%)`. |
-| **Smooth Scrolling** | Wheel / Touch inertia | Lenis (`lerp: 0.1`, `duration: 1.2`) | Butter-smooth inertial scrolling synchronizing HTML and Three.js background canvas. |
-| **Marquee Banners** | Continuous animation | `25s linear infinite` | Pauses on mouse enter (`group-hover:[animation-play-state:paused]`). |
-
----
-
-## 7. Sensory & Ambient Layer (Audio)
-
-* **Opt-in Ambient Soundscape:** Subtle Web Audio API generative synthesizer drone or mechanical keyboard click feedback on interactive buttons.
-* **Mute by Default:** Respects user preferences. Visible EQ icon in header shows audio state. State saved in `localStorage`.
+| Trigger | Motion / Easing | Visual Feedback |
+| :--- | :--- | :--- |
+| **Orbit Lines Hover** | GSAP Smooth Lerp (`0.08`) | Orbit vector ellipses shift tilt and scale with mouse coordinates. |
+| **Monumental Type Parallax** | ScrollTrigger scrub (`0.5`) | Huge display typography translates horizontally on scroll behind subject. |
+| **Service Row Expand** | `400ms cubic-bezier(0.16, 1, 0.3, 1)` | Row height expands smoothly revealing tags, elevator brief, and action pill. |
+| **Inverted Section Reveal** | ScrollTrigger pin & unclip | Deep dark canvas smoothly transitions into crisp white service card block. |
+| **Pill Button Hover** | `250ms ease-out` | Glowing ember background expand with subtle scale (`1.03`). |
 
 ---
 
-## 8. Accessibility & Semantic Graceful Degradation
+## 7. Implementation Roadmap & Execution Gates
 
-* **Strict Semantic HTML5:** `<header>`, `<main>`, `<section>`, `<article>`, `<dl>`, `<dt>`, `<dd>`, `<footer>`, `<nav>`.
-* **`<noscript>` Fallback Manifesto (from Houmahani):**
-  If WebGL or JavaScript is disabled or fails to load, the site gracefully degrades to an exquisite, editorial Swiss-typeset archive layout where every project, image, case study, and contact method is 100% accessible and indexable by search engines.
-* **Motion Reduction:** Full `@media (prefers-reduced-motion: reduce)` support disabling 3D rotational loops and replacing kinetic rolls with crisp immediate opacity fades.
-* **Keyboard Navigation:** High-contrast focus rings (`outline: 2px solid var(--accent-ember); outline-offset: 3px`) on all interactive buttons, dialog traps, and esc-key close listeners.
-
----
-
-## 9. Implementation Roadmap for Alfred's Update
-
-1. **Phase 1: Design Tokens & Layout Skeleton:**
-   - Implement the 12-column Swiss hairline grid overlay.
-   - Configure CSS custom properties for Light/Dark themes and typography.
-2. **Phase 2: Header Utility Bar & Hero Stage:**
-   - Build the live world-clock marquee and theme/sound switcher.
-   - Scaffold the kinetic split-hero with Alfred's photography and bold headline.
-3. **Phase 3: Work Showcase & Filmstrip Carousel:**
-   - Integrate Mijo Bello-style vertical thumbnail filmstrip with interactive preview.
-   - Build category tag pills, slide transitions, and infinite marquee divider.
-4. **Phase 4: Case Study Architecture & Houmahani Lightbox:**
-   - Build modular case study templates with `<dl>` specification grids, view toggles, and modal video lightboxes.
-5. **Phase 5: The "Directory" Full Archive Drawer:**
-   - Build the slide-out catalog with hover-triggered floating media reveal.
-6. **Phase 6: Sensory Polish, Lenis Smooth Scroll & 3D WebGL Accents:**
-   - Hook up Lenis smooth scrolling, Three.js subtle canvas interaction, magnetic cursor, and one-click email copy.
+1. **Step 1: CSS Framework & Theme Overhaul (`css/main.css`)**
+   - Implement the Parallax Fashion slate/mineral tokens, viewfinder coordinate grid, and radiating orbit SVG geometry.
+   - Implement the Jack Portfolio inverted section transition, numbered service rows, and pill action components.
+2. **Step 2: Homepage Transformation (`index.html`)**
+   - Rebuild the Hero section with viewfinder metadata, radiating orbit geometry, monumental display typography, and Alfred's portrait.
+   - Refactor the narrative from job seeker to Principal Consultant.
+   - Integrate the Jack-style numbered 5 practice areas with expandable details.
+   - Refactor featured work into an interactive horizontal showcase reel.
+3. **Step 3: Services & Commercial Pricing Overhaul (`services.html`)**
+   - Build dedicated, high-converting pricing cards across all 5 practices (Corporate AI Training, Web Architecture, Test Prep, Research Writing, Creative Video/Motion).
+   - Ensure dual currency display (₦ NGN / $ USD) and instant consultation inquiry hooks.
+4. **Step 4: Unified Consultant Voice Audit (`about.html`, `works.html`, `contact.html`)**
+   - Remove any residual employee/job seeker phrasing.
+   - Ensure client inquiry forms route directly to specific practice areas or corporate workshop requests.
+5. **Step 5: Visual Verification & Final Local Validation**
+   - Verify all layouts in the browser at desktop and mobile viewports.
+   - Verify smooth transitions and interactive states.
+6. **Step 6: User Approval Gate**
+   - Present the completed transformation to the user.
+   - **Only push to GitHub when explicitly instructed by the user.**

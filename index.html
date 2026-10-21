@@ -70,7 +70,6 @@
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link active">Home</a></li>
           <li><a href="works.html" class="nav-link">Works</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="brands.html" class="nav-link">Brands &amp; Social</a></li>
           <!-- About with Dropdown (Blog under About) -->
           <li class="nav-item-dropdown">
@@ -109,52 +108,74 @@
 
   <main id="mainContent">
 
-    <!-- HERO SECTION: KINETIC SPLIT & 3D WEBGL STAGE -->
-    <section id="thesis" data-session-title="Atelier Thesis" class="hero-stage" style="padding: 52px 0 44px; position: relative; border-bottom: 1px solid var(--line-grid); overflow: hidden;">
+    <!-- HERO SECTION: PARALLAX FASHION ATELIER + JACK MONUMENTAL FUSION -->
+    <section id="thesis" data-session-title="Atelier Thesis" class="hero-viewfinder-wrap">
       
-      <!-- Background 3D Globe Canvas -->
+      <!-- Background 3D Globe Canvas (Retained Subtle Depth) -->
       <div class="hero-globe-wrap">
         <canvas id="globeCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
       </div>
 
-      <div class="container" style="position: relative; z-index: 2;">
-        <div class="hero-split-grid" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 36px; align-items: center;">
+      <!-- Concentric Vector Orbit Geometry (Parallax Fashion Visual Anchor) -->
+      <div class="hero-orbit-stage" id="heroOrbitStage" aria-hidden="true">
+        <svg class="hero-orbit-svg" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Concentric Orbit Ellipses & Radiating Arcs -->
+          <circle cx="500" cy="500" r="460" class="orbit-ring-outer" opacity="0.35"/>
+          <circle cx="500" cy="500" r="390" class="orbit-ring" opacity="0.45"/>
+          <circle cx="500" cy="500" r="320" class="orbit-ring-accent"/>
+          <circle cx="500" cy="500" r="250" class="orbit-ring" opacity="0.6"/>
+          <circle cx="500" cy="500" r="180" class="orbit-ring-accent" stroke-dasharray="2 4"/>
+          <circle cx="500" cy="500" r="110" class="orbit-ring" opacity="0.8"/>
+          <!-- Orbit Axis Crosshairs -->
+          <line x1="500" y1="20" x2="500" y2="980" stroke="var(--line-grid)" stroke-width="0.75" opacity="0.4"/>
+          <line x1="20" y1="500" x2="980" y2="500" stroke="var(--line-grid)" stroke-width="0.75" opacity="0.4"/>
+        </svg>
+        <!-- Floating Atmospheric Micro-Dust Sparks -->
+        <div class="orbit-spark" style="top: 22%; left: 18%; animation-delay: 0s;"></div>
+        <div class="orbit-spark" style="top: 74%; left: 24%; animation-delay: 2.4s;"></div>
+        <div class="orbit-spark" style="top: 36%; right: 16%; animation-delay: 1.2s;"></div>
+        <div class="orbit-spark" style="top: 80%; right: 28%; animation-delay: 3.6s;"></div>
+      </div>
+
+      <div class="container viewfinder-frame">
+        
+        <!-- Viewfinder Top Monograph Bar (Parallax Fashion Style) -->
+        <div class="viewfinder-top-row">
+          <div class="viewfinder-corner-tag">
+            <span class="crosshair">+</span> 06°31' N, 03°23' E // LAGOS ATELIER
+          </div>
+          <div class="viewfinder-corner-tag" style="border-color: var(--accent-ember-glow); color: var(--accent-ember);">
+            ALFRED E. WILLIAMS // ARCHIVE 2026
+          </div>
+          <div class="viewfinder-corner-tag">
+            <span class="crosshair">+</span> PRINCIPAL CONSULTANT &amp; STUDIO DIRECTOR
+          </div>
+        </div>
+
+        <!-- 2-Column Split Stage Layout: Narrative Left, Portrait Right -->
+        <div class="hero-split-grid" style="margin: 36px 0 28px;">
           
-          <!-- Hero Copy -->
-          <div>
+          <!-- Hero Narrative Copy & Action Center (Left) -->
+          <div class="hero-split-narrative">
             <div class="editorial-chapter-badge">ATELIER MONOGRAPH · VOL. 2026</div>
-            <div class="eyebrow">Writer · Editor · Trainer · Web Developer · AI Systems · Lagos</div>
-            <h1 class="display-title" style="margin-bottom: 28px;">
-              Words that move people.<br>
-              Platforms engineered to <em>scale</em>.
+            <div class="eyebrow" style="margin-bottom: 14px;">Writer · Editor · Trainer · Web Architect · Lagos / Global</div>
+            <h1 class="display-title" style="margin-bottom: 22px; font-size: clamp(2.3rem, 4.2vw, 3.8rem); line-height: 1.12;">
+              Transformative AI Systems.<br>
+              Resilient Platforms.<br>
+              <em>Uncompromising</em> Editorial Authority.
             </h1>
-            <p class="editorial-lead" style="font-size: 1.18rem; color: var(--ink-muted); max-width: 54ch; line-height: 1.6; margin-bottom: 36px;">
-              <span class="editorial-dropcap">I</span>'m Alfred — a <span class="scrolly-focus-span">writer, editor, and trainer at my core</span>, and a <span class="scrolly-focus-span">full-cycle web developer</span> and AI-integrated brand builder by trade. Over the past decade I've helped brands, students, and startups turn ideas into content and platforms that actually perform.
+            <p class="editorial-lead" style="font-size: 1.15rem; color: var(--ink-muted); max-width: 54ch; line-height: 1.65; margin-bottom: 32px;">
+              <span class="editorial-dropcap">I</span>'m Alfred — a writer, editor, and pedagogical trainer at my core, and a full-cycle web architect and enterprise AI acceleration advisor by trade. Over the past decade I've advised enterprises, trained teams, built high-performance digital systems, and directed high-stakes editorial and admissions strategies.
             </p>
-
-            <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;">
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
               <a href="works.html" class="btn btn-solid">Explore Selected Works</a>
-              <a href="#skills" class="btn btn-outline">Skills &amp; Craft</a>
+              <a href="services.html" class="btn btn-outline">Services &amp; Packages</a>
               <a href="brands.html" class="btn btn-outline">Brand Ecosystems</a>
-              <a href="contact.html" class="btn btn-outline">Get In Touch</a>
-            </div>
-
-            <!-- Lagos Field Research Highlight Badge (Static 2D Architectural Compass) -->
-            <div class="scrolly-fade" style="display: inline-flex; align-items: center; gap: 14px; padding: 14px 20px; background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-left: 3px solid var(--accent-ember); font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-primary); border-radius: 2px;">
-              <svg width="24" height="24" viewBox="0 0 32 32" fill="none" style="flex-shrink: 0;">
-                <circle cx="16" cy="16" r="14" stroke="var(--line-grid)" stroke-width="1.2"/>
-                <circle cx="16" cy="16" r="8" stroke="var(--accent-ember)" stroke-width="1" stroke-dasharray="2 2"/>
-                <circle cx="16" cy="16" r="3" fill="var(--accent-ember)"/>
-                <circle cx="16" cy="16" r="11" stroke="var(--accent-ember)" stroke-width="0.8" opacity="0.6"/>
-                <line x1="16" y1="2" x2="16" y2="30" stroke="var(--line-grid)" stroke-width="0.8"/>
-                <line x1="2" y1="16" x2="30" y2="16" stroke="var(--line-grid)" stroke-width="0.8"/>
-                <polygon points="16,6 18,16 16,14 14,16" fill="var(--accent-ember)"/>
-              </svg>
-              <span><strong>Field Research:</strong> 551 SMEs mapped across 9 Lagos commercial districts analyzing communications &amp; growth.</span>
+              <a href="contact.html?type=consultation" class="btn btn-outline">Book Strategic Call →</a>
             </div>
           </div>
 
-          <!-- Hero Editorial 2D Cartoon Portrait Frame (Recreated with Gemini from Alfred's Brand Photo) -->
+          <!-- Hero Editorial 2D Cartoon Portrait Card (Right) -->
           <div class="hero-portrait-frame-wrap">
             <div class="hero-portrait-card">
               
@@ -164,27 +185,29 @@
               <div class="corner-bracket bottom-left" aria-hidden="true"></div>
               <div class="corner-bracket bottom-right" aria-hidden="true"></div>
 
-              <!-- 2D Cartoon Portrait Media -->
-              <div class="hero-portrait-media">
-                <img src="assets/alfred-2d-cartoon-portrait.jpg" 
-                     alt="Alfred E. Williams — Digital Architect &amp; Editorial Strategist (2D Cartoon Portrait)" 
-                     class="hero-portrait-img"
-                     loading="eager">
-                <div class="hero-portrait-badge">
-                  <span class="status-pulse-dot"></span>
-                  <span>Available for Q4/Q1 Engagements</span>
-                </div>
+              <!-- Floating Practice Status Pill -->
+              <div class="hero-status-pill">
+                <span class="pulse-indicator"></span>
+                <span>Active Practice · Accepting Q4/Q1 Engagements</span>
               </div>
 
-              <!-- Editorial Caption & Credentials Bar -->
+              <!-- Stylized 2D Cartoon Portrait Media -->
+              <div class="hero-portrait-media">
+                <img src="assets/alfred-2d-cartoon-portrait.jpg" 
+                     alt="Alfred E. Williams — Principal Consultant, Corporate AI Trainer &amp; Digital Architect" 
+                     class="hero-portrait-img"
+                     loading="eager">
+              </div>
+
+              <!-- High-Fashion Editorial Monograph Caption -->
               <div class="hero-portrait-caption">
                 <div class="hero-portrait-caption-left">
-                  <span class="hero-portrait-name">Alfred E. Williams</span>
-                  <span class="hero-portrait-role">Writer · Web Architect · Educator</span>
+                  <div class="hero-portrait-name">Alfred E. Williams</div>
+                  <div class="hero-portrait-role">AI Trainer · Systems Architect · Editorial Director</div>
                 </div>
                 <div class="hero-portrait-loc">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  <span>Lagos, Nigeria</span>
+                  <span>Lagos / Global</span>
                 </div>
               </div>
 
@@ -192,6 +215,20 @@
           </div>
 
         </div>
+
+        <!-- Viewfinder Bottom Coordinates Bar -->
+        <div class="viewfinder-bottom-row">
+          <div class="viewfinder-corner-tag">
+            <span class="crosshair">+</span> 551 LAGOS SMES MAPPED // FIELD RESEARCH ARCHIVE
+          </div>
+          <div class="viewfinder-corner-tag" style="border-color: rgba(212, 113, 59, 0.3);">
+            COMMISSIONS: AI ACCELERATION · WEB SYSTEMS · ADVISORY · CREATIVE
+          </div>
+          <div class="viewfinder-corner-tag">
+            <span class="crosshair">+</span> AVAILABLE FOR SELECT CORPORATE COMMISSIONS
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -274,510 +311,262 @@
       </div>
     </section>
 
-    <!-- SKILLS & CRAFT SECTION -->
-    <section id="skills" data-session-title="Skills Matrix" style="padding: 50px 0; border-bottom: 1px solid var(--line-grid); position: relative;">
+    <!-- INVERTED SERVICES SECTION (JACK PORTFOLIO HIGH-CONTRAST SECTION SHIFT) -->
+    <section id="practices" data-session-title="Consulting Practices" class="section-inverted">
       <div class="container">
         
-        <div class="section-head">
-          <span class="section-num">01</span>
-          <h2 class="section-title">Skills &amp; Craft</h2>
-          <div class="section-rule"></div>
-          <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-ember); text-transform: uppercase; letter-spacing: 0.1em;">Core &amp; Multidisciplinary Matrix</span>
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+          <div>
+            <div class="editorial-chapter-badge">DISCIPLINED CLIENT PRACTICES</div>
+            <div class="eyebrow">Enterprise &amp; Individual Engagements</div>
+            <h2 class="section-title">
+              Five Core <em>Consulting Practices</em>
+            </h2>
+          </div>
+          <a href="services.html" class="btn btn-pill btn-glow-ember" style="margin-bottom: 6px;">
+            View All Packages &amp; Pricing Matrix →
+          </a>
         </div>
 
-        <!-- Foundational Identity Statement -->
-        <div class="skills-lead-box">
-          <div class="eyebrow" style="margin-bottom: 14px;">The Architectural Core</div>
-          <p class="skills-lead-text">
-            At my core, I'm a <strong>professional writer, editor, and trainer</strong>, working at an advanced level across business, academic, research, social media, and personal content. That's the foundation everything else is built on.
-          </p>
-          <p class="skills-lead-sub">
-            Around that core, I've built a broader skillset: <strong>full-cycle website and web app development</strong>, <strong>AI-powered branding and ad creation</strong>, <strong>graphic design</strong>, and <strong>video editing</strong> — so I can carry a brand's voice from the page to the screen, and design the platform it lives on.
-          </p>
-          <p class="skills-lead-sub">
-            My background spans both the <strong>education and digital media sectors</strong>, where I've consistently delivered in content creation, community management, social listening, and engagement-driven campaigns.
-          </p>
-          <div class="skills-lead-status">
-            <span class="status-dot" style="display: inline-block;"></span>
-            <span><strong>Current Focus:</strong> Right now, I split my time between client web builds, AI-assisted content systems, and running social media for a handful of growing Lagos-based startups.</span>
-          </div>
-        </div>
+        <p style="font-size: 1.1rem; opacity: 0.85; max-width: 72ch; line-height: 1.65; margin-top: 18px; margin-bottom: 12px;">
+          From corporate AI acceleration workshops to sub-100ms web architectures, high-stakes admissions coaching, and academic research writing—packaged into transparent, high-impact consulting engagements.
+        </p>
 
-        <!-- Editorial Monograph Pullquote -->
-        <blockquote class="editorial-pullquote scrolly-fade">
-          <p>“True editorial craft isn't merely writing words—it is structuring thought, engineering clarity, and designing the very digital platform on which that voice commands authority.”</p>
-          <cite>— Alfred E. Williams · Writer, Systems Architect &amp; Lagos Field Researcher</cite>
-        </blockquote>
-
-        <!-- 4 Key Skill Pillars Grid -->
-        <div class="skills-grid">
-
-          <!-- Core Discipline 1: Writing & Editing -->
-          <div class="skill-card core-focus scrolly-fade">
-            <div>
-              <div class="skill-card-header">
-                <div>
-                  <div class="skill-category-label">Core Foundation 01</div>
-                  <h3 class="skill-title">Writing &amp; Editing</h3>
-                </div>
-                <span class="skill-badge badge-advanced">Advanced Level</span>
-              </div>
-
-              <!-- 2D Editorial Cartoon Illustration: Writing & Manuscript Studio -->
-              <div class="skill-illustration-media" aria-label="Writing &amp; Editorial Manuscript Craft 2D Cartoon Illustration">
-                <img src="assets/illust-editorial-writing.png" alt="Black author at classic oak library desk with manuscripts, reference books, audio mic, and Lagos skyline view" loading="lazy">
-              </div>
-
-              <p class="skill-desc">
-                Business, academic, research, social media, personal &amp; professional content — advanced level. Precision prose crafted to persuade, inform, and convert.
-              </p>
-              
-              <div class="skill-metrics-row">
-                <div class="skill-metric-item"><strong>145p</strong> Presidential Report</div>
-                <div class="skill-metric-item"><strong>90%+</strong> Admission Essays</div>
-                <div class="skill-metric-item"><strong>2,500+</strong> Research Dossiers</div>
-              </div>
-
-              <div class="skill-features-list">
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">Editorial &amp; Copywriting</div>
-                    <p class="skill-feature-desc">High-converting website copy, landing pages, corporate brochures, and B2B/B2C communications.</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">High-Stakes Policy Editing</div>
-                    <p class="skill-feature-desc">Edited the landmark 145-page PCNI report on counter-terrorism commissioned for President Muhammadu Buhari's Administration.</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">Academic &amp; Admissions Writing</div>
-                    <p class="skill-feature-desc">Authored 50+ university admission essays and scholarship statements with verified 90%+ acceptance.</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">Executive Profiles &amp; Cultural Reviews</div>
-                    <p class="skill-feature-desc">Profiles for icons like Titi Ogufere &amp; Dakore Egbuson-Akande; published critiques on Chimamanda Ngozi Adichie's Farafina Workshop and Christopher Anyokwu's <em>The Far Country</em>.</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">Research &amp; Methodological Support</div>
-                    <p class="skill-feature-desc">Technical descriptions, company profiles (BTS Renewables, Gresfor), and dissertations across business, arts, and humanities.</p>
-                  </div>
-                </div>
+        <!-- Jack-Style Numbered Services List -->
+        <div class="jack-services-list">
+          
+          <!-- Practice 01: Enterprise AI Acceleration -->
+          <a href="services.html#ai-workshops" class="jack-service-row">
+            <div class="jack-service-num">01</div>
+            <div class="jack-service-title-box">
+              <h3>Corporate &amp; SME AI Acceleration</h3>
+              <p>Hands-on team training and executive masterclasses in AI Video Creation, Advertising, Web Design, Motion, Filmmaking, Virtual Photoshoots &amp; Research across Fashion, Fitness, Interior Design, Hospitality &amp; Media.</p>
+            </div>
+            <div class="jack-service-tags">
+              <span class="jack-tag-pill">AI Video Creation</span>
+              <span class="jack-tag-pill">AI Advertising</span>
+              <span class="jack-tag-pill">AI Web Design</span>
+              <span class="jack-tag-pill">AI Virtual Photoshoots</span>
+              <span class="jack-tag-pill">AI Filmmaking</span>
+            </div>
+            <div class="jack-service-action">
+              <div class="jack-action-circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
             </div>
+          </a>
 
-            <div class="skill-tools-tags">
-              <span class="skill-tool-tag">Editorial Copywriting</span>
-              <span class="skill-tool-tag">Admission Essays (90%+)</span>
-              <span class="skill-tool-tag">Brand Storytelling</span>
-              <span class="skill-tool-tag">B2B Proposals</span>
-              <span class="skill-tool-tag">Corporate Reports</span>
-              <span class="skill-tool-tag">Fact-Checking</span>
+          <!-- Practice 02: Web Architecture & Systems -->
+          <a href="services.html#packages" class="jack-service-row">
+            <div class="jack-service-num">02</div>
+            <div class="jack-service-title-box">
+              <h3>Full-Cycle Web Architecture &amp; Systems</h3>
+              <p>Bespoke web applications, high-converting e-commerce storefronts, and macroeconomic intelligence dashboards engineered with zero bloat, mobile optimization, and sub-100ms render speeds.</p>
             </div>
-          </div>
-
-          <!-- Core Discipline 2: Tutoring & Training -->
-          <div class="skill-card core-focus scrolly-fade">
-            <div>
-              <div class="skill-card-header">
-                <div>
-                  <div class="skill-category-label">Core Foundation 02</div>
-                  <h3 class="skill-title">Tutoring &amp; Training</h3>
-                </div>
-                <span class="skill-badge badge-advanced">Advanced Level</span>
-              </div>
-
-              <!-- 2D Editorial Cartoon Illustration: Pedagogical Excellence & Academic Trajectory -->
-              <div class="skill-illustration-media" aria-label="Tutoring and Training Trajectory 2D Cartoon Illustration">
-                <img src="assets/illust-education-ai-suite.png" alt="Black educator and ambitious student reviewing academic degrees, diplomas, and standardized testing milestones" loading="lazy">
-              </div>
-
-              <p class="skill-desc">
-                Coaching writers and students to advanced proficiency, one-on-one and in structured programs. Pedagogical systems built for high-stakes test excellence.
-              </p>
-
-              <div class="skill-metrics-row">
-                <div class="skill-metric-item"><strong>90%+</strong> Target Score Rate</div>
-                <div class="skill-metric-item"><strong>50%</strong> Onboarding Slashed</div>
-                <div class="skill-metric-item"><strong>60+</strong> Scholars Annually</div>
-              </div>
-
-              <div class="skill-features-list">
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">Standardized Exam Mastery</div>
-                    <p class="skill-feature-desc">Coached IELTS, TOEFL, SAT, GRE, GMAT, and ESL candidates to top-percentile scores (IELTS 8.5+, SAT 1450+).</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7v4h10v-4h-2c-.55 0-1-.45-1-1v-2.34"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">IELTS MASTERCLASS Founder</div>
-                    <p class="skill-feature-desc">Founded the specialized IELTS Masterclass with Gryn Index Initiative, delivering a 90% student success benchmark.</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">Curriculum &amp; Operational Systems</div>
-                    <p class="skill-feature-desc">Authored unified in-house ESL curriculum and Academic Manuals, slashing new tutor onboarding time by 50%.</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">F-1 Visa Counseling &amp; Consular Prep</div>
-                    <p class="skill-feature-desc">Created proprietary US Embassy Q&amp;A Template; audited Form I-20 and DS-160 portfolios with 90%+ visa approval.</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">Executive &amp; VIP Coaching</div>
-                    <p class="skill-feature-desc">Selected for specialized instructional appointments for high-profile private clients at Covenant University.</p>
-                  </div>
-                </div>
+            <div class="jack-service-tags">
+              <span class="jack-tag-pill">Sprint MVPs (₦450k)</span>
+              <span class="jack-tag-pill">E-Commerce Stores (₦950k)</span>
+              <span class="jack-tag-pill">Enterprise Suites (₦1.85M)</span>
+              <span class="jack-tag-pill">WebGL Motion</span>
+            </div>
+            <div class="jack-service-action">
+              <div class="jack-action-circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
             </div>
+          </a>
 
-            <div class="skill-tools-tags">
-              <span class="skill-tool-tag">IELTS / TOEFL</span>
-              <span class="skill-tool-tag">SAT / GRE / GMAT</span>
-              <span class="skill-tool-tag">Curriculum Design</span>
-              <span class="skill-tool-tag">F-1 Visa Counseling</span>
-              <span class="skill-tool-tag">Faculty Training</span>
-              <span class="skill-tool-tag">Pedagogical Rubrics</span>
+          <!-- Practice 03: Test Prep & Admissions -->
+          <a href="services.html#admissions-coaching" class="jack-service-row">
+            <div class="jack-service-num">03</div>
+            <div class="jack-service-title-box">
+              <h3>Standardized Test Prep &amp; Admissions Advisory</h3>
+              <p>Elite pedagogical coaching for international candidates. IELTS 8.5+, TOEFL iBT, GRE, OET Healthcare, and Ivy League / Russell Group statements of purpose with US F-1 visa consular interview prep.</p>
             </div>
-          </div>
-
-          <!-- Broader Skill 1: Website & Web App Development -->
-          <div class="skill-card scrolly-fade">
-            <div>
-              <div class="skill-card-header">
-                <div>
-                  <div class="skill-category-label">Applied Discipline 03</div>
-                  <h3 class="skill-title">Website &amp; Web App Development</h3>
-                </div>
-                <span class="skill-badge badge-above-int">Above Intermediate</span>
-              </div>
-
-              <!-- 2D Editorial Cartoon Illustration: Structural Web Architecture -->
-              <div class="skill-illustration-media" aria-label="Full-Cycle Web Development Architecture 2D Cartoon Illustration">
-                <img src="assets/illust-creator-desk-workspace.png" alt="Black software architect at dual-monitor creative workstation with code blueprints and arched window view" loading="lazy">
-              </div>
-
-              <p class="skill-desc">
-                Full-cycle builds, from design to deployment. Engineering performant, responsive web applications and e-commerce platforms with sub-100ms render speeds.
-              </p>
-
-              <div class="skill-metrics-row">
-                <div class="skill-metric-item"><strong>Full-Cycle</strong> Architecture</div>
-                <div class="skill-metric-item"><strong>Sub-100ms</strong> Render Times</div>
-                <div class="skill-metric-item"><strong>Custom</strong> CMS &amp; WebGL</div>
-              </div>
-
-              <div class="skill-features-list">
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">Enterprise &amp; Institutional Portals</div>
-                    <p class="skill-feature-desc">Architected Renalytica (enterprise market intelligence) and GoFar Academy (educational admission portal) from scratch.</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">Lifestyle E-Commerce Storefronts</div>
-                    <p class="skill-feature-desc">Engineered AXiA Active activewear platform with responsive checkout, cart funnels, and payment gateway integration.</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">Custom Web Apps &amp; Diagnostic Tools</div>
-                    <p class="skill-feature-desc">Built SimFitness planner, 9jaProQuiz phonetics engine, and OTEC IELTS Speaking assessment diagnostic tool.</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">Modern Clean Code Standards</div>
-                    <p class="skill-feature-desc">Semantic HTML5, modern CSS3 (vanilla architecture, grid/flexbox), JavaScript (ES6+), Next.js, and Three.js 3D depth.</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">Content &amp; Platform Symmetry</div>
-                    <p class="skill-feature-desc">Designing platforms tailored specifically to amplify the brand's voice rather than forcing content into generic templates.</p>
-                  </div>
-                </div>
+            <div class="jack-service-tags">
+              <span class="jack-tag-pill">IELTS 8.5+ Intensive</span>
+              <span class="jack-tag-pill">TOEFL iBT Mastery</span>
+              <span class="jack-tag-pill">GRE Verbal &amp; Quant</span>
+              <span class="jack-tag-pill">OET Healthcare</span>
+              <span class="jack-tag-pill">US F-1 Visa Prep</span>
+            </div>
+            <div class="jack-service-action">
+              <div class="jack-action-circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
             </div>
+          </a>
 
-            <div class="skill-tools-tags">
-              <span class="skill-tool-tag">HTML5 / CSS3</span>
-              <span class="skill-tool-tag">JavaScript (ES6+)</span>
-              <span class="skill-tool-tag">WordPress &amp; Themes</span>
-              <span class="skill-tool-tag">Next.js &amp; Frontend</span>
-              <span class="skill-tool-tag">E-Commerce Stores</span>
-              <span class="skill-tool-tag">Payment APIs</span>
-              <span class="skill-tool-tag">WebGL / Three.js</span>
+          <!-- Practice 04: Academic Writing & Research -->
+          <a href="services.html#research-writing" class="jack-service-row">
+            <div class="jack-service-num">04</div>
+            <div class="jack-service-title-box">
+              <h3>Academic Research Writing &amp; Editorial Consulting</h3>
+              <p>Translating intricate data, scientific research, and policy into peer-reviewed journal papers, postgraduate dissertations, and macroeconomic executive whitepapers.</p>
             </div>
-          </div>
-
-          <!-- Broader Skill 2: AI & Digital Systems / Brand Building -->
-          <div class="skill-card scrolly-fade">
-            <div>
-              <div class="skill-card-header">
-                <div>
-                  <div class="skill-category-label">Applied Discipline 04</div>
-                  <h3 class="skill-title">AI &amp; Digital Systems / Brand Building</h3>
-                </div>
-                <span class="skill-badge badge-intermediate">Intermediate / Advanced</span>
-              </div>
-
-              <!-- 2D Editorial Cartoon Illustration: Multi-Channel Brand Engine -->
-              <div class="skill-illustration-media" aria-label="Multi-Channel Brand Strategy 2D Cartoon Illustration">
-                <img src="assets/illust-tri-brand-strategy.png" alt="Black creative director orchestrating multi-channel brand strategy, social metrics, and campaign creative boards" loading="lazy">
-              </div>
-
-              <p class="skill-desc">
-                AI-powered branding, ad creation, graphic design, and video editing. Carrying a brand's voice from the page to the screen across modern digital channels.
-              </p>
-
-              <div class="skill-metrics-row">
-                <div class="skill-metric-item"><strong>1-to-8</strong> Repurposing Engine</div>
-                <div class="skill-metric-item"><strong>Meta Ads</strong> Acquisition</div>
-                <div class="skill-metric-item"><strong>AI-Assisted</strong> Workflows</div>
-              </div>
-
-              <div class="skill-features-list">
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">1-to-8 Repurposing Engine</div>
-                    <p class="skill-feature-desc">Converting single research reports or corporate briefs into 8 synchronized high-retention assets (carousels, threads, infographics, briefs).</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">Paid Acquisition &amp; Meta Ads</div>
-                    <p class="skill-feature-desc">Planning, launching, and optimizing campaigns via Meta Business Suite (Facebook &amp; Instagram Ads) with pixel and CAPI tracking.</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">AI-Assisted Creative Workflows</div>
-                    <p class="skill-feature-desc">Leveraging advanced generative AI tools for copy optimization, concept acceleration, image generation, and creative turnaround.</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">Graphic Design &amp; Ad Creative</div>
-                    <p class="skill-feature-desc">Designing brand collateral, social creative, and ad assets using Figma and Canva.</p>
-                  </div>
-                </div>
-
-                <div class="skill-feature-item">
-                  <div class="skill-feature-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-                  </div>
-                  <div class="skill-feature-content">
-                    <div class="skill-feature-title">Video Editing &amp; Social Motion</div>
-                    <p class="skill-feature-desc">Short-form video editing (CapCut) for Reels/TikTok, audio syncing, and technical walkthrough video production.</p>
-                  </div>
-                </div>
+            <div class="jack-service-tags">
+              <span class="jack-tag-pill">Peer-Reviewed Papers</span>
+              <span class="jack-tag-pill">Thesis &amp; Proposal Advisory</span>
+              <span class="jack-tag-pill">Policy Dossiers (145p PCNI)</span>
+              <span class="jack-tag-pill">Executive Whitepapers</span>
+            </div>
+            <div class="jack-service-action">
+              <div class="jack-action-circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
             </div>
+          </a>
 
-            <div class="skill-tools-tags">
-              <span class="skill-tool-tag">AI-Powered Branding</span>
-              <span class="skill-tool-tag">Meta Business Suite</span>
-              <span class="skill-tool-tag">Facebook &amp; IG Ads</span>
-              <span class="skill-tool-tag">Graphic Design (Figma/Canva)</span>
-              <span class="skill-tool-tag">Video Editing (CapCut)</span>
-              <span class="skill-tool-tag">Social Listening</span>
-              <span class="skill-tool-tag">GA4 &amp; Insights</span>
+          <!-- Practice 05: Creative Direction & Video -->
+          <a href="services.html#creative-production" class="jack-service-row">
+            <div class="jack-service-num">05</div>
+            <div class="jack-service-title-box">
+              <h3>Creative Direction, Motion &amp; Video Production</h3>
+              <p>Brand visual identity design, kinetic Lottie/GSAP web micro-motion, and high-retention video editing for podcasts, documentaries, and social cutdowns.</p>
             </div>
-          </div>
+            <div class="jack-service-tags">
+              <span class="jack-tag-pill">Brand Identity Systems</span>
+              <span class="jack-tag-pill">Lottie &amp; GSAP Motion</span>
+              <span class="jack-tag-pill">High-Retention Video Editing</span>
+              <span class="jack-tag-pill">Social Cutdowns</span>
+            </div>
+            <div class="jack-service-action">
+              <div class="jack-action-circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
 
         </div>
 
-        <!-- Master CV Download & Deep-Dive Callout -->
-        <div class="cv-banner">
+        <!-- Corporate Commission & Workshop Callout Banner (Replaces Old Job Applicant CV Banner) -->
+        <div class="cv-banner" style="margin-top: 56px; background-color: rgba(212, 113, 59, 0.08); border-color: rgba(212, 113, 59, 0.3);">
           <div class="cv-banner-left">
-            <div class="skill-category-label">Verified Experience &amp; Credentials</div>
-            <h4 class="cv-banner-title">Need the Complete Career Chronology?</h4>
-            <p class="cv-banner-desc">
-              Download my official Master CV for an exhaustive breakdown of 10+ years spanning academic leadership, 551 Lagos SMEs field research, presidential policy publications, and live web builds.
+            <div class="skill-category-label" style="color: var(--accent-ember);">COMMISSIONING &amp; CORPORATE WORKSHOPS</div>
+            <h4 class="cv-banner-title" style="color: var(--ink-inverted);">Need a Bespoke Engagement Proposal or Corporate AI Workshop?</h4>
+            <p class="cv-banner-desc" style="color: var(--ink-inverted); opacity: 0.85;">
+              I collaborate with enterprises, growing startups, and academic institutions across Nigeria, the UK, and North America. Request a customized training proposal or commission a strategic build.
             </p>
           </div>
           <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-            <a href="Resume and CV/Alfred_Williams_Master_CV.pdf" target="_blank" rel="noopener" class="btn btn-solid">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              View Master CV (PDF)
+            <a href="contact.html?type=corporate" class="btn btn-pill btn-glow-ember">
+              Request Corporate Proposal →
             </a>
-            <a href="about.html" class="btn btn-outline">Read Full Biography →</a>
+            <a href="services.html" class="btn btn-pill btn-outline" style="border-color: var(--accent-ember); color: var(--ink-inverted);">
+              View All Transparent Packages &amp; Pricing Matrix
+            </a>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- FLAGSHIP SELECTED WORK: "SHOWING, NOT JUST TELLING" -->
-    <section id="work" data-session-title="Featured Builds" style="padding: 48px 0; border-bottom: 1px solid var(--line-grid);">
+    <!-- FLAGSHIP SELECTED WORK: HORIZONTAL INTERACTIVE REEL (JACK PORTFOLIO REEL) -->
+    <section id="work" data-session-title="Featured Builds" class="reel-section-wrap">
       <div class="container">
         
         <div class="section-head">
           <span class="section-num">02</span>
-          <h2 class="section-title">Featured Builds &amp; Systems</h2>
+          <h2 class="section-title">Selected Works &amp; Case Studies</h2>
           <div class="section-rule"></div>
           <a href="works.html" class="card-link" style="font-size: 0.85rem;">View All Works (14) <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
         </div>
 
-        <p style="color: var(--ink-muted); font-size: 1.08rem; margin-top: -36px; margin-bottom: 48px; max-width: 72ch; line-height: 1.6;">
-          Selected client web builds, e-commerce storefronts, data intelligence platforms, and literary systems—engineered to carry a brand's authentic voice from the page to the screen, and design the platform it lives on.
+        <p style="color: var(--ink-muted); font-size: 1.08rem; margin-top: -16px; margin-bottom: 28px; max-width: 72ch; line-height: 1.6;">
+          Selected client web platforms, e-commerce storefronts, data intelligence portals, and literary archives—engineered to carry authentic brand voice into high-converting digital platforms.
         </p>
 
-        <div class="dispatches-home-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px;">
+        <!-- Horizontal Interactive Dragging / Scrolling Reel -->
+        <div class="reel-scroll-container">
           
           <!-- Flagship #1: Renalytica -->
-          <article class="showcase-card">
-            <div class="card-media">
+          <article class="reel-item-card">
+            <div class="reel-media-viewport">
               <img src="assets/renalytica-real.png" alt="Renalytica Live Production Interface — Clear Market Intelligence" loading="lazy">
             </div>
-            <div class="card-body">
-              <div class="card-tag">Lead Full-Stack Web Dev &amp; Market Intelligence</div>
-              <h3 class="card-title">Renalytica Enterprise Platform</h3>
-              <p class="card-desc">
-                Architected, designed, and developed the official enterprise website (<a href="https://renalytica.com" target="_blank" style="text-decoration: underline;">renalytica.com</a>) from the ground up. Features real-time macroeconomic charts (USD/NGN currency signals, African commerce forecasts), 2,500+ research dossiers, and an automated 1-to-8 content repurposing engine across LinkedIn, Instagram, and X.
-              </p>
-              <div class="card-footer">
-                <a href="case-studies/renalytica.html" class="btn btn-solid btn-sm">Explore Deep Dive</a>
-                <a href="https://renalytica.com" target="_blank" rel="noopener" class="card-link">Live Site <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
+            <div class="reel-body">
+              <div>
+                <div class="reel-card-meta">
+                  <span>ENTERPRISE DATA · 2026</span>
+                  <span>FULL-STACK</span>
+                </div>
+                <h3 class="reel-card-title">Renalytica Enterprise Platform</h3>
+                <p class="reel-card-desc">
+                  Architected official enterprise intelligence portal with real-time macroeconomic currency signals, 2,500+ dossiers, and automated 1-to-8 content repurposing.
+                </p>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: center; justify-content: space-between; border-top: 1px solid var(--line-grid); padding-top: 14px;">
+                <a href="case-studies/renalytica.html" class="btn btn-sm btn-solid">Case Study</a>
+                <a href="https://renalytica.com" target="_blank" rel="noopener" class="card-link" style="font-size: 0.8rem;">Live Platform ↗</a>
               </div>
             </div>
           </article>
 
           <!-- Flagship #2: AXiA Active -->
-          <article class="showcase-card">
-            <div class="card-media">
+          <article class="reel-item-card">
+            <div class="reel-media-viewport">
               <img src="assets/axia-real.png" alt="AXiA Active Live E-Commerce Storefront Interface" loading="lazy">
             </div>
-            <div class="card-body">
-              <div class="card-tag">Full-Stack E-Commerce &amp; Meta Ads</div>
-              <h3 class="card-title">AXiA Active E-Commerce Storefront</h3>
-              <p class="card-desc">
-                Engineered the complete e-commerce platform (<a href="https://axiaactive.com" target="_blank" style="text-decoration: underline;">axiaactive.com</a>) from visual brand identity to a checkout-ready digital storefront. Optimized mobile responsiveness, integrated secure payment gateways, and launched targeted Meta Ads funnels for product drops.
-              </p>
-              <div class="card-footer">
-                <a href="case-studies/axia-active.html" class="btn btn-solid btn-sm">Explore Deep Dive</a>
-                <a href="https://axiaactive.com" target="_blank" rel="noopener" class="card-link">Live Storefront <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
+            <div class="reel-body">
+              <div>
+                <div class="reel-card-meta">
+                  <span>E-COMMERCE · 2025</span>
+                  <span>LIFESTYLE BRAND</span>
+                </div>
+                <h3 class="reel-card-title">AXiA Active Storefront</h3>
+                <p class="reel-card-desc">
+                  Engineered complete e-commerce platform with responsive slide-out cart, multi-currency payment checkout, and targeted Meta advertising acquisition funnels.
+                </p>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: center; justify-content: space-between; border-top: 1px solid var(--line-grid); padding-top: 14px;">
+                <a href="case-studies/axia-active.html" class="btn btn-sm btn-solid">Case Study</a>
+                <a href="https://axiaactive.com" target="_blank" rel="noopener" class="card-link" style="font-size: 0.8rem;">Storefront ↗</a>
               </div>
             </div>
           </article>
 
           <!-- Flagship #3: GoFar Academy -->
-          <article class="showcase-card">
-            <div class="card-media">
+          <article class="reel-item-card">
+            <div class="reel-media-viewport">
               <img src="assets/gofar-real.png" alt="GoFar International Academy Live Institutional Portal" loading="lazy">
             </div>
-            <div class="card-body">
-              <div class="card-tag">Web Architecture &amp; Admissions Funnels</div>
-              <h3 class="card-title">GoFar International Academy Portal</h3>
-              <p class="card-desc">
-                Architected and deployed the official institutional digital portal (<a href="https://gofarinternationalacademy.com" target="_blank" style="text-decoration: underline;">gofarinternationalacademy.com</a>), structuring parent-facing navigation, admission inquiry workflows, learner success narratives, and community updates.
-              </p>
-              <div class="card-footer">
-                <a href="case-studies/gofar-academy.html" class="btn btn-solid btn-sm">Explore Deep Dive</a>
-                <a href="https://www.gofarinternationalacademy.com/" target="_blank" rel="noopener" class="card-link">Live Portal <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
+            <div class="reel-body">
+              <div>
+                <div class="reel-card-meta">
+                  <span>EDTECH · 2025</span>
+                  <span>ADMISSIONS</span>
+                </div>
+                <h3 class="reel-card-title">GoFar Academy Portal</h3>
+                <p class="reel-card-desc">
+                  Architected institutional digital portal, parent-facing navigation, admission inquiry workflows, and candidate success stories.
+                </p>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: center; justify-content: space-between; border-top: 1px solid var(--line-grid); padding-top: 14px;">
+                <a href="case-studies/gofar-academy.html" class="btn btn-sm btn-solid">Case Study</a>
+                <a href="https://www.gofarinternationalacademy.com/" target="_blank" rel="noopener" class="card-link" style="font-size: 0.8rem;">Portal ↗</a>
               </div>
             </div>
           </article>
 
           <!-- Flagship #4: My WORLD of Literature (TWOL) -->
-          <article class="showcase-card">
-            <div class="card-media">
+          <article class="reel-item-card">
+            <div class="reel-media-viewport">
               <img src="assets/twol-real.png" alt="My WORLD of Literature Live Journal Website" loading="lazy">
             </div>
-            <div class="card-body">
-              <div class="card-tag">Self-Designed Journal &amp; Literary Archive</div>
-              <h3 class="card-title">My WORLD of Literature (TWOL)</h3>
-              <p class="card-desc">
-                Self-designed digital journal (<a href="https://twol101.wordpress.com/" target="_blank" style="text-decoration: underline;">twol101.wordpress.com</a>) showcasing original literary works, prose fiction, and published cultural reviews—including the definitive review of Dr. Chris Anyokwu's play <em>The Far Country</em> and the psychological essay <em>IN THE MOOD: Power of Music</em>.
-              </p>
-              <div class="card-footer">
-                <a href="case-studies/twol-literature.html" class="btn btn-solid btn-sm">Explore Literary Archive</a>
-                <a href="https://twol101.wordpress.com/" target="_blank" rel="noopener" class="card-link">Visit Journal <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
+            <div class="reel-body">
+              <div>
+                <div class="reel-card-meta">
+                  <span>EDITORIAL · ARCHIVE</span>
+                  <span>LITERARY JOURNAL</span>
+                </div>
+                <h3 class="reel-card-title">My WORLD of Literature</h3>
+                <p class="reel-card-desc">
+                  Digital journal featuring original literary works, published cultural reviews, and high-impact essays including reviews of Dr. Chris Anyokwu's <em>The Far Country</em>.
+                </p>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: center; justify-content: space-between; border-top: 1px solid var(--line-grid); padding-top: 14px;">
+                <a href="case-studies/twol-literature.html" class="btn btn-sm btn-solid">Archive</a>
+                <a href="https://twol101.wordpress.com/" target="_blank" rel="noopener" class="card-link" style="font-size: 0.8rem;">Journal ↗</a>
               </div>
             </div>
           </article>

@@ -142,9 +142,12 @@
   // 5. SLIDE-OUT DIRECTORY DRAWER & COMPLETE ARCHIVE
   // --------------------------------------------------------------------------
   const directoryData = [
-    { title: 'Disciplined Services &amp; Web Development Packages', category: 'Services &amp; Offerings', year: '2026', link: 'services.html', ext: null },
-    { title: 'Full-Cycle Web Architecture &amp; E-Commerce Retainers', category: 'Services &amp; Engineering', year: '2026', link: 'services.html#packages', ext: null },
-    { title: 'High-Stakes Admissions &amp; Visa Coaching Blueprint', category: 'Services &amp; Advisory', year: '2026', link: 'services.html#admissions', ext: null },
+    { title: 'Five Core Consulting Practices &amp; Pricing Engine', category: 'Practices &amp; Retainers', year: '2026', link: 'services.html', ext: null },
+    { title: 'Corporate &amp; SME AI Acceleration Workshops', category: 'Enterprise AI Training', year: '2026', link: 'services.html#ai-workshops', ext: null },
+    { title: 'Full-Cycle Web Architecture &amp; E-Commerce Retainers', category: 'Web Systems &amp; Engineering', year: '2026', link: 'services.html#packages', ext: null },
+    { title: 'High-Stakes Admissions &amp; Visa Coaching Blueprint', category: 'Admissions &amp; Advisory', year: '2026', link: 'services.html#admissions-coaching', ext: null },
+    { title: 'Academic Research Writing &amp; Policy Dossiers', category: 'Editorial &amp; Research', year: '2026', link: 'services.html#research-writing', ext: null },
+    { title: 'Creative Direction, Motion &amp; Video Production', category: 'Creative Direction', year: '2026', link: 'services.html#creative-production', ext: null },
     { title: 'Renalytica Enterprise Platform', category: 'Full-Stack &amp; BI', year: '2026', link: 'case-studies/renalytica.html', ext: 'https://renalytica.com' },
     { title: 'AXiA Active Storefront &amp; Paid Ads', category: 'E-Commerce &amp; Ads', year: '2024', link: 'case-studies/axia-active.html', ext: 'https://axiaactive.com' },
     { title: 'GoFar International Academy Portal', category: 'Web Architecture', year: '2023', link: 'case-studies/gofar-academy.html', ext: 'https://www.gofarinternationalacademy.com/' },
@@ -160,8 +163,8 @@
     { title: 'Blog &amp; Essays — Critical Journal', category: 'Journal &amp; Essays', year: '2026', link: 'blog.html', ext: null },
     { title: 'Privacy Policy &amp; Data Rights', category: 'Governance &amp; Policy', year: '2026', link: 'privacy.html', ext: null },
     { title: 'Terms of Usage &amp; Engagement', category: 'Governance &amp; Policy', year: '2026', link: 'terms.html', ext: null },
-    { title: 'Skills &amp; Craft Matrix (10-Yr Overview)', category: 'Core Competency', year: '2026', link: 'index.html#skills', ext: null },
-    { title: 'Official Master CV Repository (PDF)', category: 'Credentials &amp; Resume', year: '2026', link: 'Resume and CV/Alfred_Williams_Master_CV.pdf', ext: null },
+    { title: 'Consulting Disciplines &amp; Competency Matrix', category: 'Core Competency', year: '2026', link: 'about.html#practices', ext: null },
+    { title: 'Executive Dossier &amp; Verified Credentials', category: 'Executive Dossier', year: '2026', link: 'about.html#practices', ext: null },
     { title: 'Lagos SME Field Research (551 SMEs)', category: 'Market Research', year: '2021', link: 'about.html#sme-research', ext: null }
   ];
 
@@ -235,7 +238,6 @@
             <div class="drawer-quick-links">
               <a href="${rootPrefix}index.html" class="drawer-quick-link">Home</a>
               <a href="${rootPrefix}works.html" class="drawer-quick-link">Works</a>
-              <a href="${rootPrefix}index.html#skills" class="drawer-quick-link">Skills</a>
               <a href="${rootPrefix}brands.html" class="drawer-quick-link">Brands</a>
               <a href="${rootPrefix}about.html" class="drawer-quick-link">About</a>
               <a href="${rootPrefix}services.html" class="drawer-quick-link drawer-quick-link-highlight">Services</a>
