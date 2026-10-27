@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI for Web, App, Graphics &amp; Motion Design Training — Alfred E. Williams</title>
+  <meta name="description" content="Master AI-powered web design, mobile app prototyping, graphic branding, and motion video generation. Direct 1-on-1 mentorship with AI architect Alfred E. Williams.">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .ai-hero-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 12px;
+      padding: 48px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (max-width: 768px) {
+      .ai-hero-card { padding: 24px; }
+    }
+    .track-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin: 36px 0;
+    }
+    @media (max-width: 860px) {
+      .track-feature-grid { grid-template-columns: 1fr; }
+    }
+    .track-feature-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .track-feature-card:hover {
+      border-color: var(--accent-red);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(229, 46, 46, 0.1);
+    }
+    .track-card-media {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+      background: #111;
+      border-bottom: 1px solid var(--line-grid);
+    }
+    .track-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .track-feature-card:hover .track-card-media img {
+      transform: scale(1.04);
+    }
+    .track-card-body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 32px 0;
+    }
+    @media (max-width: 860px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+    .pricing-table-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .pricing-card-creative {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .pricing-card-creative.featured {
+      border-color: var(--accent-red);
+      background-color: var(--bg-surface-elevated);
+      box-shadow: 0 12px 36px rgba(229, 46, 46, 0.14);
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--ink-primary);
+    }
+    .feature-list li::before {
+      content: "✓";
+      color: var(--accent-red);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    /* 2D Animation Keyframes */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; transform: scale(0.98); }
+      50% { opacity: 0.85; transform: scale(1.02); }
+    }
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -32; }
+    }
+    @keyframes beaconPing {
+      0% { transform: scale(1); opacity: 0.8; }
+      70% { transform: scale(2.2); opacity: 0; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+    .anim-float {
+      animation: floatSlow 4.5s ease-in-out infinite;
+    }
+    .anim-dash {
+      stroke-dasharray: 6 6;
+      animation: dashFlow 1.8s linear infinite;
+    }
+    .anim-pulse {
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+    .faq-accordion-item {
+      border: 1px solid var(--line-grid);
+      border-radius: 10px;
+      margin-bottom: 14px;
+      background-color: var(--bg-surface);
+      overflow: hidden;
+    }
+    .faq-accordion-header {
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.05rem;
+      user-select: none;
+    }
+    .faq-accordion-header:hover {
+      color: var(--accent-red);
+    }
+    .faq-accordion-body {
+      padding: 0 24px 20px;
+      display: none;
+      color: var(--ink-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    .faq-accordion-item.open .faq-accordion-body {
+      display: block;
+    }
+    .faq-accordion-item.open .faq-accordion-header {
+      color: var(--accent-red);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Structural Grid Overlay -->
+  <div class="structural-grid-overlay" aria-hidden="true">
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="scroll-progress-bar" id="progressBar"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brandmark">
+        <span class="status-dot" title="Accepting design mentorship students"></span>
+        <span>Alfred <strong>E. Williams</strong></span>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="works.html" class="nav-link">Works</a></li>
+          <li><a href="brands.html" class="nav-link">Brands &amp; Social</a></li>
+          <li class="nav-item-dropdown">
+            <a href="about.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
+              <span>About</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="about.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">About Me</span>
+                <span class="dropdown-item-desc">Track record, speaking &amp; research</span>
+              </a>
+              <a href="blog.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Blog &amp; Essays</span>
+                <span class="dropdown-item-desc">Critical commentary &amp; insights</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <!-- Training Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="training.html" class="nav-link nav-link-dropdown active" aria-expanded="false" aria-haspopup="true">
+              <span>Training</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="ai-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Corporate AI Training ↗</span>
+                <span class="dropdown-item-desc">Workforce acceleration &amp; SOPs</span>
+              </a>
+              <a href="ai-design-training.html" class="nav-dropdown-item active" role="menuitem">
+                <span class="dropdown-item-title">AI for Design, Web &amp; Motion ↗</span>
+                <span class="dropdown-item-desc">Build sites, apps &amp; graphics with AI</span>
+              </a>
+              <a href="ielts-prep.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">IELTS 8.5+ &amp; Test Prep ↗</span>
+                <span class="dropdown-item-desc">Diagnostic assessment &amp; visa prep</span>
+              </a>
+              <a href="training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">All Training Programs</span>
+                <span class="dropdown-item-desc">Full academy curriculum &amp; cohorts</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="#enrollment" class="btn btn-sm btn-solid header-cta-btn" style="padding: 7px 18px; font-size: 0.82rem;">Enroll Now →</a>
+        <button class="theme-toggle-btn" aria-label="Toggle theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section style="padding: 64px 0 40px; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div style="margin-bottom: 24px;">
+          <div style="display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px; background: rgba(229, 46, 46, 0.08); border: 1px solid var(--accent-red); border-radius: 9999px;">
+            <span class="status-dot"></span>
+            <span style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-red); font-weight: 700;">
+              AI-POWERED CREATIVE ENGINEERING · 1-ON-1 &amp; SPRINT COHORTS
+            </span>
+          </div>
+        </div>
+
+        <div class="ai-hero-card">
+          <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center;">
+            <div>
+              <span class="card-tag">DIRECT MENTORSHIP WITH AI ARCHITECT ALFRED E. WILLIAMS</span>
+              <h1 style="font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 800; line-height: 1.12; margin: 16px 0 20px; letter-spacing: -0.02em;">
+                Build Production Websites, Apps, Brand Graphics &amp; Motion With AI.
+              </h1>
+              <p style="font-size: clamp(1rem, 1.6vw, 1.18rem); color: var(--ink-muted); line-height: 1.6; margin-bottom: 32px; max-width: 65ch;">
+                You don't need 2 years of syntax memorization to build world-class digital products. Learn how modern AI engineers and digital designers leverage <strong>Claude Code, Cursor, v0, Midjourney, Figma AI, and generative motion tools</strong> to conceive, architect, code, and ship commercial client projects at 10x speed.
+              </p>
+
+              <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 32px;">
+                <a href="#enrollment" class="btn btn-solid" style="padding: 14px 28px; font-size: 1rem;">
+                  Enroll in Mentorship ↓
+                </a>
+                <a href="https://wa.me/2348176939974?text=Hello%20Alfred,%20I%20want%20to%20learn%20how%20to%20use%20AI%20for%20web,%20app%20and%20motion%20design" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 14px 28px; font-size: 1rem;">
+                  Chat on WhatsApp ↗
+                </a>
+                <a href="#creative-modules" class="btn btn-outline" style="padding: 14px 22px; font-size: 1rem;">
+                  View 4 Modules ↓
+                </a>
+              </div>
+
+              <!-- Stats Ribbon -->
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; border-top: 1px solid var(--line-grid); padding-top: 24px;">
+                <div>
+                  <strong style="display: block; font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--accent-red);">10x Speed</strong>
+                  <span style="font-size: 0.82rem; color: var(--ink-muted);">From idea to live URL</span>
+                </div>
+                <div>
+                  <strong style="display: block; font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--accent-red);">4 Pillars</strong>
+                  <span style="font-size: 0.82rem; color: var(--ink-muted);">Web, App, Graphics &amp; Video</span>
+                </div>
+                <div>
+                  <strong style="display: block; font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--accent-red);">1-on-1 Focus</strong>
+                  <span style="font-size: 0.82rem; color: var(--ink-muted);">Live code &amp; design reviews</span>
+                </div>
+                <div>
+                  <strong style="display: block; font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--accent-red);">₦ &amp; $ Invoicing</strong>
+                  <span style="font-size: 0.82rem; color: var(--ink-muted);">Flexible local &amp; global</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating 2D Interactive Preview Card -->
+            <div class="anim-float" style="background: linear-gradient(145deg, rgba(25,25,25,0.95), rgba(15,15,15,0.95)); border: 1px solid var(--accent-red); border-radius: 16px; padding: 28px; box-shadow: 0 20px 50px rgba(229, 46, 46, 0.18);">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line-grid); padding-bottom: 14px; margin-bottom: 20px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #10B981;"></span>
+                  <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--ink-muted); margin-left: 8px;">AI_CREATIVE_PIPELINE.SYS</span>
+                </div>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-red); font-weight: 700;">PROMPT-TO-LIVE</span>
+              </div>
+
+              <!-- Terminal Simulation -->
+              <div style="font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.7; color: var(--ink-primary); display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; gap: 10px; align-items: flex-start;">
+                  <span style="color: var(--accent-red); font-weight: 700;">&gt;</span>
+                  <span><strong>AI Web Dev:</strong> "Build high-conversion editorial landing page with dark mode, semantic HTML &amp; CSS grid tokens."</span>
+                </div>
+                <div style="padding: 10px 14px; background: rgba(229, 46, 46, 0.08); border-radius: 8px; border-left: 3px solid var(--accent-red); font-size: 0.78rem;">
+                  ⚡ <em>Claude Code / Cursor Engine synthesized 480 lines clean CSS + vanilla JS in 18s.</em>
+                </div>
+
+                <div style="display: flex; gap: 10px; align-items: flex-start; margin-top: 6px;">
+                  <span style="color: var(--accent-red); font-weight: 700;">&gt;</span>
+                  <span><strong>AI Graphics:</strong> Midjourney v6 vector branding prompt + Vectorizer AI clean SVG asset output.</span>
+                </div>
+
+                <div style="display: flex; gap: 10px; align-items: flex-start; margin-top: 6px;">
+                  <span style="color: var(--accent-red); font-weight: 700;">&gt;</span>
+                  <span><strong>AI Motion Video:</strong> Runway Gen-3 + Kling 1080p cinematic product reel with animated typography.</span>
+                </div>
+
+                <div style="margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line-grid); display: flex; justify-content: space-between; align-items: center;">
+                  <span style="color: #10B981; font-size: 0.78rem; font-weight: 700;">● STATUS: PRODUCTION READY</span>
+                  <a href="#enrollment" class="btn btn-sm btn-solid" style="padding: 5px 14px; font-size: 0.75rem;">Join Mentorship →</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: THE OLD WAY VS THE AI-POWERED DESIGN WAY -->
+    <section style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div class="section-header" style="max-width: 760px; margin-bottom: 36px;">
+          <span class="card-tag">PARADIGM SHIFT</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            Why Traditional Web &amp; Design Bootcamps Are Obsolete.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6;">
+            The tech industry has permanently shifted. Spending 9 months memorizing basic CSS syntax or manually drawing buttons in Photoshop is no longer a viable career path. You must operate as an AI Creative Architect.
+          </p>
+        </div>
+
+        <div class="comparison-grid">
+          <!-- The Old Bootcamp Way -->
+          <div style="background-color: var(--bg-surface); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 32px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+              <span style="width: 12px; height: 12px; border-radius: 50%; background: #EF4444;"></span>
+              <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: #EF4444;">
+                The Outdated Bootcamp Approach
+              </h3>
+            </div>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.92rem; color: var(--ink-muted);">
+              <li style="display: flex; gap: 10px;">❌ <strong>6 to 12 months</strong> memorizing repetitive boilerplate syntax that AI writes in 3 seconds.</li>
+              <li style="display: flex; gap: 10px;">❌ <strong>Weeks spent drawing basic UI wireframes</strong> from scratch without AI design system accelerators.</li>
+              <li style="display: flex; gap: 10px;">❌ <strong>No video or motion skills</strong>: unable to produce social reels or motion graphics for paying clients.</li>
+              <li style="display: flex; gap: 10px;">❌ <strong>Single-skill trap</strong>: only knowing how to code OR only knowing graphics, leaving massive client revenue on the table.</li>
+              <li style="display: flex; gap: 10px;">❌ <strong>Graduating with generic todo-list apps</strong> that no client will ever pay to build.</li>
+            </ul>
+          </div>
+
+          <!-- The Alfred Williams AI-First Way -->
+          <div style="background-color: var(--bg-surface-elevated); border: 1px solid var(--accent-red); border-radius: 12px; padding: 32px; box-shadow: 0 12px 32px rgba(229, 46, 46, 0.1);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+              <span style="width: 12px; height: 12px; border-radius: 50%; background: #10B981;"></span>
+              <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--ink-primary);">
+                The AI-Powered Creative Architect Way
+              </h3>
+            </div>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.92rem; color: var(--ink-primary);">
+              <li style="display: flex; gap: 10px;">✓ <strong>Conceive &amp; ship complete web apps in 48 hours</strong> using Claude Code, Cursor, and v0.</li>
+              <li style="display: flex; gap: 10px;">✓ <strong>Design interactive mobile app prototypes</strong> in Figma using AI generators &amp; component libraries.</li>
+              <li style="display: flex; gap: 10px;">✓ <strong>Produce high-ticket brand identities &amp; vectors</strong> with Midjourney v6 + Vectorizer AI pipelines.</li>
+              <li style="display: flex; gap: 10px;">✓ <strong>Create cinematic motion design &amp; vertical reels</strong> with Runway Gen-3 and Kling AI video tools.</li>
+              <li style="display: flex; gap: 10px;">✓ <strong>Full-stack agency capability as a solo creator</strong>: command ₦350k - ₦1.5M ($500 - $2,500) per project.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: THE 4 CREATIVE MODULES -->
+    <section id="creative-modules" style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div class="section-header" style="max-width: 760px; margin-bottom: 36px;">
+          <span class="card-tag">SPECIALIZED CURRICULUM</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            The 4 AI-Powered Creative Tracks.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6;">
+            Master each domain step-by-step through live screen-shares, private prompt vaults, real project builds, and direct feedback on your creations.
+          </p>
+        </div>
+
+        <div class="track-feature-grid">
+
+          <!-- MODULE 01: AI FOR WEB DESIGN & FRONTEND DEV -->
+          <div class="track-feature-card">
+            <div class="track-card-media">
+              <img src="assets/illust-creator-desk-workspace.png" alt="AI Web Design and Development" loading="lazy">
+            </div>
+            <div class="track-card-body">
+              <div>
+                <span class="card-tag">MODULE 01 · PROMPT-TO-CODE SITES</span>
+                <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin: 12px 0 8px;">
+                  AI for Web Design &amp; Frontend Development
+                </h3>
+                <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 20px;">
+                  Learn how to direct AI pair programmers (Claude Code, Cursor, v0 by Vercel) to write pristine, semantic HTML5, modern vanilla CSS, responsive layouts, and interactive JavaScript without messy dependencies.
+                </p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--ink-primary); display: flex; flex-direction: column; gap: 10px;">
+                  <li>✓ Prompt engineering for pixel-perfect frontend layouts and design systems</li>
+                  <li>✓ Debugging code errors, CSS grid bugs, and mobile responsiveness with AI</li>
+                  <li>✓ Version control with Git, GitHub, and continuous deployment on Vercel</li>
+                  <li>✓ Building commercial landing pages, portfolio sites, and interactive web tools</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line-grid); font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700;">
+                Stack: Claude Code · Cursor · v0 · Semantic HTML/CSS · Vercel
+              </div>
+            </div>
+          </div>
+
+          <!-- MODULE 02: AI FOR APP DESIGN & PROTOTYPING -->
+          <div class="track-feature-card">
+            <div class="track-card-media">
+              <img src="assets/illust-sprint-mvp.png" alt="AI App Design and Prototyping" loading="lazy">
+            </div>
+            <div class="track-card-body">
+              <div>
+                <span class="card-tag">MODULE 02 · RAPID MOBILE UI/UX</span>
+                <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin: 12px 0 8px;">
+                  AI for App Design &amp; Architecture
+                </h3>
+                <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 20px;">
+                  Transform rough app ideas into interactive, clickable Figma prototypes and functional mobile app shells in days. Master user journey mapping, design token systems, and rapid MVP scoping with AI assistance.
+                </p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--ink-primary); display: flex; flex-direction: column; gap: 10px;">
+                  <li>✓ Generating user flows, wireframes, and UI design systems in Figma using AI</li>
+                  <li>✓ Prompting LLMs for full app logic, state management, and API architectures</li>
+                  <li>✓ Scaffolding React Native and Flutter mobile components with AI pair tools</li>
+                  <li>✓ Creating high-converting onboarding flows and frictionless checkout experiences</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line-grid); font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700;">
+                Stack: Figma AI · UI Component Tokens · Mobile UX · MVP Scaffolding
+              </div>
+            </div>
+          </div>
+
+          <!-- MODULE 03: AI FOR GRAPHIC DESIGN & BRANDING -->
+          <div class="track-feature-card">
+            <div class="track-card-media">
+              <img src="assets/illust-brand-identity.jpg" alt="AI Graphic Design and Branding" loading="lazy">
+            </div>
+            <div class="track-card-body">
+              <div>
+                <span class="card-tag">MODULE 03 · VISUAL IDENTITY &amp; ASSETS</span>
+                <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin: 12px 0 8px;">
+                  AI for Graphic Design &amp; Visual Identity
+                </h3>
+                <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 20px;">
+                  Stop wrestling with random AI image outputs. Master advanced prompt parameters in Midjourney v6, style references, aspect ratios, and clean vector conversion for high-end corporate logos, marketing creatives, and social ads.
+                </p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--ink-primary); display: flex; flex-direction: column; gap: 10px;">
+                  <li>✓ Consistent character generation, color harmony, and aesthetic coherence</li>
+                  <li>✓ Converting AI raster images into scalable, editable SVGs with Vectorizer AI</li>
+                  <li>✓ Designing complete corporate brand identity guidelines and pitch decks</li>
+                  <li>✓ Creating high-converting ad creatives for Instagram, Facebook &amp; LinkedIn</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line-grid); font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700;">
+                Stack: Midjourney v6 · Vectorizer AI · Illustrator · Clean SVG Assets
+              </div>
+            </div>
+          </div>
+
+          <!-- MODULE 04: AI FOR MOTION DESIGN & VIDEO REELS -->
+          <div class="track-feature-card">
+            <div class="track-card-media">
+              <img src="assets/illust-video-cutdown.jpg" alt="AI Motion Design and Video Reels" loading="lazy">
+            </div>
+            <div class="track-card-body">
+              <div>
+                <span class="card-tag">MODULE 04 · CINEMATIC MOTION &amp; REELS</span>
+                <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin: 12px 0 8px;">
+                  AI for Motion Design &amp; Video Reels
+                </h3>
+                <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 20px;">
+                  Command attention with cinematic generative video. Learn how to direct camera movements, camera pans, and character consistency using Runway Gen-3, Kling AI, Luma Dream Machine, and modern motion typography.
+                </p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--ink-primary); display: flex; flex-direction: column; gap: 10px;">
+                  <li>✓ Camera direction prompts (cinematic zooms, drone sweeps, match cuts)</li>
+                  <li>✓ Creating viral vertical video reels (9:16) with AI voiceovers and captions</li>
+                  <li>✓ Micro-interactions and animated SVG / Lottie motion design for websites</li>
+                  <li>✓ Automated video repurposing pipelines from long-form audio/text</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line-grid); font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700;">
+                Stack: Runway Gen-3 · Kling AI · Luma · CapCut Pro · SVG Micro-Motion
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: 2D VECTOR ARCHITECTURE SCHEMATIC -->
+    <section style="padding: 64px 0; border-bottom: 1px solid var(--line-grid); background: var(--bg-surface);">
+      <div class="container">
+        
+        <div class="section-header" style="max-width: 760px; margin-bottom: 36px;">
+          <span class="card-tag">THE 2D CREATIVE ARCHITECTURE</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            The Prompt-to-Production Pipeline.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6;">
+            How our AI-powered development workflow moves an asset from natural language concept to live, revenue-generating client asset.
+          </p>
+        </div>
+
+        <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-radius: 14px; padding: 32px; overflow-x: auto;">
+          <svg viewBox="0 0 960 320" width="100%" height="auto" style="min-width: 720px; font-family: var(--font-mono);">
+            <!-- Definitions for glowing gradients & markers -->
+            <defs>
+              <linearGradient id="aiFlowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#E52E2E" stop-opacity="0.8"/>
+                <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#E52E2E" stop-opacity="0.8"/>
+              </linearGradient>
+              <marker id="arrowRed" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#E52E2E"/>
+              </marker>
+            </defs>
+
+            <!-- Connecting animated flow lines -->
+            <path class="anim-dash" d="M 180 160 L 320 160" stroke="#E52E2E" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+            <path class="anim-dash" d="M 460 160 L 600 160" stroke="#E52E2E" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+            <path class="anim-dash" d="M 740 160 L 840 160" stroke="#E52E2E" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+
+            <!-- Node 1: Client Brief & Vision -->
+            <g transform="translate(40, 90)">
+              <rect width="140" height="140" rx="12" fill="#141414" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+              <circle cx="70" cy="45" r="22" fill="rgba(229,46,46,0.12)" stroke="#E52E2E" stroke-width="1.5"/>
+              <text x="70" y="50" font-size="16" fill="#FFF" text-anchor="middle" font-weight="bold">01</text>
+              <text x="70" y="92" font-size="12" fill="#FFF" font-weight="bold" text-anchor="middle">CLIENT BRIEF</text>
+              <text x="70" y="110" font-size="10" fill="#888" text-anchor="middle">Specs &amp; Wireframe</text>
+              <text x="70" y="124" font-size="9" fill="#E52E2E" text-anchor="middle">Strategic Intent</text>
+            </g>
+
+            <!-- Node 2: Multi-Model AI Engine -->
+            <g transform="translate(320, 70)">
+              <rect width="140" height="180" rx="14" fill="#141414" stroke="#E52E2E" stroke-width="2"/>
+              <circle class="anim-pulse" cx="70" cy="50" r="26" fill="rgba(229,46,46,0.2)" stroke="#E52E2E" stroke-width="2"/>
+              <text x="70" y="56" font-size="18" fill="#E52E2E" text-anchor="middle" font-weight="bold">AI</text>
+              <text x="70" y="102" font-size="12" fill="#FFF" font-weight="bold" text-anchor="middle">AI ENGINE</text>
+              <text x="70" y="122" font-size="9.5" fill="#AAA" text-anchor="middle">Claude Code · Cursor</text>
+              <text x="70" y="138" font-size="9.5" fill="#AAA" text-anchor="middle">Midjourney · v0</text>
+              <text x="70" y="154" font-size="9.5" fill="#AAA" text-anchor="middle">Runway Gen-3</text>
+            </g>
+
+            <!-- Node 3: Code & Asset Generation -->
+            <g transform="translate(600, 90)">
+              <rect width="140" height="140" rx="12" fill="#141414" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+              <circle cx="70" cy="45" r="22" fill="rgba(229,46,46,0.12)" stroke="#E52E2E" stroke-width="1.5"/>
+              <text x="70" y="50" font-size="16" fill="#FFF" text-anchor="middle" font-weight="bold">03</text>
+              <text x="70" y="92" font-size="12" fill="#FFF" font-weight="bold" text-anchor="middle">ASSET CREATION</text>
+              <text x="70" y="110" font-size="10" fill="#888" text-anchor="middle">HTML/CSS/JS</text>
+              <text x="70" y="124" font-size="9" fill="#E52E2E" text-anchor="middle">SVGs &amp; 1080p Reels</text>
+            </g>
+
+            <!-- Node 4: Production Deployment -->
+            <g transform="translate(840, 90)">
+              <rect width="100" height="140" rx="12" fill="#141414" stroke="#10B981" stroke-width="2"/>
+              <circle cx="50" cy="45" r="22" fill="rgba(16,185,129,0.12)" stroke="#10B981" stroke-width="1.5"/>
+              <text x="50" y="52" font-size="14" fill="#10B981" text-anchor="middle">LIVE</text>
+              <text x="50" y="92" font-size="11" fill="#FFF" font-weight="bold" text-anchor="middle">LAUNCH</text>
+              <text x="50" y="110" font-size="9" fill="#10B981" text-anchor="middle">Custom Domain</text>
+              <text x="50" y="124" font-size="9" fill="#888" text-anchor="middle">Vercel / Netlify</text>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: TUITION & ENROLLMENT TIERS -->
+    <section id="enrollment" style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div class="section-header" style="max-width: 760px; margin-bottom: 36px;">
+          <span class="card-tag">DIRECT MENTORSHIP TIERS</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            Transparent Tuition &amp; Flexible Billing.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6;">
+            We keep cohort sizes small (maximum 8 students per intake) or 1-on-1 private mentorship to guarantee direct screen-share reviews on every project you build.
+          </p>
+        </div>
+
+        <div class="pricing-table-grid">
+
+          <!-- TIER 01: 1-ON-1 STRATEGY & AUDIT -->
+          <div class="pricing-card-creative">
+            <div>
+              <span class="card-tag">PRIVATE CLINIC</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin: 10px 0;">
+                1-on-1 AI Workflow Audit
+              </h3>
+              <p style="font-size: 0.88rem; color: var(--ink-muted); line-height: 1.5; margin-bottom: 20px;">
+                For designers, developers, and agency owners who want to overhaul their current setup and integrate AI tools into their live client projects.
+              </p>
+
+              <div style="font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; margin-bottom: 6px;">
+                ₦45,000 <span style="font-size: 1rem; color: var(--ink-muted); font-weight: 400;">/ $55 USD</span>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-red); font-weight: 700; display: block; margin-bottom: 20px;">
+                SINGLE 90-MINUTE DEEP DIVE SESSION
+              </span>
+
+              <ul class="feature-list">
+                <li>Live 1-on-1 audit of your design &amp; code workflow</li>
+                <li>Installing &amp; configuring Cursor AI / Claude Code</li>
+                <li>Midjourney prompt optimization for your exact brand style</li>
+                <li>Custom action plan to 5x your turnaround time</li>
+                <li>Recording of the full session + prompt swipe files</li>
+              </ul>
+            </div>
+
+            <div style="margin-top: 28px;">
+              <a href="contact.html?package=ai-workflow-audit" class="btn btn-outline" style="width: 100%; justify-content: center;">
+                Book Audit Session →
+              </a>
+            </div>
+          </div>
+
+          <!-- TIER 02: 4-WEEK SPRINT (FEATURED) -->
+          <div class="pricing-card-creative featured">
+            <div style="position: absolute; top: -12px; right: 24px; background: var(--accent-red); color: #fff; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase;">
+              MOST POPULAR
+            </div>
+
+            <div>
+              <span class="card-tag">4-WEEK ACCELERATOR</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin: 10px 0;">
+                AI Web &amp; Design Sprint
+              </h3>
+              <p style="font-size: 0.88rem; color: var(--ink-muted); line-height: 1.5; margin-bottom: 20px;">
+                Go from beginner to building production-ready websites and high-end visual identities with AI pair-programming tools.
+              </p>
+
+              <div style="font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; color: var(--accent-red); margin-bottom: 6px;">
+                ₦150,000 <span style="font-size: 1rem; color: var(--ink-muted); font-weight: 400;">/ $175 USD</span>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-primary); font-weight: 700; display: block; margin-bottom: 20px;">
+                4 WEEKS · LIVE COACHING + DAILY WHATSAPP
+              </span>
+
+              <ul class="feature-list">
+                <li>Module 01 (Web) + Module 03 (Graphics) full mastery</li>
+                <li>Build 2 complete, live client-ready web applications</li>
+                <li>Direct weekly 1-on-1 video reviews on your code and designs</li>
+                <li>Full access to Alfred’s curated prompt vault (60+ prompts)</li>
+                <li>Vercel deployment setup + custom domain DNS routing</li>
+                <li>Daily WhatsApp support directly from Alfred Williams</li>
+              </ul>
+            </div>
+
+            <div style="margin-top: 28px;">
+              <a href="contact.html?package=skills-ai-web" class="btn btn-solid" style="width: 100%; justify-content: center;">
+                Enroll in 4-Week Sprint →
+              </a>
+            </div>
+          </div>
+
+          <!-- TIER 03: 8-WEEK FULL-STACK CREATIVE DIRECTOR -->
+          <div class="pricing-card-creative">
+            <div>
+              <span class="card-tag">8-WEEK COMPREHENSIVE</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin: 10px 0;">
+                Full Creative Suite Pro
+              </h3>
+              <p style="font-size: 0.88rem; color: var(--ink-muted); line-height: 1.5; margin-bottom: 20px;">
+                Complete mastery of Web, App, Graphics and Motion video. Graduate as a high-income creative technologist ready to command international rates.
+              </p>
+
+              <div style="font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; margin-bottom: 6px;">
+                ₦280,000 <span style="font-size: 1rem; color: var(--ink-muted); font-weight: 400;">/ $320 USD</span>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-red); font-weight: 700; display: block; margin-bottom: 20px;">
+                8 WEEKS · ALL 4 CREATIVE MODULES
+              </span>
+
+              <ul class="feature-list">
+                <li>All 4 Modules: Web Dev, App Design, Graphics &amp; Motion</li>
+                <li>Build 4 production portfolio projects to show paying clients</li>
+                <li>Motion video &amp; vertical reel production with Runway Gen-3</li>
+                <li>International client acquisition, proposal &amp; invoicing playbook</li>
+                <li>Complete portfolio audit &amp; personal brand positioning</li>
+                <li>60 days post-training advisory &amp; contract review support</li>
+              </ul>
+            </div>
+
+            <div style="margin-top: 28px;">
+              <a href="contact.html?package=skills-ai-suite-pro" class="btn btn-solid" style="width: 100%; justify-content: center;">
+                Enroll in Creative Suite Pro →
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: SCHEDULE VIA CAL.COM -->
+    <section style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        <div style="background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-radius: 12px; padding: 48px 32px; text-align: center; max-width: 820px; margin: 0 auto;">
+          <span class="card-tag">HAVE QUESTIONS FIRST?</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0 16px;">
+            Book a 15-Minute Mentorship Advisory Call.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 28px; max-width: 60ch; margin-left: auto; margin-right: auto;">
+            Not sure which module fits your current goals? Let’s jump on a quick call to assess your technical baseline and map out your personalized learning roadmap.
+          </p>
+
+          <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://cal.com/alfred-williams-cwb4t4/60min" target="_blank" rel="noopener" class="btn btn-solid" style="padding: 14px 28px; font-size: 1rem;">
+              Schedule Call on Cal.com ↗
+            </a>
+            <a href="https://wa.me/2348176939974?text=Hello%20Alfred,%20I%20have%20questions%20about%20your%20AI%20for%20design%20and%20web%20training" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 14px 28px; font-size: 1rem;">
+              Message on WhatsApp ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: FAQS -->
+    <section style="padding: 64px 0 80px; border-bottom: 1px solid var(--line-grid);">
+      <div class="container" style="max-width: 840px;">
+        
+        <div class="section-header" style="text-align: center; margin-bottom: 36px;">
+          <span class="card-tag">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            Got Questions? We Have Answers.
+          </h2>
+        </div>
+
+        <div class="faq-accordion">
+          <div class="faq-accordion-item open">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>Do I need prior coding or design experience before joining?</span>
+              <span class="faq-icon">−</span>
+            </div>
+            <div class="faq-accordion-body">
+              No prior coding or design background is required. We teach you how to think like an architect and creative director, utilizing generative AI models (Claude Code, Cursor, v0, Midjourney) to generate the underlying syntax and visual assets. If you can clearly articulate what you want to build in plain English, you can master this program.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>How are sessions delivered?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              All training is delivered live via Google Meet or Zoom with screen-sharing and interactive practice. Every session is recorded and uploaded to your private dashboard. You also have direct daily WhatsApp access to Alfred Williams for instant unblocking and feedback between sessions.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>What software or subscriptions will I need?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              A computer (laptop/desktop) with a stable internet connection. We guide you through free and paid AI toolchains, including Cursor, Claude Code, Figma, and Midjourney. We show you how to maximize free credits and budget-friendly plans during your learning phase.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>What payment methods do you accept?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              We accept direct Nigerian bank transfer in Naira (₦), and international payments in USD ($), GBP (£), or EUR (€) via card, PayPal, or international wire. We also offer a 2-part milestone payment option for the 8-week comprehensive track.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2 class="footer-heading">
+            Let's build<br>something <em>worth</em><br>remembering.
+          </h2>
+        </div>
+        <div class="footer-contacts">
+          <button class="contact-row-btn" data-copy-email="officialwilliamsae@gmail.com" aria-label="Copy email address to clipboard">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
+              <span style="font-weight: 500;">officialwilliamsae@gmail.com</span>
+            </span>
+            <span style="font-size: 0.72rem; color: var(--accent-red); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em;">Click to Copy</span>
+          </button>
+
+          <a href="tel:+2348176939974" class="contact-row-btn">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+234 817 693 9974</span>
+            </span>
+            <span style="font-size: 0.72rem; color: #9CA3AF;">Call Direct</span>
+          </a>
+
+          <a href="https://linkedin.com/in/williams-e-alfred/" target="_blank" rel="noopener" class="contact-row-btn">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>linkedin.com/in/williams-e-alfred</span>
+            </span>
+            <span style="font-size: 0.72rem; color: #9CA3AF;">Connect ↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="monumental-wordmark" aria-hidden="true">WILLIAMS.</div>
+      
+      <div class="footer-sub-bar">
+        <span>© 2026 Alfred E. Williams. All rights reserved.</span>
+        <span>
+          <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+          <span style="opacity: 0.3; margin: 0 8px;">/</span>
+          <a href="terms.html" class="footer-legal-link">Terms of Usage</a>
+        </span>
+        <span>Lagos, Nigeria · Operating Across London, New York &amp; Tokyo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/components.js"></script>
+  <script>
+    function toggleFaq(header) {
+      const item = header.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-accordion-item').forEach(el => {
+        el.classList.remove('open');
+        const icon = el.querySelector('.faq-icon');
+        if (icon) icon.textContent = '+';
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        const icon = item.querySelector('.faq-icon');
+        if (icon) icon.textContent = '−';
+      }
+    }
+  </script>
+</body>
+</html>

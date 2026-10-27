@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IELTS Band 8.5+ &amp; Global Admissions Mentorship — Alfred E. Williams</title>
+  <meta name="description" content="Score Band 8.5+ on the IELTS on your next attempt. Personalized 1-on-1 diagnostic evaluations, speaking fluency mocks, Band 9 essay formulas, and US/UK visa prep with Alfred E. Williams.">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .prep-hero-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 12px;
+      padding: 48px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (max-width: 768px) {
+      .prep-hero-card { padding: 24px; }
+    }
+    .prep-grid-2 {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .prep-grid-2 { grid-template-columns: 1fr; }
+    }
+    .pillar-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin: 36px 0;
+    }
+    @media (max-width: 860px) {
+      .pillar-card-grid { grid-template-columns: 1fr; }
+    }
+    .pillar-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .pillar-card:hover {
+      border-color: var(--accent-red);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(229, 46, 46, 0.1);
+    }
+    .pillar-media {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: #111;
+      border-bottom: 1px solid var(--line-grid);
+    }
+    .pillar-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .pillar-card:hover .pillar-media img {
+      transform: scale(1.04);
+    }
+    .pillar-body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .pricing-table-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .pricing-card-prep {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .pricing-card-prep.featured {
+      border-color: var(--accent-red);
+      background-color: var(--bg-surface-elevated);
+      box-shadow: 0 12px 36px rgba(229, 46, 46, 0.14);
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--ink-primary);
+    }
+    .feature-list li::before {
+      content: "✓";
+      color: var(--accent-red);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    /* 2D Keyframe Animations */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; transform: scale(0.98); }
+      50% { opacity: 0.85; transform: scale(1.02); }
+    }
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -32; }
+    }
+    .anim-float {
+      animation: floatSlow 4.5s ease-in-out infinite;
+    }
+    .anim-dash {
+      stroke-dasharray: 6 6;
+      animation: dashFlow 1.8s linear infinite;
+    }
+    .anim-pulse {
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+    .faq-accordion-item {
+      border: 1px solid var(--line-grid);
+      border-radius: 10px;
+      margin-bottom: 14px;
+      background-color: var(--bg-surface);
+      overflow: hidden;
+    }
+    .faq-accordion-header {
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.05rem;
+      user-select: none;
+    }
+    .faq-accordion-header:hover {
+      color: var(--accent-red);
+    }
+    .faq-accordion-body {
+      padding: 0 24px 20px;
+      display: none;
+      color: var(--ink-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    .faq-accordion-item.open .faq-accordion-body {
+      display: block;
+    }
+    .faq-accordion-item.open .faq-accordion-header {
+      color: var(--accent-red);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Structural Grid Overlay -->
+  <div class="structural-grid-overlay" aria-hidden="true">
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="scroll-progress-bar" id="progressBar"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brandmark">
+        <span class="status-dot" title="Accepting select candidates for upcoming exam dates"></span>
+        <span>Alfred <strong>E. Williams</strong></span>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="works.html" class="nav-link">Works</a></li>
+          <li><a href="brands.html" class="nav-link">Brands &amp; Social</a></li>
+          <li class="nav-item-dropdown">
+            <a href="about.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
+              <span>About</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="about.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">About Me</span>
+                <span class="dropdown-item-desc">Track record, speaking &amp; research</span>
+              </a>
+              <a href="blog.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Blog &amp; Essays</span>
+                <span class="dropdown-item-desc">Critical commentary &amp; insights</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <!-- Training Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="training.html" class="nav-link nav-link-dropdown active" aria-expanded="false" aria-haspopup="true">
+              <span>Training</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="ai-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Corporate AI Training ↗</span>
+                <span class="dropdown-item-desc">Workforce acceleration &amp; SOPs</span>
+              </a>
+              <a href="ai-design-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">AI for Design, Web &amp; Motion ↗</span>
+                <span class="dropdown-item-desc">Build sites, apps &amp; graphics with AI</span>
+              </a>
+              <a href="ielts-prep.html" class="nav-dropdown-item active" role="menuitem">
+                <span class="dropdown-item-title">IELTS 8.5+ &amp; Test Prep ↗</span>
+                <span class="dropdown-item-desc">Diagnostic assessment &amp; visa prep</span>
+              </a>
+              <a href="training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">All Training Programs</span>
+                <span class="dropdown-item-desc">Full academy curriculum &amp; cohorts</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="#enrollment" class="btn btn-sm btn-solid header-cta-btn" style="padding: 7px 18px; font-size: 0.82rem;">Enroll Now →</a>
+        <button class="theme-toggle-btn" aria-label="Toggle theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section style="padding: 64px 0 40px; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div style="margin-bottom: 24px;">
+          <div style="display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px; background: rgba(229, 46, 46, 0.08); border: 1px solid var(--accent-red); border-radius: 9999px;">
+            <span class="status-dot"></span>
+            <span style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-red); font-weight: 700;">
+              ACADEMIC ADMISSIONS &amp; RELOCATION · 1-ON-1 CLINIC
+            </span>
+          </div>
+        </div>
+
+        <div class="prep-hero-card">
+          <div class="prep-grid-2">
+            <div>
+              <span class="card-tag">DIRECT MENTORSHIP WITH EXAM STRATEGIST ALFRED E. WILLIAMS</span>
+              <h1 style="font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 800; line-height: 1.12; margin: 16px 0 20px; letter-spacing: -0.02em;">
+                Score Band 8.5+ on the IELTS. Stop Retaking the Exam.
+              </h1>
+              <p style="font-size: clamp(1rem, 1.6vw, 1.18rem); color: var(--ink-muted); line-height: 1.6; margin-bottom: 32px; max-width: 65ch;">
+                Most test takers fail to hit their target score not because their English is bad, but because they don't understand the <strong>examiner's exact scoring rubrics</strong>. Get personalized 1-on-1 diagnostic evaluations, live speaking mocks, Band 9 essay blueprints, and US/UK visa prep.
+              </p>
+
+              <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 32px;">
+                <a href="#enrollment" class="btn btn-solid" style="padding: 14px 28px; font-size: 1rem;">
+                  Enroll in Mentorship ↓
+                </a>
+                <a href="https://wa.me/2348176939974?text=Hello%20Alfred,%20I%20am%20preparing%20for%20the%20IELTS%20and%20need%201-on-1%20mentorship" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 14px 28px; font-size: 1rem;">
+                  Chat on WhatsApp ↗
+                </a>
+                <a href="#diagnostic-proof" class="btn btn-outline" style="padding: 14px 22px; font-size: 1rem;">
+                  See Diagnostic Proof ↓
+                </a>
+              </div>
+
+              <!-- Stats Ribbon -->
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 16px; border-top: 1px solid var(--line-grid); padding-top: 24px;">
+                <div>
+                  <strong style="display: block; font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--accent-red);">90%+</strong>
+                  <span style="font-size: 0.82rem; color: var(--ink-muted);">First-attempt pass rate</span>
+                </div>
+                <div>
+                  <strong style="display: block; font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--accent-red);">Band 8.5+</strong>
+                  <span style="font-size: 0.82rem; color: var(--ink-muted);">Alfred's verified score</span>
+                </div>
+                <div>
+                  <strong style="display: block; font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--accent-red);">1-on-1 Focus</strong>
+                  <span style="font-size: 0.82rem; color: var(--ink-muted);">Live speech &amp; essay mocks</span>
+                </div>
+                <div>
+                  <strong style="display: block; font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--accent-red);">₦ &amp; $ Invoicing</strong>
+                  <span style="font-size: 0.82rem; color: var(--ink-muted);">Transparent local &amp; USD</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating 2D Proof Card: OTEC Speaking Diagnostic -->
+            <div class="anim-float" style="background: linear-gradient(145deg, rgba(25,25,25,0.95), rgba(15,15,15,0.95)); border: 1px solid var(--accent-red); border-radius: 16px; padding: 24px; box-shadow: 0 20px 50px rgba(229, 46, 46, 0.18);">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line-grid); padding-bottom: 12px; margin-bottom: 18px;">
+                <span class="card-tag" style="margin: 0;">REAL DIAGNOSTIC AUDIT</span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #10B981; font-weight: 700;">● OTEC BENCHMARK</span>
+              </div>
+
+              <!-- Real OTEC Diagnostic Image -->
+              <div style="border-radius: 10px; overflow: hidden; border: 1px solid var(--line-grid); margin-bottom: 16px; background: #000;">
+                <img src="assets/otec-speaking-real.png" alt="OTEC Speaking Diagnostic Results" style="width: 100%; height: auto; display: block;">
+              </div>
+
+              <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-muted); line-height: 1.6;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                  <span>Fluency &amp; Coherence:</span>
+                  <strong style="color: #fff;">Band 8.5</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                  <span>Lexical Resource:</span>
+                  <strong style="color: #fff;">Band 8.5</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                  <span>Grammatical Range:</span>
+                  <strong style="color: #fff;">Band 8.0+</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--line-grid); padding-top: 6px; margin-top: 6px;">
+                  <span style="color: var(--accent-red); font-weight: 700;">Target Achievement:</span>
+                  <strong style="color: var(--accent-red);">TOP 2% GLOBALLY</strong>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: THE 4 PREPARATION PILLARS -->
+    <section id="pillars" style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div class="section-header" style="max-width: 760px; margin-bottom: 36px;">
+          <span class="card-tag">SYSTEMATIC INTERVENTION</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            The 4 Pillars of Band 8.5 Mastery.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6;">
+            We do not teach broad grammar rules. We train you directly on the 4 scoring criteria examiners use to award Band 8.0, 8.5, and 9.0 marks.
+          </p>
+        </div>
+
+        <div class="pillar-card-grid">
+
+          <!-- PILLAR 01: DIAGNOSTIC SCORE AUDIT -->
+          <div class="pillar-card">
+            <div class="pillar-media">
+              <img src="assets/illust-prep-diagnostic.jpg" alt="Diagnostic Score Clinic" loading="lazy">
+            </div>
+            <div class="pillar-body">
+              <div>
+                <span class="card-tag">PILLAR 01 · WEAKNESS PINPOINTING</span>
+                <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin: 12px 0 8px;">
+                  Diagnostic Score Audit &amp; Weakness Mapping
+                </h3>
+                <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 20px;">
+                  We administer a full diagnostic exam under strict test conditions. We analyze your speaking audio waveforms, lexical variety, sentence structure errors, and listening trap fall-rates to pinpoint exactly why you are stuck at Band 6.5 or 7.0.
+                </p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--ink-primary); display: flex; flex-direction: column; gap: 10px;">
+                  <li>✓ Audio acoustic and pronunciation diagnostic review</li>
+                  <li>✓ Exact error inventory (articles, prepositions, run-on thoughts)</li>
+                  <li>✓ Personalized score improvement roadmap mapped to test date</li>
+                  <li>✓ Cambridge IELTS benchmark alignment across all 4 modules</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line-grid); font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700;">
+                Focus: Eliminate Blindspots · Immediate Score Uplift
+              </div>
+            </div>
+          </div>
+
+          <!-- PILLAR 02: SPEAKING FLUENCY MOCKS -->
+          <div class="pillar-card">
+            <div class="pillar-media">
+              <img src="assets/illust-prep-accelerator.jpg" alt="1-on-1 Speaking Fluency Mocks" loading="lazy">
+            </div>
+            <div class="pillar-body">
+              <div>
+                <span class="card-tag">PILLAR 02 · 1-ON-1 LIVE COACHING</span>
+                <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin: 12px 0 8px;">
+                  Speaking Fluency &amp; Part 2/3 Strategy
+                </h3>
+                <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 20px;">
+                  Overcome pause hesitation, Nigerian accent cadence hurdles, and mental freezing. Practice live 1-on-1 with Alfred Williams across 40+ contemporary IELTS cue-card topics and abstract Part 3 questions.
+                </p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--ink-primary); display: flex; flex-direction: column; gap: 10px;">
+                  <li>✓ The 2-minute Part 2 cue-card bulletproof outline framework</li>
+                  <li>✓ Part 3 abstract reasoning: how to give sophisticated academic answers</li>
+                  <li>✓ Replacing fillers ("ehhh", "you know") with idiomatic discourse markers</li>
+                  <li>✓ Recorded live mock sessions with instant timestamped critiques</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line-grid); font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700;">
+                Focus: Band 8.5 Fluency · Natural Delivery · Zero Hesitation
+              </div>
+            </div>
+          </div>
+
+          <!-- PILLAR 03: WRITING TASK 1 & TASK 2 ESSAY FORMULAS -->
+          <div class="pillar-card">
+            <div class="pillar-media">
+              <img src="assets/illust-thesis-advisory.jpg" alt="IELTS Writing Task 1 and 2 Formulas" loading="lazy">
+            </div>
+            <div class="pillar-body">
+              <div>
+                <span class="card-tag">PILLAR 03 · RED-PEN CRITIQUES</span>
+                <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin: 12px 0 8px;">
+                  Writing Task 1 &amp; Task 2 Formulas
+                </h3>
+                <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 20px;">
+                  Writing is where 80% of candidates lose their Canadian or UK visa dreams. We provide proven paragraph blueprints for agree/disagree, discussion, and double-question essays, backed by line-by-line red-pen corrections on your drafts.
+                </p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--ink-primary); display: flex; flex-direction: column; gap: 10px;">
+                  <li>✓ Line-by-line red-pen critiques on every essay you submit</li>
+                  <li>✓ Task 1 Academic: 20-minute graph, chart, and process formulas</li>
+                  <li>✓ Upgrading basic lexical terms into Band 9 academic collocations</li>
+                  <li>✓ Cohesive devices and punctuation mastery (semicolons, complex clauses)</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line-grid); font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700;">
+                Focus: Break the Band 6.5 Ceiling · Secure 8.0+ in Writing
+              </div>
+            </div>
+          </div>
+
+          <!-- PILLAR 04: US/UK VISA INTERVIEWS & SOP WRITING -->
+          <div class="pillar-card">
+            <div class="pillar-media">
+              <img src="assets/illust-prep-visa.jpg" alt="US and UK Visa Interview Prep and SOPs" loading="lazy">
+            </div>
+            <div class="pillar-body">
+              <div>
+                <span class="card-tag">PILLAR 04 · VISA &amp; ADMISSIONS</span>
+                <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin: 12px 0 8px;">
+                  SOP Writing &amp; US F-1 Visa Mock Interviews
+                </h3>
+                <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 20px;">
+                  Your test score is only step one. We transform your rough life story into a compelling, scholarship-winning Statement of Purpose (SOP) and run rigorous consular mock interviews with tough questions on funding and home ties.
+                </p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--ink-primary); display: flex; flex-direction: column; gap: 10px;">
+                  <li>✓ Editorial overhaul of your Statement of Purpose (SOP) and essays</li>
+                  <li>✓ Live US Consular mock interview sessions with aggressive questioning</li>
+                  <li>✓ Bulletproof answers for "Why this school?" and "Who is paying?"</li>
+                  <li>✓ Post-graduation career plan articulation that satisfies visa officers</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line-grid); font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700;">
+                Focus: Scholarship Winning SOP · Confident Consular Approval
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: 2D VECTOR SCORE PROGRESSION PIPELINE -->
+    <section style="padding: 64px 0; border-bottom: 1px solid var(--line-grid); background: var(--bg-surface);">
+      <div class="container">
+        
+        <div class="section-header" style="max-width: 760px; margin-bottom: 36px;">
+          <span class="card-tag">THE 2D SCORE ACCELERATION PIPELINE</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            How We Move You From Band 6.5 to Band 8.5.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6;">
+            A rigorous 4-stage feedback loop engineered to eliminate repeat test fees and lock in your relocation score.
+          </p>
+        </div>
+
+        <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-radius: 14px; padding: 32px; overflow-x: auto;">
+          <svg viewBox="0 0 960 300" width="100%" height="auto" style="min-width: 720px; font-family: var(--font-mono);">
+            <defs>
+              <marker id="arrowPrep" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#E52E2E"/>
+              </marker>
+            </defs>
+
+            <!-- Connector Lines -->
+            <path class="anim-dash" d="M 180 150 L 320 150" stroke="#E52E2E" stroke-width="2.5" marker-end="url(#arrowPrep)"/>
+            <path class="anim-dash" d="M 460 150 L 600 150" stroke="#E52E2E" stroke-width="2.5" marker-end="url(#arrowPrep)"/>
+            <path class="anim-dash" d="M 740 150 L 840 150" stroke="#E52E2E" stroke-width="2.5" marker-end="url(#arrowPrep)"/>
+
+            <!-- Stage 1 -->
+            <g transform="translate(40, 80)">
+              <rect width="140" height="140" rx="12" fill="#141414" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+              <circle cx="70" cy="45" r="22" fill="rgba(239,68,68,0.12)" stroke="#EF4444" stroke-width="1.5"/>
+              <text x="70" y="52" font-size="14" fill="#EF4444" text-anchor="middle" font-weight="bold">6.5</text>
+              <text x="70" y="92" font-size="12" fill="#FFF" font-weight="bold" text-anchor="middle">DIAGNOSTIC</text>
+              <text x="70" y="110" font-size="10" fill="#888" text-anchor="middle">Error Audit</text>
+              <text x="70" y="124" font-size="9" fill="#EF4444" text-anchor="middle">Baseline Score</text>
+            </g>
+
+            <!-- Stage 2 -->
+            <g transform="translate(320, 65)">
+              <rect width="140" height="170" rx="14" fill="#141414" stroke="#E52E2E" stroke-width="2"/>
+              <circle class="anim-pulse" cx="70" cy="45" r="24" fill="rgba(229,46,46,0.2)" stroke="#E52E2E" stroke-width="2"/>
+              <text x="70" y="51" font-size="16" fill="#E52E2E" text-anchor="middle" font-weight="bold">1-on-1</text>
+              <text x="70" y="94" font-size="12" fill="#FFF" font-weight="bold" text-anchor="middle">INTERVENTION</text>
+              <text x="70" y="114" font-size="9.5" fill="#AAA" text-anchor="middle">Speaking Mocks</text>
+              <text x="70" y="130" font-size="9.5" fill="#AAA" text-anchor="middle">Essay Red-Pen</text>
+              <text x="70" y="146" font-size="9.5" fill="#AAA" text-anchor="middle">Timing Drills</text>
+            </g>
+
+            <!-- Stage 3 -->
+            <g transform="translate(600, 80)">
+              <rect width="140" height="140" rx="12" fill="#141414" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+              <circle cx="70" cy="45" r="22" fill="rgba(229,46,46,0.12)" stroke="#E52E2E" stroke-width="1.5"/>
+              <text x="70" y="52" font-size="14" fill="#FFF" text-anchor="middle" font-weight="bold">MOCK</text>
+              <text x="70" y="92" font-size="12" fill="#FFF" font-weight="bold" text-anchor="middle">SIMULATION</text>
+              <text x="70" y="110" font-size="10" fill="#888" text-anchor="middle">Exam Conditions</text>
+              <text x="70" y="124" font-size="9" fill="#E52E2E" text-anchor="middle">Target 8.0 Confirmed</text>
+            </g>
+
+            <!-- Stage 4 -->
+            <g transform="translate(840, 80)">
+              <rect width="100" height="140" rx="12" fill="#141414" stroke="#10B981" stroke-width="2"/>
+              <circle cx="50" cy="45" r="22" fill="rgba(16,185,129,0.12)" stroke="#10B981" stroke-width="1.5"/>
+              <text x="50" y="52" font-size="14" fill="#10B981" text-anchor="middle" font-weight="bold">8.5+</text>
+              <text x="50" y="92" font-size="11" fill="#FFF" font-weight="bold" text-anchor="middle">SUCCESS</text>
+              <text x="50" y="110" font-size="9" fill="#10B981" text-anchor="middle">Exam Victory</text>
+              <text x="50" y="124" font-size="9" fill="#888" text-anchor="middle">Visa Ready</text>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: TUITION & PACKAGES -->
+    <section id="enrollment" style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div class="section-header" style="max-width: 760px; margin-bottom: 36px;">
+          <span class="card-tag">TRANSPARENT TUITION</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            Choose Your Preparation Tier.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6;">
+            A single retake exam costs over ₦150,000 in official fees alone. Invest in passing once with high honors.
+          </p>
+        </div>
+
+        <div class="pricing-table-grid">
+
+          <!-- TIER 01: DIAGNOSTIC SCORE CLINIC -->
+          <div class="pricing-card-prep">
+            <div>
+              <span class="card-tag">ASSESSMENT ONLY</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin: 10px 0;">
+                Diagnostic Score Clinic
+              </h3>
+              <p style="font-size: 0.88rem; color: var(--ink-muted); line-height: 1.5; margin-bottom: 20px;">
+                Find out exactly what band you are currently performing at before booking an expensive exam date.
+              </p>
+
+              <div style="font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; margin-bottom: 6px;">
+                ₦45,000 <span style="font-size: 1rem; color: var(--ink-muted); font-weight: 400;">/ $55 USD</span>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-red); font-weight: 700; display: block; margin-bottom: 20px;">
+                FULL 4-MODULE EXAM AUDIT + 1-ON-1 FEEDBACK
+              </span>
+
+              <ul class="feature-list">
+                <li>Complete diagnostic exam across all 4 modules</li>
+                <li>Live 1-on-1 speaking interview evaluation with scoring rubric</li>
+                <li>Detailed red-pen breakdown of 2 written essays</li>
+                <li>Comprehensive weak-point audit report</li>
+                <li>Custom study roadmap mapped to your target test date</li>
+              </ul>
+            </div>
+
+            <div style="margin-top: 28px;">
+              <a href="contact.html?package=prep-diagnostic" class="btn btn-outline" style="width: 100%; justify-content: center;">
+                Book Diagnostic Clinic →
+              </a>
+            </div>
+          </div>
+
+          <!-- TIER 02: 4-WEEK ACCELERATOR (FEATURED) -->
+          <div class="pricing-card-prep featured">
+            <div style="position: absolute; top: -12px; right: 24px; background: var(--accent-red); color: #fff; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase;">
+              RECOMMENDED
+            </div>
+
+            <div>
+              <span class="card-tag">4-WEEK INTENSIVE</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin: 10px 0;">
+                IELTS Band 8.5+ Accelerator
+              </h3>
+              <p style="font-size: 0.88rem; color: var(--ink-muted); line-height: 1.5; margin-bottom: 20px;">
+                Our signature 1-on-1 coaching program designed to rapidly elevate your speaking fluency and essay scores.
+              </p>
+
+              <div style="font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; color: var(--accent-red); margin-bottom: 6px;">
+                ₦120,000 <span style="font-size: 1rem; color: var(--ink-muted); font-weight: 400;">/ $140 USD</span>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-primary); font-weight: 700; display: block; margin-bottom: 20px;">
+                4 WEEKS · 12 LIVE 1-ON-1 SESSIONS
+              </span>
+
+              <ul class="feature-list">
+                <li>12 live 1-on-1 speaking mocks with instant critiques</li>
+                <li>8 comprehensive essay red-pen reviews with Band 9 replacements</li>
+                <li>Rapid reading scanning hacks for tricky True/False questions</li>
+                <li>Official Cambridge past question vault &amp; audio files</li>
+                <li>Daily WhatsApp voice-note feedback &amp; vocabulary drills</li>
+                <li>Full exam simulation test 3 days before your real test date</li>
+              </ul>
+            </div>
+
+            <div style="margin-top: 28px;">
+              <a href="contact.html?package=prep-accelerator" class="btn btn-solid" style="width: 100%; justify-content: center;">
+                Enroll in Accelerator →
+              </a>
+            </div>
+          </div>
+
+          <!-- TIER 03: FULL ADMISSIONS & VISA PACK -->
+          <div class="pricing-card-prep">
+            <div>
+              <span class="card-tag">FULL RELOCATION SUITE</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin: 10px 0;">
+                Full Admissions &amp; Visa Pack
+              </h3>
+              <p style="font-size: 0.88rem; color: var(--ink-muted); line-height: 1.5; margin-bottom: 20px;">
+                Everything in the IELTS Accelerator plus complete Statement of Purpose overhaul and live US/UK visa interview preparation.
+              </p>
+
+              <div style="font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; margin-bottom: 6px;">
+                ₦250,000 <span style="font-size: 1rem; color: var(--ink-muted); font-weight: 400;">/ $300 USD</span>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-red); font-weight: 700; display: block; margin-bottom: 20px;">
+                IELTS + SOP + 3 VISA CONSULAR MOCKS
+              </span>
+
+              <ul class="feature-list">
+                <li>Complete 4-Week IELTS Accelerator mentorship</li>
+                <li>Full professional rewrite &amp; polish of your Statement of Purpose (SOP)</li>
+                <li>Resume / CV transformation for graduate school applications</li>
+                <li>3 live US F-1 / UK student visa consular mock interviews</li>
+                <li>Tie-to-home-country documentation strategy review</li>
+                <li>Direct advisory on university scholarships &amp; funding appeals</li>
+              </ul>
+            </div>
+
+            <div style="margin-top: 28px;">
+              <a href="contact.html?package=prep-visa-full" class="btn btn-solid" style="width: 100%; justify-content: center;">
+                Enroll in Admissions Pack →
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: SCHEDULE VIA CAL.COM -->
+    <section style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        <div style="background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-radius: 12px; padding: 48px 32px; text-align: center; max-width: 820px; margin: 0 auto;">
+          <span class="card-tag">SPEAK DIRECTLY WITH ALFRED</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0 16px;">
+            Book a 15-Minute Exam Strategy Consultation.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 28px; max-width: 60ch; margin-left: auto; margin-right: auto;">
+            Discuss your target score, exam timeline, previous test scores, and relocation plans with Alfred Williams.
+          </p>
+
+          <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://cal.com/alfred-williams-cwb4t4/60min" target="_blank" rel="noopener" class="btn btn-solid" style="padding: 14px 28px; font-size: 1rem;">
+              Schedule Consultation on Cal.com ↗
+            </a>
+            <a href="https://wa.me/2348176939974?text=Hello%20Alfred,%20I%20would%20like%20to%20consult%20with%20you%20regarding%20my%20IELTS%20exam" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 14px 28px; font-size: 1rem;">
+              Message on WhatsApp ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: FAQS -->
+    <section style="padding: 64px 0 80px; border-bottom: 1px solid var(--line-grid);">
+      <div class="container" style="max-width: 840px;">
+        
+        <div class="section-header" style="text-align: center; margin-bottom: 36px;">
+          <span class="card-tag">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            Everything You Need to Know.
+          </h2>
+        </div>
+
+        <div class="faq-accordion">
+          <div class="faq-accordion-item open">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>Is this for IELTS Academic or IELTS General Training?</span>
+              <span class="faq-icon">−</span>
+            </div>
+            <div class="faq-accordion-body">
+              We cater to both! If you are applying for postgraduate studies, medical licensing (PLAB/GMC, USMLE), or nursing registration, we train you on IELTS Academic. If you are applying for Canadian Express Entry, UK Skilled Worker, or Australian PR, we train you on IELTS General Training.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>I have taken the IELTS before and scored 6.5. Can you help me reach 7.5 or 8.0?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              This is our core specialty. Most repeat candidates stay stuck at 6.5 because they repeat the same structural mistakes in Writing and pause too frequently in Speaking. During the first diagnostic session, we identify exactly what is holding you back and apply targeted interventions to gain that crucial 1.0 to 1.5 band jump within 4 weeks.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>How are the live mocks conducted?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              Speaking mocks and reviews are conducted live 1-on-1 via Google Meet or Zoom. Alfred simulates an official IELTS examiner, recording your session and stopping to provide immediate corrections on pronunciation, grammatical complexity, and vocabulary choice.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>How do I pay tuition?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              Tuition can be paid in Nigerian Naira (₦) via bank transfer, or in USD ($) / GBP (£) via card, PayPal, or international wire for candidates living in the UK, US, Canada, or Europe.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2 class="footer-heading">
+            Let's build<br>something <em>worth</em><br>remembering.
+          </h2>
+        </div>
+        <div class="footer-contacts">
+          <button class="contact-row-btn" data-copy-email="officialwilliamsae@gmail.com" aria-label="Copy email address to clipboard">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
+              <span style="font-weight: 500;">officialwilliamsae@gmail.com</span>
+            </span>
+            <span style="font-size: 0.72rem; color: var(--accent-red); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em;">Click to Copy</span>
+          </button>
+
+          <a href="tel:+2348176939974" class="contact-row-btn">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+234 817 693 9974</span>
+            </span>
+            <span style="font-size: 0.72rem; color: #9CA3AF;">Call Direct</span>
+          </a>
+
+          <a href="https://linkedin.com/in/williams-e-alfred/" target="_blank" rel="noopener" class="contact-row-btn">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>linkedin.com/in/williams-e-alfred</span>
+            </span>
+            <span style="font-size: 0.72rem; color: #9CA3AF;">Connect ↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="monumental-wordmark" aria-hidden="true">WILLIAMS.</div>
+      
+      <div class="footer-sub-bar">
+        <span>© 2026 Alfred E. Williams. All rights reserved.</span>
+        <span>
+          <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+          <span style="opacity: 0.3; margin: 0 8px;">/</span>
+          <a href="terms.html" class="footer-legal-link">Terms of Usage</a>
+        </span>
+        <span>Lagos, Nigeria · Operating Across London, New York &amp; Tokyo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/components.js"></script>
+  <script>
+    function toggleFaq(header) {
+      const item = header.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-accordion-item').forEach(el => {
+        el.classList.remove('open');
+        const icon = el.querySelector('.faq-icon');
+        if (icon) icon.textContent = '+';
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        const icon = item.querySelector('.faq-icon');
+        if (icon) icon.textContent = '−';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,199 +1,230 @@
-# Alfred E. Williams — Executive Portfolio & Studio Manifesto (`DESIGN.md` v2.0)
+# Alfred E. Williams — Executive Portfolio Design Manifesto (`DESIGN.md` v3.0)
 
-> **Identity & Positioning:** Principal Consultant · Creative Technologist · Corporate AI Trainer · Editorial Director  
-> **Source of Truth for Portfolio Architecture & Implementation**  
-> **Synthesized from:** Parallax Fashion Atelier (`parallex-fashion.mp4` — Editorial Atmosphere, Orbit Geometry & Spatial Depth) + Jack Portfolio (`jackportofplio.mp4` — Monumental Typography, Contrast Cuts, Numbered Service Rows & Interactive Reels)
-
----
-
-## 1. Executive Positioning & Consultant Re-Framing
-
-### The Core Paradigm Shift: From "Job Seeker" to "Principal Consultant & Studio Director"
-The portfolio completely eliminates any language, visual cues, or interaction patterns reminiscent of salaried employment seeking (e.g., CV resume downloads, "hire me as your employee", standard applicant skill pills). 
-
-Alfred is positioned as an **independent, high-ticket multidisciplinary consultant and enterprise studio director** who delivers end-to-end creative and technical transformations for enterprises, SMEs, executive leaders, and academic scholars across 5 core practices:
-1. **Corporate & SME AI Acceleration / Team Training Workshops** (Fashion, Fitness, Interior Design, Hospitality, Media)
-2. **Full-Cycle Web Architecture & Digital Systems** (Sprint MVPs, High-Converting Storefronts, Enterprise Data Suites)
-3. **Standardized Test Prep & Global Academic Admissions Advisory** (IELTS 8.5+, TOEFL iBT, GRE, OET Healthcare, US F-1 Visa Prep)
-4. **Academic Research Writing, Peer Review & Editorial Advisory** (Peer-Reviewed Papers, Theses, Macroeconomic Dossiers)
-5. **Creative Direction, Motion Design & Video Production** (Brand Identity, Lottie/GSAP Web Motion, High-Retention Video Editing)
+> **Identity & Positioning:** Principal Consultant · Creative Technologist · Corporate AI Trainer · Systems Architect  
+> **Aesthetic Foundation:** Reverse-Engineered from [David Estrada](https://david-estrada.dev/) — Monumental Typography, High-Contrast Rhythm, Crisp White Canvas, Punchy Red Accents & Editorial Poise.  
+> **Source of Truth for Frontend Architecture, Visual Language & Aesthetics**
 
 ---
 
-## 2. Visual Theme & Aesthetic Fusion
+## 1. Design Philosophy: The David Estrada Paradigm
+
+### 1.1. Eradicating the "Cloud / Sci-Fi Template" Archetype
+The previous iteration leaned into dark mineral blues, blueprint grid overlays, sci-fi orbit lines, and viewfinder crosshairs. While atmospheric, this gave off a generic "cloud-type / developer template" vibe that obscured Alfred's human personality and executive prestige.
+
+The new design completely eliminates:
+* ❌ Cluttered cyber-blueprint overlays and floating coordinate grids.
+* ❌ Sci-Fi orbit rings, coordinate crosshairs, and artificial tech dust.
+* ❌ Dark mineral slate gloom that feels like an infrastructure dashboard.
+* ❌ Overly complex preloader countdowns that delay content access.
+
+### 1.2. The New Aesthetic Signature: *High-Contrast Editorial Craft with Personality*
+Synthesized directly from **David Estrada (`david-estrada.dev`)**:
+* **Monumental Display Typography:** Colossal, ultra-bold hero typography that commands the viewport with unquestionable authority.
+* **Radical Clarity & Whitespace:** Generous, breathable layouts anchored by a pure white primary canvas, punctuated by architectural grays.
+* **Vibrant Red Kinetic Accents:** Bold, energetic red used with disciplined restraint for high-intent actions, active status indicators, badge highlights, and magnetic hover states.
+* **Deep Jet Black Grounding:** Monumental black type and alternating high-contrast section blocks that create dramatic visual rhythm.
+* **Clean, Human Deliverable Cards:** Asymmetric grid layouts, refined card borders, subtle image hover zoom, and crisp tags rather than generic boxes.
+
+---
+
+## 2. Color System & Material Palette
+
+The palette is strictly anchored on the 4-tier color foundation requested:
+**Primary: White** · **Secondary: Red** · **Tertiary: Black** · **Quaternary: Gray**.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                           THE DUAL-ENGINE AESTHETIC                         │
-├──────────────────────────────────────┬──────────────────────────────────────┤
-│ PARALLAX FASHION (Mood & Outlook)    │ JACK PORTFOLIO (Transitions & Flow)  │
-├──────────────────────────────────────┼──────────────────────────────────────┤
-│ • Deep slate/mineral luxury palette  │ • Monumental hero display type       │
-│ • Four-corner editorial viewfinder   │ • Inverted black-to-white section    │
-│   coordinates & monograph text       │   cut for Services                   │
-│ • Concentric vector orbit lines with │ • Numbered row list: 01, 02, 03...   │
-│   depth behind subject               │   with interactive hover states      │
-│ • Floating atmospheric micro-dust    │ • Horizontal sliding project reel    │
-│ • High-fashion atelier typography    │ • Layered accordion project reveals  │
-│ • Cinematic spatial depth            │ • Sleek pill-shaped action triggers  │
-└──────────────────────────────────────┴──────────────────────────────────────┘
+│                           THE 4-TIER COLOR MATRIX                           │
+├───────────────┬─────────────────┬─────────────────┬─────────────────────────┤
+│ PRIMARY       │ SECONDARY       │ TERTIARY        │ QUATERNARY              │
+│ Crisp White   │ Vibrant Red     │ Jet Black       │ Architectural Gray      │
+├───────────────┼─────────────────┼─────────────────┼─────────────────────────┤
+│ #FFFFFF       │ #E52E2E         │ #0A0A0A         │ #F4F5F7 (Light Surface) │
+│ Pure Canvas   │ Electric Accent │ Ink & Dark Cut  │ #E5E7EB (Hairline Line) │
+│ & Clarity     │ & Action Pills  │ Typography      │ #6B7280 (Muted Meta)    │
+└───────────────┴─────────────────┴─────────────────┴─────────────────────────┘
 ```
 
-### The Visual Language: *"High-Fashion Editorial Precision meets Kinetic Digital Mastery"*
-- **Eradicate "AI Generated / Claude" tropes:** No generic card boxes with centered icons, no soulless gradient blobs, no cookie-cutter layouts.
-- **Viewfinder Precision (Parallax Fashion):** Architectural corner coordinates (`06°31' N, 03°23' E // LAGOS`), monograph labels, and status beacons framing the viewport like a high-end editorial publication or medium-format viewfinder.
-- **Concentric Vector Orbit Geometry:** Dynamic concentric elliptical arcs radiating from behind Alfred's portrait, rotating subtly on mouse movement to create palpable spatial depth.
-- **Monumental Layered Typography (Jack Portfolio):** Ultra-bold display font (`Space Grotesk`) placed with layered depth behind the portrait, establishing instant gravitas and creative confidence.
-- **High-Contrast Section Cuts:** Seamless shifts from the atmospheric dark mineral canvas of the hero into crisp stark-white or high-contrast inverted cards for commercial service rows and pricing matrices.
+### 2.1. Light Theme Tokens (Default Studio Canvas)
+* **Canvas Primary (`--bg-page`):** `#FFFFFF` — Pure, radiant white providing maximum readability and editorial breathability.
+* **Surface Quaternary (`--bg-surface`):** `#F4F5F7` — Soft architectural light gray for cards, chips, and grouped containers.
+* **Surface Elevated (`--bg-surface-elevated`):** `#FFFFFF` — Elevated cards with subtle hairline shadows.
+* **Contrast Section Inversion (`--bg-inverted`):** `#0A0A0A` — Jet black alternating section cut (used for high-impact practice breakdowns and footer).
+* **Ink Primary (`--ink-primary`):** `#0A0A0A` — Deep obsidian ink for headings and authoritative copy.
+* **Ink Muted (`--ink-muted`):** `#4B5563` — Refined charcoal for body paragraphs and descriptions.
+* **Ink Faint (`--ink-faint`):** `#6B7280` — Subtle gray for metadata, dates, and category tags.
+* **Ink Inverted (`--ink-inverted`):** `#FFFFFF` — Crisp pure white typography inside dark section cuts.
+* **Signature Accent Red (`--accent-red`):** `#E52E2E` — Vibrant crimson red for primary buttons, active badges, and focus rings.
+* **Accent Red Hover (`--accent-red-hover`):** `#D92323` — Richer crimson for hover states.
+* **Accent Red Subdued (`--accent-red-soft`):** `rgba(229, 46, 46, 0.08)` — Delicate tinted pill badges and highlights.
+* **Structural Hairline Grid (`--line-grid`):** `#E5E7EB` — Clean 1px architectural dividers.
+* **Structural Hairline Strong (`--line-grid-strong`):** `#D1D5DB` — Focused border strokes.
+
+### 2.2. Dark Theme Tokens (Nocturne Executive Cut)
+* **Canvas Primary (`--bg-page`):** `#0A0A0A` — Deep jet black canvas.
+* **Surface Secondary (`--bg-surface`):** `#141414` — Charcoal surface container.
+* **Surface Elevated (`--bg-surface-elevated`):** `#1C1C1C` — Elevated interactive planes.
+* **Contrast Section Inversion (`--bg-inverted`):** `#FFFFFF` — Crisp white transition section.
+* **Ink Primary (`--ink-primary`):** `#FFFFFF` — Pure white headline typography.
+* **Ink Muted (`--ink-muted`):** `#A1A1AA` — Neutral gray body copy.
+* **Ink Faint (`--ink-faint`):** `#71717A` — Dimmed metadata.
+* **Ink Inverted (`--ink-inverted`):** `#0A0A0A` — Deep black text inside inverted cards.
+* **Signature Accent Red (`--accent-red`):** `#FF3B30` — Luminous scarlet red for dark mode contrast.
+* **Accent Red Hover (`--accent-red-hover`):** `#E52E2E` — Deep scarlet hover.
+* **Structural Hairline Grid (`--line-grid`):** `rgba(255, 255, 255, 0.10)` — Subtle white divider lines.
 
 ---
 
-## 3. Color System & Material Palette
+## 3. Typographic Blueprint
 
-The palette fuses the sophisticated slate-mineral depth of high-end fashion portfolios with warm ember and antique bronze accents.
+Inspired by David Estrada's massive scale and modern grotesque sans-serif pairings:
 
-### Dark Theme (Default: Atelier Slate Chamber)
-* **Canvas Abyss (`--bg-page`):** `#0B1115` — Deep mineral obsidian with subtle cool undertones.
-* **Surface Slate (`--bg-surface`):** `#121C22` — Muted architectural slate container surface.
-* **Elevated Chamber (`--bg-surface-elevated`):** `#18252E` — Elevated interactive planes, cards, and modal sheets.
-* **Inverted Contrast Section (`--bg-inverted`):** `#F8F9FA` — Crisp stark white transition card for Jack-style service blocks.
-* **Inverted Contrast Ink (`--ink-inverted`):** `#0B1115` — Deep obsidian text inside inverted sections.
-* **Hairline Gridlines (`--line-grid`):** `rgba(255, 255, 255, 0.07)` — Ultra-fine structural guide.
-* **Primary Ink (`--ink-primary`):** `#F4F6F8` — Crisp editorial white typography.
-* **Secondary Ink (`--ink-muted`):** `#8C9DA6` — Balanced mineral body copy.
-* **Signature Accent Ember (`--accent-ember`):** `#D4713B` — Warm terracotta-ember for focal buttons and key indicators.
-* **Luxury Accent Bronze (`--accent-bronze`):** `#C9A86A` — Antique gold for editorial accents and highlights.
-
-### Light Theme (Editorial Studio Paper)
-* **Canvas Canvas (`--bg-page`):** `#FAFBFC` — Crisp studio paper.
-* **Surface Panel (`--bg-surface`):** `#F0F3F5` — Subtle mineral grey container surface.
-* **Elevated Surface (`--bg-surface-elevated`):** `#E4E8EC` — Elevated cards and hover planes.
-* **Hairline Gridlines (`--line-grid`):** `rgba(11, 17, 21, 0.08)` — Crisp architectural hairline.
-* **Primary Ink (`--ink-primary`):** `#0B1115` — Authoritative editorial ink-black.
-* **Secondary Ink (`--ink-muted`):** `#475660` — Editorial charcoal body copy.
-* **Signature Accent Ember (`--accent-ember`):** `#C86432` — Warm terracotta-ember.
-
----
-
-## 4. Typographic Blueprint
-
-| Role | Font Family | Weight & Style | Tracking & Leading | Purpose |
+| Role | Font Family | Weight & Style | Tracking & Leading | Purpose / Visual Impact |
 | :--- | :--- | :--- | :--- | :--- |
-| **Hero Monument** | `Space Grotesk` | 800 ExtraBold | `letter-spacing: -0.06em`, `line-height: 0.84` | Giant hero statement (`clamp(3.5rem, 14vw, 11rem)`) behind subject. |
-| **Editorial Emphasis** | `Fraunces` | 500-600 Italic | `letter-spacing: -0.02em`, `line-height: 1.1` | Editorial headers, philosophy quotes, prestige callouts. |
-| **Viewfinder Meta** | `DM Mono` | 500 Medium Uppercase | `letter-spacing: 0.16em`, `font-size: 0.6875rem` | Corner coordinates, chapter codes (`01 / PRACTICE`), colophons. |
-| **Body Narrative** | `Manrope` | 400 Regular / 500 Medium | `letter-spacing: -0.01em`, `line-height: 1.65` | Case studies, methodology briefs, package descriptions. |
-| **Consultation Action** | `Space Grotesk` | 700 Bold Uppercase | `letter-spacing: 0.08em`, `font-size: 0.82rem` | Pill buttons, booking triggers, package selectors. |
+| **Colossal Hero Title** | `Space Grotesk` / `Neue Haas Grotesk` | 800 ExtraBold | `letter-spacing: -0.05em`, `line-height: 0.92` | Monumental hero statement (`clamp(3.8rem, 8.5vw, 7.5rem)`). Bold, unapologetic, unforgettable. |
+| **Section Headline** | `Space Grotesk` | 700 Bold | `letter-spacing: -0.03em`, `line-height: 1.1` | Major section headers (`clamp(2.2rem, 4.5vw, 3.6rem)`). |
+| **Editorial Emphasis** | `Fraunces` | 500-600 Italic | `letter-spacing: -0.01em` | Selective italicized accent words (`personality`, `authority`, `scale`). |
+| **Body Narrative** | `Manrope` / `Inter` | 400 Regular / 500 Medium | `letter-spacing: -0.01em`, `line-height: 1.65` | Case study briefs, package deliverables, and thought leadership essays (`16px–18px`). |
+| **Micro-Tags & Badges** | `Space Grotesk` / `DM Mono` | 600 SemiBold Uppercase | `letter-spacing: 0.08em`, `font-size: 0.72rem` | Pill badges, service numbers (`01`, `02`), tech chips, and status beacons. |
+| **Interactive Buttons** | `Space Grotesk` | 700 Bold | `letter-spacing: 0.02em`, `font-size: 0.92rem` | High-conversion CTA triggers with smooth pill geometry. |
 
 ---
 
-## 5. Architectural Component Blueprints
+## 4. Architectural Layout Hierarchy & Section Rhythm
 
-### 5.1. The Editorial Hero Stage (Parallax Fashion + Jack Hybrid)
-1. **Four-Corner Viewfinder Micro-Grid:**
-   - **Top-Left:** `06°31' N, 03°23' E // LAGOS ATELIER`
-   - **Top-Right:** `PRINCIPAL CONSULTANT // 2026 ARCHIVE`
-   - **Bottom-Left:** `AI ACCELERATION · WEB SYSTEMS · ADVISORY · CREATIVE`
-   - **Bottom-Right:** `AVAILABLE FOR SELECT CORPORATE COMMISSIONS`
-2. **Concentric Vector Orbit Geometry:**
-   - Radiating vector bezier arcs rendered via `<svg class="hero-orbit-arcs">` behind Alfred's portrait.
-   - Responds to mouse coordinate parallax (tilt & scale shifts).
-3. **Layered Monumental Typography:**
-   - `ALFRED E. WILLIAMS` in monumental bold display type running across the viewport width behind the portrait.
-4. **Portrait Integration:**
-   - Crisp, stylized portrait centered or offset with depth, breaking the boundary of the background text and vector arcs.
-   - Minimalist floating status badge: `🟢 Active Practice · Accepting Q4/Q1 Engagements`.
-5. **Call to Action Suite:**
-   - Primary Pill: `Book Strategic Consultation →` (Glow hover).
-   - Secondary Pill: `Explore Client Practices ↓`.
+The page flows in a high-contrast alternating rhythm that guides the eye naturally:
 
-### 5.2. The Inverted Services Stage (Jack Portfolio Style)
-A high-contrast visual shift into a stark, clean container featuring oversized numbered rows:
-- `01 / ENTERPRISE AI ACCELERATION & TEAM WORKSHOPS`
-- `02 / FULL-CYCLE WEB ARCHITECTURE & DIGITAL SYSTEMS`
-- `03 / STANDARDIZED TEST PREP & ADMISSIONS ADVISORY`
-- `04 / ACADEMIC RESEARCH WRITING & EDITORIAL CONSULTING`
-- `05 / CREATIVE DIRECTION, MOTION & VIDEO PRODUCTION`
+```
+┌─────────────────────────────────────────────────────────────┐
+│ [STICKY MINIMAL HEADER]  Alfred E. Williams  ·  Available ● │
+├─────────────────────────────────────────────────────────────┤
+│ 1. HERO SECTION (Crisp White Canvas)                        │
+│    • Colossal Headline: "Full-Cycle Developer & Consultant" │
+│    • Sub-headline with Personality                          │
+│    • Status Pill + High-Impact Portrait + Red CTA Buttons   │
+├─────────────────────────────────────────────────────────────┤
+│ 2. CREDIBILITY & IMPACT STRIP (Architectural Gray)          │
+│    • 10+ Yrs Chronology · 551 SMEs · 90%+ Rate · 145p PCNI  │
+├─────────────────────────────────────────────────────────────┤
+│ 3. SELECTED WORK & CASE STUDIES (Crisp White Canvas)        │
+│    • Asymmetric 2-Column Cards (Renalytica, AXiA Active,    │
+│      GoFar Academy, TWOL Journal)                           │
+│    • Full-Bleed Media Viewport with Smooth Image Zoom Hover │
+│    • Direct Case Study + Live Links                         │
+├─────────────────────────────────────────────────────────────┤
+│ 4. THE 5 CONSULTING PRACTICES (Deep Jet Black Inversion)    │
+│    • 01 Corporate AI Acceleration                           │
+│    • 02 Web Architecture & Systems                          │
+│    • 03 Test Prep & Admissions Advisory                     │
+│    • 04 Research Writing & Policy                           │
+│    • 05 Creative Direction & Video                          │
+│    • Numbered expandable rows with transparent pricing      │
+├─────────────────────────────────────────────────────────────┤
+│ 5. CONTENT REPURPOSING ENGINE (Crisp White Canvas)          │
+│    • Clean, streamlined 8-asset grid (No cyber clutter)     │
+├─────────────────────────────────────────────────────────────┤
+│ 6. THE 4 PRINCIPLES / APPROACH (David Estrada Style)        │
+│    • Philosophy: Built for speed, honesty, depth & ROI      │
+├─────────────────────────────────────────────────────────────┤
+│ 7. MONUMENTAL FOOTER & CONVERSION TERMINAL (Jet Black)      │
+│    • Massive "Let's build something extraordinary"          │
+│    • Direct 1-Click Email Copy · Direct Phone · Socials     │
+└─────────────────────────────────────────────────────────────┘
+```
 
-**Interactive Behavior on Hover:**
-- Row expands vertically, revealing:
-  - Elevator scope & industry fit.
-  - Interactive pill tags for sub-capabilities.
-  - "View Packages & Pricing →" direct trigger.
-  - Micro thumbnail / looping preview.
+### 4.1. The Sticky Minimalist Header
+* Height: `64px`, floating with `backdrop-filter: blur(16px)` and subtle hairline border.
+* Left: Authoritative wordmark **Alfred E. Williams** with live pulsing green/red status indicator.
+* Center: Clean pill navigation (`Works`, `Services`, `Brands`, `About`, `Contact`).
+* Right: High-contrast Dark/Light toggle + Red Action Pill (`Let's Talk →`).
 
-### 5.3. Transparent Commercial Packages & Pricing Matrix (All 5 Practices)
+### 4.2. The Monumental Hero Stage
+* **Oversized Typography:** "Transformative Digital Systems. Uncompromising Editorial Authority."
+* **Human Personality Sub-Headline:** "I design and engineer web platforms with personality, train enterprise teams on practical AI, and direct high-stakes academic and editorial strategies."
+* **Social Proof Pill:** `● 100% Client Satisfaction · Lagos & Global Remote`.
+* **Integrated Portrait Card:** Seamlessly framed photograph (`Alfred photo.jpg` or `Brand Photo Alfred.jpg` or stylized 2D portrait) with clean geometric edges, no sci-fi orbit lines or coordinate text.
+* **Dual Action Suite:**
+  - Primary Button: Solid Vibrant Red pill (`Explore Selected Works ↓`).
+  - Secondary Button: Clean Architectural Gray outline (`Book Consultation →`).
 
-#### Practice 01: Corporate & SME AI Acceleration Workshops
-- **Executive 1-Day Masterclass (Leadership & Strategy)**:
-  - ₦350,000 / $450 · Full-day intensive for executive teams & founders.
-  - GenAI tooling stack audit, process mapping, security & IP boundaries, customized AI adoption blueprint.
-- **Corporate Team 2-Week Sprint (Operational Acceleration)**:
-  - ₦950,000 / $1,200 · Hands-on sprint for creative, marketing, and engineering departments.
-  - Custom workflows for: AI Video Creation, AI Advertising & Campaigns, AI Web Dev/Design, AI Graphic/Motion Design, AI Filmmaking, AI Photoshoots/Virtual Models, AI Writing/Research.
-  - Tailored to industry: Fashion, Fitness, Interior Design, Hospitality, Media.
-- **Enterprise AI Transformation Retainer**:
-  - ₦1,750,000 / $2,200/mo · Continuous advisory, custom prompt/tool engineering, monthly team reskilling, and process optimization.
+### 4.3. Selected Work & Case Studies (David Estrada Card Architecture)
+* 2-column or full-width staggered cards.
+* High-aspect ratio media viewports featuring live platform screenshots (`Renalytica`, `AXiA Active`, `GoFar Academy`, `My WORLD of Literature`).
+* Micro-interaction: Smooth hover scale (`transform: scale(1.025)`) with subtle red stroke highlight.
+* Tags: Category chips (`Enterprise Data`, `E-Commerce Storefront`, `Admissions EdTech`, `Literary Journal`) rendered in muted gray with red hover dot.
 
-#### Practice 02: Web Development & Systems Architecture
-- **Sprint MVP / Bespoke Showcase**: ₦450,000 / $550 (7–10 days).
-- **Commercial Storefront & Web App**: ₦950,000 / $1,200 (2–3 weeks, Most Popular).
-- **Enterprise Intelligence & Data Suite**: ₦1,850,000 / $2,400 (4–5 weeks).
+### 4.4. High-Contrast Practice Breakdown (The 5 Core Disciplines)
+A deliberate inverted dark section cut (`#0A0A0A`) providing visual shock value and focus:
+* Numbered rows (`01`, `02`, `03`, `04`, `05`) with smooth expand/hover transitions.
+* Clear transparent pricing (₦350k–₦1.75M for AI, ₦450k–₦1.85M for Web Architecture, ₦50k–₦80k/mo for Admissions, ₦180k–₦650k for Research, ₦180k–₦850k for Creative).
+* Instant inquiry triggers linking directly to `contact.html` with pre-filled practice parameters.
 
-#### Practice 03: Standardized Test Prep & Global Academic Coaching
-- **Diagnostic Evaluation & Strategy Clinic**: ₦85,000 / $110 (Comprehensive band/score diagnostic, custom roadmap, 1-on-1 strategy session).
-- **IELTS 8.5+ / TOEFL / OET 4-Week Accelerator**: ₦50,000 each exam per month (Intensive 1-on-1 coaching, 12 live writing & speaking mock clinics, proprietary scoring templates).
-- **GRE Quantitative & Verbal Mastery + US Visa Prep**: ₦80,000 per month for GRE Verbal and GRE Quantitative respectively--payment is made for added services (Full test prep cycle + Statement of Purpose refinement + US Embassy F-1 Consular interview Q&A simulation).
+### 4.5. The 4 Principles / Core Working Approach
+Modeled on David Estrada's crisp "Approach" section:
+1. **01 / Human Voice First:** Systems and code serve human narratives, not the other way around.
+2. **02 / Zero Bloat Architecture:** Sub-100ms load times, lean semantic markup, and pure CSS performance.
+3. **03 / Transparent Commercial Alignment:** Clear scopes, transparent timelines, and fixed deliverables.
+4. **04 / Cross-Disciplinary Mastery:** Bridging engineering, enterprise AI, research rigor, and creative direction.
 
-#### Practice 04: Academic Research Writing & Editorial Consulting
-- **Peer-Reviewed Paper & Journal Preparation**: From ₦180,000 / $230 per manuscript (Methodology articulation, statistical narrative, citation compliance, journal formatting).
-- **Thesis & Dissertation Advisory**: From ₦320,000 / $400 (Comprehensive structure critique, literature review synthesis, substantive editing).
-- **Executive Whitepaper & Macroeconomic Dossier**: From ₦650,000 / $850 (Original institutional research, SME data analysis, publish-ready executive report).
-
-#### Practice 05: Creative Direction, Motion & Video Production
-- **Short-Form Content & Video Cutdown Sprint**: ₦180,000 / $230 (Pack of 8 high-retention Reels/TikToks with custom dynamic captions, sound design, and color grading).
-- **Full-Cycle Documentary / Podcast Video Production**: ₦420,000 / $550 (Multi-cam editing, narrative pacing, custom motion title graphics, audio master).
-- **Monthly Creative Director & Video Retainer**: ₦850,000 / $1,100/mo (Ongoing weekly video cutdowns, bespoke brand motion assets, campaign graphics).
-
-#Note that all prices are open for negotiation and custum pricing per project needs is welcomed.
-
-### 5.4. Interactive Horizontal Project Showcase Reel (Jack Portfolio Style)
-- Replaces static vertical card lists with a kinetic horizontal dragging/sliding track.
-- Each slide features high-aspect ratio imagery/video loop, client tag, year, technology pills, and live case study trigger.
+### 4.6. Monumental Footer & Action Terminal
+* High-contrast dark block (`#0A0A0A`) or full-bleed red accent section.
+* Massive display callout: `LET'S BUILD SOMETHING EXTRAORDINARY.`
+* Interactive one-click email copy button with visual feedback (`Copied!`).
+* Direct telephone trigger and verified LinkedIn/social links.
 
 ---
 
-## 6. Motion Design & Interaction Physics
+## 5. Transitions, Physics & Micro-Interactions
 
-| Trigger | Motion / Easing | Visual Feedback |
+| Interaction | Easing / Duration | Visual Response |
 | :--- | :--- | :--- |
-| **Orbit Lines Hover** | GSAP Smooth Lerp (`0.08`) | Orbit vector ellipses shift tilt and scale with mouse coordinates. |
-| **Monumental Type Parallax** | ScrollTrigger scrub (`0.5`) | Huge display typography translates horizontally on scroll behind subject. |
-| **Service Row Expand** | `400ms cubic-bezier(0.16, 1, 0.3, 1)` | Row height expands smoothly revealing tags, elevator brief, and action pill. |
-| **Inverted Section Reveal** | ScrollTrigger pin & unclip | Deep dark canvas smoothly transitions into crisp white service card block. |
-| **Pill Button Hover** | `250ms ease-out` | Glowing ember background expand with subtle scale (`1.03`). |
+| **Page Scroll** | Native smooth scroll | Silky, zero-lag scrolling without cumbersome virtual scroll hijacking. |
+| **Card Hover** | `350ms cubic-bezier(0.16, 1, 0.3, 1)` | Image viewport zooms subtly (`1.025`), card lifts by `4px`, border shifts to subtle red. |
+| **Button Hover (Red)**| `200ms ease-out` | Shifts from `#E52E2E` to `#D92323` with a crisp `2px` scale and subtle shadow. |
+| **Link Hover** | `250ms ease` | Animated bottom hairline sweep in vibrant red. |
+| **Section Entry** | IntersectionObserver + CSS fade-up | Staggered `translateY(24px) -> translateY(0)` with opacity fade for cards and headers. |
+| **Service Row Hover** | `300ms cubic-bezier(0.16, 1, 0.3, 1)` | Row background shifts, red numbered numeral (`01`) slides slightly right, action arrow rotates 45°. |
+
+---
+
+## 6. Content Preservation Guarantee
+
+As explicitly demanded by the user, **all existing content must be strictly preserved**:
+* ✅ All written copy, statements, bio text, and thought leadership unchanged.
+* ✅ All 5 consulting practices, sub-capabilities, deliverables, and exact pricing unchanged.
+* ✅ All case studies (Renalytica, AXiA Active, GoFar Academy, TWOL, PCNI Report) and live links intact.
+* ✅ All research statistics (10+ years, 551 SMEs, 90%+ visa/admissions, 50% onboarding reduction, 145p PCNI) intact.
+* ✅ All 8 content repurposing asset descriptions (LinkedIn carousel, X thread, IG infographic, etc.) intact.
+* ✅ All contact details (`officialwilliamsae@gmail.com`, `+234 817 693 9974`, LinkedIn, Cal.com) intact.
+* ✅ All imagery and visual assets (`Alfred photo.jpg`, `Brand Photo Alfred.jpg`, `assets/renalytica-real.png`, etc.) retained and enhanced.
 
 ---
 
 ## 7. Implementation Roadmap & Execution Gates
 
-1. **Step 1: CSS Framework & Theme Overhaul (`css/main.css`)**
-   - Implement the Parallax Fashion slate/mineral tokens, viewfinder coordinate grid, and radiating orbit SVG geometry.
-   - Implement the Jack Portfolio inverted section transition, numbered service rows, and pill action components.
-2. **Step 2: Homepage Transformation (`index.html`)**
-   - Rebuild the Hero section with viewfinder metadata, radiating orbit geometry, monumental display typography, and Alfred's portrait.
-   - Refactor the narrative from job seeker to Principal Consultant.
-   - Integrate the Jack-style numbered 5 practice areas with expandable details.
-   - Refactor featured work into an interactive horizontal showcase reel.
-3. **Step 3: Services & Commercial Pricing Overhaul (`services.html`)**
-   - Build dedicated, high-converting pricing cards across all 5 practices (Corporate AI Training, Web Architecture, Test Prep, Research Writing, Creative Video/Motion).
-   - Ensure dual currency display (₦ NGN / $ USD) and instant consultation inquiry hooks.
-4. **Step 4: Unified Consultant Voice Audit (`about.html`, `works.html`, `contact.html`)**
-   - Remove any residual employee/job seeker phrasing.
-   - Ensure client inquiry forms route directly to specific practice areas or corporate workshop requests.
-5. **Step 5: Visual Verification & Final Local Validation**
-   - Verify all layouts in the browser at desktop and mobile viewports.
-   - Verify smooth transitions and interactive states.
-6. **Step 6: User Approval Gate**
-   - Present the completed transformation to the user.
-   - **Only push to GitHub when explicitly instructed by the user.**
+1. **Phase 1: Design Tokens & CSS Architecture Overhaul (`css/main.css`)**
+   - Implement the 4-tier color system (White `#FFFFFF`, Red `#E52E2E`, Black `#0A0A0A`, Gray `#F4F5F7` / `#E5E7EB`).
+   - Remove sci-fi blueprint grids, orbital vector circles, and coordinate crosshairs.
+   - Refactor typography tokens for colossal hero scale and modern grotesque sans-serif pairings.
+   - Implement David Estrada-style card hover physics, magnetic buttons, and alternating section contrast cuts.
+
+2. **Phase 2: Global Header & Navigation Polish (`index.html`, `js/components.js`)**
+   - Clean up header into a sleek floating bar with live availability indicator and high-intent red CTA.
+   - Remove heavy preloader delays to allow instant, crisp page loading.
+
+3. **Phase 3: Homepage Hero & Layout Transformation (`index.html`)**
+   - Rebuild Hero section with colossal display title, personality sub-lead, portrait integration, and dual red/gray action buttons.
+   - Transform metrics bar into a sleek architectural gray ribbon.
+   - Reformat Selected Works into modern 2-column editorial cards with media hover zoom.
+   - Restyle the 5 Practices in an inverted jet-black section cut with expandable numbered rows.
+   - Restyle the 1-to-8 Repurposing Engine into a clean modern bento grid.
+   - Add the 4 Core Principles / Approach section inspired by David Estrada.
+   - Elevate the Footer into an unforgettable conversion terminal.
+
+4. **Phase 4: Cohesive Sub-Page Alignment (`services.html`, `works.html`, `about.html`, `brands.html`, `contact.html`)**
+   - Ensure the new White/Red/Black/Gray color palette and typography seamlessly cascade across all secondary pages.
+   - Ensure all transparent pricing matrices and forms remain 100% intact.
+
+5. **Phase 5: Responsive Verification & Interactive Testing**
+   - Test across desktop, tablet, and mobile viewports.
+   - Verify smooth transitions, contrast ratios, and interactive states.

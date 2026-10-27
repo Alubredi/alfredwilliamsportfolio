@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate AI Training Executive Pitch Deck — Alfred E. Williams</title>
+  <meta name="description" content="Interactive executive slide deck: Practical AI for Enterprise &amp; SME Teams. Saving 15+ hours per week per employee.">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    :root {
+      --deck-bg: #0A0A0A;
+      --deck-card-bg: #141414;
+      --deck-border: rgba(255, 255, 255, 0.12);
+      --deck-text-main: #FFFFFF;
+      --deck-text-muted: #A1A1AA;
+      --deck-accent: #E52E2E;
+    }
+    body.pitch-deck-body {
+      background-color: var(--deck-bg);
+      color: var(--deck-text-main);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+    }
+    /* Top Deck Controls */
+    .deck-top-bar {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      border-bottom: 1px solid var(--deck-border);
+      background-color: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+    .deck-progress-track {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      width: 100%;
+    }
+    .deck-progress-fill {
+      height: 100%;
+      background: var(--deck-accent);
+      width: 12.5%;
+      transition: width 0.3s ease;
+    }
+    /* Main Slide Stage */
+    .deck-stage {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 40px;
+    }
+    .slide-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(40px);
+      transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+      padding: 32px;
+      box-sizing: border-box;
+    }
+    .slide-wrapper.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      z-index: 10;
+    }
+    .slide-wrapper.prev {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-40px);
+      z-index: 5;
+    }
+    .slide-container {
+      width: 100%;
+      max-width: 1160px;
+      height: 100%;
+      max-height: 680px;
+      background-color: var(--deck-card-bg);
+      border: 1px solid var(--deck-border);
+      border-radius: 16px;
+      padding: 44px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow-y: auto;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+    }
+    @media (max-width: 860px) {
+      .slide-container {
+        padding: 24px 20px;
+        max-height: 94%;
+      }
+      .deck-stage { padding: 12px; }
+      .deck-top-bar { padding: 0 16px; }
+    }
+    /* Bottom Navigation Bar */
+    .deck-bottom-bar {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      border-top: 1px solid var(--deck-border);
+      background-color: rgba(10, 10, 10, 0.95);
+      z-index: 100;
+    }
+    .deck-dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .deck-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .deck-dot.active {
+      background-color: var(--deck-accent);
+      width: 24px;
+      border-radius: 5px;
+    }
+    /* Deck Cards Grid */
+    .deck-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+      margin: 16px 0;
+    }
+    .deck-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .deck-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 16px 0;
+    }
+    @media (max-width: 960px) {
+      .deck-grid-4 { grid-template-columns: 1fr 1fr; }
+      .deck-grid-3 { grid-template-columns: 1fr; }
+      .deck-grid-2 { grid-template-columns: 1fr; }
+    }
+    .deck-subcard {
+      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .deck-subcard:hover {
+      border-color: rgba(229, 46, 46, 0.4);
+      transform: translateY(-2px);
+    }
+    .deck-subcard.highlight {
+      border-color: var(--deck-accent);
+      background: linear-gradient(180deg, rgba(229, 46, 46, 0.08) 0%, rgba(20, 20, 20, 0.7) 100%);
+    }
+
+    /* 2D Keyframe Animations & Micro-Interactions */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; transform: scale(0.98); }
+      50% { opacity: 0.85; transform: scale(1.02); }
+    }
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -32; }
+    }
+    @keyframes spinSlow {
+      to { transform: rotate(360deg); }
+    }
+    .anim-float {
+      animation: floatSlow 4.5s ease-in-out infinite;
+    }
+    .anim-dash {
+      stroke-dasharray: 6 6;
+      animation: dashFlow 1.8s linear infinite;
+    }
+    .anim-pulse {
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+    .anim-spin {
+      animation: spinSlow 20s linear infinite;
+      transform-origin: center;
+    }
+    .deck-icon-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(229, 46, 46, 0.12);
+      border: 1px solid rgba(229, 46, 46, 0.3);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      color: var(--deck-accent);
+      flex-shrink: 0;
+    }
+    .deck-pkg-thumb {
+      width: 100%;
+      height: 90px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #000;
+    }
+    .deck-pkg-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Print Styles: Each slide as a separate full-page slide */
+    @media print {
+      body.pitch-deck-body {
+        overflow: visible !important;
+        height: auto !important;
+        background: #FFFFFF !important;
+        color: #0A0A0A !important;
+      }
+      .deck-top-bar, .deck-bottom-bar, .deck-progress-track {
+        display: none !important;
+      }
+      .deck-stage {
+        display: block !important;
+        padding: 0 !important;
+      }
+      .slide-wrapper {
+        position: relative !important;
+        page-break-after: always !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        height: 100vh !important;
+        padding: 40px !important;
+      }
+      .slide-container {
+        border: 1px solid #CCC !important;
+        background: #FFF !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        max-height: 100% !important;
+      }
+      .deck-subcard {
+        background: #F9F9F9 !important;
+        border: 1px solid #DDD !important;
+        color: #000 !important;
+      }
+    }
+  </style>
+</head>
+<body class="pitch-deck-body">
+
+  <!-- Top Navigation & Presentation Controls -->
+  <header class="deck-top-bar">
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <a href="ai-training.html" style="display: flex; align-items: center; gap: 8px; color: var(--deck-text-muted); text-decoration: none; font-family: var(--font-mono); font-size: 0.82rem; text-transform: uppercase;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Exit Deck</span>
+      </a>
+      <span style="opacity: 0.2;">|</span>
+      <span style="font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: #fff;">
+        Alfred E. Williams <span style="font-weight: 400; color: var(--deck-text-muted);">· Corporate AI Pitch Deck</span>
+      </span>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <span id="slideCounter" style="font-family: var(--font-mono); font-size: 0.88rem; color: var(--deck-accent); font-weight: 700;">01 / 08</span>
+      <button onclick="toggleDeckFullscreen()" class="btn btn-outline btn-sm" style="padding: 5px 12px; font-size: 0.78rem;">
+        Fullscreen ⛶
+      </button>
+      <button onclick="window.print()" class="btn btn-outline btn-sm" style="padding: 5px 12px; font-size: 0.78rem;">
+        Print / PDF ↗
+      </button>
+      <a href="contact.html?package=ai-team" class="btn btn-solid btn-sm" style="padding: 6px 14px; font-size: 0.78rem;">
+        Book Workshop →
+      </a>
+    </div>
+
+    <div class="deck-progress-track">
+      <div class="deck-progress-fill" id="deckProgressBar"></div>
+    </div>
+  </header>
+
+  <!-- Slide Stage -->
+  <main class="deck-stage" id="deckStage">
+    
+    <!-- SLIDE 1: TITLE SLIDE (WITH 2D SCHEMATIC) -->
+    <div class="slide-wrapper active" data-slide="1">
+      <div class="slide-container" style="justify-content: center;">
+        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 36px; align-items: center;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(229, 46, 46, 0.12); border: 1px solid var(--deck-accent); border-radius: 9999px; margin-bottom: 20px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--deck-accent);"></span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; color: var(--deck-accent); font-weight: 700; letter-spacing: 0.08em;">
+                EXECUTIVE CORPORATE BRIEFING · 2026 ROADMAP
+              </span>
+            </div>
+
+            <h1 style="font-family: var(--font-display); font-size: clamp(2.3rem, 4.2vw, 3.6rem); font-weight: 800; line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.02em;">
+              Practical AI for Enterprise &amp; SME Teams.
+            </h1>
+
+            <p style="font-size: clamp(1.05rem, 1.8vw, 1.3rem); color: var(--deck-text-muted); line-height: 1.5; margin-bottom: 30px; max-width: 65ch;">
+              How forward-thinking Nigerian and international businesses eliminate 15+ hours of weekly clerical busywork per employee, accelerate proposal turnaround, and protect corporate intellectual property.
+            </p>
+
+            <div style="display: flex; gap: 28px; border-top: 1px solid var(--deck-border); padding-top: 20px; font-family: var(--font-mono); font-size: 0.82rem; color: var(--deck-text-muted); flex-wrap: wrap;">
+              <div><strong style="color: #fff;">Facilitator:</strong> Alfred E. Williams</div>
+              <div><strong style="color: #fff;">Scope:</strong> Lagos, Abuja &amp; Global Virtual</div>
+              <div><strong style="color: #fff;">Methodology:</strong> Zero-Code Workflows</div>
+            </div>
+          </div>
+
+          <!-- 2D Animated Vector Orbit Diagram -->
+          <div class="anim-float" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(229,46,46,0.3); border-radius: 16px; padding: 24px; text-align: center; position: relative;">
+            <svg viewBox="0 0 280 280" width="100%" height="auto" style="max-width: 240px; margin: 0 auto; display: block;">
+              <!-- Outer Dashed Ring -->
+              <circle class="anim-spin" cx="140" cy="140" r="110" fill="none" stroke="rgba(229,46,46,0.25)" stroke-width="2" stroke-dasharray="8 8"/>
+              <!-- Middle Orbit -->
+              <circle cx="140" cy="140" r="75" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+              <!-- Pulsing Center Node -->
+              <circle class="anim-pulse" cx="140" cy="140" r="45" fill="rgba(229,46,46,0.18)" stroke="#E52E2E" stroke-width="2"/>
+              <!-- Center Text -->
+              <text x="140" y="136" font-family="var(--font-display)" font-size="14" fill="#FFF" font-weight="bold" text-anchor="middle">CORP AI</text>
+              <text x="140" y="152" font-family="var(--font-mono)" font-size="10" fill="#E52E2E" text-anchor="middle">ENGINE</text>
+
+              <!-- Orbit Satellite Nodes -->
+              <circle cx="140" cy="30" r="12" fill="#141414" stroke="#E52E2E" stroke-width="1.5"/>
+              <text x="140" y="34" font-size="9" fill="#FFF" text-anchor="middle" font-family="var(--font-mono)">SOP</text>
+
+              <circle cx="235" cy="195" r="12" fill="#141414" stroke="#10B981" stroke-width="1.5"/>
+              <text x="235" y="199" font-size="9" fill="#FFF" text-anchor="middle" font-family="var(--font-mono)">ROI</text>
+
+              <circle cx="45" cy="195" r="12" fill="#141414" stroke="#3B82F6" stroke-width="1.5"/>
+              <text x="45" y="199" font-size="9" fill="#FFF" text-anchor="middle" font-family="var(--font-mono)">SEC</text>
+            </svg>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--deck-text-muted); margin-top: 10px;">
+              Enterprise Architecture · Standard Operating Procedures
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: THE PROBLEM (WITH CRISP SVG ICONS) -->
+    <div class="slide-wrapper" data-slide="2">
+      <div class="slide-container">
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; color: var(--deck-accent); font-weight: 700;">
+            THE CORPORATE BOTTLENECK
+          </span>
+          <h2 style="font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; margin: 8px 0 14px;">
+            40% of Your Knowledge Workers' Day is Trapped in Clerical Chores.
+          </h2>
+          <p style="color: var(--deck-text-muted); font-size: 0.98rem; max-width: 75ch; line-height: 1.55;">
+            Your highest-paid managers, analysts, and business developers spend hours every day wrestling with formatting, drafting boilerplate emails, transcribing meetings, and summarizing PDF reports.
+          </p>
+        </div>
+
+        <div class="deck-grid-3">
+          <!-- Card 1: Time Loss -->
+          <div class="deck-subcard">
+            <div>
+              <div class="deck-icon-badge">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <strong style="color: var(--deck-accent); font-size: 1.75rem; font-family: var(--font-display); display: block;">15+ Hours</strong>
+              <h4 style="margin: 8px 0 6px; font-size: 1.1rem;">Lost Per Week</h4>
+              <p style="font-size: 0.85rem; color: var(--deck-text-muted); line-height: 1.5;">
+                Wasted on repetitive tasks: drafting standard proposals, reformatting reports, sorting emails, and compiling status updates.
+              </p>
+            </div>
+            <div style="margin-top: 12px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--deck-accent); font-weight: 700;">
+              37.5% PRODUCTIVITY LEAK
+            </div>
+          </div>
+
+          <!-- Card 2: Financial Burn -->
+          <div class="deck-subcard">
+            <div>
+              <div class="deck-icon-badge">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <strong style="color: var(--deck-accent); font-size: 1.75rem; font-family: var(--font-display); display: block;">₦1.2M+ / mo</strong>
+              <h4 style="margin: 8px 0 6px; font-size: 1.1rem;">Uncaptured Payroll Value</h4>
+              <p style="font-size: 0.85rem; color: var(--deck-text-muted); line-height: 1.5;">
+                In a 10-person department, over 600 hours of paid labor each month produce no strategic commercial output.
+              </p>
+            </div>
+            <div style="margin-top: 12px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--deck-accent); font-weight: 700;">
+              EROSION OF OPERATING MARGINS
+            </div>
+          </div>
+
+          <!-- Card 3: Security Hazard -->
+          <div class="deck-subcard" style="border-color: rgba(239, 68, 68, 0.35);">
+            <div>
+              <div class="deck-icon-badge" style="background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.4); color: #EF4444;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <strong style="color: #EF4444; font-size: 1.75rem; font-family: var(--font-display); display: block;">Critical Risk</strong>
+              <h4 style="margin: 8px 0 6px; font-size: 1.1rem;">Data Privacy Exposure</h4>
+              <p style="font-size: 0.85rem; color: var(--deck-text-muted); line-height: 1.5;">
+                Without corporate governance, staff paste confidential client contracts and financial records into public consumer AI tools.
+              </p>
+            </div>
+            <div style="margin-top: 12px; font-family: var(--font-mono); font-size: 0.72rem; color: #EF4444; font-weight: 700;">
+              ZERO CORPORATE GOVERNANCE
+            </div>
+          </div>
+        </div>
+
+        <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--deck-text-muted); border-top: 1px solid var(--deck-border); padding-top: 12px;">
+          Key Takeaway: The problem is not whether AI works; it is the lack of structured corporate standard operating procedures (SOPs).
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: THE SYSTEM (WITH ANIMATED PIPELINE) -->
+    <div class="slide-wrapper" data-slide="3">
+      <div class="slide-container">
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; color: var(--deck-accent); font-weight: 700;">
+            THE SOLUTION ARCHITECTURE
+          </span>
+          <h2 style="font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; margin: 8px 0 14px;">
+            The 3-Step Corporate AI Acceleration Framework.
+          </h2>
+          <p style="color: var(--deck-text-muted); font-size: 0.98rem; max-width: 75ch; line-height: 1.55;">
+            We move your business from haphazard individual trial-and-error to standardized, measurable organizational efficiency.
+          </p>
+        </div>
+
+        <!-- 2D Step Progression Diagram -->
+        <div style="margin: 6px 0;">
+          <svg viewBox="0 0 800 40" width="100%" height="32" style="font-family: var(--font-mono);">
+            <line class="anim-dash" x1="120" y1="20" x2="680" y2="20" stroke="#E52E2E" stroke-width="2"/>
+            <circle cx="120" cy="20" r="8" fill="#E52E2E"/>
+            <circle cx="400" cy="20" r="8" fill="#E52E2E"/>
+            <circle cx="680" cy="20" r="8" fill="#E52E2E"/>
+          </svg>
+        </div>
+
+        <div class="deck-grid-3">
+          <div class="deck-subcard highlight">
+            <div>
+              <div class="deck-icon-badge">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v6M8 11h6"/></svg>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--deck-accent); font-weight: 700;">STEP 01</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin: 8px 0;">Workflow &amp; Time Audit</h3>
+              <p style="font-size: 0.88rem; color: var(--deck-text-muted); line-height: 1.5;">
+                We analyze your departments’ recurring bottlenecks: RFP bid generation, client proposals, operational reporting, and contract review.
+              </p>
+            </div>
+            <div style="margin-top: 10px; font-family: var(--font-mono); font-size: 0.72rem; color: #FFF;">
+              → Output: Department Bottleneck Matrix
+            </div>
+          </div>
+
+          <div class="deck-subcard highlight">
+            <div>
+              <div class="deck-icon-badge">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--deck-accent); font-weight: 700;">STEP 02</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin: 8px 0;">Hands-on Interactive Workshops</h3>
+              <p style="font-size: 0.88rem; color: var(--deck-text-muted); line-height: 1.5;">
+                Staff execute real office assignments during training. Zero theoretical slides—every team member builds live workflows with verified prompts.
+              </p>
+            </div>
+            <div style="margin-top: 10px; font-family: var(--font-mono); font-size: 0.72rem; color: #FFF;">
+              → Output: Live Verified Automations
+            </div>
+          </div>
+
+          <div class="deck-subcard highlight">
+            <div>
+              <div class="deck-icon-badge">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--deck-accent); font-weight: 700;">STEP 03</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin: 8px 0;">Company Prompt Playbook</h3>
+              <p style="font-size: 0.88rem; color: var(--deck-text-muted); line-height: 1.5;">
+                We deliver a proprietary, documented prompt library tailored specifically to your company, ensuring institutional continuity for all new hires.
+              </p>
+            </div>
+            <div style="margin-top: 10px; font-family: var(--font-mono); font-size: 0.72rem; color: #FFF;">
+              → Output: Company Playbook SOP
+            </div>
+          </div>
+        </div>
+
+        <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--deck-accent); border-top: 1px solid var(--deck-border); padding-top: 12px;">
+          Result: Workflows that previously took 4 hours are completed with superior accuracy in under 20 minutes.
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: THE 4 PILLARS (WITH SVG PILLAR BADGES) -->
+    <div class="slide-wrapper" data-slide="4">
+      <div class="slide-container">
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; color: var(--deck-accent); font-weight: 700;">
+            PRACTICAL EXECUTION
+          </span>
+          <h2 style="font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; margin: 8px 0 14px;">
+            The 4 Practical Training Pillars.
+          </h2>
+          <p style="color: var(--deck-text-muted); font-size: 0.98rem; max-width: 75ch; line-height: 1.55;">
+            Targeted practical toolkits built for executives, business development, operations, and compliance.
+          </p>
+        </div>
+
+        <div class="deck-grid-4">
+          <!-- Pillar 1 -->
+          <div class="deck-subcard">
+            <div>
+              <div class="deck-icon-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <strong style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--deck-accent); display: block;">PILLAR 01</strong>
+              <h4 style="font-family: var(--font-display); font-size: 1.1rem; margin: 6px 0 6px;">Executive Automation</h4>
+              <p style="font-size: 0.82rem; color: var(--deck-text-muted); line-height: 1.5;">
+                Inbox triage, meeting audio to board action items, and 80-page document synthesis into 1-page briefings.
+              </p>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; color: #FFF; margin-top: 8px;">Claude 3.5 · Gemini</span>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="deck-subcard">
+            <div>
+              <div class="deck-icon-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <strong style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--deck-accent); display: block;">PILLAR 02</strong>
+              <h4 style="font-family: var(--font-display); font-size: 1.1rem; margin: 6px 0 6px;">Sales &amp; Proposals</h4>
+              <p style="font-size: 0.82rem; color: var(--deck-text-muted); line-height: 1.5;">
+                Generating comprehensive commercial proposals matching RFP guidelines in 30 minutes with high-converting copy.
+              </p>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; color: #FFF; margin-top: 8px;">ChatGPT · Pitch SOP</span>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="deck-subcard">
+            <div>
+              <div class="deck-icon-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
+              <strong style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--deck-accent); display: block;">PILLAR 03</strong>
+              <h4 style="font-family: var(--font-display); font-size: 1.1rem; margin: 6px 0 6px;">Financial &amp; Ops Data</h4>
+              <p style="font-size: 0.82rem; color: var(--deck-text-muted); line-height: 1.5;">
+                Analyzing raw spreadsheets, detecting cash flow anomalies, and extracting management memos from numbers.
+              </p>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; color: #FFF; margin-top: 8px;">Code Interpreter · Excel</span>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="deck-subcard">
+            <div>
+              <div class="deck-icon-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <strong style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--deck-accent); display: block;">PILLAR 04</strong>
+              <h4 style="font-family: var(--font-display); font-size: 1.1rem; margin: 6px 0 6px;">Security &amp; Privacy</h4>
+              <p style="font-size: 0.82rem; color: var(--deck-text-muted); line-height: 1.5;">
+                Enterprise data privacy settings, PII redaction protocols, hallucination checks, and internal Acceptable Use Policy.
+              </p>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; color: #FFF; margin-top: 8px;">Zero-Retention · NDA</span>
+          </div>
+        </div>
+
+        <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--deck-text-muted); border-top: 1px solid var(--deck-border); padding-top: 12px;">
+          Software Covered: ChatGPT Enterprise / Plus, Claude 3.5 Sonnet, Google Gemini Workspace, and workflow automations.
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: CASE STUDIES (WITH INDUSTRY ICONS) -->
+    <div class="slide-wrapper" data-slide="5">
+      <div class="slide-container">
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; color: var(--deck-accent); font-weight: 700;">
+            PROVEN IMPACT
+          </span>
+          <h2 style="font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; margin: 8px 0 14px;">
+            Real-World SME &amp; Enterprise Case Studies.
+          </h2>
+          <p style="color: var(--deck-text-muted); font-size: 0.98rem; max-width: 75ch; line-height: 1.55;">
+            Measurable productivity shifts across professional services and commercial trading firms.
+          </p>
+        </div>
+
+        <div class="deck-grid-3">
+          <!-- Legal -->
+          <div class="deck-subcard">
+            <div>
+              <div class="deck-icon-badge">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M5 7l7-5 7 5M2 13l3-6 3 6a3 3 0 0 1-6 0zm14 0l3-6 3 6a3 3 0 0 1-6 0z"/></svg>
+              </div>
+              <span class="card-tag">COMMERCIAL LEGAL PRACTICE</span>
+              <h4 style="font-family: var(--font-display); font-size: 1.15rem; margin: 8px 0 6px;">Commercial Law Firm (Lagos)</h4>
+              <p style="font-size: 0.85rem; color: var(--deck-text-muted); line-height: 1.5; margin-bottom: 12px;">
+                Associates spent 6+ hours reading counter-party agreements and preparing clause markups.
+              </p>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px;">
+              <strong style="color: var(--deck-accent); font-size: 0.85rem;">Result: 68% Time Reduction</strong>
+              <p style="font-size: 0.8rem; color: #fff; margin-top: 4px;">First-pass contract reviews completed in 35 minutes with strict client NDA privacy maintained.</p>
+            </div>
+          </div>
+
+          <!-- FMCG -->
+          <div class="deck-subcard">
+            <div>
+              <div class="deck-icon-badge">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              </div>
+              <span class="card-tag">FMCG &amp; TRADING DISTRIBUTION</span>
+              <h4 style="font-family: var(--font-display); font-size: 1.15rem; margin: 8px 0 6px;">Regional Trading Group</h4>
+              <p style="font-size: 0.85rem; color: var(--deck-text-muted); line-height: 1.5; margin-bottom: 12px;">
+                Operations team spent 3 days every month compiling branch sales sheets and distributor status summaries.
+              </p>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px;">
+              <strong style="color: var(--deck-accent); font-size: 0.85rem;">Result: Automated In 90 Minutes</strong>
+              <p style="font-size: 0.8rem; color: #fff; margin-top: 4px;">Automated Excel prompt workflows now output executive summaries and SKU alerts in under 2 hours.</p>
+            </div>
+          </div>
+
+          <!-- Property -->
+          <div class="deck-subcard">
+            <div>
+              <div class="deck-icon-badge">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>
+              </div>
+              <span class="card-tag">REAL ESTATE &amp; INVESTMENTS</span>
+              <h4 style="font-family: var(--font-display); font-size: 1.15rem; margin: 8px 0 6px;">Property Development Firm</h4>
+              <p style="font-size: 0.85rem; color: var(--deck-text-muted); line-height: 1.5; margin-bottom: 12px;">
+                Struggled with sluggish investor pitch turnaround and inconsistent marketing brochures.
+              </p>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px;">
+              <strong style="color: var(--deck-accent); font-size: 0.85rem;">Result: 4x Proposal Output</strong>
+              <p style="font-size: 0.8rem; color: #fff; margin-top: 4px;">Business dev team now produces custom investor teasers and financial brochures in 4 hours.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--deck-text-muted); border-top: 1px solid var(--deck-border); padding-top: 12px;">
+          All workflows are documented in clear step-by-step SOP manuals provided to your leadership team.
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: PACKAGES & INVESTMENT (WITH 2D ILLUSTRATIONS) -->
+    <div class="slide-wrapper" data-slide="6">
+      <div class="slide-container">
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; color: var(--deck-accent); font-weight: 700;">
+            INVESTMENT &amp; COMMERCIAL PACKAGES
+          </span>
+          <h2 style="font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; margin: 8px 0 14px;">
+            Transparent Corporate Pricing Options.
+          </h2>
+          <p style="color: var(--deck-text-muted); font-size: 0.98rem; max-width: 75ch; line-height: 1.55;">
+            Fixed commercial engagements with full Nigerian Naira (₦) and USD ($) corporate invoicing.
+          </p>
+        </div>
+
+        <div class="deck-grid-3">
+          <!-- Pkg 1 -->
+          <div class="deck-subcard">
+            <div>
+              <div class="deck-pkg-thumb">
+                <img src="assets/illust-ai-masterclass.jpg" alt="Executive Masterclass" loading="lazy">
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--deck-text-muted);">PACKAGE 01</span>
+              <h4 style="font-family: var(--font-display); font-size: 1.2rem; margin: 4px 0;">Executive Masterclass</h4>
+              <div style="font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: #fff; margin: 8px 0;">
+                ₦250,000 <span style="font-size: 0.85rem; color: var(--deck-text-muted); font-weight: 400;">/ $250</span>
+              </div>
+              <ul style="list-style: none; padding: 0; font-size: 0.8rem; color: var(--deck-text-muted); display: flex; flex-direction: column; gap: 6px;">
+                <li>✓ 1-Day intensive (3.5 hours)</li>
+                <li>✓ Up to 5 senior executives / partners</li>
+                <li>✓ Board pack &amp; memo automation</li>
+                <li>✓ Enterprise data security configuration</li>
+                <li>✓ 30 days direct Q&amp;A support</li>
+              </ul>
+            </div>
+            <div style="margin-top: 10px;">
+              <a href="contact.html?package=ai-exec" class="btn btn-outline btn-sm" style="width: 100%; justify-content: center; font-size: 0.75rem;">Select Package →</a>
+            </div>
+          </div>
+
+          <!-- Pkg 2 -->
+          <div class="deck-subcard highlight">
+            <div>
+              <div class="deck-pkg-thumb">
+                <img src="assets/illust-ai-team-sprint.jpg" alt="Team Acceleration Sprint" loading="lazy">
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--deck-accent); font-weight: 700;">PACKAGE 02 · RECOMMENDED</span>
+              <h4 style="font-family: var(--font-display); font-size: 1.2rem; margin: 4px 0;">Team Acceleration Sprint</h4>
+              <div style="font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--deck-accent); margin: 8px 0;">
+                ₦650,000 <span style="font-size: 0.85rem; color: var(--deck-text-muted); font-weight: 400;">/ $700</span>
+              </div>
+              <ul style="list-style: none; padding: 0; font-size: 0.8rem; color: #fff; display: flex; flex-direction: column; gap: 6px;">
+                <li>✓ 2-Week program (up to 25 staff)</li>
+                <li>✓ Departmental workflow audit</li>
+                <li>✓ 4 interactive workshops with live practice</li>
+                <li>✓ Company Prompt Playbook (50+ prompts)</li>
+                <li>✓ 60 days follow-up &amp; certificates</li>
+              </ul>
+            </div>
+            <div style="margin-top: 10px;">
+              <a href="contact.html?package=ai-team" class="btn btn-solid btn-sm" style="width: 100%; justify-content: center; font-size: 0.75rem;">Select Package →</a>
+            </div>
+          </div>
+
+          <!-- Pkg 3 -->
+          <div class="deck-subcard">
+            <div>
+              <div class="deck-pkg-thumb">
+                <img src="assets/illust-ai-chief-retainer.jpg" alt="Chief AI Officer Retainer" loading="lazy">
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--deck-text-muted);">PACKAGE 03</span>
+              <h4 style="font-family: var(--font-display); font-size: 1.2rem; margin: 4px 0;">Chief AI Officer Retainer</h4>
+              <div style="font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: #fff; margin: 8px 0;">
+                ₦1,250,000 <span style="font-size: 0.85rem; color: var(--deck-text-muted); font-weight: 400;">/ $1,400/mo</span>
+              </div>
+              <ul style="list-style: none; padding: 0; font-size: 0.8rem; color: var(--deck-text-muted); display: flex; flex-direction: column; gap: 6px;">
+                <li>✓ Monthly strategic AI leadership</li>
+                <li>✓ Continuous workflow audits &amp; custom agents</li>
+                <li>✓ Bi-weekly executive tool evaluations</li>
+                <li>✓ Monthly staff refreshers on new models</li>
+                <li>✓ Dedicated WhatsApp/Slack channel</li>
+              </ul>
+            </div>
+            <div style="margin-top: 10px;">
+              <a href="contact.html?package=ai-retainer" class="btn btn-outline btn-sm" style="width: 100%; justify-content: center; font-size: 0.75rem;">Select Package →</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--deck-text-muted); border-top: 1px solid var(--deck-border); padding-top: 12px;">
+          Terms: 50% mobilization upon agreement signature, 50% upon workshop completion.
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: FACILITATOR CREDENTIALS (WITH 2D PORTRAIT) -->
+    <div class="slide-wrapper" data-slide="7">
+      <div class="slide-container">
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; color: var(--deck-accent); font-weight: 700;">
+            THE FACILITATOR
+          </span>
+          <h2 style="font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; margin: 8px 0 14px;">
+            Alfred E. Williams: Practical Experience, Zero Fluff.
+          </h2>
+          <p style="color: var(--deck-text-muted); font-size: 0.98rem; max-width: 75ch; line-height: 1.55;">
+            A rare blend of high-speed technical systems engineering, executive direct-response copywriting, and adult training expertise.
+          </p>
+        </div>
+
+        <div class="deck-grid-2" style="align-items: center;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div class="deck-subcard">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--deck-accent)" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <h4 style="color: #fff; font-size: 1.05rem; margin: 0;">Systems Engineer &amp; Full-Stack Architect</h4>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--deck-text-muted); line-height: 1.5;">
+                Builds commercial web apps and production software. Understands AI models from the ground up, not just as a consumer trend.
+              </p>
+            </div>
+
+            <div class="deck-subcard">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--deck-accent)" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                <h4 style="color: #fff; font-size: 1.05rem; margin: 0;">Editorial Director &amp; Ghostwriter</h4>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--deck-text-muted); line-height: 1.5;">
+                Has written and reviewed high-stakes investor pitch decks, corporate company profiles, and multi-million Naira business proposals.
+              </p>
+            </div>
+
+            <div class="deck-subcard">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--deck-accent)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <h4 style="color: #fff; font-size: 1.05rem; margin: 0;">High-Impact Trainer (90%+ Track Record)</h4>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--deck-text-muted); line-height: 1.5;">
+                Trained dozens of candidates to score 8.5+ on standardized examinations and mentored corporate professionals into higher-income roles.
+              </p>
+            </div>
+          </div>
+
+          <!-- Facilitator 2D Portrait Card -->
+          <div style="background-color: rgba(255,255,255,0.02); border: 1px solid var(--deck-border); border-radius: 12px; padding: 28px; text-align: center;">
+            <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 2.5px solid var(--deck-accent); margin: 0 auto 14px; box-shadow: 0 0 24px rgba(229,46,46,0.35);">
+              <img src="assets/alfred-2d-cartoon-portrait.jpg" alt="Alfred E. Williams 2D Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; margin-bottom: 2px;">Alfred E. Williams</h3>
+            <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--deck-accent); display: block; margin-bottom: 12px;">
+              Lagos, Nigeria · Operating Globally
+            </span>
+            <p style="font-size: 0.85rem; color: var(--deck-text-muted); line-height: 1.55; margin-bottom: 18px;">
+              "My mission is simple: to ensure African businesses and knowledge professionals do not get left behind by the AI wave, but instead harness it to out-compete and deliver exponential value."
+            </p>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+              <a href="https://linkedin.com/in/williams-e-alfred/" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="font-size: 0.78rem;">LinkedIn ↗</a>
+              <a href="about.html" class="btn btn-outline btn-sm" style="font-size: 0.78rem;">Full Bio ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--deck-text-muted); border-top: 1px solid var(--deck-border); padding-top: 12px;">
+          Available for corporate board presentations and keynote speaking across Nigeria and internationally.
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8: CALL TO ACTION -->
+    <div class="slide-wrapper" data-slide="8">
+      <div class="slide-container" style="justify-content: center; text-align: center;">
+        <div style="max-width: 760px; margin: 0 auto;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(229, 46, 46, 0.12); border: 1px solid var(--deck-accent); border-radius: 9999px; margin-bottom: 16px;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--deck-accent);"></span>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; color: var(--deck-accent); font-weight: 700; letter-spacing: 0.08em;">
+              TAKE ACTION TODAY
+            </span>
+          </div>
+
+          <h2 style="font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 800; margin: 10px 0 16px;">
+            Ready to Accelerate Your Workforce?
+          </h2>
+          <p style="color: var(--deck-text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 28px;">
+            Book a 30-minute discovery session with Alfred Williams to review your current bottlenecks and secure your company's training date.
+          </p>
+
+          <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px;">
+            <a href="contact.html?package=ai-team" class="btn btn-solid" style="padding: 13px 28px; font-size: 0.95rem;">
+              Book Team Sprint (₦650k) →
+            </a>
+            <a href="https://wa.me/2348176939974?text=Hello%20Alfred,%20I%20just%20viewed%20your%20AI%20Pitch%20Deck%20and%20want%20to%20discuss%20training%20for%20my%20company" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 13px 26px; font-size: 0.95rem;">
+              Chat on WhatsApp Direct ↗
+            </a>
+            <a href="ai-training.html#discovery-session" class="btn btn-outline" style="padding: 13px 22px; font-size: 0.95rem;">
+              Schedule via Cal.com ↗
+            </a>
+          </div>
+
+          <div style="border-top: 1px solid var(--deck-border); padding-top: 20px; display: flex; justify-content: center; gap: 28px; font-family: var(--font-mono); font-size: 0.82rem; color: var(--deck-text-muted); flex-wrap: wrap;">
+            <div><strong style="color: #fff;">Email:</strong> officialwilliamsae@gmail.com</div>
+            <div><strong style="color: #fff;">Phone / WhatsApp:</strong> +234 817 693 9974</div>
+            <div><strong style="color: #fff;">HQ:</strong> Lagos, Nigeria</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Bottom Navigation Bar & Slide Controls -->
+  <footer class="deck-bottom-bar">
+    <button onclick="prevSlide()" class="btn btn-outline btn-sm" id="prevBtn" style="padding: 7px 18px; font-size: 0.82rem;">
+      ← Previous
+    </button>
+
+    <div class="deck-dots" id="deckDotsContainer">
+      <!-- Dots populated dynamically by script -->
+    </div>
+
+    <button onclick="nextSlide()" class="btn btn-solid btn-sm" id="nextBtn" style="padding: 7px 22px; font-size: 0.82rem;">
+      Next →
+    </button>
+  </footer>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 8;
+    const slides = document.querySelectorAll('.slide-wrapper');
+    const counterEl = document.getElementById('slideCounter');
+    const progressEl = document.getElementById('deckProgressBar');
+    const dotsContainer = document.getElementById('deckDotsContainer');
+
+    // Build Dots
+    for (let i = 1; i <= totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.className = `deck-dot ${i === 1 ? 'active' : ''}`;
+      dot.title = `Jump to Slide ${i}`;
+      dot.onclick = () => goToSlide(i);
+      dotsContainer.appendChild(dot);
+    }
+    const dots = document.querySelectorAll('.deck-dot');
+
+    function updateDeckUI() {
+      slides.forEach((s, idx) => {
+        const slideNum = idx + 1;
+        s.classList.remove('active', 'prev');
+        if (slideNum === currentSlide) {
+          s.classList.add('active');
+        } else if (slideNum < currentSlide) {
+          s.classList.add('prev');
+        }
+      });
+
+      dots.forEach((d, idx) => {
+        d.classList.toggle('active', idx + 1 === currentSlide);
+      });
+
+      const formattedCurrent = currentSlide < 10 ? `0${currentSlide}` : currentSlide;
+      const formattedTotal = totalSlides < 10 ? `0${totalSlides}` : totalSlides;
+      if (counterEl) counterEl.textContent = `${formattedCurrent} / ${formattedTotal}`;
+
+      if (progressEl) {
+        const pct = (currentSlide / totalSlides) * 100;
+        progressEl.style.width = `${pct}%`;
+      }
+
+      // Next / Prev Button text on final slide
+      const nextBtn = document.getElementById('nextBtn');
+      if (nextBtn) {
+        if (currentSlide === totalSlides) {
+          nextBtn.textContent = 'Book Workshop →';
+          nextBtn.onclick = () => window.location.href = 'contact.html?package=ai-team';
+        } else {
+          nextBtn.textContent = 'Next →';
+          nextBtn.onclick = nextSlide;
+        }
+      }
+    }
+
+    function goToSlide(n) {
+      if (n < 1) n = 1;
+      if (n > totalSlides) n = totalSlides;
+      currentSlide = n;
+      updateDeckUI();
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        updateDeckUI();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        updateDeckUI();
+      }
+    }
+
+    // Keyboard Navigation
+    window.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'f' || e.key === 'F') {
+        toggleDeckFullscreen();
+      } else if (e.key === 'Escape') {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        }
+      }
+    });
+
+    // Touch Swipe Navigation
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const stage = document.getElementById('deckStage');
+
+    stage.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+
+    stage.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, false);
+
+    function handleSwipe() {
+      const swipeDistance = touchEndX - touchStartX;
+      if (swipeDistance < -50) {
+        nextSlide();
+      } else if (swipeDistance > 50) {
+        prevSlide();
+      }
+    }
+
+    function toggleDeckFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.warn(`Error attempting to enable fullscreen: ${err.message}`);
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+  </script>
+</body>
+</html>

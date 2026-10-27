@@ -321,62 +321,9 @@
   function initPreloader() {
     const preloader = document.getElementById('sitePreloader');
     if (!preloader) return;
-
-    const countEl = document.getElementById('preloaderCount');
-    const statusEl = document.getElementById('preloaderStatusText');
-    const barFill = document.getElementById('preloaderBarFill');
-
-    // Check if user already saw preloader in this tab session
-    const hasPreloaded = sessionStorage.getItem('alfred_preloaded');
-    const duration = hasPreloaded ? 350 : 1350;
-
-    document.body.style.overflow = 'hidden';
-
-    const statusMessages = [
-      { pct: 0, text: 'CALIBRATING 12-COLUMN BLUEPRINT...' },
-      { pct: 25, text: 'INDEXING EDITORIAL & RESEARCH ARCHIVES...' },
-      { pct: 50, text: 'SYNCHRONIZING LAGOS FIELD DATA (551 SMEs)...' },
-      { pct: 75, text: 'MOUNTING 3D DEPTH SHADERS & VECTOR ENGINES...' },
-      { pct: 95, text: 'SYSTEM ARCHIVE READY // LAUNCHING' }
-    ];
-
-    const startTime = performance.now();
-
-    function updateCounter(now) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // Easing: easeOutCubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const currentVal = Math.round(eased * 100);
-
-      if (countEl) countEl.textContent = String(currentVal).padStart(2, '0');
-      if (barFill) barFill.style.width = `${currentVal}%`;
-
-      for (let i = statusMessages.length - 1; i >= 0; i--) {
-        if (currentVal >= statusMessages[i].pct) {
-          if (statusEl && statusEl.textContent !== statusMessages[i].text) {
-            statusEl.textContent = statusMessages[i].text;
-          }
-          break;
-        }
-      }
-
-      if (progress < 1) {
-        requestAnimationFrame(updateCounter);
-      } else {
-        sessionStorage.setItem('alfred_preloaded', 'true');
-        setTimeout(() => {
-          preloader.classList.add('is-opening');
-          setTimeout(() => {
-            preloader.classList.add('is-finished');
-            document.body.style.overflow = '';
-            window.dispatchEvent(new CustomEvent('sitePreloaded'));
-          }, 850);
-        }, 120);
-      }
-    }
-
-    requestAnimationFrame(updateCounter);
+    preloader.classList.add('is-finished');
+    document.body.style.overflow = '';
+    window.dispatchEvent(new CustomEvent('sitePreloaded'));
   }
 
   // --------------------------------------------------------------------------
@@ -582,8 +529,8 @@
   // 10. SCROLLYTELLING ANIMATIONS & READING FOCUS
   // --------------------------------------------------------------------------
   function initScrollytelling() {
-    // 1. Reveal elements on scroll (.scrolly-fade)
-    const revealElements = document.querySelectorAll('.scrolly-fade, .section-head');
+    // 1. Reveal elements on scroll (.scrolly-fade, .scrolly-slide-left, .scrolly-slide-right)
+    const revealElements = document.querySelectorAll('.scrolly-fade, .scrolly-slide-left, .scrolly-slide-right, .section-head');
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -591,7 +538,7 @@
             entry.target.classList.add('is-inview');
           }
         });
-      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
       revealElements.forEach(el => observer.observe(el));
     } else {

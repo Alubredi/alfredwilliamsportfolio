@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Programs &amp; Mentorship — Alfred E. Williams</title>
+  <meta name="description" content="Master high-income digital skills and standardized exams with 1-on-1 mentorship from Alfred E. Williams. IELTS 8.5+, Web Development, Corporate AI, and Global Admissions.">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .training-hero-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 12px;
+      padding: 48px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 768px) {
+      .training-hero-card { padding: 24px; }
+    }
+    .track-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .track-card:hover {
+      border-color: var(--accent-red);
+      transform: translateY(-2px);
+    }
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .proof-stat-box {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .proof-stat-number {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--accent-red);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .faq-accordion-item {
+      border: 1px solid var(--line-grid);
+      border-radius: 10px;
+      margin-bottom: 14px;
+      background-color: var(--bg-surface);
+      overflow: hidden;
+    }
+    .faq-accordion-header {
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.05rem;
+      user-select: none;
+    }
+    .faq-accordion-header:hover {
+      color: var(--accent-red);
+    }
+    .faq-accordion-body {
+      padding: 0 24px 20px;
+      display: none;
+      color: var(--ink-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    .faq-accordion-item.open .faq-accordion-body {
+      display: block;
+    }
+    .faq-accordion-item.open .faq-accordion-header {
+      color: var(--accent-red);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Structural Grid Overlay -->
+  <div class="structural-grid-overlay" aria-hidden="true">
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="scroll-progress-bar" id="progressBar"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brandmark">
+        <span class="status-dot" title="Accepting select training candidates"></span>
+        <span>Alfred <strong>E. Williams</strong></span>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="works.html" class="nav-link">Works</a></li>
+          <li><a href="brands.html" class="nav-link">Brands &amp; Social</a></li>
+          <li class="nav-item-dropdown">
+            <a href="about.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
+              <span>About</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="about.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">About Me</span>
+                <span class="dropdown-item-desc">Track record, speaking &amp; research</span>
+              </a>
+              <a href="blog.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Blog &amp; Essays</span>
+                <span class="dropdown-item-desc">Critical commentary &amp; insights</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <!-- Training Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="training.html" class="nav-link nav-link-dropdown active" aria-expanded="false" aria-haspopup="true">
+              <span>Training</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="ai-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Corporate AI Training ↗</span>
+                <span class="dropdown-item-desc">Workforce acceleration &amp; SOPs</span>
+              </a>
+              <a href="ai-design-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">AI for Design, Web &amp; Motion ↗</span>
+                <span class="dropdown-item-desc">Build sites, apps &amp; graphics with AI</span>
+              </a>
+              <a href="ielts-prep.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">IELTS 8.5+ &amp; Test Prep ↗</span>
+                <span class="dropdown-item-desc">Diagnostic assessment &amp; visa prep</span>
+              </a>
+              <a href="training.html" class="nav-dropdown-item active" role="menuitem">
+                <span class="dropdown-item-title">All Training Programs</span>
+                <span class="dropdown-item-desc">Full academy curriculum &amp; cohorts</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="#enrollment" class="btn btn-sm btn-solid header-cta-btn" style="padding: 7px 18px; font-size: 0.82rem;">Enroll Now →</a>
+        <button class="theme-toggle-btn" aria-label="Toggle theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section style="padding: 64px 0 40px; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div style="margin-bottom: 24px;">
+          <div class="hero-status-beacon" style="display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px; background: rgba(229, 46, 46, 0.08); border: 1px solid var(--accent-red); border-radius: 9999px;">
+            <span class="status-dot"></span>
+            <span style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-red); font-weight: 700;">
+              ACADEMIC &amp; DIGITAL SKILLS ACADEMY · 1-ON-1 &amp; MICRO-COHORTS
+            </span>
+          </div>
+        </div>
+
+        <div class="training-hero-card">
+          <div style="max-width: 880px;">
+            <span class="card-tag">DIRECT MENTORSHIP WITH ALFRED E. WILLIAMS</span>
+            <h1 style="font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1; margin: 16px 0 20px; letter-spacing: -0.02em;">
+              Master High-Income Skills &amp; Standardized Exams With Proven Mentorship.
+            </h1>
+            <p style="font-size: clamp(1.05rem, 1.8vw, 1.25rem); color: var(--ink-muted); line-height: 1.6; margin-bottom: 32px; max-width: 72ch;">
+              Stop relying on generic recorded videos and mass webinars that leave you stuck. Learn directly through personalized 1-on-1 coaching: from scoring <strong>8.5+ on the IELTS</strong> to building production-ready websites, deploying corporate AI workflows, and winning international university admissions.
+            </p>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 32px;">
+              <a href="#tracks" class="btn btn-solid" style="padding: 14px 28px; font-size: 1rem;">
+                Explore Training Tracks ↓
+              </a>
+              <a href="ai-training.html" class="btn btn-outline" style="padding: 14px 22px; font-size: 0.95rem;">
+                Corporate AI ↗
+              </a>
+              <a href="ai-design-training.html" class="btn btn-outline" style="padding: 14px 22px; font-size: 0.95rem;">
+                AI for Design, Web &amp; Motion ↗
+              </a>
+              <a href="ielts-prep.html" class="btn btn-outline" style="padding: 14px 22px; font-size: 0.95rem;">
+                IELTS 8.5+ Prep ↗
+              </a>
+            </div>
+
+            <!-- Proof Numbers Ribbon -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; border-top: 1px solid var(--line-grid); padding-top: 28px;">
+              <div>
+                <strong style="display: block; font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--accent-red);">90%+</strong>
+                <span style="font-size: 0.85rem; color: var(--ink-muted);">First-attempt exam pass rate</span>
+              </div>
+              <div>
+                <strong style="display: block; font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--accent-red);">Band 8.5+</strong>
+                <span style="font-size: 0.85rem; color: var(--ink-muted);">Track record on IELTS Academic</span>
+              </div>
+              <div>
+                <strong style="display: block; font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--accent-red);">1-on-1 Focus</strong>
+                <span style="font-size: 0.85rem; color: var(--ink-muted);">Personalized curriculum &amp; reviews</span>
+              </div>
+              <div>
+                <strong style="display: block; font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--accent-red);">₦ &amp; $ Invoicing</strong>
+                <span style="font-size: 0.85rem; color: var(--ink-muted);">Flexible local &amp; global payments</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: THE 4 TRAINING TRACKS -->
+    <section id="tracks" style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div class="section-header" style="max-width: 760px; margin-bottom: 36px;">
+          <span class="card-tag">SPECIALIZED CURRICULUMS</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            Choose Your Learning Track.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6;">
+            Every program includes direct weekly video coaching sessions, personalized homework evaluations, real-world practical projects, and daily WhatsApp support.
+          </p>
+        </div>
+
+        <div class="track-grid">
+
+          <!-- TRACK 01: STANDARDIZED TEST PREP (IELTS / TOEFL / GRE) -->
+          <div class="track-card">
+            <div>
+              <span class="card-tag">TRACK 01 · GLOBAL ADMISSIONS &amp; RELOCATION</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin: 12px 0 8px;">
+                IELTS Band 8.5+ &amp; TOEFL Prep
+              </h3>
+              <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 20px;">
+                Stop writing the IELTS multiple times. Learn the exact examiner scoring rubrics, time-saving reading techniques, speaking fluency strategies, and Task 1 &amp; Task 2 essay formulas that consistently secure Band 8.0+.
+              </p>
+
+              <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700; margin-bottom: 6px;">TUITION TIERS</div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 4px;">
+                  <span>Diagnostic Score Clinic:</span>
+                  <strong>₦45,000 / $55</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 4px;">
+                  <span>4-Week Accelerator:</span>
+                  <strong>₦120,000 / $140</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.88rem;">
+                  <span>Full Admissions &amp; Visa Pack:</span>
+                  <strong>₦250,000 / $300</strong>
+                </div>
+              </div>
+
+              <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--ink-primary); display: flex; flex-direction: column; gap: 10px;">
+                <li>✓ Full diagnostic assessment identifying your exact weak points</li>
+                <li>✓ 12+ live 1-on-1 speaking mock sessions with instant feedback</li>
+                <li>✓ Line-by-line essay corrections with Band 9 model replacements</li>
+                <li>✓ Cambridge IELTS official past question vault and audio guides</li>
+              </ul>
+            </div>
+
+            <div style="margin-top: 28px; display: flex; flex-direction: column; gap: 10px;">
+              <a href="ielts-prep.html" class="btn btn-solid" style="width: 100%; justify-content: center;">
+                Explore IELTS Prep Track →
+              </a>
+              <a href="contact.html?package=skills-prep" class="btn btn-outline btn-sm" style="width: 100%; justify-content: center; font-size: 0.8rem;">
+                Direct Application Form ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- TRACK 02: AI FOR DESIGN, WEB & MOTION -->
+          <div class="track-card">
+            <div>
+              <span class="card-tag">TRACK 02 · AI-POWERED CREATIVE ENGINEERING</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin: 12px 0 8px;">
+                AI for Design, Web &amp; Motion
+              </h3>
+              <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 20px;">
+                Master how to use AI for web design and development, mobile app prototyping, graphic design, and cinematic motion reels. Learn prompt-to-code toolchains (Claude Code, Cursor, v0), Figma AI, Midjourney v6 vector branding, and generative video with Runway Gen-3.
+              </p>
+
+              <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700; margin-bottom: 6px;">TUITION TIERS</div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 4px;">
+                  <span>4-Week AI Design &amp; Web Sprint:</span>
+                  <strong>₦150,000 / $175</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.88rem;">
+                  <span>8-Week Creative Suite Pro:</span>
+                  <strong>₦280,000 / $320</strong>
+                </div>
+              </div>
+
+              <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--ink-primary); display: flex; flex-direction: column; gap: 10px;">
+                <li>✓ Build production web apps with Claude Code, Cursor &amp; v0</li>
+                <li>✓ Prototype mobile apps &amp; UI systems in Figma with AI</li>
+                <li>✓ Vector brand identities &amp; ad creatives with Midjourney v6</li>
+                <li>✓ Cinematic motion design &amp; vertical video reels with Runway Gen-3</li>
+              </ul>
+            </div>
+
+            <div style="margin-top: 28px; display: flex; flex-direction: column; gap: 10px;">
+              <a href="ai-design-training.html" class="btn btn-solid" style="width: 100%; justify-content: center;">
+                Explore AI Design &amp; Web Track →
+              </a>
+              <a href="contact.html?package=skills-ai-web" class="btn btn-outline btn-sm" style="width: 100%; justify-content: center; font-size: 0.8rem;">
+                Direct Application Form ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- TRACK 03: CORPORATE & FREELANCE AI ACCELERATION -->
+          <div class="track-card">
+            <div>
+              <span class="card-tag">TRACK 03 · WORKFORCE &amp; FREELANCER PRODUCTIVITY</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin: 12px 0 8px;">
+                Corporate AI Training &amp; Prompt Engineering
+              </h3>
+              <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 20px;">
+                For corporate teams, executives, and SME owners who want to cut their workday in half. Automate client proposals, financial report synthesis, meeting action items, and establish corporate data privacy standards.
+              </p>
+
+              <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700; margin-bottom: 6px;">TUITION TIERS</div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 4px;">
+                  <span>Executive Masterclass (1-Day):</span>
+                  <strong>₦250,000 / $250</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.88rem;">
+                  <span>Corporate Team Sprint (2-Wk):</span>
+                  <strong>₦650,000 / $700</strong>
+                </div>
+              </div>
+
+              <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--ink-primary); display: flex; flex-direction: column; gap: 10px;">
+                <li>✓ Multi-step prompt engineering for ChatGPT, Claude &amp; Gemini</li>
+                <li>✓ Automating 20-page proposal drafts and market research memos</li>
+                <li>✓ Corporate data privacy protocols and safe AI governance</li>
+                <li>✓ Custom Company Prompt Playbook (50+ prompts)</li>
+              </ul>
+            </div>
+
+            <div style="margin-top: 28px; display: flex; flex-direction: column; gap: 10px;">
+              <a href="ai-training.html" class="btn btn-solid" style="width: 100%; justify-content: center;">
+                Explore Corporate AI Track →
+              </a>
+              <a href="ai-training.html#interactive-pitch-deck" class="btn btn-outline btn-sm" style="width: 100%; justify-content: center; font-size: 0.8rem;">
+                View Web Pitch Deck ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- TRACK 04: ACADEMIC WRITING, SOPS & VISA PREP -->
+          <div class="track-card">
+            <div>
+              <span class="card-tag">TRACK 04 · STUDY ABROAD &amp; SCHOLARSHIPS</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin: 12px 0 8px;">
+                SOP Writing &amp; US F-1 Visa Prep
+              </h3>
+              <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 20px;">
+                Your statement of purpose and visa interview decide whether you get accepted and funded. We turn your rough career story into a compelling, scholarly narrative and prepare you to pass consular interviews with calm confidence.
+              </p>
+
+              <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700; margin-bottom: 6px;">TUITION TIERS</div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 4px;">
+                  <span>SOP &amp; Essay Editorial Review:</span>
+                  <strong>₦75,000 / $90</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.88rem;">
+                  <span>Full Admissions &amp; Visa Mentorship:</span>
+                  <strong>₦250,000 / $300</strong>
+                </div>
+              </div>
+
+              <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--ink-primary); display: flex; flex-direction: column; gap: 10px;">
+                <li>✓ Complete rewrite &amp; polish of your Statement of Purpose (SOP)</li>
+                <li>✓ Professor outreach &amp; graduate research alignment strategy</li>
+                <li>✓ Live US Consular mock interview sessions with tricky questions</li>
+                <li>✓ Financial sponsor documentation checklist &amp; tie-to-home-country review</li>
+              </ul>
+            </div>
+
+            <div style="margin-top: 28px; display: flex; flex-direction: column; gap: 10px;">
+              <a href="ielts-prep.html#pillars" class="btn btn-solid" style="width: 100%; justify-content: center;">
+                Explore Admissions &amp; Visa Pack →
+              </a>
+              <a href="contact.html?package=skills-admissions" class="btn btn-outline btn-sm" style="width: 100%; justify-content: center; font-size: 0.8rem;">
+                Direct Application Form ↗
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: HOW THE MENTORSHIP WORKS -->
+    <section style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div class="section-header" style="max-width: 760px; margin-bottom: 36px;">
+          <span class="card-tag">THE LEARNING EXPERIENCE</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            Why 1-on-1 Mentorship Beats Generic Online Courses.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6;">
+            Recorded courses have an 8% completion rate because nobody is there when you hit an obstacle. Our approach is hands-on, accountable, and outcome-obsessed.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+          <div style="background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-radius: 12px; padding: 28px;">
+            <strong style="color: var(--accent-red); font-family: var(--font-mono); font-size: 0.85rem;">01 / ASSESSMENT</strong>
+            <h4 style="font-family: var(--font-display); font-size: 1.2rem; margin: 8px 0;">Diagnostic First Step</h4>
+            <p style="font-size: 0.88rem; color: var(--ink-muted); line-height: 1.5;">
+              We never start with guesswork. We assess your starting baseline, identify specific blind spots, and build a custom road map for your target score or skill.
+            </p>
+          </div>
+
+          <div style="background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-radius: 12px; padding: 28px;">
+            <strong style="color: var(--accent-red); font-family: var(--font-mono); font-size: 0.85rem;">02 / LIVE SESSIONS</strong>
+            <h4 style="font-family: var(--font-display); font-size: 1.2rem; margin: 8px 0;">Weekly Live Reviews</h4>
+            <p style="font-size: 0.88rem; color: var(--ink-muted); line-height: 1.5;">
+              Interactive video calls with live screen sharing. Watch code get refactored, essays dissected, or speaking answers polished in real-time.
+            </p>
+          </div>
+
+          <div style="background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-radius: 12px; padding: 28px;">
+            <strong style="color: var(--accent-red); font-family: var(--font-mono); font-size: 0.85rem;">03 / DAILY FEEDBACK</strong>
+            <h4 style="font-family: var(--font-display); font-size: 1.2rem; margin: 8px 0;">Direct WhatsApp Line</h4>
+            <p style="font-size: 0.88rem; color: var(--ink-muted); line-height: 1.5;">
+              Got stuck on an exercise? Send audio notes or screenshots directly to Alfred Williams and get quick answers within hours—not days.
+            </p>
+          </div>
+
+          <div style="background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-radius: 12px; padding: 28px;">
+            <strong style="color: var(--accent-red); font-family: var(--font-mono); font-size: 0.85rem;">04 / CERTIFICATION</strong>
+            <h4 style="font-family: var(--font-display); font-size: 1.2rem; margin: 8px 0;">Real-World Verification</h4>
+            <p style="font-size: 0.88rem; color: var(--ink-muted); line-height: 1.5;">
+              You leave with tangible proof of work: a live deployed web portfolio, verified exam band score, or a completed company AI SOP playbook.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: ENROLLMENT & SCHEDULER -->
+    <section id="enrollment" style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container" style="max-width: 860px;">
+        
+        <div style="text-align: center; margin-bottom: 36px;">
+          <span class="card-tag">READY TO GET STARTED?</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            Book Your Diagnostic Session or Enroll Today.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6;">
+            Have questions about which track is right for you? Message Alfred directly on WhatsApp or book a consultation via the scheduler.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px;">
+          <a href="https://wa.me/2348176939974?text=Hello%20Alfred,%20I%20would%20like%20to%20enroll%20in%20your%20training%20program" target="_blank" rel="noopener" class="btn btn-solid" style="padding: 16px 20px; justify-content: center; font-size: 1rem;">
+            Chat Direct on WhatsApp ↗
+          </a>
+          <a href="contact.html?package=skills-diagnostic" class="btn btn-outline" style="padding: 16px 20px; justify-content: center; font-size: 1rem;">
+            Send Written Application →
+          </a>
+        </div>
+
+        <!-- Cal.com verified container -->
+        <div class="cal-embed-card">
+          <div class="cal-embed-header">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span class="status-dot"></span>
+              <strong style="color: var(--ink-primary);">VERIFIED SCHEDULER</strong>
+              <span style="color: var(--ink-faint);">· Alfred E. Williams Direct</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; color: var(--accent-red);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Instant Timezone Sync</span>
+            </div>
+          </div>
+
+          <div class="cal-embed-body" id="my-cal-inline-60min"></div>
+          <script type="text/javascript">
+            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "60min", {origin:"https://app.cal.com"});
+            Cal.config = Cal.config || {};
+            Cal.config.forwardQueryParams = true;
+
+            Cal.ns["60min"]("inline", {
+              elementOrSelector:"#my-cal-inline-60min",
+              config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+              calLink: "alfred-williams-cwb4t4/60min",
+            });
+
+            Cal.ns["60min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+          </script>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: FREQUENTLY ASKED QUESTIONS -->
+    <section style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container" style="max-width: 860px;">
+        <div class="section-header" style="margin-bottom: 36px; text-align: center;">
+          <span class="card-tag">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            Clear Answers Before You Join.
+          </h2>
+        </div>
+
+        <div class="faq-accordion-list">
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>Are classes one-on-one or in large groups?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              All premier coaching is strictly <strong>1-on-1</strong> or in micro-cohorts of at most 4–5 students. We deliberately keep enrollment limited so Alfred can review your work personally and tailor every lesson to your pace.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>What if I am a complete beginner in AI design or coding?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              Track 02 starts from the foundation: you don't need years of syntax memorization. We train you how to direct generative AI models (Claude Code, Cursor, v0, Midjourney) to generate clean HTML, modern CSS, mobile app prototypes, and brand graphics with architectural precision.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>How do payments work? Can I pay in installments?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              Yes. For 4-week and 8-week accelerators, we offer a 50/50 installment plan (50% mobilization at enrollment, 50% midway through the program). Payments can be made in Nigerian Naira (₦) via bank transfer or in USD ($) via card or wire.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>What is the schedule for live sessions?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              Since sessions are 1-on-1, schedules are arranged directly between you and Alfred to accommodate working professionals and students, including evening and weekend slots.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2 class="footer-heading">
+            Let's build<br>something <em>worth</em><br>remembering.
+          </h2>
+        </div>
+        <div class="footer-contacts">
+          <button class="contact-row-btn" data-copy-email="officialwilliamsae@gmail.com" aria-label="Copy email address to clipboard">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
+              <span style="font-weight: 500;">officialwilliamsae@gmail.com</span>
+            </span>
+            <span style="font-size: 0.72rem; color: var(--accent-red); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em;">Click to Copy</span>
+          </button>
+
+          <a href="tel:+2348176939974" class="contact-row-btn">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+234 817 693 9974</span>
+            </span>
+            <span style="font-size: 0.72rem; color: #9CA3AF;">Call Direct</span>
+          </a>
+
+          <a href="https://linkedin.com/in/williams-e-alfred/" target="_blank" rel="noopener" class="contact-row-btn">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>linkedin.com/in/williams-e-alfred</span>
+            </span>
+            <span style="font-size: 0.72rem; color: #9CA3AF;">Connect ↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="monumental-wordmark" aria-hidden="true">WILLIAMS.</div>
+      
+      <div class="footer-sub-bar">
+        <span>© 2026 Alfred E. Williams. All rights reserved.</span>
+        <span>
+          <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+          <span style="opacity: 0.3; margin: 0 8px;">/</span>
+          <a href="terms.html" class="footer-legal-link">Terms of Usage</a>
+        </span>
+        <span>Lagos, Nigeria · Operating Across London, New York &amp; Tokyo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/components.js"></script>
+  <script>
+    function toggleFaq(header) {
+      const item = header.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-accordion-item').forEach(el => {
+        el.classList.remove('open');
+        const icon = el.querySelector('.faq-icon');
+        if (icon) icon.textContent = '+';
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        const icon = item.querySelector('.faq-icon');
+        if (icon) icon.textContent = '−';
+      }
+    }
+  </script>
+</body>
+</html>

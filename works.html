@@ -12,35 +12,37 @@
     .filter-bar {
       display: flex;
       gap: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       flex-wrap: wrap;
       border-bottom: 1px solid var(--line-grid);
-      padding-bottom: 14px;
+      padding-bottom: 16px;
     }
     .filter-btn {
-      background: transparent;
+      background: var(--bg-surface);
       border: 1px solid var(--line-grid);
       color: var(--ink-muted);
-      padding: 7px 16px;
+      padding: 8px 20px;
       font-family: var(--font-mono);
       font-size: 0.8rem;
-      border-radius: 2px;
+      border-radius: 50px;
       cursor: pointer;
       transition: all 0.25s ease;
+      font-weight: 500;
     }
     .filter-btn.active, .filter-btn:hover {
-      background: var(--ink-primary);
-      color: var(--bg-page);
-      border-color: var(--ink-primary);
+      background: var(--accent-red);
+      color: #FFFFFF;
+      border-color: var(--accent-red);
     }
     .works-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+      gap: 36px;
     }
     @media (max-width: 860px) {
       .works-grid {
         grid-template-columns: 1fr;
+        gap: 28px;
       }
     }
   </style>
@@ -89,6 +91,31 @@
             </div>
           </li>
           <li><a href="services.html" class="nav-link">Services</a></li>
+          <!-- Training Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="training.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
+              <span>Training</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="ai-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Corporate AI Training ↗</span>
+                <span class="dropdown-item-desc">Workforce acceleration &amp; SOPs</span>
+              </a>
+              <a href="ai-design-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">AI for Design, Web &amp; Motion ↗</span>
+                <span class="dropdown-item-desc">Build sites, apps &amp; graphics with AI</span>
+              </a>
+              <a href="ielts-prep.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">IELTS 8.5+ &amp; Test Prep ↗</span>
+                <span class="dropdown-item-desc">Diagnostic assessment &amp; visa prep</span>
+              </a>
+              <a href="training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">All Training Programs</span>
+                <span class="dropdown-item-desc">Full academy curriculum &amp; cohorts</span>
+              </a>
+            </div>
+          </li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -99,6 +126,7 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
           <span>Directory</span>
         </button>
+        <a href="contact.html" class="btn btn-sm btn-solid" style="padding: 8px 18px; font-size: 0.78rem;">Let's Talk →</a>
       </div>
     </div>
   </header>
@@ -364,13 +392,28 @@
           </p>
         </div>
         <div class="footer-contacts">
-          <button class="contact-row-btn" data-copy-email="officialwilliamsae@gmail.com">
-            <span>officialwilliamsae@gmail.com</span>
-            <span style="font-size: 0.72rem; color: var(--accent-ember);">Click to Copy</span>
+          <button class="contact-row-btn" data-copy-email="officialwilliamsae@gmail.com" aria-label="Copy email address to clipboard">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
+              <span style="font-weight: 500;">officialwilliamsae@gmail.com</span>
+            </span>
+            <span style="font-size: 0.72rem; color: var(--accent-red); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em;">Click to Copy</span>
           </button>
+
           <a href="tel:+2348176939974" class="contact-row-btn">
-            <span>+234 817 693 9974</span>
-            <span style="font-size: 0.72rem; color: var(--ink-faint);">Call Direct</span>
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+234 817 693 9974</span>
+            </span>
+            <span style="font-size: 0.72rem; color: #9CA3AF;">Call Direct</span>
+          </a>
+
+          <a href="https://linkedin.com/in/williams-e-alfred/" target="_blank" rel="noopener" class="contact-row-btn">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>linkedin.com/in/williams-e-alfred</span>
+            </span>
+            <span style="font-size: 0.72rem; color: #9CA3AF;">Connect ↗</span>
           </a>
         </div>
       </div>

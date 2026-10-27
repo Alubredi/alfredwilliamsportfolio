@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate &amp; SME AI Training — Alfred E. Williams</title>
+  <meta name="description" content="Practical corporate AI training for Nigerian and international businesses. Train your team to automate workflows, write winning proposals, synthesize reports, and save 15+ hours weekly.">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .ai-hero-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 12px;
+      padding: 48px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (max-width: 768px) {
+      .ai-hero-card { padding: 24px; }
+    }
+    .problem-vs-solution {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 32px 0;
+    }
+    @media (max-width: 860px) {
+      .problem-vs-solution { grid-template-columns: 1fr; }
+    }
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .curriculum-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 12px;
+      padding: 28px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .curriculum-card:hover {
+      border-color: var(--accent-red);
+      transform: translateY(-2px);
+    }
+    .roi-box {
+      background: linear-gradient(135deg, rgba(229, 46, 46, 0.08) 0%, rgba(10, 10, 10, 0.4) 100%);
+      border: 1px solid var(--accent-red);
+      border-radius: 12px;
+      padding: 36px;
+      margin: 40px 0;
+    }
+    .pricing-table-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .pricing-card-corporate {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .pricing-card-corporate.featured {
+      border-color: var(--accent-red);
+      background-color: var(--bg-surface-elevated);
+      box-shadow: 0 12px 36px rgba(229, 46, 46, 0.12);
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--ink-primary);
+    }
+    .feature-list li::before {
+      content: "✓";
+      color: var(--accent-red);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item {
+      border: 1px solid var(--line-grid);
+      border-radius: 10px;
+      margin-bottom: 14px;
+      background-color: var(--bg-surface);
+      overflow: hidden;
+    }
+    .faq-accordion-header {
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.05rem;
+      user-select: none;
+    }
+    .faq-accordion-header:hover {
+      color: var(--accent-red);
+    }
+    .faq-accordion-body {
+      padding: 0 24px 20px;
+      display: none;
+      color: var(--ink-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    .faq-accordion-item.open .faq-accordion-body {
+      display: block;
+    }
+    .faq-accordion-item.open .faq-accordion-header {
+      color: var(--accent-red);
+    }
+    /* 2D Micro-Animations & SVG Styles */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; transform: scale(0.98); }
+      50% { opacity: 0.85; transform: scale(1.02); }
+    }
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -32; }
+    }
+    @keyframes beaconPing {
+      0% { transform: scale(1); opacity: 0.8; }
+      70% { transform: scale(2.2); opacity: 0; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+    .anim-float {
+      animation: floatSlow 4.5s ease-in-out infinite;
+    }
+    .anim-dash {
+      stroke-dasharray: 6 6;
+      animation: dashFlow 1.8s linear infinite;
+    }
+    .anim-pulse {
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+    .anim-ping {
+      animation: beaconPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+    .interactive-deck-teaser {
+      background: linear-gradient(135deg, rgba(20,20,20,0.95), rgba(30,30,30,0.95));
+      border: 1px solid var(--line-grid);
+      border-radius: 14px;
+      transition: all 0.3s ease;
+    }
+    .interactive-deck-teaser:hover {
+      border-color: var(--accent-red);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(229, 46, 46, 0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Structural Grid Overlay -->
+  <div class="structural-grid-overlay" aria-hidden="true">
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="scroll-progress-bar" id="progressBar"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brandmark">
+        <span class="status-dot" title="Available for corporate bookings"></span>
+        <span>Alfred <strong>E. Williams</strong></span>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="works.html" class="nav-link">Works</a></li>
+          <li><a href="brands.html" class="nav-link">Brands &amp; Social</a></li>
+          <li class="nav-item-dropdown">
+            <a href="about.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
+              <span>About</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="about.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">About Me</span>
+                <span class="dropdown-item-desc">Track record, speaking &amp; research</span>
+              </a>
+              <a href="blog.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Blog &amp; Essays</span>
+                <span class="dropdown-item-desc">Critical commentary &amp; insights</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <!-- Training Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="training.html" class="nav-link nav-link-dropdown active" aria-expanded="false" aria-haspopup="true">
+              <span>Training</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="ai-training.html" class="nav-dropdown-item active" role="menuitem">
+                <span class="dropdown-item-title">Corporate AI Training ↗</span>
+                <span class="dropdown-item-desc">Workforce acceleration &amp; SOPs</span>
+              </a>
+              <a href="ai-design-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">AI for Design, Web &amp; Motion ↗</span>
+                <span class="dropdown-item-desc">Build sites, apps &amp; graphics with AI</span>
+              </a>
+              <a href="ielts-prep.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">IELTS 8.5+ &amp; Test Prep ↗</span>
+                <span class="dropdown-item-desc">Diagnostic assessment &amp; visa prep</span>
+              </a>
+              <a href="training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">All Training Programs</span>
+                <span class="dropdown-item-desc">Full academy curriculum &amp; cohorts</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="#discovery-session" class="btn btn-sm btn-solid header-cta-btn" style="padding: 7px 18px; font-size: 0.82rem;">Book Discovery →</a>
+        <button class="theme-toggle-btn" aria-label="Toggle theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section style="padding: 64px 0 40px; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <!-- Status Beacon -->
+        <div style="margin-bottom: 24px;">
+          <div class="hero-status-beacon" style="display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px; background: rgba(229, 46, 46, 0.08); border: 1px solid var(--accent-red); border-radius: 9999px;">
+            <span class="status-dot"></span>
+            <span style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-red); font-weight: 700;">
+              CORPORATE &amp; SME WORKFORCE ACCELERATION · LAGOS, ABUJA &amp; VIRTUAL
+            </span>
+          </div>
+        </div>
+
+        <div class="ai-hero-card" style="padding: 40px; background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-radius: 16px;">
+          <div style="display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 40px; align-items: center;">
+            <div>
+              <span class="card-tag">PRACTICAL AI FOR EXECUTIVES &amp; TEAMS</span>
+              <h1 style="font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; line-height: 1.1; margin: 16px 0 20px; letter-spacing: -0.02em;">
+                Stop Wasting 40% of Your Team's Workday on Repetitive Busywork.
+              </h1>
+              <p style="font-size: clamp(1.02rem, 1.5vw, 1.18rem); color: var(--ink-muted); line-height: 1.6; margin-bottom: 28px; max-width: 68ch;">
+                Practical corporate AI workshops designed specifically for Nigerian and international businesses. We train your staff to automate research, write flawless business proposals in minutes, extract insights from financial sheets, and save <strong>15+ hours per week per employee</strong>—with zero coding required.
+              </p>
+
+              <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 32px;">
+                <a href="#discovery-session" class="btn btn-solid" style="padding: 13px 26px; font-size: 0.95rem;">
+                  Book a 30-Min Discovery Session →
+                </a>
+                <a href="ai-pitch-deck.html" class="btn btn-outline" style="padding: 13px 24px; font-size: 0.95rem; border-color: var(--accent-red); color: var(--accent-red); font-weight: 700;">
+                  View Interactive Pitch Deck (8 Slides) ↗
+                </a>
+                <a href="https://wa.me/2348176939974?text=Hello%20Alfred,%20I%20am%20interested%20in%20Corporate%20AI%20Training%20for%20my%20team" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 13px 20px; font-size: 0.95rem;">
+                  Chat on WhatsApp ↗
+                </a>
+              </div>
+
+              <!-- Proof Metrics Ribbon -->
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; border-top: 1px solid var(--line-grid); padding-top: 24px;">
+                <div>
+                  <strong style="display: block; font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--accent-red);">15+ Hours</strong>
+                  <span style="font-size: 0.82rem; color: var(--ink-muted);">Saved per staff member each week</span>
+                </div>
+                <div>
+                  <strong style="display: block; font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--accent-red);">100%</strong>
+                  <span style="font-size: 0.82rem; color: var(--ink-muted);">Non-technical &amp; immediately actionable</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Animated 2D Interactive Pitch Deck Teaser Card -->
+            <div class="anim-float" style="width: 100%; max-width: 380px; justify-self: center;">
+              <div class="interactive-deck-teaser" style="padding: 26px; color: #FFFFFF; position: relative;">
+                
+                <!-- Floating Pulse Beacon -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="position: relative; display: flex; width: 10px; height: 10px;">
+                      <span class="anim-ping" style="position: absolute; display: inline-flex; height: 100%; width: 100%; border-radius: 50%; background-color: var(--accent-red); opacity: 0.75;"></span>
+                      <span style="position: relative; display: inline-flex; border-radius: 50%; height: 10px; width: 10px; background-color: var(--accent-red);"></span>
+                    </span>
+                    <span style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; color: #A1A1AA; letter-spacing: 0.08em;">
+                      Live Web Deck
+                    </span>
+                  </div>
+                  <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-red); font-weight: 700;">
+                    01 / 08 SLIDES
+                  </span>
+                </div>
+
+                <!-- Slide Mockup Visual -->
+                <div style="border-radius: 8px; background: #0A0A0A; border: 1px solid rgba(255,255,255,0.12); padding: 18px; margin-bottom: 18px;">
+                  <div style="font-size: 0.68rem; font-family: var(--font-mono); color: var(--accent-red); margin-bottom: 6px;">BOARD BRIEFING ROADMAP</div>
+                  <h3 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: #fff; margin: 0 0 8px; line-height: 1.3;">
+                    Practical AI for Enterprise &amp; SME Teams
+                  </h3>
+                  <p style="font-size: 0.78rem; color: #9CA3AF; line-height: 1.4; margin: 0;">
+                    Complete slide deck for board meetings, leadership buy-in, and department directors.
+                  </p>
+                </div>
+
+                <!-- Deck Feature Tags -->
+                <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px; font-family: var(--font-mono); font-size: 0.68rem; color: #A1A1AA;">
+                  <span style="padding: 3px 8px; background: rgba(255,255,255,0.06); border-radius: 4px;">Keyboard Navigation</span>
+                  <span style="padding: 3px 8px; background: rgba(255,255,255,0.06); border-radius: 4px;">Fullscreen</span>
+                  <span style="padding: 3px 8px; background: rgba(255,255,255,0.06); border-radius: 4px;">Print to PDF</span>
+                </div>
+
+                <a href="ai-pitch-deck.html" class="btn btn-solid btn-sm" style="width: 100%; justify-content: center; font-size: 0.82rem; padding: 10px 16px;">
+                  Launch Interactive Web Deck ↗
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: THE PROBLEM VS THE SOLUTION -->
+    <section style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        <div class="section-header" style="max-width: 760px; margin-bottom: 36px;">
+          <span class="card-tag">THE REALITY IN MOST OFFICES TODAY</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            Why Most Corporate AI Implementations Fail Completely.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6;">
+            Most companies either ban AI out of fear or let employees fiddle with ChatGPT individually. The result is robotic-sounding emails, leaked confidential documents, and zero measurable lift in productivity. Here is the difference:
+          </p>
+        </div>
+
+        <div class="problem-vs-solution">
+          <!-- The Generic Mistake -->
+          <div style="background-color: var(--bg-surface); border: 1px solid rgba(239, 68, 68, 0.4); border-radius: 12px; padding: 32px;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+              <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background-color: #EF4444;"></span>
+              <strong style="font-family: var(--font-mono); text-transform: uppercase; color: #EF4444; font-size: 0.85rem; letter-spacing: 0.05em;">What Most Teams Do (The Money Pit)</strong>
+            </div>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.95rem; color: var(--ink-muted);">
+              <li>✕ Employees use random, single-sentence prompts that produce generic, embarrassingly robotic copy.</li>
+              <li>✕ Staff accidentally paste proprietary client contracts, financial statements, and passwords into public LLMs.</li>
+              <li>✕ Management pays monthly software subscriptions without tracking whether anyone is actually saving time.</li>
+              <li>✕ Teams waste hours arguing with AI outputs because nobody taught them structured chain-of-thought prompting.</li>
+              <li>✕ Zero standardization: when an employee leaves, their workflows disappear with them.</li>
+            </ul>
+          </div>
+
+          <!-- The Alfred Williams System -->
+          <div style="background-color: var(--bg-surface); border: 1px solid var(--accent-red); border-radius: 12px; padding: 32px; box-shadow: 0 8px 30px rgba(229, 46, 46, 0.08);">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+              <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background-color: var(--accent-red);"></span>
+              <strong style="font-family: var(--font-mono); text-transform: uppercase; color: var(--accent-red); font-size: 0.85rem; letter-spacing: 0.05em;">The Alfred Williams Corporate Training System</strong>
+            </div>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.95rem; color: var(--ink-primary);">
+              <li>✓ Department-specific SOPs: Sales, Operations, HR, and Legal receive custom prompt templates matching their actual daily work.</li>
+              <li>✓ Bulletproof enterprise data security: strict privacy configurations to guarantee company secrets stay confidential.</li>
+              <li>✓ Multi-step workflow automation: turn 5-hour tasks (e.g. drafting 20-page RFP responses) into 25-minute verified workflows.</li>
+              <li>✓ Documented Company Prompt Playbook: your organization keeps a permanent, institutional asset ready for every new hire.</li>
+              <li>✓ Measured ROI: tangible time audits before and after training to prove hours saved and payroll value gained.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: 2D ANIMATED WORKFLOW AUTOMATION ARCHITECTURE -->
+    <section style="padding: 56px 0; border-bottom: 1px solid var(--line-grid); background-color: var(--bg-surface);">
+      <div class="container">
+        <div style="max-width: 980px; margin: 0 auto; text-align: center;">
+          <div class="editorial-chapter-badge">SYSTEM ARCHITECTURE · 2D VECTOR BLUEPRINT</div>
+          <span class="card-tag">HOW IT ACTUALLY WORKS</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0 16px;">
+            The 2D Corporate AI Acceleration Architecture.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6; max-width: 70ch; margin: 0 auto 36px;">
+            Converting raw, disorganized inputs into board-ready deliverables and verified client proposals through standardized prompts and secure governance.
+          </p>
+
+          <!-- 2D Animated Vector Schematic -->
+          <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-radius: 12px; padding: 24px; position: relative; overflow: hidden;" aria-label="AI Workflow Schematic">
+            <svg viewBox="0 0 880 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; max-height: 220px; display: block;">
+              <!-- Flow Connection 1: Input to Engine -->
+              <path d="M 220 100 L 370 100" stroke="var(--line-grid)" stroke-width="2"/>
+              <path class="anim-dash" d="M 220 100 L 370 100" stroke="var(--accent-red)" stroke-width="2"/>
+
+              <!-- Flow Connection 2: Engine to Output -->
+              <path d="M 510 100 L 660 100" stroke="var(--line-grid)" stroke-width="2"/>
+              <path class="anim-dash" d="M 510 100 L 660 100" stroke="var(--accent-red)" stroke-width="2"/>
+
+              <!-- Node 1: Input Cluster (Left) -->
+              <g transform="translate(30, 35)">
+                <rect width="190" height="130" rx="8" fill="var(--bg-surface)" stroke="var(--line-grid)" stroke-width="1.2"/>
+                <text x="18" y="26" font-family="var(--font-mono)" font-size="8.5" fill="var(--ink-faint)" letter-spacing="0.1em">01 · CORPORATE INPUTS</text>
+                
+                <rect x="16" y="38" width="158" height="22" rx="4" fill="rgba(229,46,46,0.06)" stroke="rgba(229,46,46,0.2)"/>
+                <text x="24" y="53" font-family="var(--font-display)" font-size="9" font-weight="600" fill="var(--ink-primary)">• Messy RFP &amp; Bid Documents</text>
+                
+                <rect x="16" y="66" width="158" height="22" rx="4" fill="rgba(229,46,46,0.06)" stroke="rgba(229,46,46,0.2)"/>
+                <text x="24" y="81" font-family="var(--font-display)" font-size="9" font-weight="600" fill="var(--ink-primary)">• Unstructured Meeting Audio</text>
+                
+                <rect x="16" y="94" width="158" height="22" rx="4" fill="rgba(229,46,46,0.06)" stroke="rgba(229,46,46,0.2)"/>
+                <text x="24" y="109" font-family="var(--font-display)" font-size="9" font-weight="600" fill="var(--ink-primary)">• Complex Excel Spreadsheets</text>
+              </g>
+
+              <!-- Node 2: Central AI Acceleration Engine (Center) -->
+              <g transform="translate(370, 25)">
+                <rect width="140" height="150" rx="10" fill="var(--bg-surface)" stroke="var(--accent-red)" stroke-width="2"/>
+                <circle cx="70" cy="55" r="28" fill="rgba(229,46,46,0.1)" stroke="var(--accent-red)" stroke-width="1.5" class="anim-pulse"/>
+                
+                <!-- Center Core Icon -->
+                <path d="M 64 55 L 70 45 L 76 55 L 70 65 Z" fill="var(--accent-red)"/>
+                <circle cx="70" cy="55" r="4" fill="#FFFFFF"/>
+                
+                <text x="70" y="102" text-anchor="middle" font-family="var(--font-display)" font-size="11" font-weight="700" fill="var(--ink-primary)">Alfred Williams</text>
+                <text x="70" y="116" text-anchor="middle" font-family="var(--font-mono)" font-size="8.5" fill="var(--accent-red)" font-weight="600">AI PROMPT ENGINE</text>
+                <text x="70" y="132" text-anchor="middle" font-family="var(--font-mono)" font-size="7.5" fill="var(--ink-faint)">Governance &amp; Privacy</text>
+              </g>
+
+              <!-- Node 3: Output Cluster (Right) -->
+              <g transform="translate(660, 35)">
+                <rect width="190" height="130" rx="8" fill="var(--bg-surface)" stroke="var(--line-grid)" stroke-width="1.2"/>
+                <text x="18" y="26" font-family="var(--font-mono)" font-size="8.5" fill="var(--accent-ember)" letter-spacing="0.1em">02 · VERIFIED OUTPUTS</text>
+                
+                <rect x="16" y="38" width="158" height="22" rx="4" fill="rgba(34,197,94,0.08)" stroke="rgba(34,197,94,0.3)"/>
+                <text x="24" y="53" font-family="var(--font-display)" font-size="9" font-weight="600" fill="var(--ink-primary)">✓ 15-Page Winning Proposal</text>
+                
+                <rect x="16" y="66" width="158" height="22" rx="4" fill="rgba(34,197,94,0.08)" stroke="rgba(34,197,94,0.3)"/>
+                <text x="24" y="81" font-family="var(--font-display)" font-size="9" font-weight="600" fill="var(--ink-primary)">✓ 1-Page Executive Action Memo</text>
+                
+                <rect x="16" y="94" width="158" height="22" rx="4" fill="rgba(34,197,94,0.08)" stroke="rgba(34,197,94,0.3)"/>
+                <text x="24" y="109" font-family="var(--font-display)" font-size="9" font-weight="600" fill="var(--ink-primary)">✓ PII-Safe Financial Insight</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: THE 4-PILLAR PRACTICAL CURRICULUM -->
+    <section style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        <div class="section-header" style="max-width: 760px; margin-bottom: 36px;">
+          <span class="card-tag">PRACTICAL SKILLS FOR EVERY DEPARTMENT</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            The 4-Pillar Corporate AI Curriculum.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6;">
+            We do not teach abstract machine learning theory or code. We teach immediate, point-and-click workflows that any employee can execute from day one.
+          </p>
+        </div>
+
+        <div class="curriculum-grid">
+          
+          <div class="curriculum-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700;">MODULE 01</span>
+              <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(229,46,46,0.1); display: flex; align-items: center; justify-content: center; color: var(--accent-red);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin: 0 0 8px;">
+              Executive Automation &amp; Admin
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 14px;">
+              Eliminate administrative bottlenecks for leadership and managers.
+            </p>
+            <ul class="feature-list" style="margin: 0;">
+              <li>Instant email inbox triage &amp; priority drafting</li>
+              <li>Turning messy audio meeting recordings into board-ready action items</li>
+              <li>Summarizing 80-page policy briefs into 1-page executive memos</li>
+              <li>Automated calendar scheduling &amp; stakeholder briefings</li>
+            </ul>
+          </div>
+
+          <div class="curriculum-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700;">MODULE 02</span>
+              <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(229,46,46,0.1); display: flex; align-items: center; justify-content: center; color: var(--accent-red);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin: 0 0 8px;">
+              Sales, Proposals &amp; Winning Copy
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 14px;">
+              Win more commercial contracts in half the preparation time.
+            </p>
+            <ul class="feature-list" style="margin: 0;">
+              <li>Generating 15-page client proposals tailored to RFP guidelines</li>
+              <li>Writing high-converting cold outreach emails that actually get replies</li>
+              <li>Creating investor pitch deck scripts and marketing collateral</li>
+              <li>Maintaining exact corporate tone and brand voice across all copy</li>
+            </ul>
+          </div>
+
+          <div class="curriculum-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700;">MODULE 03</span>
+              <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(229,46,46,0.1); display: flex; align-items: center; justify-content: center; color: var(--accent-red);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin: 0 0 8px;">
+              Financial Sheets &amp; Operations
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 14px;">
+              Turn raw, intimidating spreadsheets into clear operational strategy.
+            </p>
+            <ul class="feature-list" style="margin: 0;">
+              <li>Uploading messy Excel sheets to detect variances &amp; cashflow leaks</li>
+              <li>Automated invoice reconciliation &amp; vendor receipt parsing</li>
+              <li>Market intelligence &amp; competitor benchmarking in 10 minutes</li>
+              <li>Creating visual presentation charts directly from raw business numbers</li>
+            </ul>
+          </div>
+
+          <div class="curriculum-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700;">MODULE 04</span>
+              <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(229,46,46,0.1); display: flex; align-items: center; justify-content: center; color: var(--accent-red);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin: 0 0 8px;">
+              Corporate Data Security &amp; Safety
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 14px;">
+              Protect your business from intellectual property and compliance disasters.
+            </p>
+            <ul class="feature-list" style="margin: 0;">
+              <li>Enforcing strict data privacy settings on ChatGPT, Claude &amp; Copilot</li>
+              <li>Preventing customer personally identifiable information (PII) leakage</li>
+              <li>Hallucination detection: fact-checking protocols before sending documents</li>
+              <li>Drafting your company’s internal Acceptable AI Use Policy (AUP)</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: THE FINANCIAL MATH & ROI -->
+    <section style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        <div class="roi-box">
+          <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: center;">
+            <div>
+              <span class="card-tag" style="background-color: var(--accent-red); color: #fff;">THE REAL COST OF DELAY</span>
+              <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; margin: 14px 0;">
+                The Numbers Don't Lie: How This Training Pays For Itself In 3 Weeks.
+              </h2>
+              <p style="color: var(--ink-primary); font-size: 1.05rem; line-height: 1.65; margin-bottom: 20px;">
+                In a typical 10-person office in Lagos or Abuja with staff earning an average salary of ₦350,000/month, each employee spends roughly 15 hours each week on repetitive administrative chores: drafting emails, reformatting docs, finding files, and compiling status reports.
+              </p>
+              <div style="padding: 18px 22px; background-color: var(--bg-page); border-radius: 8px; border: 1px solid var(--line-grid);">
+                <strong style="color: var(--accent-red); font-size: 1.15rem; display: block; margin-bottom: 6px;">
+                  10 staff × 15 wasted hours/week = 600 hours wasted every month.
+                </strong>
+                <span style="font-size: 0.92rem; color: var(--ink-muted);">
+                  That equates to over <strong>₦1,200,000 in lost payroll productivity every single month</strong>. A one-time investment of ₦650,000 in team AI acceleration recovers this lost time immediately.
+                </span>
+              </div>
+            </div>
+
+            <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-radius: 12px; padding: 28px;">
+              <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 18px;">
+                Guaranteed Training Outcomes
+              </h3>
+              <ul class="feature-list" style="margin: 0;">
+                <li><strong>Turnaround speed:</strong> Proposal generation time drops from 4 days to 4 hours.</li>
+                <li><strong>Error reduction:</strong> Zero embarrassing grammatical blunders or broken formatting in client deliverables.</li>
+                <li><strong>Permanent playbook:</strong> Company-owned prompt library with 50+ tested industry prompts.</li>
+                <li><strong>Staff morale:</strong> Eliminates soul-crushing manual data entry so your team can focus on client relationships.</li>
+              </ul>
+              <div style="margin-top: 24px; text-align: center;">
+                <a href="#discovery-session" class="btn btn-solid" style="width: 100%; justify-content: center;">
+                  Schedule Executive Assessment →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: TRAINING FORMATS & COMMERCIAL PACKAGES -->
+    <section id="packages" style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        <div class="section-header" style="max-width: 760px; margin-bottom: 36px;">
+          <span class="card-tag">CLEAR &amp; TRANSPARENT COMMERCIAL PACKAGES</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            Select the Training Format That Fits Your Business.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6;">
+            Delivered either on-site at your offices (Lagos, Abuja, Port Harcourt) or virtually via interactive live video. Fixed corporate pricing with zero hidden fees.
+          </p>
+        </div>
+
+        <div class="pricing-table-grid">
+          
+          <!-- Package 1: Executive 1-Day Masterclass -->
+          <div class="pricing-card-corporate">
+            <div style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
+              <img src="assets/illust-ai-masterclass.jpg" alt="Executive AI Masterclass 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div>
+              <span class="card-tag">FORMAT 01 · LEADERSHIP INTENSIVE</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin: 12px 0 6px;">
+                Executive AI Masterclass
+              </h3>
+              <p style="font-size: 0.88rem; color: var(--ink-muted); margin-bottom: 20px;">
+                Designed specifically for CEOs, Managing Directors, Partners, and C-Suite executives who need strategic mastery without technical clutter.
+              </p>
+              
+              <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--line-grid);">
+                <div style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--ink-primary);">
+                  ₦250,000 <span style="font-size: 1rem; color: var(--ink-muted); font-weight: 400;">/ $250</span>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); margin-top: 4px;">
+                  Single-day intensive (3.5 hours) · Up to 5 leaders
+                </div>
+              </div>
+
+              <ul class="feature-list">
+                <li>Strategic AI overview for commercial decision-makers</li>
+                <li>Automating board packs, investor updates &amp; executive memos</li>
+                <li>Confidential corporate privacy &amp; IP protection setup</li>
+                <li>Executive prompt cheat sheet for mobile &amp; laptop</li>
+                <li>30 days direct WhatsApp support for participating executives</li>
+              </ul>
+            </div>
+
+            <div style="margin-top: 28px;">
+              <a href="contact.html?package=ai-exec" class="btn btn-outline" style="width: 100%; justify-content: center;">
+                Enroll Leadership Team →
+              </a>
+            </div>
+          </div>
+
+          <!-- Package 2: Corporate Team 2-Week Sprint (Featured) -->
+          <div class="pricing-card-corporate featured">
+            <div style="position: absolute; top: -12px; right: 24px; background-color: var(--accent-red); color: #fff; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase;">
+              Most Popular Corporate Option
+            </div>
+            <div style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
+              <img src="assets/illust-ai-team-sprint.jpg" alt="Corporate Team AI Sprint 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div>
+              <span class="card-tag">FORMAT 02 · FULL WORKFORCE SPRINT</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin: 12px 0 6px;">
+                Team AI Acceleration Sprint
+              </h3>
+              <p style="font-size: 0.88rem; color: var(--ink-muted); margin-bottom: 20px;">
+                Comprehensive department-wide transformation for operations, sales, marketing, client service, and administration.
+              </p>
+              
+              <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--line-grid);">
+                <div style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--accent-red);">
+                  ₦650,000 <span style="font-size: 1rem; color: var(--ink-muted); font-weight: 400;">/ $700</span>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); margin-top: 4px;">
+                  2-week hybrid program · Up to 25 team members
+                </div>
+              </div>
+
+              <ul class="feature-list">
+                <li>Pre-training workflow audit of current company bottlenecks</li>
+                <li>4 hands-on interactive workshops with practical exercises</li>
+                <li>Custom-built Company Prompt Playbook (50+ prompts)</li>
+                <li>Sales proposal &amp; report generation automation</li>
+                <li>Data privacy, fact-checking &amp; security governance audit</li>
+                <li>Recorded session library &amp; employee completion certificates</li>
+                <li>60 days ongoing Q&amp;A and review support</li>
+              </ul>
+            </div>
+
+            <div style="margin-top: 28px;">
+              <a href="contact.html?package=ai-team" class="btn btn-solid" style="width: 100%; justify-content: center;">
+                Book Team Sprint →
+              </a>
+            </div>
+          </div>
+
+          <!-- Package 3: Chief AI Officer Advisory Retainer -->
+          <div class="pricing-card-corporate">
+            <div style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
+              <img src="assets/illust-ai-chief-retainer.jpg" alt="Chief AI Officer Advisory 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div>
+              <span class="card-tag">FORMAT 03 · ONGOING TRANSFORMATION</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin: 12px 0 6px;">
+                Chief AI Officer Retainer
+              </h3>
+              <p style="font-size: 0.88rem; color: var(--ink-muted); margin-bottom: 20px;">
+                Dedicated monthly AI leadership. We continuously audit workflows, implement modern AI tools, and keep your company ahead of competitors.
+              </p>
+              
+              <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--line-grid);">
+                <div style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--ink-primary);">
+                  ₦1,250,000 <span style="font-size: 1rem; color: var(--ink-muted); font-weight: 400;">/ $1,400</span>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); margin-top: 4px;">
+                  Monthly retainer · Direct founder/board access
+                </div>
+              </div>
+
+              <ul class="feature-list">
+                <li>Continuous monthly audit &amp; automation of internal systems</li>
+                <li>Bi-weekly executive strategy &amp; tool-evaluation meetings</li>
+                <li>Custom AI agent &amp; workflow building for sales &amp; ops</li>
+                <li>Monthly staff refresher workshops on new AI developments</li>
+                <li>Direct Slack / WhatsApp channel with Alfred Williams</li>
+                <li>Priority turnaround for all technical briefs</li>
+              </ul>
+            </div>
+
+            <div style="margin-top: 28px;">
+              <a href="contact.html?package=ai-retainer" class="btn btn-outline" style="width: 100%; justify-content: center;">
+                Inquire for Retainer →
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE EXECUTIVE WEB PITCH DECK SHOWCASE -->
+    <section id="pitch-deck-showcase" style="padding: 64px 0; border-bottom: 1px solid var(--line-grid); background-color: var(--bg-surface);">
+      <div class="container">
+        
+        <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-top: 4px solid var(--accent-red); border-radius: 16px; padding: 40px; box-shadow: 0 16px 40px rgba(0,0,0,0.06);">
+          <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center;">
+            <div>
+              <div style="display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; background: rgba(229, 46, 46, 0.1); border-radius: 9999px; margin-bottom: 14px;">
+                <span class="status-dot"></span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; color: var(--accent-red); font-weight: 700; letter-spacing: 0.08em;">
+                  FEATURED PRESENTATION ARTIFACT
+                </span>
+              </div>
+              <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; margin-bottom: 16px;">
+                Explore the Interactive Executive Web Pitch Deck.
+              </h2>
+              <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 24px;">
+                Presenting to your board, partners, or C-suite? I have engineered a dedicated 8-slide interactive web presentation deck. It features keyboard slide navigation (<kbd style="background: var(--bg-surface); border: 1px solid var(--line-grid); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.8rem;">←</kbd> <kbd style="background: var(--bg-surface); border: 1px solid var(--line-grid); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.8rem;">→</kbd>), fullscreen mode, live slide counters, ROI calculations, and one-click print-to-PDF formatting.
+              </p>
+              
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <a href="ai-pitch-deck.html" class="btn btn-solid" style="padding: 12px 24px;">
+                  Launch Interactive Deck (8 Slides) ↗
+                </a>
+                <a href="ai-pitch-deck.html#slide=4" class="btn btn-outline" style="padding: 12px 20px;">
+                  Jump to 4-Pillar Curriculum →
+                </a>
+              </div>
+            </div>
+
+            <!-- Visual Slide Preview Mockup Card -->
+            <div style="background: #0A0A0A; color: #fff; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px; position: relative; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.5);">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; margin-bottom: 16px;">
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #8F9995;">SLIDE 01 OF 08 · DECK PREVIEW</span>
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-red); font-weight: 700;">LIVE INTERACTIVE</span>
+              </div>
+              <div style="display: inline-block; padding: 2px 8px; background: rgba(229,46,46,0.2); border: 1px solid var(--accent-red); border-radius: 4px; font-family: var(--font-mono); font-size: 0.68rem; color: #FF6B6B; margin-bottom: 10px;">EXECUTIVE BRIEFING</div>
+              <h4 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin: 0 0 10px; color: #fff;">
+                Practical AI for Enterprise &amp; SME Teams
+              </h4>
+              <p style="font-size: 0.82rem; color: #A1A1AA; line-height: 1.5; margin-bottom: 16px;">
+                Eliminating 15+ hours of weekly clerical busywork per employee with zero coding required.
+              </p>
+              <div style="display: flex; gap: 8px; align-items: center; font-family: var(--font-mono); font-size: 0.72rem; color: #71717A;">
+                <span>• Arrow Keys Enabled</span>
+                <span>• Fullscreen ⛶</span>
+                <span>• Print to PDF</span>
+              </div>
+              <a href="ai-pitch-deck.html" style="position: absolute; inset: 0; z-index: 5;" aria-label="Open Interactive Pitch Deck"></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: CAL.COM DIRECT DISCOVERY SCHEDULER -->
+    <section id="discovery-session" style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div style="text-align: center; max-width: 760px; margin: 0 auto 36px;">
+          <span class="card-tag">SCHEDULE A ZERO-OBLIGATION CALL</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; margin: 12px 0;">
+            Book a 30-Minute Corporate AI Discovery Session.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6;">
+            Let us review your current company workflows, identify your biggest time-wasters, and show you exactly what an AI training sprint would look like for your specific organization.
+          </p>
+        </div>
+
+        <div class="cal-embed-card" style="max-width: 900px; margin: 0 auto;">
+          <div class="cal-embed-header">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span class="status-dot"></span>
+              <strong style="color: var(--ink-primary);">VERIFIED SCHEDULER</strong>
+              <span style="color: var(--ink-faint);">· Alfred E. Williams Direct</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; color: var(--accent-red);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Instant Timezone Sync</span>
+            </div>
+          </div>
+
+          <!-- Cal inline embed code -->
+          <div class="cal-embed-body" id="my-cal-inline-60min"></div>
+          <script type="text/javascript">
+            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "60min", {origin:"https://app.cal.com"});
+            Cal.config = Cal.config || {};
+            Cal.config.forwardQueryParams = true;
+
+            Cal.ns["60min"]("inline", {
+              elementOrSelector:"#my-cal-inline-60min",
+              config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+              calLink: "alfred-williams-cwb4t4/60min",
+            });
+
+            Cal.ns["60min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+          </script>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: FREQUENTLY ASKED QUESTIONS -->
+    <section style="padding: 64px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container" style="max-width: 860px;">
+        <div class="section-header" style="margin-bottom: 36px; text-align: center;">
+          <span class="card-tag">CLEAR ANSWERS</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 12px 0;">
+            Frequently Asked Corporate Questions.
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem;">
+            Common questions corporate executives and HR directors ask before booking a training sprint.
+          </p>
+        </div>
+
+        <div class="faq-accordion-list">
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>Do my staff members need any coding or programming knowledge?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              <strong>Absolutely not.</strong> 100% of the training is built around natural language prompting and user-friendly software interfaces. If your staff can type an email or use Microsoft Word and WhatsApp, they will be completely comfortable in this training.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>Do you deliver training on-site or virtually?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              Both. We deliver high-energy on-site workshops across Nigeria (Lagos, Abuja, Port Harcourt, Ibadan) directly at your corporate headquarters or conference facility. For international clients or distributed teams, we deliver interactive virtual sessions via Zoom or Microsoft Teams with screen-sharing, breakout exercises, and live feedback.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>Will our company confidential data or customer information be leaked?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              Data privacy is a foundational pillar of Module 04. We audit your team’s account settings to ensure history training toggles are disabled, show your team how to redact sensitive PII, and configure team workspace permissions so your proprietary contracts and intellectual property remain 100% confidential.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>What AI tools will our team learn during the sessions?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              We focus on the tools that deliver the highest ROI in real-world business today: OpenAI ChatGPT (Advanced Data Analysis &amp; Custom GPTs), Anthropic Claude (long-form document synthesis and proposal writing), Google Gemini (deep research and document intelligence), and specialized automation extensions. We also teach teams how to maximize free tools before recommending paid licenses.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header" onclick="toggleFaq(this)">
+              <span>What payment methods and invoicing do you accept?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              We provide formal corporate invoices and receipts. Payment is accepted in Nigerian Naira (₦) via direct corporate bank transfer, and in USD / GBP / EUR ($) via international wire transfer or card for overseas organizations. Standard commercial terms are 50% mobilization upfront and 50% upon workshop completion.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2 class="footer-heading">
+            Let's build<br>something <em>worth</em><br>remembering.
+          </h2>
+        </div>
+        <div class="footer-contacts">
+          <button class="contact-row-btn" data-copy-email="officialwilliamsae@gmail.com" aria-label="Copy email address to clipboard">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
+              <span style="font-weight: 500;">officialwilliamsae@gmail.com</span>
+            </span>
+            <span style="font-size: 0.72rem; color: var(--accent-red); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em;">Click to Copy</span>
+          </button>
+
+          <a href="tel:+2348176939974" class="contact-row-btn">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+234 817 693 9974</span>
+            </span>
+            <span style="font-size: 0.72rem; color: #9CA3AF;">Call Direct</span>
+          </a>
+
+          <a href="https://linkedin.com/in/williams-e-alfred/" target="_blank" rel="noopener" class="contact-row-btn">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>linkedin.com/in/williams-e-alfred</span>
+            </span>
+            <span style="font-size: 0.72rem; color: #9CA3AF;">Connect ↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="monumental-wordmark" aria-hidden="true">WILLIAMS.</div>
+      
+      <div class="footer-sub-bar">
+        <span>© 2026 Alfred E. Williams. All rights reserved.</span>
+        <span>
+          <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+          <span style="opacity: 0.3; margin: 0 8px;">/</span>
+          <a href="terms.html" class="footer-legal-link">Terms of Usage</a>
+        </span>
+        <span>Lagos, Nigeria · Operating Across London, New York &amp; Tokyo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/components.js"></script>
+  <script>
+    function toggleFaq(header) {
+      const item = header.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-accordion-item').forEach(el => {
+        el.classList.remove('open');
+        const icon = el.querySelector('.faq-icon');
+        if (icon) icon.textContent = '+';
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        const icon = item.querySelector('.faq-icon');
+        if (icon) icon.textContent = '−';
+      }
+    }
+  </script>
+</body>
+</html>
