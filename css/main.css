@@ -40,7 +40,7 @@
 
   /* Spacing & Geometry */
   --max-width: 1360px;
-  --header-height: 72px;
+  --header-height: 88px;
   --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-kinetic: cubic-bezier(0.65, 0, 0.35, 1);
 }
@@ -199,43 +199,49 @@ img, video {
   top: 0;
   z-index: 500;
   width: 100%;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  background-color: rgba(255, 255, 255, 0.70);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background-color: rgba(255, 255, 255, 0.90);
   border-bottom: 1px solid var(--line-grid);
   transition: background-color 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
 }
 
 [data-theme="dark"] .site-header {
-  background-color: rgba(9, 12, 11, 0.65);
+  background-color: rgba(10, 10, 10, 0.90);
 }
 
-/* Highly transparent frosted glass as soon as user begins to scroll */
+/* Translucent frosted glass as soon as user begins to scroll */
 .site-header.is-scrolled {
-  background-color: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(14px) saturate(180%);
-  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-bottom-color: rgba(0, 0, 0, 0.08);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 [data-theme="dark"] .site-header.is-scrolled {
-  background-color: rgba(9, 12, 11, 0.18);
-  backdrop-filter: blur(14px) saturate(180%);
-  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  background-color: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-bottom-color: rgba(255, 255, 255, 0.08);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.28);
 }
 
+/* Two-tier flexible container: Layer 1 (Brand + Actions) & Layer 2 (Navigation Stream) */
 .header-inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  height: var(--header-height);
-  gap: 24px;
+  min-height: var(--header-height);
+  height: auto;
+  padding: 8px 0 0;
+  gap: 0;
 }
 
+/* Layer 1 - Left: Brandmark */
 .brandmark {
+  order: 1;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.15rem;
@@ -244,6 +250,7 @@ img, video {
   display: flex;
   align-items: center;
   gap: 10px;
+  height: 42px;
 }
 
 .brandmark .status-dot {
@@ -290,24 +297,57 @@ img, video {
   .world-clocks { display: none; }
 }
 
-/* Navigation Links */
+/* Layer 1 - Right: Actions & Utilities */
+.header-actions {
+  order: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 42px;
+}
+
+/* Layer 2: Dedicated Navigation Row with Ample Breathing Room */
+.site-header nav {
+  order: 3;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--line-grid);
+  padding: 6px 0 8px;
+  margin-top: 4px;
+  transition: border-color 0.35s ease;
+}
+
+.site-header.is-scrolled nav {
+  border-top-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .site-header.is-scrolled nav {
+  border-top-color: rgba(255, 255, 255, 0.06);
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 36px;
+  justify-content: center;
+  gap: 36px; /* Generous breathing room */
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-link {
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-muted);
   position: relative;
-  padding: 8px 0;
+  padding: 6px 4px;
   transition: color 0.25s ease;
+  white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -329,8 +369,29 @@ img, video {
   width: 100%;
 }
 
+@media (max-width: 992px) and (min-width: 861px) {
+  .nav-menu {
+    gap: 20px;
+  }
+}
+
 @media (max-width: 860px) {
-  .nav-menu { display: none; }
+  .header-inner {
+    padding: 0;
+    min-height: 64px;
+    height: 64px;
+  }
+  .brandmark {
+    height: 64px;
+  }
+  .header-actions {
+    height: 64px;
+    gap: 8px;
+  }
+  .site-header nav,
+  .nav-menu {
+    display: none;
+  }
 }
 
 /* Navigation Dropdown Menu (Blog under About) */
@@ -455,21 +516,15 @@ img, video {
 }
 
 /* Header Utilities (Theme Toggle & Directory Button) */
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
 .theme-toggle-btn {
   background: transparent;
   border: 1px solid var(--line-grid);
   color: var(--ink-primary);
-  padding: 8px 12px;
-  border-radius: 2px;
+  padding: 7px 14px;
+  border-radius: 9999px;
   cursor: pointer;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -485,11 +540,11 @@ img, video {
   background: var(--ink-primary);
   color: var(--bg-page);
   border: 1px solid var(--ink-primary);
-  padding: 8px 16px;
-  border-radius: 2px;
+  padding: 7px 16px;
+  border-radius: 9999px;
   cursor: pointer;
   font-family: var(--font-display);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
