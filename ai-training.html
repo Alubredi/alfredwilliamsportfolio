@@ -214,7 +214,39 @@
               </a>
             </div>
           </li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
+          <!-- Services with Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="services.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
+              <span>Services</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="services.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">All Services Overview</span>
+                <span class="dropdown-item-desc">Consulting suites &amp; master price matrix</span>
+              </a>
+              <a href="ai-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Corporate AI Training ↗</span>
+                <span class="dropdown-item-desc">Workforce acceleration &amp; playbooks</span>
+              </a>
+              <a href="web-development.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Web &amp; App Development ↗</span>
+                <span class="dropdown-item-desc">Sub-100ms lightweight web platforms</span>
+              </a>
+              <a href="business-writing.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Business Writing &amp; Decks ↗</span>
+                <span class="dropdown-item-desc">Company profiles &amp; investor pitch decks</span>
+              </a>
+              <a href="editorial-writing.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Editorial &amp; AI Humanizing ↗</span>
+                <span class="dropdown-item-desc">Manuscript polish, novels &amp; executive CVs</span>
+              </a>
+              <a href="digital-marketing.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Digital Marketing &amp; Retainers ↗</span>
+                <span class="dropdown-item-desc">Social media, video reels &amp; web management</span>
+              </a>
+            </div>
+          </li>
           <!-- Training Dropdown -->
           <li class="nav-item-dropdown">
             <a href="training.html" class="nav-link nav-link-dropdown active" aria-expanded="false" aria-haspopup="true">
@@ -249,6 +281,10 @@
         <a href="#discovery-session" class="btn btn-sm btn-solid header-cta-btn" style="padding: 7px 18px; font-size: 0.82rem;">Book Discovery →</a>
         <button class="theme-toggle-btn" aria-label="Toggle theme">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark
+        </button>
+        <button class="menu-trigger-btn directory-trigger-btn" aria-label="Open menu directory">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Menu</span>
         </button>
       </div>
     </div>

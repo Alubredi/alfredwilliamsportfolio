@@ -1,163 +1,176 @@
-# Implementation Plan: Copywriting Overhaul, Expanded Service Suites, Sales Landing Pages & Pitch Deck
+# Implementation Plan: Service Landing Pages, Header Grid Alignment, Mobile Menu & 2D Visual Enrichment
 
-> **Goal:** Transform the website's tone from academic into simple, punchy, high-converting direct-response sales copy, expand Alfred's service offers to fully showcase Writing & Editing (business profiles, pitch decks, CVs, copywriting, ghostwriting), Video & Motion Design (promo videos, company intros), Speaking & Keynotes, and Universal Training (AI, Web, Writing, Test Prep), backed by dedicated landing pages (`ai-training.html`, `training.html`), a web-based corporate pitch deck (`ai-pitch-deck.html`), and Nigerian-market realistic pricing.
-
----
-
-## 1. Context & User Vision (Incorporating Latest Voice Note)
-
-You have approved the general direction and requested that we add the following essential service pillars to the transformation:
-
-### 1.1 Complete Writing & Editing Suite
-- **Business Writing & Corporate Collateral:**
-  - Company Profile Documents (written + beautifully designed on-brand)
-  - Investor Pitch Decks (copywriting + graphic design)
-  - Business Proposals, Grant Applications & Executive Summaries
-  - Website Copywriting (high-converting landing page copy)
-- **Professional Career Writing:**
-  - Executive CV & Resume Revamp
-  - LinkedIn Profile Optimization & Executive Bio
-  - Cover Letters & Professional Portfolios
-- **Content Writing & Thought Leadership:**
-  - High-impact Copywriting (sales pages, email sequences, ad copy)
-  - Ghostwriting for Founders & Executives (LinkedIn posts, articles, thought-leadership essays)
-- **Academic & Admissions Writing:**
-  - Statements of Purpose (SOP), Personal Statements, Study Plans for UK, US, Canada & EU universities
-  - Research Proposals & Academic Editing
-
-### 1.2 Creative Video Production & Motion Design
-- Company Introduction Videos
-- Promotional & Explainer Videos for brands, SMEs, and startups
-- Motion Graphics & Animated Brand Assets
-- Video Editing for YouTube, Social Media, and Corporate Campaigns
-
-### 1.3 Keynote & Public Speaking Engagements
-- Open for invitations as a Speaker, Panelist, or Workshop Facilitator
-- Topics:
-  - *Practical AI for African Businesses & Professionals*
-  - *Building High-Income Tech & Digital Careers*
-  - *Cracking Global Admissions & Scholarships (IELTS/GRE/Visas)*
-  - *Digital Product Architecture & Web Engineering*
-- Dedicated "Invite Alfred to Speak" booking flow and speaker bio.
-
-### 1.4 Pricing Calibration for the Nigerian Corporate & Professional Market
-- Transparent, realistic, and highly compelling pricing in Nigerian Naira (₦) with USD ($) equivalents for international clients.
-- Tiered packages for individuals, startups/SMEs, and corporate enterprises.
+> **Goal:** 
+> 1. Align the two-tier header so that both Row 1 (`Alfred E. Williams`) and Row 2 (`HOME`, `WORKS`, `BRANDS & SOCIAL`, etc.) begin at the exact same left grid anchor line.
+> 2. Rename `Directory` to `Menu` across desktop and mobile.
+> 3. Refine mobile header scroll behavior with fluid, non-intrusive frosted translucency.
+> 4. Build dedicated, high-converting landing pages for all service pillars under `services.html` with rich 2D cartoon illustrations (`assets/illust-*`), icons, benefits, and transparent dual-currency pricing.
+> 5. Generate new custom 2D illustrations with AI wherever appropriate to add to Alfred's assets.
+> 6. Enrich `about.html` and other text-heavy pages with 2D illustrations as visual "breathers" to eliminate text fatigue.
+> 7. Add a `SERVICES ▾` dropdown in the global navigation menu.
 
 ---
 
-## 2. Updated Architecture & Site Map
+## 1. User Feedback & Architectural Requirements
 
-```mermaid
-graph TD
-    A[Main Portfolio / Home] --> B[Services Page - 6 Full Service Suites]
-    A --> C[AI Training Sales Page: ai-training.html]
-    C --> D[Interactive Corporate Pitch Deck: ai-pitch-deck.html]
-    A --> E[Comprehensive Training & Test Prep: training.html]
-    A --> F[About Page: Proven Story & Speaking Engagements]
-    A --> G[Works: Case Studies & Portfolio Tools]
-    A --> H[Contact: Instant WhatsApp & Cal.com Scheduling]
+### 1.1 Header Grid Alignment (Start-Line Alignment)
+- **Problem:** Currently, `Alfred E. Williams` is pushed to the far left edge of the container, while the navigation links on Row 2 are centered in isolation, causing a disjointed visual balance.
+- **Solution:** 
+  - Align both rows to begin at the exact same left coordinate (left-aligned with the container's structural grid).
+  - **Row 1:** 
+    - Left: `● Alfred E. Williams` (aligned to container left).
+    - Right: `Let's Talk →`, Theme Toggle, and `Menu` button (aligned to container right).
+  - **Row 2:** 
+    - Begins at the exact same left line: `HOME`, `WORKS`, `BRANDS & SOCIAL`, `ABOUT ▾`, `SERVICES ▾`, `TRAINING ▾`, `CONTACT` with generous breathing room (28px–32px gaps).
+
+### 1.2 "Directory" → "Menu" Renaming
+- Change the button label from `Directory` to `Menu` across:
+  - Header desktop button (`.directory-trigger-btn` -> `.menu-trigger-btn`)
+  - Drawer heading (`Project Archive & Directory` -> `Navigation Menu & Archive`)
+  - Mobile trigger icons and labels.
+
+### 1.3 Fluid Mobile Scroll Behavior
+- On mobile screens, prevent the header from feeling choked or encroaching on content.
+- Implement an ultra-clean, lightweight mobile header:
+  - Shows `● Alfred E. Williams` and `Menu` button.
+  - On scroll down: smoothly transitions into an ultra-compact frosted glass ribbon (or hides off-screen).
+  - On scroll up: smoothly glides back into view without jitter or layout shifts.
+
+### 1.4 Visual Breathers & 2D Cartoon Generation via AI
+- **Break Up Text Fatigue:** Pages like `about.html` (the 4 chapters and skills matrix) and sections across the site are currently text-dense.
+- **Visual Rhythm:** Insert 2D editorial cartoon illustrations alongside text blocks to serve as visual breathers.
+- **Asset Generation:** If an exact illustration does not already exist in `assets/`, generate it using Gemini (`generate_image`) in the exact on-brand 2D flat cartoon style:
+  - Character features: Sharp, charismatic African professional with trimmed beard, modern smart-casual attire.
+  - Style: Clean 2D flat editorial line art, warm architectural color palette (ochre, terracotta, charcoal, soft cream, sage).
+  - Subject matter: Coding & web architecture, economic fieldwork in Lagos, pitch deck presentations, book rewriting/humanizing, and digital marketing retainers.
+
+---
+
+## 2. Dedicated Service Landing Pages Overview
+
+Every service currently featured on `services.html` will have its own dedicated, content-rich landing page:
+
+| Service Pillar | Landing Page | Key Offers & Deliverables | 2D Cartoon Illustration & Visuals |
+| :--- | :--- | :--- | :--- |
+| **01. Corporate AI Training** | `ai-training.html` *(Live)* | 1-Day Executive Workshop, 2-Week Team Accelerator, Custom AI SOPs, Data Security Protocol + `ai-pitch-deck.html` | `illust-ai-masterclass.jpg`<br>`illust-ai-team-sprint.jpg`<br>`illust-ai-chief-retainer.jpg` |
+| **02. Web & App Development** | `web-development.html` *(New)* | Starter Business Sites (₦180k), Growth Web Apps (₦450k), Bespoke Platforms (₦850k+), sub-100ms speed, Next.js/Vanilla architecture | `illust-sprint-mvp.png`<br>`illust-ecommerce-storefront.png`<br>`illust-enterprise-data-suite.png` |
+| **03. Business Writing & Pitch Decks** | `business-writing.html` *(New)* | Company Profiles (₦120k), Investor Pitch Decks (₦180k), Business Proposals (₦95k), Grant Applications, Brand Books | `illust-creative-director.jpg`<br>`illust-brand-identity.jpg`<br>*Custom generated if needed* |
+| **04. Editorial Polish & AI Humanizing** | `editorial-writing.html` *(New)* | AI Content Humanizing & Rewriting, Book/Manuscript Ghostwriting, Academic Theses Polish, Policy Whitepapers (PCNI Case) | `illust-editorial-writing.png`<br>`illust-policy-whitepaper.jpg` |
+| **05. Digital Marketing & Social Retainers** | `digital-marketing.html` *(New)* | Social Media Management (₦150k/mo), Paid Ads & Lead Generation, Creative Reels, Multi-Brand Authority Retainers | `illust-tri-brand-strategy.png`<br>`illust-video-cutdown.jpg`<br>*Custom generated if needed* |
+| **06. Skills & Test Coaching** | `training.html` *(Live)* + `ielts-prep.html` *(Live)* | IELTS 8.5+ Intensive, TOEFL iBT, GRE, Web Dev Mentorship, SOP Admissions Coaching | `illust-prep-diagnostic.jpg`<br>`illust-prep-accelerator.jpg`<br>`illust-prep-visa.jpg` |
+
+---
+
+## 3. Dedicated Landing Page Structure & Aesthetics
+
+Each new landing page will follow a high-converting, clean, soft editorial design:
+1. **Hero Stage:**
+   - Pill badge: e.g. `● Available for Commissions · 2026 Engagement Schedule`
+   - Monumental display headline with editorial italic accent.
+   - Clear value proposition sub-lead.
+   - Dual-currency investment pill: e.g. `From ₦180,000 / $200 · 7-Day Sprint Delivery`.
+   - Action triggers: `Book on WhatsApp ↗` and `View Packages & Deliverables ↓`.
+2. **2D Cartoon Illustration Showcase:**
+   - High-resolution cartoon illustrations visually anchoring every tier and key feature.
+3. **Core Offers & Deliverables Breakdown:**
+   - 3-column / 2-column feature cards with icons (deliverables, timelines, tech specs, revision policies).
+4. **Who It's For & Benefits (ROI Proof):**
+   - Practical business advantages (saving hours, closing funding, winning clients, accelerating career).
+5. **Detailed Package Pricing Cards:**
+   - Transparent pricing in Nigerian Naira (₦) and USD ($).
+   - "Order via WhatsApp" button with pre-filled message for each package.
+6. **FAQ Accordion & Direct Strategy Call Booking:**
+   - Common questions answered with zero fluff.
+   - Back to Services link & WhatsApp floating button.
+
+---
+
+## 4. Visual Breathers on `about.html`
+
+In `about.html`, inject 2D cartoon illustrations alongside each of the 4 biography chapters and keynote section:
+- **Chapter 01 (UNILAG Literary Studies & Editorial):** Insert `assets/illust-editorial-writing.png` (Alfred at writing desk).
+- **Chapter 02 (Lagos 551 SMEs Field Study):** Generate / insert an illustration showing Alfred conducting field research across Lagos districts.
+- **Chapter 03 (Academic Operations & High-Stakes Admissions):** Insert `assets/illust-prep-visa.jpg` or `assets/illust-prep-accelerator.jpg`.
+- **Chapter 04 (Movement, Dance & Sound Studio):** Generate / insert an illustration of sonic design and choreography.
+- **Keynote Section:** Anchor the speaking topics with an on-stage presentation illustration (`assets/otec-speaking-real.png` or generated).
+
+---
+
+## 5. Navigation & Global Cross-Linking
+
+### 5.1 Global Navigation (`SERVICES ▾` Dropdown)
+Update the navigation across all HTML pages:
+```html
+<li class="nav-item-dropdown">
+  <a href="services.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
+    <span>Services</span>
+    <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </a>
+  <div class="nav-dropdown-menu" role="menu">
+    <a href="services.html" class="nav-dropdown-item" role="menuitem">
+      <span class="dropdown-item-title">All Services Overview</span>
+      <span class="dropdown-item-desc">Complete service matrix &amp; pricing</span>
+    </a>
+    <a href="ai-training.html" class="nav-dropdown-item" role="menuitem">
+      <span class="dropdown-item-title">Corporate AI Training ↗</span>
+      <span class="dropdown-item-desc">Workforce acceleration &amp; SOPs</span>
+    </a>
+    <a href="web-development.html" class="nav-dropdown-item" role="menuitem">
+      <span class="dropdown-item-title">Web &amp; App Development ↗</span>
+      <span class="dropdown-item-desc">Fast websites, MVPs &amp; custom platforms</span>
+    </a>
+    <a href="business-writing.html" class="nav-dropdown-item" role="menuitem">
+      <span class="dropdown-item-title">Business Writing &amp; Pitch Decks ↗</span>
+      <span class="dropdown-item-desc">Investor pitch decks &amp; company profiles</span>
+    </a>
+    <a href="editorial-writing.html" class="nav-dropdown-item" role="menuitem">
+      <span class="dropdown-item-title">Editorial Polish &amp; AI Humanizing ↗</span>
+      <span class="dropdown-item-desc">Ghostwriting, books &amp; AI text refinement</span>
+    </a>
+    <a href="digital-marketing.html" class="nav-dropdown-item" role="menuitem">
+      <span class="dropdown-item-title">Digital Marketing &amp; Retainers ↗</span>
+      <span class="dropdown-item-desc">Social media, paid ads &amp; brand growth</span>
+    </a>
+    <a href="training.html" class="nav-dropdown-item" role="menuitem">
+      <span class="dropdown-item-title">Skills &amp; Test Coaching ↗</span>
+      <span class="dropdown-item-desc">IELTS 8.5+, web dev &amp; mentorship</span>
+    </a>
+  </div>
+</li>
 ```
 
----
-
-## 3. Detailed Service Breakdown & Nigerian Market Pricing
-
-| Service Suite | Offerings Included | Typical Nigerian Market Pricing |
-| :--- | :--- | :--- |
-| **01. Corporate AI Training & Automation** | Team AI workshops, custom ChatGPT/Claude workflows, 1-on-1 executive coaching, productivity automation | **Executive 1-Day:** ₦250k / $250<br>**Team 2-Week Accelerator:** ₦650k / $650<br>**Enterprise Custom:** Custom Scope |
-| **02. Full-Cycle Web Development** | High-speed business websites, custom landing pages, web applications, sub-100ms performance | **Starter Business Site:** ₦180k / $200<br>**Growth Corporate Web App:** ₦450k / $500<br>**Bespoke Platform:** ₦850k+ / $950+ |
-| **03. Business Writing & Pitch Decks** | Company Profile (copy + design), Investor Pitch Decks, Business Proposals, Website Copywriting | **Company Profile (Copy+Design):** ₦120k / $140<br>**Investor Pitch Deck:** ₦180k / $200<br>**Website Full Copy:** ₦95k / $110 |
-| **04. Professional Career Writing** | Executive CV / Resume Revamp, LinkedIn Optimization, Executive Bios, Cover Letters | **Career Starter (CV + Letter):** ₦35k / $40<br>**Executive Package (CV + LinkedIn):** ₦65k / $75 |
-| **05. Video Production & Motion Design** | Promo videos, company intro videos, motion graphics, video editing for campaigns | **Social Promo / Reel:** ₦45k / $50<br>**Company Intro Video:** ₦120k / $140<br>**Full Campaign Suite:** ₦280k / $320 |
-| **06. Skills Coaching & Test Prep** | IELTS 8.5+ Intensive, TOEFL iBT, GRE, Web Dev Mentorship, Academic SOP Coaching | **Test Prep Intensive (4-Wk):** ₦120k / $140<br>**SOP / Admissions Mentorship:** ₦85k / $100<br>**1-on-1 Web Mentorship:** ₦150k / $175 |
-| **07. Keynotes & Public Speaking** | University symposiums, tech panels, corporate conferences, youth summits | **Non-Profit / Student Summits:** Honorarium<br>**Corporate / Tech Keynotes:** Custom Engagement |
+### 5.2 Services Page CTA Integration (`services.html`)
+On `services.html`, inside each of the 6 practice sections, add a direct CTA link button:
+- Practice 01: `Explore Corporate AI Training Page ↗` (`ai-training.html`)
+- Practice 02: `Explore Web & App Development Details ↗` (`web-development.html`)
+- Practice 03: `Explore Pitch Decks & Business Writing Suite ↗` (`business-writing.html`)
+- Practice 04: `Explore AI Humanizing & Editorial Polish ↗` (`editorial-writing.html`)
+- Practice 05: `Explore Digital Marketing & Retainers ↗` (`digital-marketing.html`)
+- Practice 06: `Explore Skills Training & Test Prep Hub ↗` (`training.html`)
 
 ---
 
-## 4. Phased Implementation Steps
+## 6. Execution Sequence
 
-### Phase 1: Site-Wide Copywriting & Tone Transformation
-* **Goal:** Eliminate academic jargon and replace with high-converting, benefit-driven sales copy written in simple, persuasive English.
-* **Files to Update:**
-  - `services.html`:
-    - Re-title header: *"Practical Services & Transparent Pricing — Built to Grow Your Business, Brand, and Career."*
-    - Expand practices to reflect the full six service pillars: AI Training, Web Development, Business Writing & Decks, Professional Career Writing, Video/Motion Design, and Test Prep/Mentorship.
-    - Add clear, realistic pricing cards with Nigerian Naira (₦) and USD ($).
-    - Simplify the FAQ section into everyday business questions with direct answers.
-  - `about.html`:
-    - Replace *"Humanistic Rigor"* with *"Proven Strategy. Real-World Execution. Zero Fluff."*
-    - Add a dedicated **Keynotes & Public Speaking** card: speaker topics, past audiences, and an *"Invite Alfred to Speak"* CTA button.
-  - `index.html`:
-    - Update hero copy to showcase the complete value proposition: Web Architect, Corporate AI Trainer, Professional Writer & Speaker.
-    - Update service highlights and trust metrics.
-  - `contact.html`:
-    - Update inquiry form options to include: Corporate AI Training, Business Website, Pitch Deck / Company Profile, CV & Career Writing, Video/Motion, Speaking Engagement.
-
----
-
-### Phase 2: Dedicated Sales Landing Page — Corporate & SME AI Training (`ai-training.html`)
-* **Goal:** A dedicated sales landing page specifically tailored for Nigerian and international SMEs, corporate leaders, and HR managers.
-* **Structure:**
-  1. **Hero:** *"Train Your Workforce to Use Practical AI — Save 15+ Hours Every Week and Increase Output by 3x."*
-  2. **The Problem:** Companies wasting money on generic tools while employees struggle with vague prompting and fear of AI.
-  3. **The 4-Pillar AI Curriculum:**
-     - Module 1: Daily Task Automation (Email, reports, scheduling, meeting notes).
-     - Module 2: Research & Document Synthesis (Turning long PDFs into executive insights in seconds).
-     - Module 3: Marketing & Sales Copy Generation (Ad copy, client proposals, follow-ups).
-     - Module 4: Corporate Data Security & Safe AI Protocols.
-  4. **Training Delivery Formats:** 1-Day Executive Intensive, 2-Week Team Accelerator, 1-on-1 Leadership Coaching.
-  5. **Corporate ROI Proof:** How a 10-person team saves 400+ productive work hours every month.
-  6. **Interactive CTA:** Buttons to *"View Corporate Pitch Deck ↗"* and *"Book a Free Discovery Call"*.
-  7. **Pricing & Packages:** Clear Nigerian corporate pricing tiers.
-
----
-
-### Phase 3: Interactive Web-Based Enterprise Pitch Deck (`ai-pitch-deck.html`)
-* **Goal:** A sleek, interactive slide presentation that corporate executives can open in a browser, present in boardroom meetings, or click through slide-by-slide.
-* **Features:**
-  - **Slide 1:** Title — *Corporate AI Acceleration: Practical Workforce Upskilling for 2026*.
-  - **Slide 2:** The Challenge — Why traditional workflows are costing Nigerian companies millions in wasted hours.
-  - **Slide 3:** The Alfred E. Williams Solution — Real-world, hands-on, workflow-integrated AI training.
-  - **Slide 4:** The 4-Module Curriculum & Hands-on Deliverables.
-  - **Slide 5:** Delivery Formats — On-site workshops, hybrid cohorts, and executive 1-on-1s.
-  - **Slide 6:** Investment & Corporate Engagement Tiers (₦250k - ₦650k+).
-  - **Slide 7:** Facilitator Credentials & Track Record.
-  - **Slide 8:** Next Steps & Board Approval Checklist with direct *"Schedule Discovery Session"* button.
-  - **Interactive Controls:** Left/Right keyboard arrows, touch swipe, slide indicator dots, full-screen mode, printable/PDF-ready.
-
----
-
-### Phase 4: Comprehensive Skills, Writing & Test Prep Hub (`training.html`)
-* **Goal:** A dedicated hub for individual learners, students, and professionals.
-* **Categories Covered:**
-  - **Test Prep:** IELTS 8.5+ Intensive, TOEFL iBT, GRE, SAT, and US Visa mock interviews.
-  - **Tech Skills:** Frontend Web Development Bootcamp (HTML/CSS/JS).
-  - **Writing & Careers:** Statement of Purpose (SOP) Mentorship, Executive CV & LinkedIn Makeovers.
-  - **Practical AI for Freelancers:** Using AI to double freelance output and land international gigs.
-* **Features:** Syllabus accordion, student guarantees, transparent dual-currency fees (₦/$) and 1-click WhatsApp enrollment.
-
----
-
-### Phase 5: Navigation, Cross-Linking & Global Consistency
-* Update global navbar and mobile menu across all pages:
-  - Add **`Training & Programs`** dropdown:
-    - *Corporate AI Training* (`ai-training.html`)
-    - *Interactive Pitch Deck* (`ai-pitch-deck.html`)
-    - *Skills & Test Prep* (`training.html`)
-  - Ensure links to Writing, Video, and Speaking are prominent and clearly labeled.
-* Update footer on all pages with quick links to these new offerings.
-
----
-
-### Phase 6: Browser Testing & Verification
-* Open test server (`http://localhost:8080`).
-* Validate all pages on Desktop (1280px+), Tablet (768px), and Mobile (375px).
-* Test keyboard arrow navigation and full-screen mode on `ai-pitch-deck.html`.
-* Verify that all WhatsApp buttons launch with pre-filled, professional messages.
-
----
-
-## 5. Ready for Execution
-
-Review this plan and click **"Proceed"** (or reply to confirm) when you're ready for implementation to begin!
+1. **Step 1: Header Alignment & Rename to "Menu":**
+   - Left-align Row 2 in `css/main.css` so `HOME` starts directly beneath `Alfred E. Williams`.
+   - Update buttons to label as `Menu`.
+   - Add mobile scroll hide/reveal script in `js/components.js`.
+2. **Step 2: Generate Semantically Appropriate 2D Cartoon Illustrations:**
+   - Generate any missing 2D cartoon illustrations for Lagos field research, sound studio, web engineering, etc., using `generate_image`.
+3. **Step 3: Enrich `about.html` with Visual Breathers:**
+   - Add 2D illustrations alongside chapters 01–04 and keynote cards.
+4. **Step 4: Build `web-development.html`:**
+   - Complete landing page with starter sites, web apps, bespoke platforms, illustrations, and icons.
+5. **Step 5: Build `business-writing.html`:**
+   - Complete landing page for pitch decks, company profiles, and proposals.
+6. **Step 6: Build `editorial-writing.html`:**
+   - Complete landing page for AI content humanizing, book rewriting, and policy polish.
+7. **Step 7: Build `digital-marketing.html`:**
+   - Complete landing page for social media management, paid ads, and brand retainers.
+8. **Step 8: Global Navigation & Services Page Cross-Linking:**
+   - Add `SERVICES ▾` dropdown across all 15 HTML files.
+   - Add direct landing page CTA buttons on `services.html`.
+9. **Step 9: Testing & Browser Verification:**
+   - Check layout alignment, mobile scroll, and zero console errors.
+10. **Step 10: Git Commit & Push to GitHub.**

@@ -261,8 +261,8 @@
 
     renderDirectoryList('all');
 
-    // Drawer Event Listeners
-    document.querySelectorAll('.directory-trigger-btn').forEach(btn => {
+    // Drawer Event Listeners (.menu-trigger-btn & .directory-trigger-btn)
+    document.querySelectorAll('.menu-trigger-btn, .directory-trigger-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         drawer.classList.add('is-open');
         document.body.style.overflow = 'hidden';
@@ -714,14 +714,32 @@
     if (!header) return;
 
     let ticking = false;
+    let lastScrollY = window.scrollY || 0;
+
     function updateHeader() {
       const scrollY = window.scrollY || document.documentElement.scrollTop || window.pageYOffset || 0;
-      // Immediately become transparent as soon as user begins scrolling down (scrollY > 15)
+      
+      // Transparent frosted glass when scrolled down
       if (scrollY > 15) {
         header.classList.add('is-scrolled');
       } else {
         header.classList.remove('is-scrolled');
       }
+
+      // Mobile smart-scroll: smoothly hide header on scroll down, reveal on scroll up
+      if (window.innerWidth <= 860) {
+        if (scrollY > 90 && scrollY > lastScrollY + 8) {
+          // Scrolling down - hide header smoothly so content has full viewport
+          header.classList.add('is-hidden');
+        } else if (scrollY < lastScrollY - 6 || scrollY <= 30) {
+          // Scrolling up - reveal header smoothly
+          header.classList.remove('is-hidden');
+        }
+      } else {
+        header.classList.remove('is-hidden');
+      }
+
+      lastScrollY = Math.max(0, scrollY);
       ticking = false;
     }
 

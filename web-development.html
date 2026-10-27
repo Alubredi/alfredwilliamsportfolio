@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full-Cycle Web &amp; App Development — Alfred E. Williams</title>
+  <meta name="description" content="High-speed business websites, custom web applications, and conversion landing pages engineered with clean standards and sub-100ms load speeds. 100% code ownership.">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .web-hero-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 14px;
+      padding: 44px;
+      margin-bottom: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (max-width: 860px) {
+      .web-hero-card { padding: 24px; }
+    }
+    .problem-vs-solution {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 32px 0;
+    }
+    @media (max-width: 860px) {
+      .problem-vs-solution { grid-template-columns: 1fr; }
+    }
+    .pricing-table-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .pricing-card-web {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .pricing-card-web.featured {
+      border-color: var(--accent-red);
+      background-color: var(--bg-surface-elevated);
+      box-shadow: 0 12px 36px rgba(229, 46, 46, 0.12);
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--ink-primary);
+    }
+    .feature-list li::before {
+      content: "✓";
+      color: var(--accent-red);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item {
+      border: 1px solid var(--line-grid);
+      border-radius: 10px;
+      margin-bottom: 14px;
+      background-color: var(--bg-surface);
+      overflow: hidden;
+    }
+    .faq-accordion-header {
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.05rem;
+      user-select: none;
+    }
+    .faq-accordion-header:hover {
+      color: var(--accent-red);
+    }
+    .faq-accordion-body {
+      padding: 0 24px 20px;
+      display: none;
+      color: var(--ink-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    .faq-accordion-item.open .faq-accordion-body {
+      display: block;
+    }
+    .faq-accordion-item.open .faq-accordion-header {
+      color: var(--accent-red);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brandmark">
+        <span class="status-dot" title="Available for select Q3/Q4 commissions"></span>
+        <span>Alfred <strong>E. Williams</strong></span>
+      </a>
+
+      <!-- Navigation -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="works.html" class="nav-link">Works</a></li>
+          <li><a href="brands.html" class="nav-link">Brands &amp; Social</a></li>
+          
+          <!-- About with Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="about.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
+              <span>About</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="about.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">About Alfred</span>
+                <span class="dropdown-item-desc">Biography, philosophy &amp; 551 SME study</span>
+              </a>
+              <a href="blog.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Blog &amp; Essays</span>
+                <span class="dropdown-item-desc">Critical commentary, data &amp; culture</span>
+              </a>
+            </div>
+          </li>
+
+          <!-- Services with Dropdown (Active) -->
+          <li class="nav-item-dropdown">
+            <a href="services.html" class="nav-link nav-link-dropdown active" aria-expanded="false" aria-haspopup="true">
+              <span>Services</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="services.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">All Services Overview</span>
+                <span class="dropdown-item-desc">Consulting suites &amp; master price matrix</span>
+              </a>
+              <a href="ai-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Corporate AI Training ↗</span>
+                <span class="dropdown-item-desc">Workforce acceleration &amp; playbooks</span>
+              </a>
+              <a href="web-development.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Web &amp; App Development ↗</span>
+                <span class="dropdown-item-desc">Sub-100ms lightweight web platforms</span>
+              </a>
+              <a href="business-writing.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Business Writing &amp; Decks ↗</span>
+                <span class="dropdown-item-desc">Company profiles &amp; investor pitch decks</span>
+              </a>
+              <a href="editorial-writing.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Editorial &amp; AI Humanizing ↗</span>
+                <span class="dropdown-item-desc">Manuscript polish, novels &amp; executive CVs</span>
+              </a>
+              <a href="digital-marketing.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Digital Marketing &amp; Retainers ↗</span>
+                <span class="dropdown-item-desc">Social media, video reels &amp; web management</span>
+              </a>
+            </div>
+          </li>
+
+          <!-- Training with Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="training.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
+              <span>Training</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="ai-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Corporate AI Training ↗</span>
+                <span class="dropdown-item-desc">Workforce acceleration &amp; SOPs</span>
+              </a>
+              <a href="ai-design-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">AI for Design, Web &amp; Motion ↗</span>
+                <span class="dropdown-item-desc">Build sites, apps &amp; graphics with AI</span>
+              </a>
+              <a href="ielts-prep.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">IELTS 8.5+ &amp; Test Prep ↗</span>
+                <span class="dropdown-item-desc">Diagnostic assessment &amp; visa prep</span>
+              </a>
+              <a href="training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">All Training Programs</span>
+                <span class="dropdown-item-desc">Full academy curriculum &amp; cohorts</span>
+              </a>
+            </div>
+          </li>
+          
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Utilities -->
+      <div class="header-actions">
+        <a href="contact.html?type=web" class="btn btn-sm btn-solid header-cta-btn" style="padding: 7px 18px; font-size: 0.82rem;">Start a Build →</a>
+        <button class="theme-toggle-btn" aria-label="Toggle theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark
+        </button>
+        <button class="menu-trigger-btn directory-trigger-btn" aria-label="Open menu directory">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section style="padding: 56px 0 36px; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div class="web-hero-card">
+          <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 36px; align-items: center;">
+            <div>
+              <div class="editorial-chapter-badge">DIGITAL SYSTEMS · ZERO-BLOAT WEB ARCHITECTURE</div>
+              <h1 style="font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700; line-height: 1.15; margin: 12px 0 16px;">
+                Lightning-Fast Websites &amp; Web Apps That <em>Turn Visitors into Revenue</em>
+              </h1>
+              <p style="font-size: 1.1rem; color: var(--ink-muted); line-height: 1.65; margin-bottom: 24px; max-width: 58ch;">
+                Stop losing customers to sluggish WordPress templates and broken plugins. I engineer lightweight, sub-100ms websites and web applications with 100% code ownership, native Paystack/Stripe checkout, and ruthless conversion design.
+              </p>
+              
+              <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 24px;">
+                <a href="#packages" class="btn btn-solid">View Packages &amp; Nigerian Pricing ↓</a>
+                <a href="https://wa.me/2348176939974?text=Hello%20Alfred,%20I'm%20interested%20in%20building%20a%20new%20website/web%20app." target="_blank" rel="noopener" class="btn btn-outline" style="background-color: #25D366; border-color: #25D366; color: #FFFFFF;">
+                  Chat on WhatsApp ↗
+                </a>
+              </div>
+
+              <div style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.82rem; font-family: var(--font-mono); color: var(--ink-faint);">
+                <span>⚡ Sub-100ms Load Times</span>
+                <span>🔒 100% Code Ownership</span>
+                <span>💳 Paystack &amp; Stripe Ready</span>
+                <span>📱 Mobile-First for Nigerian Networks</span>
+              </div>
+            </div>
+
+            <!-- Visual Breather Hero Illustration -->
+            <div class="editorial-illustration-frame" style="border-radius: 12px; overflow: hidden; border: 1px solid var(--line-grid); box-shadow: 0 8px 30px rgba(0,0,0,0.06);">
+              <img src="assets/illust-web-architecture.png" alt="Alfred E. Williams Web Engineering &amp; 100% Speed Score 2D Cartoon Illustration" style="width: 100%; height: auto; display: block;">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROBLEM VS SOLUTION -->
+    <section style="padding: 48px 0; border-bottom: 1px solid var(--line-grid); background-color: var(--bg-surface);">
+      <div class="container">
+        
+        <div style="text-align: center; max-width: 65ch; margin: 0 auto 36px;">
+          <div class="editorial-chapter-badge" style="justify-content: center;">THE MODERN WEB REALITY</div>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700;">Why 80% of Business Websites Fail in Emerging Markets</h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; margin-top: 10px;">
+            In Nigeria and emerging markets, over 70% of web traffic browses on mobile networks with fluctuating bandwidth. Bloated websites literally burn your ad money.
+          </p>
+        </div>
+
+        <div class="problem-vs-solution">
+          <!-- The Old Bloated Way -->
+          <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-top: 3px solid #E52E2E; padding: 32px; border-radius: 12px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+              <span style="color: #E52E2E; font-size: 1.2rem;">✕</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700;">The Bloated Template Trap</h3>
+            </div>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.95rem; color: var(--ink-muted);">
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #E52E2E; font-weight: bold;">✕</span>
+                <span>Takes 6 to 12 seconds to load on MTN or Airtel mobile networks; 50%+ of visitors bounce before seeing your offer.</span>
+              </li>
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #E52E2E; font-weight: bold;">✕</span>
+                <span>Tangled in 35+ WordPress plugins that crash on every auto-update and require costly monthly retainer fixes.</span>
+              </li>
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #E52E2E; font-weight: bold;">✕</span>
+                <span>Generic cookie-cutter templates that look identical to your competitors and inspire zero buyer confidence.</span>
+              </li>
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #E52E2E; font-weight: bold;">✕</span>
+                <span>Hidden ongoing license fees and hosting vulnerabilities that leave you locked into an unreliable developer.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Alfred's Architecture -->
+          <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-top: 3px solid #10B981; padding: 32px; border-radius: 12px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+              <span style="color: #10B981; font-size: 1.2rem;">✓</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700;">Alfred's Zero-Bloat Architecture</h3>
+            </div>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.95rem; color: var(--ink-muted);">
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #10B981; font-weight: bold;">✓</span>
+                <span>Loads instantaneously in under 100ms. Tested and verified on real Lagos mobile devices across 9 commercial districts.</span>
+              </li>
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #10B981; font-weight: bold;">✓</span>
+                <span>100% clean vanilla web standards (HTML5/CSS3/modern JS) — unbreakable, ultra-secure, and zero plugin rot.</span>
+              </li>
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #10B981; font-weight: bold;">✓</span>
+                <span>Bespoke editorial aesthetic tailored to your brand, featuring rich micro-interactions and high-converting copy.</span>
+              </li>
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #10B981; font-weight: bold;">✓</span>
+                <span>100% complete code ownership handed to you on GitHub. Zero monthly recurring lock-in fees. Ever.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CORE ARCHITECTURE PILLARS -->
+    <section style="padding: 48px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div class="section-head">
+          <span class="section-num">01</span>
+          <h2 class="section-title">What Every Build Includes</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 24px;">
+          
+          <div style="background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-radius: 12px; padding: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 1.8rem; color: var(--accent-red); margin-bottom: 8px;">01</div>
+            <h4 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin-bottom: 8px;">Sub-100ms Speed Engine</h4>
+            <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6;">
+              Optimized down to the byte. Minimal DOM, zero unused styles, and lazy-loaded assets ensure instant rendering even on 3G connections.
+            </p>
+          </div>
+
+          <div style="background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-radius: 12px; padding: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 1.8rem; color: var(--accent-red); margin-bottom: 8px;">02</div>
+            <h4 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin-bottom: 8px;">Paystack &amp; Stripe Checkout</h4>
+            <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6;">
+              Seamless local and international payment processing. Receive Naira via bank transfer, USSD, cards, or USD/GBP cards globally with instant webhooks.
+            </p>
+          </div>
+
+          <div style="background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-radius: 12px; padding: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 1.8rem; color: var(--accent-red); margin-bottom: 8px;">03</div>
+            <h4 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin-bottom: 8px;">Conversion Copywriting</h4>
+            <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6;">
+              I don't just build the skeleton; I write the persuasive sales copy, value propositions, and calls to action grounded in my 551 SME field research.
+            </p>
+          </div>
+
+          <div style="background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-radius: 12px; padding: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 1.8rem; color: var(--accent-red); margin-bottom: 8px;">04</div>
+            <h4 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin-bottom: 8px;">100% Code Handover</h4>
+            <p style="font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6;">
+              Full repository transfer to your GitHub account, custom domain DNS routing, SSL security certificate setup, and simple handover documentation.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRANSPARENT PRICING PACKAGES -->
+    <section id="packages" style="padding: 48px 0; border-bottom: 1px solid var(--line-grid); background-color: var(--bg-surface);">
+      <div class="container">
+        
+        <div style="text-align: center; max-width: 65ch; margin: 0 auto 36px;">
+          <div class="editorial-chapter-badge" style="justify-content: center;">TRANSPARENT CLIENT PRICING</div>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700;">Simple, Transparent Web Packages</h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; margin-top: 10px;">
+            Clear scopes, fixed timelines, dual currency rates (₦ / $), and no surprise fees.
+          </p>
+        </div>
+
+        <div class="pricing-table-grid">
+          
+          <!-- Package 1: Rapid Launch Landing Page -->
+          <div class="pricing-card-web">
+            <div>
+              <div class="card-media" style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
+                <img src="assets/illust-sprint-mvp.png" alt="High-Converting Landing Page 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-red); font-weight: 700; text-transform: uppercase;">Tier 01 · Rapid Launch</div>
+              <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin: 6px 0 10px;">High-Converting Landing Page</h3>
+              <p style="font-size: 0.92rem; color: var(--ink-muted); line-height: 1.55;">
+                For founders, consultants, speakers, and product launches needing a focused, high-converting digital storefront fast.
+              </p>
+
+              <div style="margin: 20px 0 16px; padding: 14px 0; border-top: 1px solid var(--line-grid); border-bottom: 1px solid var(--line-grid);">
+                <div style="font-size: 2rem; font-weight: 700; font-family: var(--font-display); color: var(--ink-primary);">
+                  ₦180,000 <span style="font-size: 1rem; color: var(--ink-muted); font-weight: normal;">/ $200</span>
+                </div>
+                <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--accent-red); margin-top: 4px;">
+                  Delivery: 5 to 7 Business Days
+                </div>
+              </div>
+
+              <ul class="feature-list">
+                <li><span>Single Long-Form Conversion Sales Page</span></li>
+                <li><span>High-Converting Persuasive Copy Included</span></li>
+                <li><span>Interactive WhatsApp &amp; Contact Inquiries</span></li>
+                <li><span>Sub-100ms Mobile Performance Score</span></li>
+                <li><span>Custom Domain &amp; SSL Security Setup</span></li>
+                <li><span>14 Days Post-Launch Support</span></li>
+              </ul>
+            </div>
+            <div style="margin-top: 24px;">
+              <a href="contact.html?package=web-landing" class="btn btn-outline" style="width: 100%; text-align: center;">Choose Landing Page →</a>
+            </div>
+          </div>
+
+          <!-- Package 2: Full-Stack Business Site (Featured) -->
+          <div class="pricing-card-web featured">
+            <div>
+              <div style="position: absolute; top: -12px; right: 24px; background-color: var(--accent-red); color: #FFF; font-family: var(--font-mono); font-size: 0.72rem; padding: 4px 12px; border-radius: 999px; font-weight: 700; text-transform: uppercase;">
+                Most Popular
+              </div>
+              <div class="card-media" style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
+                <img src="assets/illust-ecommerce-storefront.png" alt="Growth Business Platform 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-red); font-weight: 700; text-transform: uppercase;">Tier 02 · Full Business Suite</div>
+              <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin: 6px 0 10px;">Growth Business &amp; E-Commerce Web App</h3>
+              <p style="font-size: 0.92rem; color: var(--ink-muted); line-height: 1.55;">
+                Complete multi-page corporate website or lightweight e-commerce platform with automated payment checkout and catalog management.
+              </p>
+
+              <div style="margin: 20px 0 16px; padding: 14px 0; border-top: 1px solid var(--line-grid); border-bottom: 1px solid var(--line-grid);">
+                <div style="font-size: 2rem; font-weight: 700; font-family: var(--font-display); color: var(--ink-primary);">
+                  ₦450,000 <span style="font-size: 1rem; color: var(--ink-muted); font-weight: normal;">/ $500</span>
+                </div>
+                <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--accent-red); margin-top: 4px;">
+                  Delivery: 10 to 14 Business Days
+                </div>
+              </div>
+
+              <ul class="feature-list">
+                <li><span>Up to 6 Bespoke Pages (Home, About, Services, Store, Blog, Contact)</span></li>
+                <li><span>Paystack &amp; Stripe Payment Gateway Integration</span></li>
+                <li><span>Instant WhatsApp Order Forwarding &amp; Customer Invoices</span></li>
+                <li><span>SEO Optimization &amp; Google Search Console Indexing</span></li>
+                <li><span>Full Brand Typography &amp; Custom Visual Layout</span></li>
+                <li><span>30 Days Post-Launch Dedicated Support</span></li>
+              </ul>
+            </div>
+            <div style="margin-top: 24px;">
+              <a href="contact.html?package=web-growth" class="btn btn-solid" style="width: 100%; text-align: center;">Choose Growth Platform →</a>
+            </div>
+          </div>
+
+          <!-- Package 3: Bespoke Enterprise Platform -->
+          <div class="pricing-card-web">
+            <div>
+              <div class="card-media" style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
+                <img src="assets/illust-web-architecture.png" alt="Bespoke Platform &amp; Portal 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-red); font-weight: 700; text-transform: uppercase;">Tier 03 · Enterprise &amp; Portals</div>
+              <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin: 6px 0 10px;">Bespoke Web Platform &amp; Client Portal</h3>
+              <p style="font-size: 0.92rem; color: var(--ink-muted); line-height: 1.55;">
+                For institutions, schools, clinics, and firms requiring client dashboards, authentication, custom databases, or automated workflow portals.
+              </p>
+
+              <div style="margin: 20px 0 16px; padding: 14px 0; border-top: 1px solid var(--line-grid); border-bottom: 1px solid var(--line-grid);">
+                <div style="font-size: 2rem; font-weight: 700; font-family: var(--font-display); color: var(--ink-primary);">
+                  ₦850,000+ <span style="font-size: 1rem; color: var(--ink-muted); font-weight: normal;">/ $950+</span>
+                </div>
+                <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--accent-red); margin-top: 4px;">
+                  Delivery: 3 to 4 Weeks · Milestone-Based
+                </div>
+              </div>
+
+              <ul class="feature-list">
+                <li><span>Custom Database &amp; User Authentication Architecture</span></li>
+                <li><span>Role-Based Dashboards (Admin, Staff, Client)</span></li>
+                <li><span>Automated Email &amp; SMS Dispatch Integration</span></li>
+                <li><span>Enterprise Security Audit &amp; Data Protection</span></li>
+                <li><span>Staff Admin Onboarding &amp; Screen Recordings</span></li>
+                <li><span>60 Days VIP Maintenance &amp; Dedicated WhatsApp Hotline</span></li>
+              </ul>
+            </div>
+            <div style="margin-top: 24px;">
+              <a href="contact.html?package=web-bespoke" class="btn btn-outline" style="width: 100%; text-align: center;">Commission Bespoke Build →</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LIVE WORK PORTFOLIO PROOFS -->
+    <section style="padding: 48px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div class="section-head">
+          <span class="section-num">02</span>
+          <h2 class="section-title">Verified Production Case Studies</h2>
+          <div class="section-rule"></div>
+          <a href="works.html" class="card-link" style="font-size: 0.85rem;">View Full Works Archive ↗</a>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 24px;">
+          
+          <div style="background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-radius: 12px; overflow: hidden;">
+            <div style="height: 180px; overflow: hidden; background-color: #0E1217;">
+              <img src="assets/axia-real.png" alt="AXIA Online Storefront" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="padding: 20px;">
+              <span class="card-tag">E-Commerce &amp; Paystack</span>
+              <h4 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin: 8px 0 6px;">AXIA African Fashion Store</h4>
+              <p style="font-size: 0.88rem; color: var(--ink-muted); line-height: 1.55;">
+                Engineered a responsive retail storefront with real-time currency conversion (₦ / $ / £), automated cart checkout, and sub-100ms mobile speed.
+              </p>
+              <a href="works.html" class="card-link" style="margin-top: 12px; display: inline-flex; font-size: 0.82rem;">Inspect Architecture →</a>
+            </div>
+          </div>
+
+          <div style="background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-radius: 12px; overflow: hidden;">
+            <div style="height: 180px; overflow: hidden; background-color: #0E1217;">
+              <img src="assets/gofar-real.png" alt="GoFar Global Travel Platform" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="padding: 20px;">
+              <span class="card-tag">Travel &amp; Admissions</span>
+              <h4 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin: 8px 0 6px;">GoFar Global Consults</h4>
+              <p style="font-size: 0.88rem; color: var(--ink-muted); line-height: 1.55;">
+                High-converting admissions inquiry portal with tiered visa packages, student testimonial sliders, and direct WhatsApp lead routing.
+              </p>
+              <a href="works.html" class="card-link" style="margin-top: 12px; display: inline-flex; font-size: 0.82rem;">Inspect Architecture →</a>
+            </div>
+          </div>
+
+          <div style="background-color: var(--bg-surface); border: 1px solid var(--line-grid); border-radius: 12px; overflow: hidden;">
+            <div style="height: 180px; overflow: hidden; background-color: #0E1217;">
+              <img src="assets/renalytica-real.png" alt="Renalytica Healthcare Intelligence Platform" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="padding: 20px;">
+              <span class="card-tag">Clinical Intelligence</span>
+              <h4 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin: 8px 0 6px;">Renalytica Dialysis Network</h4>
+              <p style="font-size: 0.88rem; color: var(--ink-muted); line-height: 1.55;">
+                Healthcare portal mapping 80+ Nigerian dialysis centers with verified price filters, emergency hotlines, and kidney donor matching protocols.
+              </p>
+              <a href="works.html" class="card-link" style="margin-top: 12px; display: inline-flex; font-size: 0.82rem;">Inspect Architecture →</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CLIENT FAQ ACCORDION -->
+    <section style="padding: 48px 0; border-bottom: 1px solid var(--line-grid); background-color: var(--bg-surface);">
+      <div class="container">
+        
+        <div style="max-width: 65ch; margin-bottom: 32px;">
+          <div class="editorial-chapter-badge">CLIENT FAQ</div>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700;">Frequently Asked Questions About Web Builds</h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; margin-top: 10px;">
+            Everything you need to know before initiating a project with Alfred.
+          </p>
+        </div>
+
+        <div style="max-width: 800px;">
+          
+          <div class="faq-accordion-item open">
+            <div class="faq-accordion-header">
+              <span>Why don't you use WordPress or Elementor?</span>
+              <span class="accordion-arrow">−</span>
+            </div>
+            <div class="faq-accordion-body">
+              WordPress and heavy visual page-builders load dozens of external stylesheets, JavaScript libraries, and database queries. In Nigeria, where visitors browse on mobile 3G/4G networks, that extra bloat adds 5 to 10 seconds of loading delay, costing you over half your potential clients. Hand-coded vanilla web standards load in under 100 milliseconds, cannot be hacked through vulnerable plugins, and never require monthly update fixes.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header">
+              <span>Do I own the code once the project is finished?</span>
+              <span class="accordion-arrow">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              Yes, 100%. Once final payment is made, the entire codebase is transferred to your personal or company GitHub account. You are never held hostage or locked into paying monthly platform subscriptions.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header">
+              <span>Can I accept payments in Naira and foreign currencies?</span>
+              <span class="accordion-arrow">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              Yes. I integrate Paystack (for instant Naira cards, bank transfers, USSD) and Stripe (for international cards in USD, GBP, and EUR), complete with automated receipts and WhatsApp notifications.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header">
+              <span>What if I need updates or changes after launch?</span>
+              <span class="accordion-arrow">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              Every build comes with 14 to 30 days of complimentary post-launch support. Afterward, you can either manage edits yourself using simple documentation or retain me for ongoing monthly maintenance and digital marketing.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FINAL CALL TO ACTION -->
+    <section style="padding: 56px 0;">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 28px;">
+        <div>
+          <span class="card-tag">Direct Collaboration</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; margin-top: 8px;">
+            Ready to Build a Website That Actually Converts?
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; margin-top: 8px; max-width: 60ch;">
+            Tell me about your business goals and timeline. Let's build a lightning-fast digital asset you are proud to share.
+          </p>
+        </div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="https://wa.me/2348176939974?text=Hello%20Alfred,%20I%20would%20like%20to%20discuss%20a%20web%20development%20project." target="_blank" rel="noopener" class="btn btn-solid" style="background-color: #25D366; border-color: #25D366; color: #FFFFFF;">
+            Chat on WhatsApp (Instant) ↗
+          </a>
+          <a href="contact.html?type=web" class="btn btn-outline">Submit Project Brief →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer id="terminal" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2 class="footer-heading">
+            Let's build<br>something <em>worth</em><br>remembering.
+          </h2>
+        </div>
+        <div class="footer-contacts">
+          <button class="contact-row-btn" data-copy-email="officialwilliamsae@gmail.com" aria-label="Copy email address to clipboard">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
+              <span style="font-weight: 500;">officialwilliamsae@gmail.com</span>
+            </span>
+            <span style="font-size: 0.72rem; color: var(--accent-red); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em;">Click to Copy</span>
+          </button>
+
+          <a href="tel:+2348176939974" class="contact-row-btn">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+234 817 693 9974</span>
+            </span>
+            <span style="font-size: 0.72rem; color: #9CA3AF;">Call Direct</span>
+          </a>
+
+          <a href="https://linkedin.com/in/williams-e-alfred/" target="_blank" rel="noopener" class="contact-row-btn">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>linkedin.com/in/williams-e-alfred</span>
+            </span>
+            <span style="font-size: 0.72rem; color: #9CA3AF;">Connect ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Alfred E. Williams. Hand-coded with zero bloat. All rights reserved.</div>
+        <div style="display: flex; gap: 18px;">
+          <a href="privacy.html" style="color: var(--ink-faint); font-size: 0.76rem;">Privacy Policy</a>
+          <a href="terms.html" style="color: var(--ink-faint); font-size: 0.76rem;">Terms of Engagement</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/components.js"></script>
+  <script>
+    // FAQ Accordion interaction
+    document.querySelectorAll('.faq-accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-accordion-item').forEach(i => {
+          i.classList.remove('open');
+          const arrow = i.querySelector('.accordion-arrow');
+          if (arrow) arrow.textContent = '+';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          const arrow = header.querySelector('.accordion-arrow');
+          if (arrow) arrow.textContent = '−';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

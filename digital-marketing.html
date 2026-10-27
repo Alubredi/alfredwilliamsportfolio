@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Management &amp; Digital Marketing Retainers — Alfred E. Williams</title>
+  <meta name="description" content="End-to-end social media account management, viral short-form video reels, conversion ad funnels, and ongoing web maintenance for modern brands.">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .digital-hero-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 14px;
+      padding: 44px;
+      margin-bottom: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (max-width: 860px) {
+      .digital-hero-card { padding: 24px; }
+    }
+    .problem-vs-solution {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 32px 0;
+    }
+    @media (max-width: 860px) {
+      .problem-vs-solution { grid-template-columns: 1fr; }
+    }
+    .pricing-table-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .pricing-card-digital {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--line-grid);
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .pricing-card-digital.featured {
+      border-color: var(--accent-red);
+      background-color: var(--bg-surface-elevated);
+      box-shadow: 0 12px 36px rgba(229, 46, 46, 0.12);
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--ink-primary);
+    }
+    .feature-list li::before {
+      content: "✓";
+      color: var(--accent-red);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item {
+      border: 1px solid var(--line-grid);
+      border-radius: 10px;
+      margin-bottom: 14px;
+      background-color: var(--bg-surface);
+      overflow: hidden;
+    }
+    .faq-accordion-header {
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.05rem;
+      user-select: none;
+    }
+    .faq-accordion-header:hover {
+      color: var(--accent-red);
+    }
+    .faq-accordion-body {
+      padding: 0 24px 20px;
+      display: none;
+      color: var(--ink-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    .faq-accordion-item.open .faq-accordion-body {
+      display: block;
+    }
+    .faq-accordion-item.open .faq-accordion-header {
+      color: var(--accent-red);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brandmark">
+        <span class="status-dot" title="Available for select Q3/Q4 commissions"></span>
+        <span>Alfred <strong>E. Williams</strong></span>
+      </a>
+
+      <!-- Navigation -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="works.html" class="nav-link">Works</a></li>
+          <li><a href="brands.html" class="nav-link">Brands &amp; Social</a></li>
+          
+          <!-- About with Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="about.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
+              <span>About</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="about.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">About Alfred</span>
+                <span class="dropdown-item-desc">Biography, philosophy &amp; 551 SME study</span>
+              </a>
+              <a href="blog.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Blog &amp; Essays</span>
+                <span class="dropdown-item-desc">Critical commentary, data &amp; culture</span>
+              </a>
+            </div>
+          </li>
+
+          <!-- Services with Dropdown (Active) -->
+          <li class="nav-item-dropdown">
+            <a href="services.html" class="nav-link nav-link-dropdown active" aria-expanded="false" aria-haspopup="true">
+              <span>Services</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="services.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">All Services Overview</span>
+                <span class="dropdown-item-desc">Consulting suites &amp; master price matrix</span>
+              </a>
+              <a href="ai-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Corporate AI Training ↗</span>
+                <span class="dropdown-item-desc">Workforce acceleration &amp; playbooks</span>
+              </a>
+              <a href="web-development.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Web &amp; App Development ↗</span>
+                <span class="dropdown-item-desc">Sub-100ms lightweight web platforms</span>
+              </a>
+              <a href="business-writing.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Business Writing &amp; Decks ↗</span>
+                <span class="dropdown-item-desc">Company profiles &amp; investor pitch decks</span>
+              </a>
+              <a href="editorial-writing.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Editorial &amp; AI Humanizing ↗</span>
+                <span class="dropdown-item-desc">Manuscript polish, novels &amp; executive CVs</span>
+              </a>
+              <a href="digital-marketing.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Digital Marketing &amp; Retainers ↗</span>
+                <span class="dropdown-item-desc">Social media, video reels &amp; web management</span>
+              </a>
+            </div>
+          </li>
+
+          <!-- Training with Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="training.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
+              <span>Training</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="ai-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Corporate AI Training ↗</span>
+                <span class="dropdown-item-desc">Workforce acceleration &amp; SOPs</span>
+              </a>
+              <a href="ai-design-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">AI for Design, Web &amp; Motion ↗</span>
+                <span class="dropdown-item-desc">Build sites, apps &amp; graphics with AI</span>
+              </a>
+              <a href="ielts-prep.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">IELTS 8.5+ &amp; Test Prep ↗</span>
+                <span class="dropdown-item-desc">Diagnostic assessment &amp; visa prep</span>
+              </a>
+              <a href="training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">All Training Programs</span>
+                <span class="dropdown-item-desc">Full academy curriculum &amp; cohorts</span>
+              </a>
+            </div>
+          </li>
+          
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Utilities -->
+      <div class="header-actions">
+        <a href="contact.html?type=digital" class="btn btn-sm btn-solid header-cta-btn" style="padding: 7px 18px; font-size: 0.82rem;">Start Retainer →</a>
+        <button class="theme-toggle-btn" aria-label="Toggle theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark
+        </button>
+        <button class="menu-trigger-btn directory-trigger-btn" aria-label="Open menu directory">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section style="padding: 56px 0 36px; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div class="digital-hero-card">
+          <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 36px; align-items: center;">
+            <div>
+              <div class="editorial-chapter-badge">DIGITAL GROWTH · COMPLETE SOCIAL &amp; WEB STEWARDSHIP</div>
+              <h1 style="font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700; line-height: 1.15; margin: 12px 0 16px;">
+                End-to-End Social Media, Video Reels &amp; Web <em>Management Retainers</em>
+              </h1>
+              <p style="font-size: 1.1rem; color: var(--ink-muted); line-height: 1.65; margin-bottom: 24px; max-width: 58ch;">
+                Stop stressing over what to post every morning. We take complete stewardship of your Instagram, LinkedIn, X, Facebook, and website: designing high-converting graphic carousels, editing viral video reels, managing community DMs, and converting followers into paying customers.
+              </p>
+              
+              <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 24px;">
+                <a href="#packages" class="btn btn-solid">View Retainer Packages &amp; Pricing ↓</a>
+                <a href="https://wa.me/2348176939974?text=Hello%20Alfred,%20I'm%20interested%20in%20a%20Monthly%20Digital%20Marketing%20/%20Social%20Media%20Retainer." target="_blank" rel="noopener" class="btn btn-outline" style="background-color: #25D366; border-color: #25D366; color: #FFFFFF;">
+                  Chat on WhatsApp ↗
+                </a>
+              </div>
+
+              <div style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.82rem; font-family: var(--font-mono); color: var(--ink-faint);">
+                <span>📱 Instagram, LinkedIn, X &amp; TikTok</span>
+                <span>🎬 Short-Form Video Reels Included</span>
+                <span>🌐 Ongoing Website Maintenance</span>
+                <span>📈 1-to-8 Content Repurposing</span>
+              </div>
+            </div>
+
+            <!-- Visual Breather Hero Illustration -->
+            <div class="editorial-illustration-frame" style="border-radius: 12px; overflow: hidden; border: 1px solid var(--line-grid); box-shadow: 0 8px 30px rgba(0,0,0,0.06);">
+              <img src="assets/illust-digital-growth.png" alt="Alfred E. Williams Digital Marketing &amp; Growth Analytics 2D Cartoon Illustration" style="width: 100%; height: auto; display: block;">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROBLEM VS SOLUTION -->
+    <section style="padding: 48px 0; border-bottom: 1px solid var(--line-grid); background-color: var(--bg-surface);">
+      <div class="container">
+        
+        <div style="text-align: center; max-width: 65ch; margin: 0 auto 36px;">
+          <div class="editorial-chapter-badge" style="justify-content: center;">THE RETRACTED MARKETING TRAP</div>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700;">Why Most Companies Struggle to Grow Online</h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; margin-top: 10px;">
+            Juggling separate freelancers for graphics, video editing, social posting, and website updates creates misaligned branding, missed deadlines, and zero commercial accountability.
+          </p>
+        </div>
+
+        <div class="problem-vs-solution">
+          <!-- Fragmented Freelancers -->
+          <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-top: 3px solid #E52E2E; padding: 32px; border-radius: 12px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+              <span style="color: #E52E2E; font-size: 1.2rem;">✕</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700;">The Fragmented Freelancer Chaos</h3>
+            </div>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.95rem; color: var(--ink-muted);">
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #E52E2E; font-weight: bold;">✕</span>
+                <span>Hiring a separate graphic designer, copywriter, and video editor who never talk to each other and deliver disjointed styles.</span>
+              </li>
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #E52E2E; font-weight: bold;">✕</span>
+                <span>Unpublished weeks where your social pages sit dead because internal staff are overwhelmed with core business operations.</span>
+              </li>
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #E52E2E; font-weight: bold;">✕</span>
+                <span>Unanswered customer comments and lost DMs that translate directly into thousands of Naira in lost sales.</span>
+              </li>
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #E52E2E; font-weight: bold;">✕</span>
+                <span>Website remains outdated with old phone numbers, broken links, and outdated product prices for months.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Alfred's Unified Retainer -->
+          <div style="background-color: var(--bg-page); border: 1px solid var(--line-grid); border-top: 3px solid #10B981; padding: 32px; border-radius: 12px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+              <span style="color: #10B981; font-size: 1.2rem;">✓</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700;">Alfred's Unified Operations Retainer</h3>
+            </div>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.95rem; color: var(--ink-muted);">
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #10B981; font-weight: bold;">✓</span>
+                <span>One single, accountable partner handling copy, graphic carousels, video reels, posting calendars, and website updates.</span>
+              </li>
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #10B981; font-weight: bold;">✓</span>
+                <span>Consistent monthly schedule with 12 to 20 custom posts and edited video reels created and pre-scheduled in advance.</span>
+              </li>
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #10B981; font-weight: bold;">✓</span>
+                <span>Daily community management, comment moderation, and DM lead triaging directly to your sales team's WhatsApp.</span>
+              </li>
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #10B981; font-weight: bold;">✓</span>
+                <span>Continuous website maintenance, speed audits, security updates, and promotional landing page creation included.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 1-TO-8 CONTENT REPURPOSING ARCHITECTURE -->
+    <section style="padding: 48px 0; border-bottom: 1px solid var(--line-grid);">
+      <div class="container">
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center;">
+          <div>
+            <div class="editorial-chapter-badge">THE CONTENT MULTIPLIER METHOD</div>
+            <h2 style="font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; margin-bottom: 14px;">
+              The 1-to-8 Content Repurposing Engine
+            </h2>
+            <p style="font-size: 1rem; color: var(--ink-muted); line-height: 1.65; margin-bottom: 16px;">
+              You don't need to invent new ideas daily. From one core customer insight, case study, or client testimonial, our engine generates 8 synchronized digital assets:
+            </p>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: var(--ink-muted);">
+              <li style="display: flex; gap: 10px;"><strong style="color: var(--accent-red);">01.</strong> <span>A dynamic 45-second vertical video reel for Instagram, TikTok, and YouTube Shorts.</span></li>
+              <li style="display: flex; gap: 10px;"><strong style="color: var(--accent-red);">02.</strong> <span>An educational 6-slide graphic carousel for Instagram &amp; LinkedIn.</span></li>
+              <li style="display: flex; gap: 10px;"><strong style="color: var(--accent-red);">03.</strong> <span>A founder thought-leadership post for the CEO's personal LinkedIn profile.</span></li>
+              <li style="display: flex; gap: 10px;"><strong style="color: var(--accent-red);">04.</strong> <span>A punchy 5-tweet insight thread for X (Twitter) community engagement.</span></li>
+              <li style="display: flex; gap: 10px;"><strong style="color: var(--accent-red);">05.</strong> <span>An email newsletter blast sent directly to your existing customer base.</span></li>
+              <li style="display: flex; gap: 10px;"><strong style="color: var(--accent-red);">06.</strong> <span>A fresh blog article / case study published to your website for Google SEO.</span></li>
+            </ul>
+          </div>
+
+          <div class="editorial-illustration-frame" style="border-radius: 12px; overflow: hidden; border: 1px solid var(--line-grid); box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+            <img src="assets/illust-tri-brand-strategy.png" alt="Tri-Brand Growth Strategy and Unified Operations 2D Cartoon Illustration" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRANSPARENT RETAINER PACKAGES -->
+    <section id="packages" style="padding: 48px 0; border-bottom: 1px solid var(--line-grid); background-color: var(--bg-surface);">
+      <div class="container">
+        
+        <div style="text-align: center; max-width: 65ch; margin: 0 auto 36px;">
+          <div class="editorial-chapter-badge" style="justify-content: center;">MONTHLY PARTNERSHIP PLANS</div>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700;">Simple Monthly Retainer Rates</h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; margin-top: 10px;">
+            Full creative production, copywriting, scheduling, and community stewardship. Dual currency rates (₦ / $).
+          </p>
+        </div>
+
+        <div class="pricing-table-grid">
+          
+          <!-- Retainer 1: Single Platform Management -->
+          <div class="pricing-card-digital">
+            <div>
+              <div class="card-media" style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
+                <img src="assets/illust-digital-growth.png" alt="Single Platform Social Media Management 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-red); font-weight: 700; text-transform: uppercase;">Tier 01 · Single Channel</div>
+              <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin: 6px 0 10px;">Social Media Account Management</h3>
+              <p style="font-size: 0.92rem; color: var(--ink-muted); line-height: 1.55;">
+                Dedicated stewardship of your company's primary channel (Instagram, LinkedIn, or X). Consistent branding and active posting.
+              </p>
+
+              <div style="margin: 20px 0 16px; padding: 14px 0; border-top: 1px solid var(--line-grid); border-bottom: 1px solid var(--line-grid);">
+                <div style="font-size: 2rem; font-weight: 700; font-family: var(--font-display); color: var(--ink-primary);">
+                  ₦120,000 <span style="font-size: 1rem; color: var(--ink-muted); font-weight: normal;">/ $140 <span style="font-size: 0.8rem;">/mo</span></span>
+                </div>
+                <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--accent-red); margin-top: 4px;">
+                  Commitment: Monthly Retainer · 12 Custom Posts
+                </div>
+              </div>
+
+              <ul class="feature-list">
+                <li><span>12 Custom Graphic / Carousel Posts per Month</span></li>
+                <li><span>Strategic Caption Writing &amp; Hashtag Research</span></li>
+                <li><span>Daily Comment Moderation &amp; DM Lead Triaging</span></li>
+                <li><span>Monthly Audience Growth &amp; Engagement Report</span></li>
+                <li><span>Dedicated Content Calendar Shared in Advance</span></li>
+                <li><span>Direct WhatsApp Client Hotline</span></li>
+              </ul>
+            </div>
+            <div style="margin-top: 24px;">
+              <a href="contact.html?package=social-single" class="btn btn-outline" style="width: 100%; text-align: center;">Retain Single Platform →</a>
+            </div>
+          </div>
+
+          <!-- Retainer 2: Multi-Platform Growth & Reels (Featured) -->
+          <div class="pricing-card-digital featured">
+            <div>
+              <div style="position: absolute; top: -12px; right: 24px; background-color: var(--accent-red); color: #FFF; font-family: var(--font-mono); font-size: 0.72rem; padding: 4px 12px; border-radius: 999px; font-weight: 700; text-transform: uppercase;">
+                Highest ROI
+              </div>
+              <div class="card-media" style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
+                <img src="assets/illust-video-cutdown.jpg" alt="Multi-Platform Social Growth and Video Reels 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-red); font-weight: 700; text-transform: uppercase;">Tier 02 · Multi-Platform &amp; Reels</div>
+              <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin: 6px 0 10px;">Multi-Platform Management &amp; Video Reels</h3>
+              <p style="font-size: 0.92rem; color: var(--ink-muted); line-height: 1.55;">
+                Complete growth management across 2 to 3 major channels (e.g. Instagram + LinkedIn + X). Combines viral short-form video reels with branded carousels.
+              </p>
+
+              <div style="margin: 20px 0 16px; padding: 14px 0; border-top: 1px solid var(--line-grid); border-bottom: 1px solid var(--line-grid);">
+                <div style="font-size: 2rem; font-weight: 700; font-family: var(--font-display); color: var(--ink-primary);">
+                  ₦240,000 <span style="font-size: 1rem; color: var(--ink-muted); font-weight: normal;">/ $280 <span style="font-size: 0.8rem;">/mo</span></span>
+                </div>
+                <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--accent-red); margin-top: 4px;">
+                  Commitment: Monthly Retainer · 20 Posts + 6 Reels
+                </div>
+              </div>
+
+              <ul class="feature-list">
+                <li><span>Management across 2–3 Channels (Instagram, LinkedIn, X, Facebook)</span></li>
+                <li><span>20 Branded Carousel/Graphic Posts per Month</span></li>
+                <li><span>6 Edited Short-Form Video Reels with Motion Text &amp; Audio</span></li>
+                <li><span>1-to-8 Content Repurposing Across All Platforms</span></li>
+                <li><span>Proactive Community Engagement &amp; Influencer Tagging</span></li>
+                <li><span>Bi-Weekly Performance Strategy Review Calls</span></li>
+              </ul>
+            </div>
+            <div style="margin-top: 24px;">
+              <a href="contact.html?package=social-multi" class="btn btn-solid" style="width: 100%; text-align: center;">Retain Multi-Platform Growth →</a>
+            </div>
+          </div>
+
+          <!-- Retainer 3: Total Digital Operations Partner -->
+          <div class="pricing-card-digital">
+            <div>
+              <div class="card-media" style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
+                <img src="assets/illust-tri-brand-strategy.png" alt="Digital Marketing and Website Operations 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-red); font-weight: 700; text-transform: uppercase;">Tier 03 · Total Digital Partner</div>
+              <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin: 6px 0 10px;">Digital Marketing &amp; Website Management</h3>
+              <p style="font-size: 0.92rem; color: var(--ink-muted); line-height: 1.55;">
+                Complete outsourced digital department for established businesses. Covers multi-platform social management, continuous website maintenance, and landing page creation.
+              </p>
+
+              <div style="margin: 20px 0 16px; padding: 14px 0; border-top: 1px solid var(--line-grid); border-bottom: 1px solid var(--line-grid);">
+                <div style="font-size: 2rem; font-weight: 700; font-family: var(--font-display); color: var(--ink-primary);">
+                  ₦450,000 <span style="font-size: 1rem; color: var(--ink-muted); font-weight: normal;">/ $500 <span style="font-size: 0.8rem;">/mo</span></span>
+                </div>
+                <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--accent-red); margin-top: 4px;">
+                  Commitment: Full-Suite Retainer · Priority 24/48h Turnaround
+                </div>
+              </div>
+
+              <ul class="feature-list">
+                <li><span>Full Social Media Management across 4+ Platforms</span></li>
+                <li><span>Continuous Website Maintenance, Bug Fixes &amp; Speed Audits</span></li>
+                <li><span>Up to 2 Conversion Landing Pages Created per Month</span></li>
+                <li><span>Bi-Weekly Email Marketing Campaigns &amp; Lead Funnels</span></li>
+                <li><span>Meta / LinkedIn Paid Ad Setup &amp; Budget Optimization</span></li>
+                <li><span>Dedicated Chief Digital Advisor Access via WhatsApp</span></li>
+              </ul>
+            </div>
+            <div style="margin-top: 24px;">
+              <a href="contact.html?package=social-fullsuite" class="btn btn-outline" style="width: 100%; text-align: center;">Retain Operations Partner →</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CLIENT FAQ ACCORDION -->
+    <section style="padding: 48px 0; border-bottom: 1px solid var(--line-grid); background-color: var(--bg-surface);">
+      <div class="container">
+        
+        <div style="max-width: 65ch; margin-bottom: 32px;">
+          <div class="editorial-chapter-badge">CLIENT FAQ</div>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700;">Frequently Asked Questions About Retainers</h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; margin-top: 10px;">
+            Clear answers about approval workflows, video filming, and monthly contracts.
+          </p>
+        </div>
+
+        <div style="max-width: 800px;">
+          
+          <div class="faq-accordion-item open">
+            <div class="faq-accordion-header">
+              <span>Do I get to review and approve posts before they go live?</span>
+              <span class="accordion-arrow">−</span>
+            </div>
+            <div class="faq-accordion-body">
+              Yes, 100%. At the beginning of every month, we deliver a complete monthly content calendar inside Google Drive / Notion detailing visual graphics, video scripts, captions, and publishing dates. Nothing is posted without your team's prior review and approval.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header">
+              <span>How are short-form video reels created?</span>
+              <span class="accordion-arrow">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              Depending on your location, you can send us raw video clips filmed on your smartphone (behind-the-scenes, product unboxing, founder speaking), and we edit them into high-retention reels with kinetic captions, sound design, and color grading. For Lagos-based clients, we can also coordinate scheduled content capture sessions.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header">
+              <span>Is there a long-term contract or lock-in?</span>
+              <span class="accordion-arrow">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              No long-term lock-in. Our retainers operate on a flexible month-to-month agreement. You can pause or cancel at the end of any 30-day billing cycle with 14 days' notice.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-accordion-header">
+              <span>Can you also run our paid Instagram and LinkedIn ads?</span>
+              <span class="accordion-arrow">+</span>
+            </div>
+            <div class="faq-accordion-body">
+              Yes. In our Tier 02 and Tier 03 retainers, we design high-converting ad creatives, write persuasive sales copy, and set up Meta / LinkedIn ad campaigns targeting your exact local and international buyers.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FINAL CALL TO ACTION -->
+    <section style="padding: 56px 0;">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 28px;">
+        <div>
+          <span class="card-tag">Monthly Partnership</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; margin-top: 8px;">
+            Ready to Put Your Digital Marketing on Autopilot?
+          </h2>
+          <p style="color: var(--ink-muted); font-size: 1.05rem; margin-top: 8px; max-width: 60ch;">
+            Let's build a consistent, authoritative brand presence that drives real inquiries every single week.
+          </p>
+        </div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="https://wa.me/2348176939974?text=Hello%20Alfred,%20I%20would%20like%20to%20discuss%20a%20Monthly%20Digital%20Marketing%20Retainer." target="_blank" rel="noopener" class="btn btn-solid" style="background-color: #25D366; border-color: #25D366; color: #FFFFFF;">
+            Chat on WhatsApp (Instant) ↗
+          </a>
+          <a href="contact.html?type=digital" class="btn btn-outline">Submit Marketing Goals →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer id="terminal" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2 class="footer-heading">
+            Let's build<br>something <em>worth</em><br>remembering.
+          </h2>
+        </div>
+        <div class="footer-contacts">
+          <button class="contact-row-btn" data-copy-email="officialwilliamsae@gmail.com" aria-label="Copy email address to clipboard">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
+              <span style="font-weight: 500;">officialwilliamsae@gmail.com</span>
+            </span>
+            <span style="font-size: 0.72rem; color: var(--accent-red); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em;">Click to Copy</span>
+          </button>
+
+          <a href="tel:+2348176939974" class="contact-row-btn">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+234 817 693 9974</span>
+            </span>
+            <span style="font-size: 0.72rem; color: #9CA3AF;">Call Direct</span>
+          </a>
+
+          <a href="https://linkedin.com/in/williams-e-alfred/" target="_blank" rel="noopener" class="contact-row-btn">
+            <span style="display: flex; align-items: center; gap: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>linkedin.com/in/williams-e-alfred</span>
+            </span>
+            <span style="font-size: 0.72rem; color: #9CA3AF;">Connect ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Alfred E. Williams. Hand-coded with zero bloat. All rights reserved.</div>
+        <div style="display: flex; gap: 18px;">
+          <a href="privacy.html" style="color: var(--ink-faint); font-size: 0.76rem;">Privacy Policy</a>
+          <a href="terms.html" style="color: var(--ink-faint); font-size: 0.76rem;">Terms of Engagement</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/components.js"></script>
+  <script>
+    // FAQ Accordion interaction
+    document.querySelectorAll('.faq-accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-accordion-item').forEach(i => {
+          i.classList.remove('open');
+          const arrow = i.querySelector('.accordion-arrow');
+          if (arrow) arrow.textContent = '+';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          const arrow = header.querySelector('.accordion-arrow');
+          if (arrow) arrow.textContent = '−';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

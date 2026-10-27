@@ -52,7 +52,39 @@
               </a>
             </div>
           </li>
-          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <!-- Services with Dropdown (Active) -->
+          <li class="nav-item-dropdown">
+            <a href="services.html" class="nav-link nav-link-dropdown active" aria-expanded="false" aria-haspopup="true">
+              <span>Services</span>
+              <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="services.html" class="nav-dropdown-item active" role="menuitem">
+                <span class="dropdown-item-title">All Services Overview</span>
+                <span class="dropdown-item-desc">Consulting suites &amp; master price matrix</span>
+              </a>
+              <a href="ai-training.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Corporate AI Training ↗</span>
+                <span class="dropdown-item-desc">Workforce acceleration &amp; playbooks</span>
+              </a>
+              <a href="web-development.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Web &amp; App Development ↗</span>
+                <span class="dropdown-item-desc">Sub-100ms lightweight web platforms</span>
+              </a>
+              <a href="business-writing.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Business Writing &amp; Decks ↗</span>
+                <span class="dropdown-item-desc">Company profiles &amp; investor pitch decks</span>
+              </a>
+              <a href="editorial-writing.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Editorial &amp; AI Humanizing ↗</span>
+                <span class="dropdown-item-desc">Manuscript polish, novels &amp; executive CVs</span>
+              </a>
+              <a href="digital-marketing.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Digital Marketing &amp; Retainers ↗</span>
+                <span class="dropdown-item-desc">Social media, video reels &amp; web management</span>
+              </a>
+            </div>
+          </li>
           <!-- Training Dropdown -->
           <li class="nav-item-dropdown">
             <a href="training.html" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
@@ -84,9 +116,9 @@
 
       <div class="header-actions">
         <button class="theme-toggle-btn" aria-label="Toggle theme"></button>
-        <button class="directory-trigger-btn">
+        <button class="menu-trigger-btn directory-trigger-btn" aria-label="Open menu directory">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          <span>Directory</span>
+          <span>Menu</span>
         </button>
         <a href="contact.html" class="btn btn-sm btn-solid" style="padding: 8px 18px; font-size: 0.78rem;">Let's Talk →</a>
       </div>
@@ -269,8 +301,11 @@
               High-speed business websites, custom web applications, and conversion-focused landing pages. Built with clean web standards, zero slow WordPress plugins, and sub-100ms load speeds.
             </p>
           </div>
-          <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-red); background-color: var(--bg-page); padding: 8px 16px; border: 1px solid var(--line-grid); border-radius: 999px; font-weight: 600;">
-            100% Code Ownership · Zero Monthly Template Fees
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
+            <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-red); background-color: var(--bg-page); padding: 8px 16px; border: 1px solid var(--line-grid); border-radius: 999px; font-weight: 600;">
+              100% Code Ownership · Zero Monthly Template Fees
+            </div>
+            <a href="web-development.html" class="btn btn-sm btn-solid" style="font-size: 0.76rem; padding: 6px 14px;">Dedicated Web Dev Sales Page →</a>
           </div>
         </div>
 
@@ -392,8 +427,11 @@
               We write and design authoritative, on-brand corporate documents that win contracts, impress investors, and position your company as an industry leader. Both persuasive copy and graphic design delivered together.
             </p>
           </div>
-          <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-red); background-color: var(--bg-surface); padding: 8px 16px; border: 1px solid var(--line-grid); border-radius: 999px; font-weight: 600;">
-            Copywriting + Visual Graphic Design Included
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
+            <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-red); background-color: var(--bg-surface); padding: 8px 16px; border: 1px solid var(--line-grid); border-radius: 999px; font-weight: 600;">
+              Copywriting + Visual Graphic Design Included
+            </div>
+            <a href="business-writing.html" class="btn btn-sm btn-solid" style="font-size: 0.76rem; padding: 6px 14px;">Dedicated Business Writing Page →</a>
           </div>
         </div>
 
@@ -402,7 +440,7 @@
           <!-- Writing Tier 1: Website Copywriting -->
           <div class="consultant-pricing-card scrolly-fade">
             <div class="card-media" style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
-              <img src="assets/illust-editorial-writing.png" alt="Website Copywriting 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="assets/illust-grant-proposal.jpg" alt="Website Copywriting &amp; Proposals 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div>
               <div class="pricing-card-tier">Tier 01 · Conversion Copy</div>
@@ -435,7 +473,7 @@
           <div class="consultant-pricing-card is-popular scrolly-fade">
             <div class="pricing-popular-badge">High Demand</div>
             <div class="card-media" style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
-              <img src="assets/illust-brand-identity.jpg" alt="Company Profile Document 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="assets/illust-creative-director.jpg" alt="Company Profile Document 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div>
               <div class="pricing-card-tier">Tier 02 · Corporate Identity</div>
@@ -467,7 +505,7 @@
           <!-- Writing Tier 3: Pitch Deck -->
           <div class="consultant-pricing-card scrolly-fade">
             <div class="card-media" style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
-              <img src="assets/illust-policy-whitepaper.jpg" alt="Investor Pitch Deck 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="assets/illust-pitch-deck-presentation.png" alt="Investor Pitch Deck 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div>
               <div class="pricing-card-tier">Tier 03 · Fundraising &amp; Sales</div>
@@ -513,8 +551,11 @@
               Take the robotic "AI stain" out of your text. If you used ChatGPT, Claude, or Jasper to draft a <strong>fiction novel, business book, academic essay, thesis, or corporate manuscript</strong>, we provide meticulous manual restructuring, paraphrasing, cadence adjustment, and tone elevation. We transform stiff AI drafts into compelling, 100% human prose that bypasses all AI detectors with 0% flags.
             </p>
           </div>
-          <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-red); background-color: var(--bg-page); padding: 8px 16px; border: 1px solid var(--line-grid); border-radius: 999px; font-weight: 600;">
-            100% Human Writing · Turnitin &amp; GPTZero 0% AI · Novels, Books &amp; Academic
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
+            <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-red); background-color: var(--bg-page); padding: 8px 16px; border: 1px solid var(--line-grid); border-radius: 999px; font-weight: 600;">
+              100% Human Writing · Turnitin &amp; GPTZero 0% AI · Novels, Books &amp; Academic
+            </div>
+            <a href="editorial-writing.html" class="btn btn-sm btn-solid" style="font-size: 0.76rem; padding: 6px 14px;">Dedicated Editorial Sales Page →</a>
           </div>
         </div>
 
@@ -523,7 +564,7 @@
           <!-- Humanization Tier 1: Essays & Articles -->
           <div class="consultant-pricing-card scrolly-fade">
             <div class="card-media" style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
-              <img src="assets/illust-prep-diagnostic.jpg" alt="AI Essay Humanization 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="assets/illust-editorial-writing.png" alt="AI Essay Humanization 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div>
               <div class="pricing-card-tier">Tier 01 · Short-Form &amp; Academic</div>
@@ -556,7 +597,7 @@
           <div class="consultant-pricing-card is-popular scrolly-fade">
             <div class="pricing-popular-badge">Specialist Favorite</div>
             <div class="card-media" style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
-              <img src="assets/illust-prep-accelerator.jpg" alt="Novel and Book AI Humanization 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="assets/illust-policy-whitepaper.jpg" alt="Novel and Book AI Humanization 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div>
               <div class="pricing-card-tier">Tier 02 · Full Manuscript Mastery</div>
@@ -588,7 +629,7 @@
           <!-- Humanization Tier 3: Executive CV & Ghostwriting -->
           <div class="consultant-pricing-card scrolly-fade">
             <div class="card-media" style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
-              <img src="assets/illust-thesis-advisory.jpg" alt="Executive Ghostwriting 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="assets/illust-career-executive-cv.jpg" alt="Executive Career &amp; Ghostwriting 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div>
               <div class="pricing-card-tier">Tier 03 · Career Positioning &amp; Ghostwriting</div>
@@ -634,8 +675,11 @@
               We manage your social media accounts from end to end. For growing Nigerian and international businesses, we take complete stewardship of your <strong>Instagram, LinkedIn, X (Twitter), Facebook, and TikTok</strong>: developing monthly content calendars, designing branded carousels, scripting and editing viral video reels, writing converting captions, managing community DMs, updating your website, and driving qualified customer inquiries.
             </p>
           </div>
-          <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-red); background-color: var(--bg-surface); padding: 8px 16px; border: 1px solid var(--line-grid); border-radius: 999px; font-weight: 600;">
-            Account Management · Content Creation · Video Reels · Web Maintenance
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
+            <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-red); background-color: var(--bg-surface); padding: 8px 16px; border: 1px solid var(--line-grid); border-radius: 999px; font-weight: 600;">
+              Account Management · Content Creation · Video Reels · Web Maintenance
+            </div>
+            <a href="digital-marketing.html" class="btn btn-sm btn-solid" style="font-size: 0.76rem; padding: 6px 14px;">Dedicated Digital Retainers Page →</a>
           </div>
         </div>
 
@@ -644,7 +688,7 @@
           <!-- Social Tier 1: Single Platform -->
           <div class="consultant-pricing-card scrolly-fade">
             <div class="card-media" style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
-              <img src="assets/illust-video-cutdown.jpg" alt="Social Media Management 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="assets/illust-digital-growth.png" alt="Social Media Management 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div>
               <div class="pricing-card-tier">Tier 01 · Single-Platform Management</div>
@@ -677,7 +721,7 @@
           <div class="consultant-pricing-card is-popular scrolly-fade">
             <div class="pricing-popular-badge">High Growth</div>
             <div class="card-media" style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
-              <img src="assets/illust-brand-identity.jpg" alt="Multi-Platform Social Growth 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="assets/illust-video-cutdown.jpg" alt="Multi-Platform Social Growth &amp; Video Reels 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div>
               <div class="pricing-card-tier">Tier 02 · Multi-Platform &amp; Video Growth</div>
@@ -709,7 +753,7 @@
           <!-- Social Tier 3: Full Digital Marketing & Website Management -->
           <div class="consultant-pricing-card scrolly-fade">
             <div class="card-media" style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--line-grid);">
-              <img src="assets/illust-creative-director.jpg" alt="Digital Marketing and Website Management 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="assets/illust-tri-brand-strategy.png" alt="Digital Marketing and Website Operations 2D Cartoon Illustration" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div>
               <div class="pricing-card-tier">Tier 03 · Total Digital Operations Partner</div>
